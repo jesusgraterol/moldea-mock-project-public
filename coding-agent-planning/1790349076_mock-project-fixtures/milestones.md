@@ -1,18 +1,18 @@
 # Mock project fixture milestones
 
-These milestones implement the current `plan.md` in this directory. Each branch is a complete local fixture at its checkpoint; Milestone 16 publishes the corpus. Source filenames, agent IDs, context topics, and bindings are chosen through the developer workflow and repository-installed skill, so they are intentionally not predetermined here. For every valid branch, verify that the coding host selected that branch's installed skill path and version before skill-dependent work. If selection cannot be verified, re-enter the branch in a compatible session or host and stop that milestone if it still fails. No milestone performs Cloud connection, Assurance testing, provider calls, or application tests.
+These milestones implement the current `plan.md` in this directory. Begin fixture work only after the developer confirms the pending skill and adapter upgrade is complete, and verify the published release and adapter coverage before installation. Each branch is a complete local fixture at its checkpoint; Milestone 16 publishes the corpus. Source filenames, agent IDs, context topics, and bindings are chosen through the developer workflow and repository-installed skill, so they are intentionally not predetermined here. For every valid branch, verify that the coding host selected that branch's installed skill path and version before skill-dependent work. If selection cannot be verified, re-enter the branch in a compatible session or host and stop that milestone if it still fails. No milestone performs Cloud connection, Assurance testing, provider calls, or application tests.
 
 ## Milestone 1: Uninitialized index and shared skill
 
 **Objective:** Establish `main` as the uninitialized fixture index and `fixture_skill_only` as the common, unadopted skill ancestor.
 
-**Dependencies:** Approval of the current plan and milestone sequence; access to the latest published skill release. No earlier milestone.
+**Dependencies:** Approval of the current plan and milestone sequence; developer confirmation that the pending skill and adapter upgrade is complete; publication of that release and access to its qualification profiles. No earlier milestone.
 
 **Owned scope:** `main`'s `README.md` only; the installer-created repository-local skill files on `fixture_skill_only`. No `/moldea/**`, package manifest, CLI dependency, or managed README block on either branch.
 
-**Implementation:** Document branch purposes and the ordinary Git skill-refresh procedure on `main`. Create `fixture_skill_only` from it, install the exact current skill tag with the documented repository-scoped installer, inspect every generated path and the installed `SKILL.md`, and commit the two branch states cohesively with `-s -S`. Do not stage the planning directory or protected `AGENTS.md`.
+**Implementation:** After the upgrade confirmation, inspect the latest published skill tag, adapter qualification inventory, target forms, and compatible CLI range. Stop for a plan revision if the release is unavailable or materially changes the planned coverage. Document branch purposes and the ordinary Git skill-refresh procedure on `main`. Create `fixture_skill_only` from it, install the verified tag with the documented repository-scoped installer, inspect every generated path and the installed `SKILL.md`, and commit the two branch states cohesively with `-s -S`. Do not stage the planning directory or protected `AGENTS.md`.
 
-**Verification:** Confirm both branches lack adoption, identify the installed skill path/version, and confirm the coding host discovers that repository copy. Review complete diffs, generated paths, `git diff --check`, status, and signed commits. No source typecheck or skill validation applies.
+**Verification:** Record the upgrade confirmation, published tag, adapter inventory and target forms, and CLI compatibility result. Confirm both branches lack adoption, identify the installed skill path/version, and confirm the coding host discovers that repository copy. Review complete diffs, generated paths, `git diff --check`, status, and signed commits. No source typecheck or skill validation applies.
 
 **Acceptance criteria:** Both local branch states exist; `main` remains uninitialized; `fixture_skill_only` contains the current selectable skill and nothing that adopts a project.
 
@@ -260,4 +260,4 @@ These milestones implement the current `plan.md` in this directory. Each branch 
 
 ## Approval required
 
-Approval is requested for this complete sixteen-milestone sequence. Because the current plan has not yet been approved, approval of this sequence also approves that plan unless you limit it. Approval does not start implementation: identify the specific milestone to implement, beginning with Milestone 1. After approval, planning is complete and I will tell you it is ready for your manual switch to the cheaper model before implementation starts.
+Approval is requested for this complete sixteen-milestone sequence. Because the current plan has not yet been approved, approval of this sequence also approves that plan unless you limit it. Approval does not start implementation: after confirming the skill and adapter upgrade is complete, identify the specific milestone to implement, beginning with Milestone 1. After approval, planning is complete and I will tell you it is ready for your manual switch to the cheaper model before implementation starts.
