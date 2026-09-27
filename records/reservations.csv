@@ -1,0 +1,2 @@
+reservation_id,equipment_id,pickup_on,return_on,status
+RS-271,TL-P08,2026-10-23,2026-10-26,confirmed

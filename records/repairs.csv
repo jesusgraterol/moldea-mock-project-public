@@ -1,0 +1,3 @@
+repair_id,equipment_id,opened_on,completed_on,issue
+RR-91,TL-T12,2026-10-18,,Broken pole sleeve
+RR-92,TL-S03,2026-10-19,2026-10-21,Loose fuel valve
