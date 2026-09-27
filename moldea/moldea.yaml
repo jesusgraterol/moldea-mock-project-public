@@ -18,7 +18,7 @@ agents:
         category: runtime-integration
         effect: blocking
         description: The root and knowledge subagent are source-only; no service, credentials, or provider-backed turn demonstrates engineer-facing delegation.
-        resolution: In a separately authorized integration, configure an access-controlled entry point and credentials, then verify real FN-101 and FN-102 turns load both instructions and return only attributed checked-in sources.
+        resolution: In a separately authorized integration, configure an access-controlled entry point and credentials, then verify real FN-101, FN-102, and note-only alias turns load both instructions and return only attributed checked-in sources.
         related:
           - path: /agent/agent.ts
           - path: /agent/subagents/knowledge/agent.ts
@@ -34,10 +34,10 @@ agents:
     tools:
       lookup-notes:
         name: lookup_notes
-        description: Returns the curated checked-in source set for FN-101 or FN-102.
+        description: Returns curated checked-in sources for FN-101, FN-102, or a known lag-note query.
         implementation:
           path: /agent/subagents/knowledge/source-catalog.ts
-          symbol: lookupCaseSources
+          symbol: lookupNotes
         registration:
           path: /agent/subagents/knowledge/tools/lookup_notes.ts
           symbol: default

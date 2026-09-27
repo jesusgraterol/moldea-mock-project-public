@@ -1,10 +1,11 @@
 import { defineTool } from 'eve/tools';
 
 import { LookupNotesInputSchema } from '../contracts.js';
-import { lookupCaseSources } from '../source-catalog.js';
+import { lookupNotes } from '../source-catalog.js';
 
 export default defineTool({
-  description: 'Return the reviewed checked-in record and operational notes for FN-101 or FN-102.',
+  description:
+    'Return curated checked-in sources for FN-101, FN-102, or an edge-events/edge-ingest lag note query.',
   inputSchema: LookupNotesInputSchema,
-  execute: lookupCaseSources,
+  execute: lookupNotes,
 });
