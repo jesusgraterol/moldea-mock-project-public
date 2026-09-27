@@ -18,6 +18,10 @@ Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 
 The intended local invocation is `npm run dev`: Eve discovers the root and `knowledge` agent files, loads their mirrored instructions, exposes the local subagent to the root, and exposes `lookup_notes` only to that subagent. Use that script rather than bare `eve dev`, which would omit the safety flags. This is a source-level path, not an exercised service: no credentials, access-controlled entry point, deployment, or provider-backed turn is supplied. Do not interpret the source, build, or Moldea validation as proof of live delegation. The direct dependencies in `package.json` are exact-versioned; `package-lock.json` records their resolved closure.
 
+## Attempt record
+
+This attempt used the published Moldea skill `v6.0.0` installed at `.agents/skills/moldea/SKILL.md`. The developer conversation reached adoption, a knowledge-subagent lookup for FN-101 and FN-102, and a later note-only lookup using the former stream name. It stopped after that refinement. Live delegation and engineer-facing responses remain unexercised.
+
 <!-- moldea:start -->
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
