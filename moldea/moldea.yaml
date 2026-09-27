@@ -1,0 +1,23 @@
+version: 1
+agents:
+  release-note-drafter:
+    runtime:
+      id: claude-agent-sdk
+      guidance: /moldea/runtimes/claude-agent-sdk.md
+    bindings:
+      runtimeAgent:
+        path: /src/release-note-drafter/release-note-drafter.ts
+        symbol: draftSeatline28ReleaseNotes
+      instructionLoader:
+        path: /src/release-note-drafter/instruction.ts
+        symbol: loadReleaseNoteInstruction
+    affectedBy:
+      - /package.json
+    unresolved:
+      live-integration:
+        category: integration
+        effect: blocking
+        description: The source-only drafting function has no product caller or verified live provider execution.
+        resolution: Wire an authorized caller and provider configuration, then verify the non-publishing drafting path against the planned records before operational use.
+        related:
+          - path: /src/release-note-drafter/release-note-drafter.ts
