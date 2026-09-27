@@ -17,6 +17,9 @@ This is a source-only prototype. It needs no working service, deployment, creden
 `/docs` is reserved for concise, quickly scannable documentation of essential, durable project concepts and processes. API and HTTP endpoint documentation belongs in its established location outside `/docs` if those surfaces are added later.
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
+Installed skill: `v6.0.0` at `.agents/skills/moldea/`. Actor session: `01a0e3ff-bfb1-71d2-8391-34269dac7fab`.
+
+Observed stopping point: the adopted project has a direct OpenAI Responses draft path. A later PD-432 request added date-only scans and guidance for a passed carrier estimate. Typechecking and Moldea validation passed; live model output, staff review integration, and customer delivery were not exercised.
 
 <!-- moldea:start -->
 
