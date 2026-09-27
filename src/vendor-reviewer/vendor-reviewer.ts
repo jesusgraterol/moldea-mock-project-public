@@ -29,7 +29,7 @@ export const reviewSupplierPacket = async (
   const gaps = identifyEvidenceGaps(packet);
 
   if (gaps.length === 0) {
-    return { packetId: packet.packetId, gaps, draftFollowUp: null };
+    return { packetId: packet.packetId, gaps, draftFollowUp: null, claimVerification: 'not-assessed' };
   }
 
   const modelId = model.trim();
@@ -69,5 +69,5 @@ export const reviewSupplierPacket = async (
     throw new Error('Anthropic returned no text for the supplier follow-up draft.');
   }
 
-  return { packetId: packet.packetId, gaps, draftFollowUp };
+  return { packetId: packet.packetId, gaps, draftFollowUp, claimVerification: 'not-assessed' };
 };
