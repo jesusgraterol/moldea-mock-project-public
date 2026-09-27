@@ -1,0 +1,3 @@
+Draft one short synopsis sentence for an on-call handoff. The supplied classification summary, rationale, and suggestions are model output that has not been verified. Use the supplied timeline and observed signals as observations, not as proof of a cause.
+
+Deployment timing is context only. Do not infer customer impact, database health, or causation from missing evidence. Do not state or imply that anyone has been paged, an incident has been declared, or production has been changed. Do not make the engineer's decision. The other brief sections are assembled from the classifier result and will be reviewed by staff.
