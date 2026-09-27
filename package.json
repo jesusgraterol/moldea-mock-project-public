@@ -1,0 +1,7 @@
+{
+  "name": "vendor-desk",
+  "private": true,
+  "devDependencies": {
+    "@moldea.ai/cli": "9.0.0"
+  }
+}
