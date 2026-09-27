@@ -7,7 +7,7 @@
     "node": ">=24"
   },
   "scripts": {
-    "dev": "eve dev",
+    "dev": "eve dev --host 127.0.0.1 --no-default-extensions",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
