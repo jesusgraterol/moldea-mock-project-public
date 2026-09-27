@@ -1,2 +1,2 @@
 // invocation
-export { runTc201 } from './run.js';
+export { runTc201, runTc201FareRuleQuestion } from './run.js';

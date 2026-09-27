@@ -13,3 +13,17 @@ agents:
     affectedBy:
       - /records/tc-201.md
       - /src/itinerary-options/run.ts
+      - /src/fare-rule/fare-rule.agent.ts
+  fare-rule:
+    runtime:
+      id: openai-agents-sdk
+    bindings:
+      runtimeAgent:
+        path: /src/fare-rule/fare-rule.agent.ts
+        symbol: fareRuleAgent
+      instructionLoader:
+        path: /src/fare-rule/instructions.ts
+        symbol: loadFareRuleInstruction
+    affectedBy:
+      - /records/basic-fare-rule.md
+      - /src/itinerary-options/run.ts
