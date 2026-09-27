@@ -24,6 +24,8 @@ The classifier result retains the raw batch with original units and event IDs be
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 
+Construction record: repository-local Moldea skill `v6.0.0` at `.agents/skills/moldea/SKILL.md`; coding session `01a0e440-2914-7e21-9831-8e560431a241`. The conversation reached ID-301 classification and briefing, then ID-302 mixed-unit normalization and briefing. Integration remains source-only; no provider or operational workflow was run.
+
 <!-- moldea:start -->
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
