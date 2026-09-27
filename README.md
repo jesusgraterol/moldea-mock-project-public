@@ -2,7 +2,7 @@
 
 Case Router helps support staff at a small appointment-scheduling company decide which queue should review a customer request. Staff currently use account access, billing review, privacy review, and product help queues. A recommendation should name the queue and explain the evidence from the supplied request without deciding a billing dispute or approving deletion.
 
-The fictional `CR-118` request in `records/` concerns two renewal receipts for one organization subscription. The customer asks whether they were charged twice. Support needs a short routing recommendation, while billing staff verify the ledger and decide any correction.
+The fictional `CR-118` request in `records/` concerns two renewal receipts for one organization subscription. The customer asks whether they were charged twice. Support needs a short routing recommendation, while billing staff verify the ledger and decide any correction. `CR-119` combines a booking-history deletion request with a receipt question; the recommender should prioritize privacy review and keep the billing question visible for staff follow-up.
 
 This is a source-only prototype. It needs no working service, deployment, credentials, live provider calls, or application test suite. No ticket is routed automatically by this repository.
 
@@ -10,7 +10,7 @@ This is a source-only prototype. It needs no working service, deployment, creden
 
 - `src/case-router/` owns the caller-facing `recommendQueue` function, input and output schemas, the LangChain `createAgent` configuration, and the canonical instruction loader.
 - `moldea/` owns the project context and queue-recommender instruction. The source loader reads that instruction from the checkout before the agent is invoked.
-- `records/cr-118.md` is the fictional billing example, not a verified payment record or a default input.
+- `records/` contains fictional requests, not verified account or payment records or default inputs.
 - `/docs` is reserved for concise, scannable documentation of essential, durable concepts and processes. API and HTTP endpoint documentation belongs in its established location outside `/docs`.
 
 Run `npm run typecheck` to check the TypeScript source. This prototype has no service, ticket integration, application test suite, credentials, deployment, or live provider verification. A later integration would need to supply provider credentials, exercise the invocation path, and keep staff responsible for billing and deletion decisions.

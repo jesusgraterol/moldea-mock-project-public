@@ -12,7 +12,7 @@ export const QueueRecommendationSchema = z.object({
     .string()
     .trim()
     .min(1)
-    .describe('A short explanation grounded only in the supplied customer request.'),
+    .describe('Request evidence for the queue, including any separate issue needing staff follow-up.'),
 });
 
 export type IQueueRecommendation = z.infer<typeof QueueRecommendationSchema>;

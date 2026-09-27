@@ -20,7 +20,7 @@ agents:
         category: runtime-integration
         effect: blocking
         description: The source path is wired, but no provider credentials or live invocation have verified its recommendations.
-        resolution: Approve the customer-data boundary, configure provider access in a consuming application, and verify the instruction load, structured response, CR-118 routing, and staff-only decision boundary through focused integration checks.
+        resolution: Approve the customer-data boundary, configure provider access in a consuming application, and verify the instruction load, structured response, CR-118 billing routing, CR-119 privacy priority with billing follow-up, and staff-only decision boundary through focused integration checks.
         related:
           - path: /src/case-router/agent.ts
           - path: /src/case-router/recommendation.ts
