@@ -1,263 +1,315 @@
 # Mock project fixture milestones
 
-These milestones implement the current `plan.md` in this directory. Begin fixture work only after the developer confirms the pending skill and adapter upgrade is complete, and verify the published release and adapter coverage before installation. Each branch is a complete local fixture at its checkpoint; Milestone 16 publishes the corpus. Source filenames, agent IDs, context topics, and bindings are chosen through the developer workflow and repository-installed skill, so they are intentionally not predetermined here. For every valid branch, verify that the coding host selected that branch's installed skill path and version before skill-dependent work. If selection cannot be verified, re-enter the branch in a compatible session or host and stop that milestone if it still fails. No milestone performs Cloud connection, Assurance testing, provider calls, or application tests.
+This sequence implements the current `plan.md` in this directory. No fixture implementation has started. The numbered milestones are review boundaries; branch suffixes identify attempts and increment independently. The listed branches are first-attempt names. Use the next available suffix for a retry and preserve every concluded attempt.
 
-## Milestone 1: Uninitialized index and shared skill
+## Rules shared by the milestones
 
-**Objective:** Establish `main` as the uninitialized fixture index and `fixture_skill_only` as the common, unadopted skill ancestor.
+These rules are part of each applicable milestone's implementation, verification, and acceptance criteria.
 
-**Dependencies:** Approval of the current plan and milestone sequence; developer confirmation that the pending skill and adapter upgrade is complete; publication of that release and access to its qualification profiles. No earlier milestone.
+- **Startup and dependencies:** Begin fixture work only after the developer confirms the skill and adapter upgrade is published and authorizes a milestone under the approved plan and breakdown. Milestone 1 establishes the unadopted main base, index, and verified installation method. Milestones 2–14 need those startup prerequisites, but do not depend on each other's success. A publication-only blocker does not prevent separately authorized local work with satisfied prerequisites. Milestones 15 and 16 each need their own successful parent. The order favors simpler projects first without making that a requirement for unrelated projects.
+- **Independent attempts:** Start fresh projects from a recorded unadopted `main` commit and install the skill in that project. Replace the inherited index with the product README before adoption. Check local and remote refs before choosing the attempt number. Completed branches retain their tips and history; no global skill refresh or automatic propagation of upgrades is performed.
+- **Release selection:** For each fresh or retry attempt, verify the latest stable published skill, compatible CLI and adapter contracts, and required libraries at attempt start. Pin selected dependencies exactly and retain the lockfile. Read the actual SDK APIs and installed adapter contract. Keep selected releases fixed during that attempt; record any genuinely needed new dependency. Let the skill establish CLI tooling at its normal adoption or maintenance step. Missing publication blocks the attempt; material changes to planned coverage require a plan revision. Do not silently downgrade or substitute a runtime. Negative fixtures inherit their valid parent's releases without upgrading them.
+- **Actual skill use:** Verify that the host selects the branch's repository-installed skill path and release; repeat selection checks after branch, installation, or host changes. Installation and CLI success alone are insufficient. If selection cannot be verified, re-enter a compatible session or report the attempt blocked. Use the installed skill for adoption, agent planning where needed, creation, maintenance, and supported repair. Do not hand-author canonical output to conceal a skill failure.
+- **Developer interaction and checkpoints:** Deliver clearly labeled simulated requests sequentially, answer actual product ambiguities coherently, and review the observed result before the next request. Before initialization and every later request that may change files, commit the intended inputs and record their SHA alongside the exact request in the session. Include the product README, existing source and mock records, installed skill, and package files already present; do not create missing tooling early. Reuse an existing checkpoint when unchanged and add no empty commits for read-only exchanges. Every source-bearing successful project includes a meaningful later requirement change reflected in source and canonical state. There is no fixed conversation length or agent quota.
+- **Failure and retry:** Preserve the request, starting state, failure state, and diagnostics before correction. Ordinary implementation corrections and skill-directed recovery retain their observed history. A skill or compatibility problem requiring an external fix concludes that attempt; the project milestone remains incomplete. Retry under authorization for that project using a new numbered branch from the recorded pre-request commit, preferably in a fresh session. Record inherited state, selected releases, setup changes, and both original and new checkpoint SHAs. A partial replay proves only its observed operations. Other independently authorized milestones may proceed; no automatic retry loop is added.
+- **Records and observer:** Keep a concise attempt record in the branch README with date, base/retry checkpoint, selected skill path and release, exposed CLI/adapter identity, outcome, checks, and limitations. Source-bearing projects also describe a named mock case, expected outcome, and later refinement. Keep detailed requests and tool results in the actual coding session for the developer's separate observing agent. Do not fabricate transcripts, observer findings, or approvals, and do not add observer automation. Skill changes happen outside this implementation.
+- **Verification and publication:** Perform the applicable checks below and read the source, README, and canonical state together. Review task changes, dependency and installer output, paths, and relevant history. Preserve existing tracked planning files, unrelated user changes, and protected instruction files; respect archive/backup exclusions. Use available targeted formatting without adding tooling. Create cohesive task commits with `-s -S`; do not bypass signing or hooks. Publish reviewed concluded attempts to the verified private `origin` through explicit one-branch refspecs without force or tag following. Compare each remote ref with its reviewed local commit. Update and publish only the owning attempt's records in `main`'s README, including the reviewed SHA and selected successful fixture. Publication and this index update belong to the project milestone, including safely representable failed or blocked attempts.
 
-**Owned scope:** `main`'s `README.md` only; the installer-created repository-local skill files on `fixture_skill_only`. No `/moldea/**`, package manifest, CLI dependency, or managed README block on either branch.
+Use outcomes `passed`, `failed`, `blocked`, and `intentional_invalid`. Preserving a failure is useful progress but does not satisfy a project's successful acceptance criteria. A milestone with missing publication or required evidence remains incomplete. Git conflicts, secrets, and unsafe unrelated changes remain blockers regardless of the expected fixture outcome.
 
-**Implementation:** After the upgrade confirmation, inspect the latest published skill tag, adapter qualification inventory, target forms, and compatible CLI range. Stop for a plan revision if the release is unavailable or materially changes the planned coverage. Document branch purposes and the ordinary Git skill-refresh procedure on `main`. Create `fixture_skill_only` from it, install the verified tag with the documented repository-scoped installer, inspect every generated path and the installed `SKILL.md`, and commit the two branch states cohesively with `-s -S`. Do not stage the planning directory or protected `AGENTS.md`.
+No milestone connects Cloud, opens PRs, runs Assurance, generates resolution prompts, calls model providers, adds application tests, deploys services, or modifies the sibling skill, packages, or platform repositories. No migrations, fixture generator, CI matrix, or custom reporting system is introduced.
 
-**Verification:** Record the upgrade confirmation, published tag, adapter inventory and target forms, and CLI compatibility result. Confirm both branches lack adoption, identify the installed skill path/version, and confirm the coding host discovers that repository copy. Review complete diffs, generated paths, `git diff --check`, status, and signed commits. No source typecheck or skill validation applies.
+## Common files and verification
 
-**Acceptance criteria:** Both local branch states exist; `main` remains uninitialized; `fixture_skill_only` contains the current selectable skill and nothing that adopts a project.
+Each adopted project owns its product `README.md` and skill-managed block, repository-local CLI `package.json` and `package-lock.json`, and skill-created `moldea/moldea.yaml` and `moldea/project.md`. Each source-bearing project also owns `tsconfig.json`, exact TypeScript/SDK dependencies, focused source, and typed mock records. Registered agents own skill-maintained `description.md` and `instruction.md`, with focused context, runtime guidance, capabilities, bindings, and optional target-owned handoff descriptions only where justified. Exact source filenames and agent IDs follow the developer workflow and skill decisions; they are not invented in advance by this breakdown.
 
-**Review checkpoint:** Inspect the installation footprint and refresh path before authorizing any project branch.
+The applicable adopted-project checks use the selected skill's supported launcher contract. The invocation shape inspected in the plan is:
 
-## Milestone 2: Cedar Workshop minimum adoption
+```bash
+./node_modules/.bin/tsc --noEmit
+node .agents/skills/moldea/scripts/moldea-cli.mjs --repository "$PWD" -- composition --json
+node .agents/skills/moldea/scripts/moldea-cli.mjs --repository "$PWD" -- validate --json --max-output-bytes 65536
+node .agents/skills/moldea/scripts/moldea-cli.mjs --repository "$PWD" -- inspect --json --max-output-bytes 65536
+git diff --check
+git status --short --branch
+```
 
-**Objective:** Create a valid initialized project with no source, extra context, or agents.
+Run TypeScript checking only for source-bearing projects. For valid adopted projects, require successful validation, the intended adapter composition where agents exist, and source-backed inspection results. Read relevant warnings and paginated output fully. Trace the representative request and later refinement through mock records, policy, source, and canonical state. Verify checkpoint SHAs and actual skill-operation evidence. Typechecking and inspection do not establish provider execution.
 
-**Dependencies:** Milestone 1 complete; branch from `fixture_skill_only`.
+For unadopted states, check absence of adoption directly. For intentional invalid states, require the designated diagnostic without an independent defect. For failed or blocked attempts, record actual results without reporting them as passed. After publication, use `git rev-parse HEAD` and `git ls-remote` for the actual branch; the plan's example is `git ls-remote origin refs/heads/fixture_initialized_01`.
 
-**Owned scope:** `fixture_initialized` README, repository-local CLI `package.json` and `package-lock.json`, skill-managed README block, `moldea/moldea.yaml`, and `moldea/project.md`.
+## Milestone 1: Main index and skill-only attempt
 
-**Implementation:** Treat the booking/waitlist brief as the developer's first request, invoke the host-selected installed skill to initialize, and stop at the foundation. Review the skill output and commit with `-s -S`; add no ceremonial source or agent.
+**Objective:** Establish the uninitialized repository index and a selectable installed-skill fixture.
 
-**Verification:** Record selected skill path/version and initialization result. Run the plan's launcher `composition`, `validate`, and `inspect` checks; require zero agents. Check README, foundation, complete diff, `git diff --check`, status, and signature. No TypeScript or application tests apply.
+**Dependencies:** Approved plan and milestone sequence, explicit milestone authorization, and developer confirmation that the upgrade is published.
 
-**Acceptance criteria:** The local branch is adopted and valid with exactly the minimum foundation and zero agents; the waitlist boundary is clear from project context.
+**Owned scope:** `main`'s `README.md`; `fixture_skill_only_01` README and installer-owned repository-local skill files. Preserve existing tracked planning files. Neither branch gains canonical state, a managed README block, or a CLI dependency.
 
-**Review checkpoint:** Inspect whether the skill grounded initialization in the developer brief without inventing source or agent behavior.
+**Implementation:** Verify the published release, installation instructions, adapter inventory and target forms, and CLI compatibility contract without prescribing a version in advance. Create the concise main index and attempt instructions. Install the verified immutable release on the numbered skill-only branch, inspect the generated files, verify host selection, and publish its outcome and index record under the shared rules.
+
+**Verification:** Check installed identity and selection evidence, installation footprint, absence of adoption and CLI files, task diffs, signed commits, and remote-ref identity.
+
+**Acceptance criteria:** Main remains unadopted; a successful skill-only attempt is published and accurately indexed. The verified base and installation method are available for independent projects.
+
+**Review checkpoint:** Inspect the selected release, generated paths, host-selection evidence, and absence of premature initialization.
+
+## Milestone 2: Cedar Workshop minimum initialization
+
+**Objective:** Publish the minimum adopted project with zero agents.
+
+**Dependencies:** Startup prerequisites from Milestone 1.
+
+**Owned scope:** `fixture_initialized_01` installed skill and common adopted-project files, plus its main index entry. No application source, TypeScript tooling, or extra canonical context.
+
+**Implementation:** Prepare the class-booking and waitlist brief, checkpoint it, then request initialization through the selected skill. Answer necessary product clarification and stop at the foundation. Record and publish the attempt.
+
+**Verification:** Run composition, validation, and inspection; require zero agents and only the minimum canonical foundation. Confirm a waitlist entry cannot be described as a confirmed seat. Review skill use, checkpoint, README block, and publication evidence.
+
+**Acceptance criteria:** A successful minimum initialization is published and indexed. No later feature or artificial refinement has expanded this fixture.
+
+**Review checkpoint:** Inspect whether the skill grounded the foundation in the brief and stopped at the requested scope.
 
 ## Milestone 3: Trail Ledger context without agents
 
-**Objective:** Create a source-backed rental project whose durable context evolves with an ordinary repair or reservation change.
+**Objective:** Publish a small rental project whose context follows ordinary development.
 
-**Dependencies:** Milestone 1 complete and Milestone 2 reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1; Cedar Workshop need not succeed first.
 
-**Owned scope:** `fixture_context_only` README, exact-pinned package and lock files, `tsconfig.json`, focused rental/stock/repair TypeScript source, foundation, and skill-maintained context with source-backed `affectedBy` relationships. No agent or runtime registration.
+**Owned scope:** `fixture_context_only_01` common source-bearing project files, rental/stock/repair source and records, skill-maintained context and `affectedBy` relationships, and its index entry. No agent registration.
 
-**Implementation:** Build a small rental slice and a mock request grounded in stock and repair records; initialize through the selected skill; request focused project context. Commit the reviewed baseline with `-s -S`. Make one ordinary repair or reservation refinement, let the skill maintain affected context, and sign the refinement commit.
+**Implementation:** Build the initial rental slice, initialize through the skill, and use sequential developer requests to evolve reservation or repair behavior. Include a meaningful later rule change and observe context maintenance without prescribing its output. Publish the reviewed result.
 
-**Verification:** Record selected skill path/version and adoption/maintenance operations. Run local `tsc --noEmit` plus launcher `composition`, `validate`, and `inspect`; require zero agents. Trace the request and refinement through source and context, inspect exact `affectedBy` paths, complete diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common source and skill checks; require zero agents. Trace a named rental case and refinement through source, narrow relationship paths, and canonical context.
 
-**Acceptance criteria:** The local branch validates, typechecks, has meaningful source-backed context and zero agents, and shows a genuine before/after skill maintenance step.
+**Acceptance criteria:** The published project typechecks, validates, demonstrates context maintenance, and never promises gear under repair.
 
-**Review checkpoint:** Compare the initial and refined context against the rental rules and confirm no agent was introduced to implement deterministic logic.
+**Review checkpoint:** Inspect the source-to-context change and confirm deterministic rental rules did not create an unnecessary agent.
 
 ## Milestone 4: Vendor Desk with Anthropic
 
-**Objective:** Build a supplier-intake assistant using the direct Anthropic SDK.
+**Objective:** Publish supplier-packet assistance using the direct Anthropic SDK.
 
-**Dependencies:** Milestone 1 complete and zero-agent fixtures reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_anthropic` README, exact-pinned package and lock files, `tsconfig.json`, supplier-intake source and mock records, foundation, and skill-created agent/context files and relationships.
+**Owned scope:** `fixture_anthropic_01` common source-bearing files, supplier packets and intake rules, skill-created agent/context state for `anthropic`, and its index entry.
 
-**Implementation:** Develop the missing-evidence workflow, initialize through the selected skill, then request a source-grounded assistant while procurement retains approval. Commit the reviewed adopted feature; add one realistic intake-rule refinement and let the skill maintain its canonical state; sign both commits with `-s -S`.
+**Implementation:** Develop a missing-evidence case, adopt through the skill, request assistant follow-up drafting, and introduce a realistic later intake clarification or exception. Preserve staff approval and record the actual interaction before publication.
 
-**Verification:** Confirm selected skill path/version, current SDK API, source typecheck, and launcher `composition`, `validate`, and `inspect` evidence for the `anthropic` adapter. Trace a supplier packet and later rule change through source and instructions; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks against the selected SDK and adapter. Trace the supplier case, later change, exact implementation binding, and instructions.
 
-**Acceptance criteria:** A valid, typechecked local branch with one meaningful Anthropic-backed agent and a traceable developer progression.
+**Acceptance criteria:** A published, typechecked, valid Anthropic fixture demonstrates both agent creation and later maintenance; supplier approval remains with procurement staff.
 
-**Review checkpoint:** Inspect the exact runtime binding and the line between assistant follow-up and staff approval.
+**Review checkpoint:** Inspect the distinction between identifying missing evidence, drafting a response, and approving a supplier.
 
 ## Milestone 5: Catalog Studio with Google Gen AI
 
-**Objective:** Build product-copy review from known catalog facts using Google Gen AI.
+**Objective:** Publish catalog-grounded product-copy assistance.
 
-**Dependencies:** Milestone 1 complete; prior single-target adapter checkpoint reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_google_genai` README, exact-pinned package and lock files, `tsconfig.json`, catalog source and facts, foundation, and skill-created agent/context files and relationships.
+**Owned scope:** `fixture_google_genai_01` common source-bearing files, catalog facts and drafting source, skill-maintained `google-genai` agent/context state, and its index entry.
 
-**Implementation:** Create a small catalog slice, initialize with the selected skill, then request drafting and unsupported-claim detection. Commit the adopted feature; refine one catalog rule and let the skill update affected guidance; sign both commits with `-s -S`.
+**Implementation:** Build a product-copy case, initialize with the selected skill, request drafting and unsupported-claim handling, then introduce a natural catalog or policy refinement. Publish the observed outcome.
 
-**Verification:** Record skill selection and operations; typecheck against current Google Gen AI types; run launcher `composition`, `validate`, and `inspect` for `google-genai`. Trace one product request and refinement through source and canonical content; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks and trace the named product's facts through source and instructions before and after the refinement.
 
-**Acceptance criteria:** The local branch validates and typechecks, flags unsupported claims, and leaves publication to staff.
+**Acceptance criteria:** A published, typechecked, valid Google Gen AI fixture represents unsupported-claim handling and leaves publication approval to staff.
 
-**Review checkpoint:** Inspect whether the instruction claims only facts the mock catalog supplies.
+**Review checkpoint:** Inspect whether every claimed product fact and later correction is supported by the mock catalog and policy.
 
 ## Milestone 6: Parcel Desk with direct OpenAI
 
-**Objective:** Build delivery-exception assistance using the direct OpenAI SDK.
+**Objective:** Publish delivery-exception assistance grounded in tracking facts.
 
-**Dependencies:** Milestone 1 complete; earlier single-target adapters reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_openai` README, exact-pinned package and lock files, `tsconfig.json`, delivery/tracking source and mock events, foundation, and skill-created agent/context files and relationships.
+**Owned scope:** `fixture_openai_01` common source-bearing files, tracking records and delivery-policy source, skill-maintained `openai` agent/context state, and its index entry.
 
-**Implementation:** Establish a delayed-delivery case, initialize with the selected skill, then request a grounded explanation assistant. Commit the adopted feature; add one delivery-policy or tracking-state refinement and let the skill maintain affected canonical state; sign both commits with `-s -S`.
+**Implementation:** Build a delayed-delivery case, adopt with the skill, request an explanation assistant, and follow up with a realistic tracking gap or uncertainty requirement. Let skill maintenance follow the observed development and publish the result.
 
-**Verification:** Record skill selection and operations; typecheck against current OpenAI APIs; run launcher `composition`, `validate`, and `inspect` for `openai`. Trace initial and refined cases, inspect source-observable binding, diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks against the exact SDK and adapter. Trace the initial and refined request, policy, runtime binding, and human authority boundary.
 
-**Acceptance criteria:** The local branch validates and typechecks; it explains tracking facts without granting refunds or changing a carrier request.
+**Acceptance criteria:** A published, typechecked, valid direct OpenAI fixture explains available facts without granting refunds or changing carrier requests. Its successful commit can parent Milestone 16.
 
-**Review checkpoint:** Inspect the exact implementation relationship; this branch later becomes the valid parent of `fixture_invalid_binding`.
+**Review checkpoint:** Inspect uncertain-delivery guidance and the exact implementation binding that the later negative fixture will mutate.
 
 ## Milestone 7: Case Router with LangChain
 
-**Objective:** Build customer-request classification and staff routing with LangChain.
+**Objective:** Publish customer-request classification and queue recommendations.
 
-**Dependencies:** Milestone 1 complete; single-target adapter approach reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_langchain` README, exact-pinned package and lock files, `tsconfig.json`, case-category source and mock messages, foundation, and skill-created agent/context files and relationships.
+**Owned scope:** `fixture_langchain_01` common source-bearing files, customer messages and routing rules, skill-maintained `langchain` agent/context state, and its index entry.
 
-**Implementation:** Build a small routing flow, initialize through the selected skill, request a classification agent, and commit the adopted feature. Add a modest category or escalation refinement, use skill maintenance, and sign the refinement commit with `-s -S`.
+**Implementation:** Develop a routing case, adopt through the skill, request classification assistance, and refine a category or escalation rule through ordinary follow-up. Publish the reviewed attempt.
 
-**Verification:** Confirm selected skill and actual operations; typecheck against the latest LangChain packages; run launcher `composition`, `validate`, and `inspect` for `langchain`. Trace a message and refinement through routing rules and canonical state; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks and trace a named message through categories, source, instructions, and later refinement.
 
-**Acceptance criteria:** The local branch validates and typechecks, with billing and deletion decisions remaining with staff.
+**Acceptance criteria:** A published, typechecked, valid LangChain fixture recommends queues while billing disputes and deletion decisions remain with staff.
 
-**Review checkpoint:** Inspect category ownership and ensure the assistant recommends a queue without mutating an account.
+**Review checkpoint:** Inspect classification responsibilities and ensure routing suggestions do not imply account mutations.
 
-## Milestone 8: Mesa Help with two Cloudflare targets
+## Milestone 8: Mesa Help with both Cloudflare forms
 
-**Objective:** Build one edge-support product with conversational and structured-reasoning target forms.
+**Objective:** Publish one support product using both qualified Cloudflare target forms.
 
-**Dependencies:** Milestone 1 complete; single-target patterns reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1; other adapter successes are not required.
 
-**Owned scope:** `fixture_cloudflare_agents` README, exact-pinned package and lock files, `tsconfig.json`, support source and mock cases, foundation, and skill-created agent/context files and relationships for both qualified Cloudflare forms.
+**Owned scope:** `fixture_cloudflare_agents_01` common source-bearing files, customer support records and chat/routing source, skill-maintained `cloudflare-agents` state for both forms, and its index entry.
 
-**Implementation:** Build a credible chat and case-routing need, initialize through the selected skill, then request the relevant capabilities. Let current Cloudflare APIs and the skill determine source and agent layout. Commit the adopted feature; refine a support-routing rule through skill maintenance; sign both commits with `-s -S`.
+**Implementation:** Establish a product need for conversational support and structured staff-routing reasoning. Adopt, request the capabilities, and evolve one support rule through sequential interaction. Let the current skill and APIs determine the layout, then publish the result.
 
-**Verification:** Record skill selection and operations; typecheck current Cloudflare APIs; run launcher `composition`, `validate`, and `inspect` and require evidence for both target forms. Trace a chat case and staff-routing refinement; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks and require source-observable evidence for both target forms. Trace the support case and later refinement through their distinct responsibilities.
 
-**Acceptance criteria:** Both targets serve the same understandable support workflow; the local branch validates and typechecks without account-changing behavior.
+**Acceptance criteria:** Both forms serve the same believable support workflow in a published, typechecked, valid fixture with no account mutations.
 
-**Review checkpoint:** Inspect why each target form exists and whether the skill registered only source-observable relationships.
+**Review checkpoint:** Inspect why both forms exist and whether their declared relationships match source.
 
-## Milestone 9: Incident Desk with two LangGraph forms
+## Milestone 9: Incident Desk with both LangGraph forms
 
-**Objective:** Build severity classification and a draft incident brief using Graph and Functional API targets.
+**Objective:** Publish an incident workflow using Graph and Functional API targets.
 
-**Dependencies:** Milestone 1 complete; multiple-target checkpoint reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_langgraph` README, exact-pinned package and lock files, `tsconfig.json`, alert/incident source and mock records, foundation, and skill-created agent/context files and relationships for both qualified LangGraph forms.
+**Owned scope:** `fixture_langgraph_01` common source-bearing files, alert records and classification/brief source, skill-maintained `langgraph` state for both forms, and its index entry.
 
-**Implementation:** Build the engineer's alert flow, initialize through the selected skill, request the two useful reasoning stages, and commit the adopted feature. Refine one severity or incident-brief rule and let skill maintenance update the affected canonical state; sign both commits with `-s -S`.
+**Implementation:** Build an engineer's alert case, initialize through the skill, request useful classification and briefing capabilities, and introduce a severity or briefing refinement. Preserve the actual development sequence and publish it.
 
-**Verification:** Record skill selection and operations; typecheck against current LangGraph and peer APIs; run launcher `composition`, `validate`, and `inspect` for both target forms. Trace an alert and refinement through source and instructions; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks for both forms and relevant SDK peers. Trace the case, shared incident facts, bindings, and later change.
 
-**Acceptance criteria:** Both targets participate in one coherent workflow; the local branch validates and typechecks; no production paging or action is implied.
+**Acceptance criteria:** Both forms participate in one published, typechecked, valid incident workflow without automated paging or production action.
 
-**Review checkpoint:** Inspect Graph and Functional bindings separately and their shared incident facts.
+**Review checkpoint:** Inspect the two bindings separately and verify that their duties explain the chosen split.
 
-## Milestone 10: Store Guide with two Vercel AI SDK forms
+## Milestone 10: Store Guide with both Vercel AI SDK forms
 
-**Objective:** Build catalog lookup and comparison using both qualified Vercel AI SDK forms.
+**Objective:** Publish catalog guidance using tool-loop and direct-generation targets.
 
-**Dependencies:** Milestone 1 complete; multiple-target patterns reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_vercel_ai_sdk` README, exact-pinned package and lock files, `tsconfig.json`, catalog and guidance source with mock products, foundation, and skill-created agent/context files and relationships for both qualified Vercel forms.
+**Owned scope:** `fixture_vercel_ai_sdk_01` common source-bearing files, product records and lookup/comparison source, skill-maintained `vercel-ai-sdk` state for both forms, and its index entry.
 
-**Implementation:** Establish a shopper question grounded in local products, initialize through the selected skill, then request tool-assisted guidance and a direct comparison output. Commit the adopted feature; add a catalog or availability refinement with skill maintenance; sign both commits with `-s -S`.
+**Implementation:** Start with a shopper's catalog question, adopt through the skill, request lookup-assisted guidance and comparison output, then refine a catalog or availability requirement. Publish the observed result.
 
-**Verification:** Record skill selection and operations; typecheck current Vercel AI SDK APIs; run launcher `composition`, `validate`, and `inspect` for both forms. Trace the question and refinement to catalog facts and canonical guidance; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks for both target forms and trace the initial and later requests to actual catalog facts and canonical guidance.
 
-**Acceptance criteria:** Both forms serve one plausible store workflow; the local branch validates and typechecks without cart or purchase side effects.
+**Acceptance criteria:** A published, typechecked, valid fixture uses both forms coherently and cannot change carts or place orders.
 
-**Review checkpoint:** Inspect tool use versus direct generation and confirm the comparison does not invent product facts.
+**Review checkpoint:** Inspect tool-loop responsibilities, direct generation, and the factual basis for product comparisons.
 
-## Milestone 11: Release Desk with Claude Agent SDK delegation
+## Milestone 11: Release Desk with Claude Agent SDK
 
-**Objective:** Build release-note drafting with a genuine change-review subagent.
+**Objective:** Publish release-note drafting with a meaningful change-review subagent.
 
-**Dependencies:** Milestone 1 complete; multi-agent adapter evidence from earlier fixtures reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_claude_agent_sdk` README, exact-pinned package and lock files, `tsconfig.json`, release/change source and mock entries, foundation, and skill-created root/reviewer agent files, context, and optional target-owned handoff description.
+**Owned scope:** `fixture_claude_agent_sdk_01` common source-bearing files, mock changes and release source, skill-maintained root/reviewer state and optional handoff description, and its index entry.
 
-**Implementation:** Build a release manager's draft workflow, initialize through the selected skill, request reviewer delegation where ambiguity warrants it, and commit the adopted feature. Add a change-classification refinement; let the skill maintain source and canonical relationships; sign both commits with `-s -S`.
+**Implementation:** Build the release manager's draft workflow, adopt, request reviewer delegation for ambiguous changes, and refine a change-classification requirement through the skill. Publish the attempt.
 
-**Verification:** Record skill selection and operations; typecheck current Claude Agent SDK APIs; run launcher `composition`, `validate`, and `inspect`. Confirm a source-observable programmatic subagent relationship and trace one ambiguous change plus refinement; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks and confirm an actual programmatic subagent relationship. Trace an ambiguous change and refinement through source and instructions.
 
-**Acceptance criteria:** The local branch validates and typechecks; reviewer duties are distinct; publication remains a release-manager action.
+**Acceptance criteria:** A published, typechecked, valid Claude Agent SDK fixture gives the reviewer a distinct role and retains release publication with the manager.
 
-**Review checkpoint:** Inspect the runtime-native delegation and target guidance rather than inferring it from agent names.
+**Review checkpoint:** Inspect delegation evidence and target guidance; agent names alone do not establish the relationship.
 
-## Milestone 12: Trip Care with OpenAI Agents SDK handoff
+## Milestone 12: Trip Care with OpenAI Agents SDK
 
-**Objective:** Build itinerary-change advice with a real fare-rule specialist handoff.
+**Objective:** Publish itinerary-change assistance with a fare-rule specialist handoff.
 
-**Dependencies:** Milestone 1 complete; delegation checkpoint reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_openai_agents_sdk` README, exact-pinned package and lock files, `tsconfig.json`, travel/fare source and mock itinerary, foundation, and skill-created coordinator/specialist files, context, and target-owned handoff guidance when useful.
+**Owned scope:** `fixture_openai_agents_sdk_01` common source-bearing files, itinerary/fare records and source, skill-maintained coordinator/specialist state and optional handoff guidance, and its index entry.
 
-**Implementation:** Build a travel representative's change request, initialize through the selected skill, request specialist interpretation, and commit the adopted feature. Add a fare-rule refinement and let skill maintenance follow the source change; sign both commits with `-s -S`.
+**Implementation:** Develop a travel representative's change request, adopt, request specialist interpretation, and refine a fare-policy requirement through natural follow-up. Publish the reviewed result.
 
-**Verification:** Record skill selection and operations; typecheck current OpenAI Agents SDK APIs; run launcher `composition`, `validate`, and `inspect`. Confirm a source-observable runtime handoff and trace both requests to fare facts and canonical instructions; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks, confirm source-observable handoff wiring, and trace both the initial case and refinement through fare facts and instructions.
 
-**Acceptance criteria:** The local branch validates and typechecks; the specialist has a meaningful routing purpose; no agent books or cancels travel.
+**Acceptance criteria:** A published, typechecked, valid OpenAI Agents SDK fixture includes meaningful specialist delegation while staff retain booking and cancellation decisions.
 
-**Review checkpoint:** Inspect the handoff target's effective description and the human booking boundary.
+**Review checkpoint:** Inspect the routing purpose, handoff target guidance, and human decision boundary.
 
-## Milestone 13: Field Notes with Eve subagent and tool
+## Milestone 13: Field Notes with Eve
 
-**Objective:** Build operational-note lookup with an Eve root agent, knowledge subagent, and grounded local tool.
+**Objective:** Publish operational-note assistance with an Eve subagent and local tool.
 
-**Dependencies:** Milestone 1 complete; delegation patterns reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1.
 
-**Owned scope:** `fixture_eve` README, exact-pinned package and lock files, `tsconfig.json`, operational notes and Eve agent/tool source, foundation, and skill-created agent/context files and relationships.
+**Owned scope:** `fixture_eve_01` common source-bearing files, operational notes, Eve root/subagent/tool source, skill-maintained canonical relationships, and its index entry.
 
-**Implementation:** Build a plausible on-call symptom and local note collection, initialize through the selected skill, request knowledge lookup delegation, and commit the adopted feature. Refine one operational note or lookup condition, use skill maintenance, and sign the refinement commit with `-s -S`.
+**Implementation:** Build an on-call symptom and note collection, adopt, request knowledge lookup assistance, then refine a note or lookup requirement through ordinary interaction. Publish the observed attempt.
 
-**Verification:** Record skill selection and operations; typecheck current Eve APIs; run launcher `composition`, `validate`, and `inspect`. Inspect the root/subagent/tool source relationship and trace the symptom and refinement to local notes; review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks and inspect root/subagent/tool wiring. Trace the symptom and refinement to the local notes and relevant guidance.
 
-**Acceptance criteria:** The local branch validates and typechecks; the tool is grounded in local notes and no production operation is executed.
+**Acceptance criteria:** A published, typechecked, valid Eve fixture has justified delegation and a grounded local tool; it never operates production infrastructure.
 
-**Review checkpoint:** Inspect whether the knowledge role and tool add real value over deterministic lookup alone.
+**Review checkpoint:** Inspect which work is deterministic lookup and which requires the knowledge agent's reasoning.
 
 ## Milestone 14: Harbor Supply complex custom system
 
-**Objective:** Build the rich dealer-support fixture with several evidence-justified model roles and one later business-rule change.
+**Objective:** Publish a complex dealer-support project with several justified reasoning roles.
 
-**Dependencies:** Milestone 1 complete; simple, multiple-target, and delegation fixtures reviewed; branch from `fixture_skill_only`.
+**Dependencies:** Startup prerequisites from Milestone 1. Earlier simple-project experience is useful; success of all adapters is not required.
 
-**Owned scope:** `fixture_custom_complex` README, exact-pinned package and lock files, `tsconfig.json`, focused product/order/warranty/delivery source and mock records, foundation, and skill-maintained custom runtime guidance, context, agent instructions, capabilities, and relationships justified by actual source. The skill's plan determines exact agent paths and count.
+**Owned scope:** `fixture_custom_complex_01` common source-bearing files, product/order/warranty/delivery records and source, skill-maintained custom runtime guidance, agents, shared and focused context, supported capabilities and relationships, and its index entry.
 
-**Implementation:** Build a dealer case and domain records, initialize through the selected skill, then invoke its read-only agent-system planning workflow. Implement justified specialist reasoning while keeping lookups deterministic and final commitments with staff. Use the skill to create canonical state, commit the adopted feature, then refine one business rule and let the skill maintain affected relationships; sign both commits with `-s -S`.
+**Implementation:** Build a dealer case and domain records, initialize, then invoke the skill's read-only agent-system planning workflow. Develop justified specialist capabilities, answer actual product questions, and follow with a meaningful business-rule refinement. Keep deterministic lookups in ordinary software and final commitments with staff. Publish the reviewed result.
 
-**Verification:** Record selected skill path/version and planning, creation, and maintenance operations. Typecheck source; run launcher `composition`, `validate`, and `inspect` for `custom`. Trace the case and refinement through records, specialists, and staff decision; inspect every binding, capability, variable, and `affectedBy` path against source. Review diffs, `git diff --check`, status, and signatures.
+**Verification:** Apply common checks for `custom`. Trace the complete dealer case and later refinement across specialists, context, tools, variables, and declared bindings or `affectedBy` paths where present.
 
-**Acceptance criteria:** The local branch is valid and typechecked; several model roles have distinct evidence-backed duties; the README, source, and canonical state agree before and after refinement.
+**Acceptance criteria:** A published, typechecked, valid complex fixture has several distinct model-reasoning responsibilities without an arbitrary agent quota. Source, canonical state, and the product story agree.
 
-**Review checkpoint:** Inspect the complete dealer case, agent boundaries, and human authority; reject complexity introduced only to raise agent count.
+**Review checkpoint:** Inspect the skill's planning rationale, role boundaries, maintenance behavior, and preservation of staff authority.
 
-## Milestone 15: Two controlled invalid fixtures
+## Milestone 15: Partial-adoption fixture
 
-**Objective:** Produce the partial-adoption and broken-binding states from verified valid parents.
+**Objective:** Publish the controlled incomplete-adoption state.
 
-**Dependencies:** Milestone 2 and Milestone 6 complete and reviewed.
+**Dependencies:** A verified successful Cedar Workshop attempt from Milestone 2. No other project dependency; deriving the negative fixture does not require waiting for its parent's publication.
 
-**Owned scope:** `fixture_partial` derived from `fixture_initialized`, deleting only `moldea/project.md` and adding a concise README defect note; `fixture_invalid_binding` derived from `fixture_openai`, changing one exact manifest binding to a nonexistent path and adding its README defect note. Preserve all inherited skill and project content otherwise.
+**Owned scope:** `fixture_partial_01` derived from that exact parent commit, deletion of `moldea/project.md`, its README defect/attempt note, and its index entry. Retain inherited releases and other project content.
 
-**Implementation:** Reconfirm both parent diagnostics are clean, derive the branches, apply one intentional fault per branch, inspect the exact diff, and sign cohesive commits with `-s -S`. Do not use the skill to repair the intentional faults.
+**Implementation:** Confirm the parent's valid baseline, record its SHA, create the numbered branch, and remove only the designated canonical file. Record and publish the result without asking the skill to repair the deliberate fault.
 
-**Verification:** Run the plan's launcher validation on each negative branch and require the named failure with no independent defect. Compare each to its valid parent, review `git diff --check`, status, signed commits, and expected README explanation. No source typecheck or application test adds value beyond the inherited parent verification.
+**Verification:** Run the relevant launcher validation and require the expected partial-adoption diagnostic without an independent error. Inspect the exact parent-to-negative diff, signed commit, and remote ref. Reuse unchanged parent evidence for other checks.
 
-**Acceptance criteria:** Both local invalid branches exist, each has only its designated mutation, and each produces the intended diagnostic while its parent remains valid.
+**Acceptance criteria:** The published branch is indexed as `intentional_invalid`, has only the planned canonical defect, and retains a valid unchanged parent.
 
-**Review checkpoint:** Inspect the parent-to-negative diff and diagnostic pair before authorizing publication.
+**Review checkpoint:** Inspect the missing-foundation diagnostic against the actual mutation.
 
-## Milestone 16: Current release snapshot and private publication
+## Milestone 16: Invalid implementation binding
 
-**Objective:** Publish every planned branch as one documented, current fixture corpus.
+**Objective:** Publish an adopted project with one deliberately broken source relationship.
 
-**Dependencies:** Milestones 1–15 complete and reviewed; private `origin` and required cryptographic signing available.
+**Dependencies:** A verified successful Parcel Desk attempt from Milestone 6. Milestone 15 need not be complete; deriving the negative fixture does not require waiting for its parent's publication.
 
-**Owned scope:** The final UTC cutoff and version record in `main`'s `README.md`; any required latest-release refresh to `fixture_skill_only` and affected fixture branches under the approved plan; Git publication of `main`, `fixture_skill_only`, all thirteen valid projects, and both invalid projects. No Cloud or PR work.
+**Owned scope:** `fixture_invalid_binding_01` derived from that exact parent commit, one manifest implementation binding changed to a nonexistent source path, its README defect/attempt note, and its index entry. Retain inherited releases and source.
 
-**Implementation:** Immediately before the first push, recheck the latest stable skill tag and every directly pinned npm package. If a release advanced, refresh the common skill branch and affected exact pins/locks, confirm the coding host selects the refreshed branch copy before further skill work, and rerun affected source typechecks, skill validation, adapter inspections, and negative diagnostics. Stop for a plan decision if the new release is incompatible. Record the UTC cutoff and actual skill version on `main`; inspect complete branch histories and final state; make any required cohesive signed commits. Push each active branch `HEAD` to only its explicit private `origin` branch ref without force or tag following.
+**Implementation:** Confirm the valid parent, record its SHA, create the numbered branch, and make the single binding mutation. Record and publish the result without skill repair of the deliberate fault.
 
-**Verification:** Confirm every valid branch still passes its relevant launcher checks and source typecheck, both negative branches still fail as designed, and `main`/`fixture_skill_only` remain unadopted. Inspect all intended tracked and untracked paths while respecting excluded archive/backup content; ensure the planning directory and protected instructions are absent from commits. Verify required sign-off and cryptographic signatures, clean intended branch states, and each remote ref against its local `HEAD` with `git ls-remote`. Record actual skill selections, operations, versions, checks, and results; make no claim about provider execution, Cloud connection, Assurance, or resolution prompts.
+**Verification:** Run the relevant launcher validation and require the intended binding diagnostic without an independent defect. Inspect the exact diff, signed commit, and remote ref; reuse unchanged parent source/typecheck evidence.
 
-**Acceptance criteria:** The complete branch inventory is present on private `origin`; all valid states are current as of the recorded cutoff and verified; both invalid states retain only their expected defect; remote refs equal reviewed local commits; excluded files were not published.
+**Acceptance criteria:** The published branch is indexed as `intentional_invalid`, contains only the planned canonical fault, and preserves the valid parent.
 
-**Review checkpoint:** Inspect the final branch inventory, version snapshot, key skill-use evidence, negative diagnostics, signed commits, and remote-ref identities. This concludes the fixture deliverable.
+**Review checkpoint:** Inspect the failed relationship and confirm the diagnostic is caused by the changed path.
+
+## Milestone 17: Final fixture inventory
+
+**Objective:** Review the published collection and make its usable coverage explicit.
+
+**Dependencies:** Concluded attempt records are available. Full completion requires Milestones 1–16 to satisfy their acceptance criteria; missing projects may be reported without claiming completion.
+
+**Owned scope:** Final reconciliation of `main`'s README index, successful-attempt selections, outcomes, releases, and reviewed commit references. This milestone does not rebuild projects, upgrade releases, or modify concluded attempt branches.
+
+**Implementation:** Compare the scenario list with recorded attempts and published refs. Confirm one successful skill-only attempt, all thirteen successful valid-project scenarios, and both verified intentional-invalid scenarios, while retaining failed attempts as evidence. Correct index discrepancies supported by the actual records and publish the main update. Assign missing project work back to its owning milestone for separate authorization.
+
+**Verification:** Match remote tips to reviewed commits and check that recorded skill-use, checkpoint, dependency, and validation evidence applies to those commits. Verify task commit signatures and main's continued lack of adoption. Reuse applicable completed checks; do not rerun a whole matrix or refresh packages merely because a newer release exists. Report evidence gaps explicitly.
+
+**Acceptance criteria:** The complete required coverage is published, the index identifies usable successful attempts and preserved failures accurately, and all recorded remote refs match reviewed states. Different skill versions across branches are acceptable. Any missing required scenario leaves the overall deliverable incomplete.
+
+**Review checkpoint:** Inspect the complete coverage table, version diversity, retry lineage, unresolved limitations, and the limits of what was actually tested.
 
 ## Approval required
 
-Approval is requested for this complete sixteen-milestone sequence. Because the current plan has not yet been approved, approval of this sequence also approves that plan unless you limit it. Approval does not start implementation: after confirming the skill and adapter upgrade is complete, identify the specific milestone to implement, beginning with Milestone 1. After approval, planning is complete and I will tell you it is ready for your manual switch to the cheaper model before implementation starts.
+Approval is requested for this complete seventeen-milestone sequence: startup and skill-only installation, thirteen valid projects, two independent negative fixtures, and final inventory review. Because the current plan has not yet been approved, approval of this sequence also approves that plan unless you limit it. Approval does not authorize implementation; each milestone needs explicit authorization identifying it. After approval, planning is complete and I will signal that you can switch models manually. When the upgrade is published, confirm that fact and authorize Milestone 1 to begin. Later independent milestones can be selected according to their stated prerequisites.
