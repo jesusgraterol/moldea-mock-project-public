@@ -1,0 +1,23 @@
+version: 1
+agents:
+  shipment-explainer:
+    runtime:
+      id: openai
+    bindings:
+      runtimeAgent:
+        path: /src/shipment-explainer/agent.ts
+        symbol: draftShipmentExplanation
+      instructionLoader:
+        path: /src/shipment-explainer/instructions.ts
+        symbol: loadShipmentExplainerInstruction
+    affectedBy:
+      - /src/shipment-explainer/types.ts
+      - /package.json
+    unresolved:
+      live-integration:
+        category: runtime-integration
+        effect: blocking
+        description: The source-only assistant has no application caller, credential configuration, staff-review flow, or verified live provider behavior.
+        resolution: Connect an authorized caller and staff-review flow, vet supplied text for personal data, configure credentials outside the repository, and verify the provider path before treating the agent as operational.
+        related:
+          - path: /src/shipment-explainer/agent.ts
