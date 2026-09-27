@@ -1,4 +1,10 @@
-import type { IStaffCase, IStaffRoutingNote, IStaffReviewQueue } from './types.js';
+import { STAFF_CASES } from './case-facts.js';
+import type {
+  ILookupRoutingNoteInput,
+  IStaffCase,
+  IStaffReviewQueue,
+  IStaffRoutingNote,
+} from './types.js';
 
 // local prototype policy; staff retain the final routing decision
 const REVIEW_QUEUES = {
@@ -7,16 +13,16 @@ const REVIEW_QUEUES = {
   MissingParcel: 'shipment-support',
 } as const satisfies Record<string, IStaffReviewQueue>;
 
-/** Builds a staff routing note without approving or performing customer remedies. */
+/** Builds a structured routing note without approving or performing customer remedies. */
 export const buildRoutingNote = (staffCase: IStaffCase): IStaffRoutingNote => {
   const { missingParcel, snapshotOn } = staffCase;
   let recommendedQueue: IStaffReviewQueue = REVIEW_QUEUES.MissingParcel;
-  let routingReason = 'The customer reports a missing parcel without a recorded delivery.';
+  let routingReason = 'The customer reports a missing parcel without a recorded delivery scan.';
 
   if (missingParcel.deliveryScanOn !== null) {
     recommendedQueue = REVIEW_QUEUES.ConflictingDelivery;
     routingReason =
-      'The customer report conflicts with a recorded delivery scan; staff should reconcile the facts.';
+      `A carrier delivery scan on ${missingParcel.deliveryScanOn} conflicts with the customer report; the scan does not establish receipt.`;
   } else if (
     missingParcel.estimatedDeliveryBy !== null &&
     missingParcel.estimatedDeliveryBy < snapshotOn
@@ -32,17 +38,14 @@ export const buildRoutingNote = (staffCase: IStaffCase): IStaffRoutingNote => {
           'Current location after the last recorded scan',
           'Whether delivery occurred after the snapshot date',
         ]
-      : ['Why the customer reports the parcel missing despite the recorded delivery scan'];
+      : [
+          'Whether the customer received the shade despite the carrier delivery scan',
+          'Where the shade carton is now',
+        ];
 
-  return {
-    orderId: staffCase.orderId,
-    snapshotOn,
-    missingParcel,
-    deliveredParcels: staffCase.deliveredParcels,
-    customerReport: staffCase.customerReport,
-    requestsForStaff: staffCase.requestsForStaff,
-    recommendedQueue,
-    routingReason,
-    unknowns,
-  };
+  return { ...staffCase, recommendedQueue, routingReason, unknowns };
 };
+
+/** Looks up one fictional case and applies the read-only local routing policy on demand. */
+export const lookupRoutingNote = ({ caseId }: ILookupRoutingNoteInput): IStaffRoutingNote =>
+  buildRoutingNote(STAFF_CASES[caseId]);

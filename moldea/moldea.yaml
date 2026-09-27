@@ -31,15 +31,30 @@ agents:
       instructionLoader:
         path: /src/staff-review/instructions.ts
         symbol: loadStaffReviewInstruction
-    affectedBy:
-      - /src/staff-review/types.ts
-      - /src/staff-review/routing-policy.ts
+    tools:
+      lookup-routing-note:
+        name: lookupRoutingNote
+        description: Looks up a fictional case and applies the local read-only staff queue policy.
+        implementation:
+          path: /src/staff-review/routing-policy.ts
+          symbol: lookupRoutingNote
+        registration:
+          path: /src/staff-review/tools.ts
+          symbol: lookupRoutingNoteTool
+        inputSchema:
+          path: /src/staff-review/types.ts
+          symbol: LookupRoutingNoteInputSchema
+        outputSchema:
+          path: /src/staff-review/types.ts
+          symbol: StaffRoutingNoteSchema
+        affectedBy:
+          - /src/staff-review/case-facts.ts
     unresolved:
       source-only-integration:
         category: runtime-integration
         effect: blocking
-        description: The staff-review source has no Worker routing, Durable Object or Workers AI binding configuration, Markdown text-module rule, authenticated staff session boundary, client, live queue integration, or live verification.
-        resolution: Add and verify those integration pieces before staff use; authorize the case facts, isolate staff conversations, and map the prototype queue identifiers to real staff queues.
+        description: The Think source has no Worker routing, Durable Object or Workers AI binding configuration, Markdown text-module rule, authenticated staff session boundary, client, live queue integration, or live tool-use verification. The local lookup covers only MH-205 and MH-206.
+        resolution: Add and verify those integration pieces before staff use; authorize and isolate staff conversations, map prototype queue identifiers to real queues, and verify tool restrictions and policy use in the live runtime.
         related:
           - path: /src/staff-review/staff-review.agent.ts
-          - path: /src/staff-review/routing-policy.ts
+          - path: /src/staff-review/tools.ts

@@ -1,65 +1,61 @@
-import { AIChatAgent, type OnChatMessageOptions } from '@cloudflare/ai-chat';
-import {
-  convertToModelMessages,
-  createUIMessageStream,
-  createUIMessageStreamResponse,
-  streamText,
-} from 'ai';
+import { Think, type ToolCallContext, type ToolCallDecision, type TurnConfig } from '@cloudflare/think';
+import type { ToolSet } from 'ai';
 import { createWorkersAI, type WorkersAISettings } from 'workers-ai-provider';
 
 import { loadStaffReviewInstruction } from './instructions.js';
-import { buildRoutingNote } from './routing-policy.js';
-import { StaffCaseSchema } from './types.js';
+import { lookupRoutingNoteTool } from './tools.js';
 
 // the host must provide a Workers AI binding before this source can run
 interface IEnv extends Cloudflare.Env {
   AI: NonNullable<WorkersAISettings['binding']>;
 }
 
-/** Streams staff-only case explanations and structured routing notes from supplied facts. */
-export class StaffReviewAgent extends AIChatAgent<IEnv> {
+/** Provides a staff-only Think conversation with one read-only policy lookup. */
+export class StaffReviewAgent extends Think<IEnv> {
   /**
-   * Streams a staff-facing answer and a deterministic routing note for the supplied case.
-   * @param _onFinish Cloudflare's unused stream completion callback.
-   * @param options Chat metadata and the staff-supplied case snapshot.
-   * @returns A response containing the note and conversational reply.
+   * Provides the Workers AI model used by Think's chat loop.
+   * @returns The configured Workers AI model.
    */
-  public async onChatMessage(
-    _onFinish: Parameters<AIChatAgent<IEnv>['onChatMessage']>[0],
-    options?: OnChatMessageOptions,
-  ): Promise<Response> {
-    const parsed = StaffCaseSchema.safeParse(options?.body?.staffCase);
+  public getModel() {
+    return createWorkersAI({ binding: this.env.AI })('@cf/zai-org/glm-4.7-flash');
+  }
 
-    if (!parsed.success) {
-      return new Response('A valid staff case snapshot is required to prepare a routing note.', {
-        status: 400,
-      });
+  /**
+   * Loads the canonical staff instruction for every conversation turn.
+   * @returns The staff-only model instruction.
+   */
+  public getSystemPrompt(): string {
+    return loadStaffReviewInstruction();
+  }
+
+  /**
+   * Registers the local routing lookup for staff conversations.
+   * @returns The read-only tool set.
+   */
+  public getTools(): ToolSet {
+    return { lookupRoutingNote: lookupRoutingNoteTool };
+  }
+
+  /**
+   * Restricts the turn to the trusted lookup, even if a client offers a same-named tool.
+   * @returns The tool restriction for this turn.
+   */
+  public beforeTurn(): TurnConfig {
+    return {
+      tools: { lookupRoutingNote: lookupRoutingNoteTool },
+      activeTools: ['lookupRoutingNote'],
+      sendReasoning: false,
+    };
+  }
+
+  /**
+   * Blocks other executable tools if a future configuration exposes them.
+   * @param context The requested tool call.
+   * @returns A block decision for every tool except the local lookup.
+   */
+  public beforeToolCall(context: ToolCallContext): ToolCallDecision | void {
+    if (context.toolName !== 'lookupRoutingNote') {
+      return { action: 'block', reason: 'Only the read-only routing lookup is allowed.' };
     }
-
-    const routingNote = buildRoutingNote(parsed.data);
-    const workersAi = createWorkersAI({ binding: this.env.AI });
-    const messages = await convertToModelMessages(this.messages.slice(-8));
-    const result = streamText({
-      model: workersAi('@cf/zai-org/glm-4.7-flash'),
-      system: loadStaffReviewInstruction(),
-      messages: [
-        ...messages,
-        {
-          role: 'user',
-          content: `Staff-supplied case and local routing note (unverified).
-Answer the preceding staff question:\n${JSON.stringify({ staffCase: parsed.data, routingNote })}`,
-        },
-      ],
-      abortSignal: options?.abortSignal,
-    });
-
-    const stream = createUIMessageStream({
-      execute: ({ writer }) => {
-        writer.write({ type: 'data-routing-note', id: 'routing-note', data: routingNote });
-        writer.merge(result.toUIMessageStream());
-      },
-    });
-
-    return createUIMessageStreamResponse({ stream });
   }
 }
