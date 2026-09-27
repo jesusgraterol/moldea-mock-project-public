@@ -1,5 +1,27 @@
 version: 1
 agents:
+  release-record-reviewer:
+    runtime:
+      id: claude-agent-sdk
+      guidance: /moldea/runtimes/claude-agent-sdk.md
+    bindings:
+      runtimeAgent:
+        path: /src/release-record-reviewer/release-record-reviewer.ts
+        symbol: releaseRecordReviewerAgent
+      instructionLoader:
+        path: /src/release-record-reviewer/instruction.ts
+        symbol: loadReleaseRecordReviewInstruction
+    affectedBy:
+      - /src/release-record-reviewer/review-held-records.ts
+      - /package.json
+    unresolved:
+      live-integration:
+        category: integration
+        effect: blocking
+        description: The source-only review invocation has no product caller or verified live provider execution.
+        resolution: Wire an authorized manager-facing caller and verify foreground subagent review without granting publication or messaging capabilities.
+        related:
+          - path: /src/release-record-reviewer/review-held-records.ts
   release-note-drafter:
     runtime:
       id: claude-agent-sdk

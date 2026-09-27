@@ -8,12 +8,14 @@ No working service, deployment, credentials, live provider execution, or applica
 
 ## Project blueprint
 
-- `records/release-2.8.md` contains the planned source changes, not approved release claims.
-- `moldea/` owns project context and the release-note drafter's canonical instruction and runtime boundary.
-- `src/release-note-drafter/` loads that instruction and the records before constructing a Claude Agent SDK query. `draftSeatline28ReleaseNotes` is exported through its module entry point but is not connected to a service or run by a script.
+- `records/release-2.8.md` is the drafter's planned, drafting-eligible source. `records/release-2.8-held.md` holds unresolved RC-44 outside that input.
+- `moldea/` owns project context and the drafter and reviewer's canonical instructions and runtime boundary.
+- `src/release-note-drafter/` loads only the drafting source and its instruction. `src/release-record-reviewer/` defines a review-only subagent and a separate held-record review invocation. Both functions are exported through their module entry points but are not connected to a service or run by a script.
 - `/docs` is reserved for concise, quickly scannable documentation of essential, durable project concepts and processes. API and HTTP endpoint documentation belongs in its established location outside `/docs`.
 
-The query has no built-in tools or filesystem settings and returns unverified draft text for human review; it does not publish, deploy, or message customers or staff. The release manager must check the cited change IDs and uncertain claims before any publication. A future invocation would transmit the source records to the configured model provider. A real caller, credentials, provider execution, and integration verification remain future work, not capabilities established by this prototype.
+The drafter query has no built-in tools or filesystem settings. The separate review query permits only the SDK `Agent` tool to invoke the tool-free reviewer subagent. Its assessment is advisory to the release manager and is never passed to the drafter. To resolve a held record, the manager must manually move approved facts into `release-2.8.md`, include `Draft category: Added`, `Changed`, or `Fixes` in that record, and remove the held entry. Without that promotion, the drafter cannot see RC-44. The manager still checks every draft and decides whether to publish. Neither path publishes, deploys, or messages customers or staff.
+
+A future invocation would transmit the relevant source records to the configured model provider. A real caller, credentials, provider execution, and integration verification remain future work, not capabilities established by this prototype.
 
 Direct dependency versions are pinned in `package.json` and `package-lock.json`. On Node.js 22.11 or later, `npm ci --ignore-scripts` installs them and `npm run typecheck` checks the source without invoking a provider. There is no application test suite or runnable drafting command.
 
