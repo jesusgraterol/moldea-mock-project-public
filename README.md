@@ -8,6 +8,14 @@ This is a source-only prototype repository. It does not run a booking service or
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 
+## Attempt record
+
+- Installed skill: `v6.0.0` at `.agents/skills/moldea`.
+- Case: `CW-241` is full, with three waitlist requests.
+- Later clarification: a waitlist request does not reserve a seat; staff confirm any offered place on the roster.
+- Stopping point: shared project context only. No booking source or agents were requested.
+- Actor session: `01a0e3b7-4902-7e80-bd22-cc8737e962f5`.
+
 <!-- moldea:start -->
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.

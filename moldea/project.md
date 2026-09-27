@@ -9,8 +9,10 @@ Cedar Workshop is a neighborhood maker studio. Staff schedule small-group cerami
 - Staff schedule classes with a date and capacity.
 - Staff track the number of confirmed places on each class roster.
 - When a class fills, staff keep a waitlist of requests.
+- A waitlist request does not reserve a seat.
+- If a confirmed place opens, staff may offer it, but the offer alone does not confirm a booking. The customer has a place only once staff confirm the booking on the roster.
 
-The sample schedule in `records/class-schedule.csv` illustrates these practices. It lists an October 12, 2026, wheel-throwing class with all 8 places confirmed and 3 waitlist requests, and an October 17, 2026, chair-repair class with 4 of 6 places confirmed and no waitlist requests. These are sample schedule entries, not live booking data. The repository does not yet establish rules for waitlist order, promotion, cancellation, or payment.
+The sample schedule in `records/class-schedule.csv` illustrates class capacities, confirmed counts, and waitlist counts. It lists an October 12, 2026, wheel-throwing class with all 8 places confirmed and 3 waitlist requests, and an October 17, 2026, chair-repair class with 4 of 6 places confirmed and no waitlist requests. These are sample schedule entries, not live booking data. The repository does not yet establish rules for waitlist order, selection of offer recipients, cancellation, or payment.
 
 ## Current project boundary
 
