@@ -1,0 +1,37 @@
+version: 1
+agents:
+  store-guide:
+    runtime:
+      id: vercel-ai-sdk
+      guidance: /moldea/runtimes/vercel-ai-sdk.md
+    bindings:
+      runtimeAgent:
+        path: /src/store-guide/store-guide.agent.ts
+        symbol: storeGuideAgent
+      instructionLoader:
+        path: /src/store-guide/store-guide.agent.ts
+        symbol: loadStoreGuideInstruction
+    tools:
+      lookup-bags:
+        name: lookup_bags
+        description: Reads the local catalog for SG-101's 16-inch laptop bag options.
+        implementation:
+          path: /src/store-guide/catalog.ts
+          symbol: lookupBags
+        registration:
+          path: /src/store-guide/catalog.ts
+          symbol: lookupBagsTool
+        inputSchema:
+          path: /src/store-guide/catalog.ts
+          symbol: LookupBagsInputSchema
+    affectedBy:
+      - /records/catalog.md
+      - /records/sg-101.md
+    unresolved:
+      host-integration:
+        category: runtime-integration
+        effect: blocking
+        description: The source-only agent has no application host, configured provider access, or live execution evidence.
+        resolution: Connect a host to runSg101, configure provider access outside source, and verify catalog-grounded behavior before claiming a working guide.
+        related:
+          - path: /src/store-guide/sg-101.ts
