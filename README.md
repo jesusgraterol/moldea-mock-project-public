@@ -21,6 +21,9 @@ This is a source-only prototype. It needs no working service, deployment, creden
 This source is not a runnable Worker. There is no routing or Durable Object configuration, Workers AI binding, Markdown `Text` module rule, authenticated caller or staff session boundary, or client. The customer snapshot is unverified input, and the staff lookup contains only fictional cases; integration must establish order authorization, staff access, conversation isolation, actual queue mapping, and live verification of Think's tool restrictions before use. No provider call or application test suite has been run. `npm run typecheck` checks only the TypeScript source.
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
+Installed skill: `v6.0.0` at `.agents/skills/moldea/`. Actor session: `01a0e425-7b70-7561-95ba-91cdd5b0dc66`.
+
+Observed stopping point: the adopted project has an `AIChatAgent` customer conversation and a separate Think staff review with a read-only local routing lookup. MH-206 refined the staff route for a delivery-scan/customer-report conflict. Typechecking, focused local case checks, and Moldea validation passed; live tool restrictions, provider output, Worker integration, and staff access were not verified.
 
 <!-- moldea:start -->
 
