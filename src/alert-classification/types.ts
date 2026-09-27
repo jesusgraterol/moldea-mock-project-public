@@ -38,7 +38,7 @@ export const AlertBatchSchema = z.strictObject({
 
 export type IAlertBatch = z.infer<typeof AlertBatchSchema>;
 
-// deterministic observations derived from source events, never from model output
+// deterministic source observations use milliseconds for recognized duration units
 export const NormalizedSignalSchema = z.strictObject({
   rawEventId: z.string(),
   observedAt: z.string(),

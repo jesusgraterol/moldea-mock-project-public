@@ -7,3 +7,4 @@ export { draftAlertBrief } from './alert-briefing.workflow.js';
 
 // fictional batch example
 export { draftId301Brief } from './id-301-example.js';
+export { draftId302Brief } from './id-302-example.js';

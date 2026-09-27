@@ -43,9 +43,9 @@ export const composeBriefFacts = (classification: IClassificationResult): IBrief
   return {
     batchId: rawBatch.batchId,
     timeline,
-    observedSignals: rawBatch.events.map((event) => {
-      const measurement = `${event.value} ${event.unit} vs ${event.threshold} ${event.unit}`;
-      return `${event.eventId}: ${event.service} ${event.signal}, ${measurement}.`;
+    observedSignals: classification.normalizedSignals.map((signal) => {
+      const measurement = `${signal.observedValue} ${signal.unit} vs ${signal.threshold} ${signal.unit}`;
+      return `${signal.rawEventId}: ${signal.service} ${signal.signal}, ${measurement}.`;
     }),
     classificationSummary: recommendation.summary,
     classificationRationale: recommendation.rationale,

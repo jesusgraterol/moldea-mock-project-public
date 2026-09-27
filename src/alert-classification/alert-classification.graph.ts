@@ -4,6 +4,7 @@ import { HumanMessage, SystemMessage } from '@langchain/core/messages';
 import { END, START, StateGraph, StateSchema } from '@langchain/langgraph';
 import { z } from 'zod';
 
+import { normalizeSignal } from './transformers.js';
 import {
   AlertBatchSchema,
   ClassificationRecommendationSchema,
@@ -22,16 +23,7 @@ const AlertClassificationState = new StateSchema({
 });
 
 const normalizeAlerts: typeof AlertClassificationState.Node = (state) => ({
-  normalizedSignals: state.rawBatch.events.map((event) => ({
-    rawEventId: event.eventId,
-    observedAt: event.observedAt,
-    service: event.service,
-    signal: event.signal,
-    observedValue: event.value,
-    threshold: event.threshold,
-    unit: event.unit,
-    isThresholdExceeded: event.value > event.threshold,
-  })),
+  normalizedSignals: state.rawBatch.events.map(normalizeSignal),
 });
 
 const loadInstructions: typeof AlertClassificationState.Node = async () => ({
