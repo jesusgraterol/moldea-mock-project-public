@@ -9,13 +9,26 @@ export interface IDealerReplyInvocation {
     path: '/catalog/hc-240.md';
     markdown: string;
   };
+  warrantySource: {
+    path: '/policies/parts-warranty.md';
+    markdown: string;
+  };
+}
+
+// distinct internal review sections, none of which are dealer-facing
+export interface IStaffVerificationNotes {
+  fit: string[];
+  symptomFollowUp: string[];
+  warrantyScreening: string[];
+  shipmentQuestions: string[];
+  staffApproval: string[];
 }
 
 // staff-facing result of the current source-only invocation
 export interface IDealerReplyResult {
   mode: 'deterministic-preview';
   dealerDraft: string;
-  verificationNotes: string[];
+  verificationNotes: IStaffVerificationNotes;
 }
 
 // replaceable invocation boundary; no provider implementation is installed

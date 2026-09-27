@@ -4,27 +4,30 @@ import type { IDealerReplyInvocation } from './types.ts';
 
 const CASE_URL = new URL('../../records/hs-214.md', import.meta.url);
 const PRODUCT_URL = new URL('../../catalog/hc-240.md', import.meta.url);
+const WARRANTY_URL = new URL('../../policies/parts-warranty.md', import.meta.url);
 
 /**
- * Reads the checked-in case and product sheet without accepting arbitrary paths.
+ * Reads the checked-in case, product sheet, and warranty policy without arbitrary paths.
  * @returns The current source texts and their repository-logical paths.
  * @throws
  * - An HS-214 source is empty.
  */
 export const loadDealerReplySources = async (): Promise<
-  Pick<IDealerReplyInvocation, 'caseSource' | 'productSource'>
+  Pick<IDealerReplyInvocation, 'caseSource' | 'productSource' | 'warrantySource'>
 > => {
-  const [caseMarkdown, productMarkdown] = await Promise.all([
+  const [caseMarkdown, productMarkdown, warrantyMarkdown] = await Promise.all([
     readFile(CASE_URL, 'utf8'),
     readFile(PRODUCT_URL, 'utf8'),
+    readFile(WARRANTY_URL, 'utf8'),
   ]);
 
-  if (!caseMarkdown.trim() || !productMarkdown.trim()) {
+  if (!caseMarkdown.trim() || !productMarkdown.trim() || !warrantyMarkdown.trim()) {
     throw new Error('An HS-214 source is empty.');
   }
 
   return {
     caseSource: { path: '/records/hs-214.md', markdown: caseMarkdown },
     productSource: { path: '/catalog/hc-240.md', markdown: productMarkdown },
+    warrantySource: { path: '/policies/parts-warranty.md', markdown: warrantyMarkdown },
   };
 };

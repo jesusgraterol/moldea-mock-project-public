@@ -6,7 +6,7 @@ This is a source-only prototype. No working service, deployment, credentials, li
 
 ## HS-214 dealer-reply preview
 
-With Node.js 24.12 or newer, run `npm ci --ignore-scripts` and then `npm run reply:hs-214`. The command loads the canonical `dealer-reply` instruction, the checked-in case, and the HC-240 product sheet. It prints a dealer-addressed draft and separate staff verification notes. The fixed preview fails if those reviewed inputs change; it does not call a model, send a message, or replace staff confirmation. `npm test` runs the focused invocation checks, and `npm run typecheck` checks the TypeScript source.
+With Node.js 24.12 or newer, run `npm ci --ignore-scripts` and then `npm run reply:hs-214`. The command loads the canonical `dealer-reply` instruction, the checked-in case, the HC-240 product sheet, and the parts-warranty policy. It prints a dealer-addressed draft and a staff review packet grouped by fit, symptom follow-up, preliminary warranty screening, shipment questions, and approval checks. Warranty screening and the dated stock/transit information stay in staff notes until staff confirm them. The fixed preview fails if its reviewed inputs change; it does not call a model, send a message, or replace staff confirmation. `npm test` runs the focused checks, and `npm run typecheck` checks the TypeScript source.
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 

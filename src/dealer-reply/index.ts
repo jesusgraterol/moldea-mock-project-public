@@ -4,6 +4,7 @@ export type {
   IDealerReplyInvocation,
   IDealerReplyInvoker,
   IDealerReplyResult,
+  IStaffVerificationNotes,
 } from './types.ts';
 
 // agent

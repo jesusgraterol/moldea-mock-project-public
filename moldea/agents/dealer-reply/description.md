@@ -1,1 +1,1 @@
-Prepares a staff-reviewed HS-214 dealer reply draft about HC-240 gasket fit and reported door-edge moisture, with separate verification notes for Harbor Supply staff.
+Prepares an HS-214 dealer reply draft and staff review packet covering HC-240 gasket fit, reported symptoms, preliminary warranty screening, and shipment questions.

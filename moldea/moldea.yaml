@@ -16,6 +16,7 @@ agents:
       - /package.json
       - /records/hs-214.md
       - /catalog/hc-240.md
+      - /policies/parts-warranty.md
     unresolved:
       model-execution:
         category: runtime-integration

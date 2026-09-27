@@ -3,6 +3,13 @@ import { previewDealerReply } from './dealer-reply-preview.ts';
 
 const agent = createDealerReplyAgent(previewDealerReply);
 const result = await agent.invoke();
+const sections = [
+  ['Fit', result.verificationNotes.fit],
+  ['Symptom follow-up', result.verificationNotes.symptomFollowUp],
+  ['Preliminary warranty screening', result.verificationNotes.warrantyScreening],
+  ['Shipment questions', result.verificationNotes.shipmentQuestions],
+  ['Staff approval', result.verificationNotes.staffApproval],
+] as const;
 
 process.stdout.write(
   [
@@ -10,9 +17,14 @@ process.stdout.write(
     '',
     result.dealerDraft,
     '',
-    '# Staff verification notes',
+    '# Staff review packet',
     '',
-    ...result.verificationNotes.map((note) => `- ${note}`),
+    ...sections.flatMap(([heading, notes]) => [
+      `## ${heading}`,
+      '',
+      ...notes.map((note) => `- ${note}`),
+      '',
+    ]),
     '',
   ].join('\n'),
 );

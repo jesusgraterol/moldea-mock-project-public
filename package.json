@@ -7,7 +7,8 @@
   },
   "scripts": {
     "reply:hs-214": "node src/dealer-reply/dealer-reply-cli.ts",
-    "test": "npm run test:integration",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "node --test src/dealer-reply/dealer-reply-warranty.test-unit.ts",
     "test:integration": "node --test src/dealer-reply/dealer-reply-agent.test-integration.ts",
     "typecheck": "tsc --noEmit"
   },
