@@ -1,0 +1,26 @@
+version: 1
+agents:
+  queue-recommender:
+    runtime:
+      id: langchain
+    bindings:
+      runtimeAgent:
+        path: /src/case-router/agent.ts
+        symbol: queueRecommenderAgent
+      instructionLoader:
+        path: /src/case-router/instructions.ts
+        symbol: loadQueueRecommenderInstruction
+      outputSchema:
+        path: /src/case-router/contracts.ts
+        symbol: QueueRecommendationSchema
+    affectedBy:
+      - /src/case-router/recommendation.ts
+    unresolved:
+      live-provider-verification:
+        category: runtime-integration
+        effect: blocking
+        description: The source path is wired, but no provider credentials or live invocation have verified its recommendations.
+        resolution: Approve the customer-data boundary, configure provider access in a consuming application, and verify the instruction load, structured response, CR-118 routing, and staff-only decision boundary through focused integration checks.
+        related:
+          - path: /src/case-router/agent.ts
+          - path: /src/case-router/recommendation.ts
