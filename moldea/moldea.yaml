@@ -1,0 +1,23 @@
+version: 1
+agents:
+  customer-conversation:
+    runtime:
+      id: cloudflare-agents
+    bindings:
+      runtimeAgent:
+        path: /src/customer-conversation/customer-conversation.agent.ts
+        symbol: CustomerConversationAgent
+      instructionLoader:
+        path: /src/customer-conversation/instructions.ts
+        symbol: loadCustomerConversationInstruction
+    affectedBy:
+      - /src/customer-conversation/types.ts
+    unresolved:
+      source-only-integration:
+        category: runtime-integration
+        effect: blocking
+        description: The source has no Worker routing, Durable Object or Workers AI binding configuration, Markdown text-module rule, authenticated session boundary, or live integration verification.
+        resolution: Add and verify those integration pieces before exposing the chat agent to customers; confirm that caller-supplied facts come from an authorized order context and that each conversation is isolated.
+        related:
+          - path: /src/customer-conversation/customer-conversation.agent.ts
+          - path: /src/customer-conversation/instructions.ts
