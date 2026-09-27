@@ -20,6 +20,8 @@ Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 
 This source has no host, configured model credentials, or live provider verification. `runSg101` and `runComparisonCard` are exported source boundaries, not a runnable shopper service or a staff review UI. The source-relative file URLs assume this repository layout; packaging or deployment would require an explicit asset-loading decision. The catalog is a small local fixture, not a stock or pricing feed.
 
+Construction record: repository-local Moldea skill `v6.0.0` at `.agents/skills/moldea/SKILL.md`; coding session `01a0e45a-1457-74d2-8c13-508aafa811e0`. The conversation reached the SG-101 lookup-assisted guide, then a separate staff comparison card. Neither model path was run live, and the comparison draft has not been checked by staff.
+
 <!-- moldea:start -->
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
