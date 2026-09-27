@@ -1,5 +1,8 @@
 import { z } from 'zod';
 
+// carrier scans may provide a date without a time
+const CarrierScanOccurrenceSchema = z.union([z.iso.date(), z.iso.datetime({ offset: true })]);
+
 // the closed snapshot contract keeps unrelated customer data out of model input
 export const ShipmentSnapshotSchema = z.strictObject({
   reference: z.string().trim().min(1).max(64),
@@ -9,7 +12,7 @@ export const ShipmentSnapshotSchema = z.strictObject({
   scans: z
     .array(
       z.strictObject({
-        occurredAt: z.iso.datetime({ offset: true }),
+        occurredAt: CarrierScanOccurrenceSchema,
         description: z.string().trim().min(1).max(256),
       }),
     )
