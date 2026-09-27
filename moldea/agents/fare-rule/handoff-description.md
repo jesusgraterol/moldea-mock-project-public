@@ -1,1 +1,1 @@
-Answer Basic fare voluntary-change policy questions using the supplied local rule; do not decide or perform a change.
+Handle Basic fare voluntary-change and carrier-cancellation fee questions without deciding or performing a change.

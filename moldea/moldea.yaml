@@ -12,7 +12,9 @@ agents:
         symbol: loadItineraryOptionsInstruction
     affectedBy:
       - /records/tc-201.md
+      - /records/tc-202.md
       - /src/itinerary-options/run.ts
+      - /src/itinerary-options/run-tc-202.ts
       - /src/fare-rule/fare-rule.agent.ts
   fare-rule:
     runtime:
@@ -26,4 +28,6 @@ agents:
         symbol: loadFareRuleInstruction
     affectedBy:
       - /records/basic-fare-rule.md
+      - /records/tc-202.md
       - /src/itinerary-options/run.ts
+      - /src/itinerary-options/run-tc-202.ts
