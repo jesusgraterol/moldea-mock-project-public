@@ -15,4 +15,4 @@ These files are the available case and product evidence, not authorization to gu
 
 ## Prototype status
 
-There is no working service, deployment, credential, live provider execution, or application test suite. No agent or runtime is configured yet. Future capabilities should remain small and plausible, with instruction-loading and invocation paths that can be inspected in source. Record incomplete integrations honestly rather than presenting them as operational.
+There is no working service, deployment, credential, live provider execution, or delivery integration. The first `dealer-reply` agent is declared with a custom, source-only HS-214 invocation. A staff CLI loads its canonical instruction and the checked-in case and product sheet, then prints a deterministic dealer draft and separate verification notes. It is not a model response or a sent message; model execution remains an explicitly unresolved integration. Future capabilities should remain small and plausible, with instruction-loading and invocation paths that can be inspected in source.

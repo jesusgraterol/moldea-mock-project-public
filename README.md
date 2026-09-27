@@ -4,6 +4,10 @@ Harbor Supply is a fictional dealer-support team for refrigerated display equipm
 
 This is a source-only prototype. No working service, deployment, credentials, live provider execution, or application test suite is required. Keep source small and plausible, with meaningful instruction-loading and invocation paths that can be inspected later. Describe incomplete integration honestly.
 
+## HS-214 dealer-reply preview
+
+With Node.js 24.12 or newer, run `npm ci --ignore-scripts` and then `npm run reply:hs-214`. The command loads the canonical `dealer-reply` instruction, the checked-in case, and the HC-240 product sheet. It prints a dealer-addressed draft and separate staff verification notes. The fixed preview fails if those reviewed inputs change; it does not call a model, send a message, or replace staff confirmation. `npm test` runs the focused invocation checks, and `npm run typecheck` checks the TypeScript source.
+
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 
 <!-- moldea:start -->

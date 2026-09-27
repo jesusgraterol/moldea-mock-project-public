@@ -1,1 +1,27 @@
 version: 1
+agents:
+  dealer-reply:
+    runtime:
+      id: custom
+      guidance: /moldea/runtimes/custom.md
+    bindings:
+      runtimeAgent:
+        path: /src/dealer-reply/dealer-reply-agent.ts
+        symbol: createDealerReplyAgent
+      instructionLoader:
+        path: /src/dealer-reply/dealer-reply-instruction.ts
+        symbol: loadDealerReplyInstruction
+    affectedBy:
+      - /src/dealer-reply/**
+      - /package.json
+      - /records/hs-214.md
+      - /catalog/hc-240.md
+    unresolved:
+      model-execution:
+        category: runtime-integration
+        effect: blocking
+        description: The custom runtime currently invokes only a deterministic HS-214 preview; no model provider consumes the canonical instruction and sources.
+        resolution: Connect an approved model invoker to the existing instruction-and-source invocation path and verify its output contract and staff-review boundary before calling model-assisted drafting operational.
+        related:
+          - path: /src/dealer-reply/dealer-reply-agent.ts
+          - path: /src/dealer-reply/dealer-reply-preview.ts

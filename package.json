@@ -1,7 +1,19 @@
 {
   "name": "harbor-supply",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "scripts": {
+    "reply:hs-214": "node src/dealer-reply/dealer-reply-cli.ts",
+    "test": "npm run test:integration",
+    "test:integration": "node --test src/dealer-reply/dealer-reply-agent.test-integration.ts",
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
-    "@moldea.ai/cli": "9.0.0"
+    "@moldea.ai/cli": "9.0.0",
+    "@types/node": "24.19.0",
+    "typescript": "6.0.3"
   }
 }
