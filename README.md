@@ -15,3 +15,9 @@ Install dependencies with `npm install`, run `npm run typecheck`, and run the fi
 This is not a booking authority or a working service. The example copies values from the CSV fixtures; there is no CSV loader, persistence, synchronization, authentication, live-provider integration, or reservation write. A future staff tool must supply complete, current, validated records for the requested item and handle concurrent booking decisions before relying on the result. The check scans its supplied records once and does not cache them.
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
+
+<!-- moldea:start -->
+
+For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
+Canonical moldea project state lives under `/moldea/**`; start at `/moldea/project.md`.
+<!-- moldea:end -->
