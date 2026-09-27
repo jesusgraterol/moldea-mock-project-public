@@ -18,6 +18,9 @@ Run `npm run typecheck` to check the TypeScript source. This prototype has no se
 The selected OpenAI model would receive the supplied request during a live invocation, so real customer-data use also requires a privacy review.
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
+Installed skill: `v6.0.0` at `.agents/skills/moldea/`. Actor session: `01a0e416-2f59-7dd3-904c-ea705ecf79b7`.
+
+Observed stopping point: the adopted project has a LangChain queue-recommendation path. A later CR-119 request gave explicit deletion needs privacy-review priority while retaining the separate billing concern for staff. Typechecking and Moldea validation passed; live provider output, ticket integration, and staff decisions were not exercised.
 
 <!-- moldea:start -->
 
