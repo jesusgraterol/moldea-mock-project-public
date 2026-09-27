@@ -1,19 +1,15 @@
 import { loadDealerReplyInstruction } from './dealer-reply-instruction.ts';
-import { loadDealerReplySources } from './dealer-reply-sources.ts';
 import type { IDealerReplyAgent, IDealerReplyInvoker } from './types.ts';
 
 /**
- * Creates the source-backed HS-214 invocation without selecting a provider.
+ * Creates the reply writer without granting access to desk-owned sources.
  * @param invoker The draft invoker, currently a deterministic preview.
- * @returns An agent boundary that loads instructions and sources when invoked.
+ * @returns An agent boundary that loads its instruction for each invocation.
  */
 export const createDealerReplyAgent = (invoker: IDealerReplyInvoker): IDealerReplyAgent => ({
-  invoke: async () => {
-    const [instructions, sources] = await Promise.all([
-      loadDealerReplyInstruction(),
-      loadDealerReplySources(),
-    ]);
+  invoke: async (reviews) => {
+    const instructions = await loadDealerReplyInstruction();
 
-    return invoker({ instructions, ...sources });
+    return invoker({ instructions, ...reviews });
   },
 });

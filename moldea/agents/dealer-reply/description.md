@@ -1,1 +1,1 @@
-Prepares an HS-214 dealer reply draft and staff review packet covering HC-240 gasket fit, reported symptoms, preliminary warranty screening, and shipment questions.
+Composes an HS-214 dealer-addressed draft from separate equipment, claims, and fulfillment staff reviews while preserving their source-attributed handoff and manager-approval boundary.

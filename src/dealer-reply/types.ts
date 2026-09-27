@@ -1,34 +1,25 @@
-// source files and canonical instruction supplied to the draft invoker
+import type { IClaimsReview } from '../claims-review/index.ts';
+import type { IEquipmentSupportReview } from '../equipment-support/index.ts';
+import type { IFulfillmentReview } from '../fulfillment-review/index.ts';
+
+// the writer receives desk findings, not the underlying desk-owned sources
 export interface IDealerReplyInvocation {
   instructions: string;
-  caseSource: {
-    path: '/records/hs-214.md';
-    markdown: string;
-  };
-  productSource: {
-    path: '/catalog/hc-240.md';
-    markdown: string;
-  };
-  warrantySource: {
-    path: '/policies/parts-warranty.md';
-    markdown: string;
-  };
+  equipmentReview: IEquipmentSupportReview;
+  claimsReview: IClaimsReview;
+  fulfillmentReview: IFulfillmentReview;
 }
 
-// distinct internal review sections, none of which are dealer-facing
-export interface IStaffVerificationNotes {
-  fit: string[];
-  symptomFollowUp: string[];
-  warrantyScreening: string[];
-  shipmentQuestions: string[];
-  staffApproval: string[];
-}
-
-// staff-facing result of the current source-only invocation
+// staff-facing result, with all source-attributed desk reviews kept separate
 export interface IDealerReplyResult {
   mode: 'deterministic-preview';
   dealerDraft: string;
-  verificationNotes: IStaffVerificationNotes;
+  deskReviews: {
+    equipment: IEquipmentSupportReview;
+    claims: IClaimsReview;
+    fulfillment: IFulfillmentReview;
+  };
+  managerChecks: string[];
 }
 
 // replaceable invocation boundary; no provider implementation is installed
@@ -36,15 +27,14 @@ export type IDealerReplyInvoker = (
   invocation: IDealerReplyInvocation,
 ) => Promise<IDealerReplyResult>;
 
-// staff invokes the prepared HS-214 capability through this boundary
 export interface IDealerReplyAgent {
   /**
-   * Loads the current instruction and sources, then invokes the draft boundary.
-   * @returns The staff-reviewable dealer draft and verification notes.
+   * Loads the writer instruction and invokes it with completed desk reviews.
+   * @param reviews The three independent, staff-only desk reviews.
+   * @returns A dealer draft alongside the original reviews and approval checks.
    * @throws
    * - The dealer-reply instruction is empty.
-   * - An HS-214 source is empty.
    * - An HS-214 preview input changed and must be reviewed.
    */
-  invoke(): Promise<IDealerReplyResult>;
+  invoke(reviews: Omit<IDealerReplyInvocation, 'instructions'>): Promise<IDealerReplyResult>;
 }

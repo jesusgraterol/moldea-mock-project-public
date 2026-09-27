@@ -8,8 +8,8 @@
   "scripts": {
     "reply:hs-214": "node src/dealer-reply/dealer-reply-cli.ts",
     "test": "npm run test:unit && npm run test:integration",
-    "test:unit": "node --test src/dealer-reply/dealer-reply-warranty.test-unit.ts",
-    "test:integration": "node --test src/dealer-reply/dealer-reply-agent.test-integration.ts",
+    "test:unit": "node --test src/claims-review/claims-review-warranty.test-unit.ts",
+    "test:integration": "node --test src/equipment-support/equipment-support-agent.test-integration.ts src/claims-review/claims-review-agent.test-integration.ts src/fulfillment-review/fulfillment-review-agent.test-integration.ts src/dealer-reply/dealer-reply-agent.test-integration.ts src/hs-214/hs-214-workflow.test-integration.ts",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {

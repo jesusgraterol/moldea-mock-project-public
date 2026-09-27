@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 
-import { screenWarrantyReportingWindow } from './dealer-reply-warranty.ts';
+import { screenWarrantyReportingWindow } from './claims-review-warranty.ts';
 
 test('HS-214 report is within 12 months of the invoice', () => {
   assert.equal(screenWarrantyReportingWindow('2026-01-12', '2026-09-27'), 'within-period');

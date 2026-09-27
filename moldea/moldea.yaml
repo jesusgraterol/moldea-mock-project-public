@@ -1,5 +1,79 @@
 version: 1
 agents:
+  equipment-support:
+    runtime:
+      id: custom
+      guidance: /moldea/runtimes/custom.md
+    bindings:
+      runtimeAgent:
+        path: /src/equipment-support/equipment-support-agent.ts
+        symbol: createEquipmentSupportAgent
+      instructionLoader:
+        path: /src/equipment-support/equipment-support-agent.ts
+        symbol: loadEquipmentSupportInstruction
+    affectedBy:
+      - /src/equipment-support/**
+      - /src/desk-review/**
+      - /records/hs-214.md
+      - /catalog/hc-240.md
+    unresolved:
+      model-execution:
+        category: runtime-integration
+        effect: blocking
+        description: Equipment support currently invokes only a deterministic HS-214 review; no model provider consumes its canonical instruction and sources.
+        resolution: Connect an approved model invoker to the equipment instruction-and-source boundary and verify its review contract and staff-only scope before calling model-assisted review operational.
+        related:
+          - path: /src/equipment-support/equipment-support-agent.ts
+          - path: /src/equipment-support/equipment-support-preview.ts
+  claims-review:
+    runtime:
+      id: custom
+      guidance: /moldea/runtimes/custom.md
+    bindings:
+      runtimeAgent:
+        path: /src/claims-review/claims-review-agent.ts
+        symbol: createClaimsReviewAgent
+      instructionLoader:
+        path: /src/claims-review/claims-review-agent.ts
+        symbol: loadClaimsReviewInstruction
+    affectedBy:
+      - /src/claims-review/**
+      - /src/desk-review/**
+      - /records/hs-214-claims.md
+      - /policies/parts-warranty.md
+    unresolved:
+      model-execution:
+        category: runtime-integration
+        effect: blocking
+        description: Claims review currently invokes only a deterministic HS-214 screen; no model provider consumes its canonical instruction and sources.
+        resolution: Connect an approved model invoker to the claims instruction-and-source boundary and verify the preliminary staff-only contract without claim approval authority.
+        related:
+          - path: /src/claims-review/claims-review-agent.ts
+          - path: /src/claims-review/claims-review-preview.ts
+  fulfillment-review:
+    runtime:
+      id: custom
+      guidance: /moldea/runtimes/custom.md
+    bindings:
+      runtimeAgent:
+        path: /src/fulfillment-review/fulfillment-review-agent.ts
+        symbol: createFulfillmentReviewAgent
+      instructionLoader:
+        path: /src/fulfillment-review/fulfillment-review-agent.ts
+        symbol: loadFulfillmentReviewInstruction
+    affectedBy:
+      - /src/fulfillment-review/**
+      - /src/desk-review/**
+      - /records/hs-214-fulfillment.md
+    unresolved:
+      model-execution:
+        category: runtime-integration
+        effect: blocking
+        description: Fulfillment review currently invokes only a deterministic HS-214 snapshot review; no model provider consumes its canonical instruction and source.
+        resolution: Connect an approved model invoker to the fulfillment instruction-and-source boundary and verify its staff-only contract without reservation or shipping authority.
+        related:
+          - path: /src/fulfillment-review/fulfillment-review-agent.ts
+          - path: /src/fulfillment-review/fulfillment-review-preview.ts
   dealer-reply:
     runtime:
       id: custom
@@ -13,16 +87,23 @@ agents:
         symbol: loadDealerReplyInstruction
     affectedBy:
       - /src/dealer-reply/**
+      - /src/hs-214/**
+      - /src/desk-review/**
+      - /src/equipment-support/**
+      - /src/claims-review/**
+      - /src/fulfillment-review/**
       - /package.json
       - /records/hs-214.md
+      - /records/hs-214-claims.md
+      - /records/hs-214-fulfillment.md
       - /catalog/hc-240.md
       - /policies/parts-warranty.md
     unresolved:
       model-execution:
         category: runtime-integration
         effect: blocking
-        description: The custom runtime currently invokes only a deterministic HS-214 preview; no model provider consumes the canonical instruction and sources.
-        resolution: Connect an approved model invoker to the existing instruction-and-source invocation path and verify its output contract and staff-review boundary before calling model-assisted drafting operational.
+        description: The custom runtime currently invokes only a deterministic HS-214 reply composition; no model provider consumes its canonical instruction and three desk reviews.
+        resolution: Connect an approved model invoker to the instruction-and-review invocation path and verify its output contract, source-attributed desk handoff, and staff-approval boundary before calling model-assisted drafting operational.
         related:
           - path: /src/dealer-reply/dealer-reply-agent.ts
           - path: /src/dealer-reply/dealer-reply-preview.ts

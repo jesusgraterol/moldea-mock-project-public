@@ -1,92 +1,66 @@
-import { createHash } from 'node:crypto';
+import { assertReviewedSource } from '../desk-review/index.ts';
 
-import { screenWarrantyReportingWindow } from './dealer-reply-warranty.ts';
 import type { IDealerReplyInvocation, IDealerReplyResult } from './types.ts';
 
-// reviewed snapshots keep this fixed HS-214 wording from surviving source changes
 const REVIEWED_SHA256 = {
-  instructions: '300d56ff0388e5dceca9c93ab553bd5864cac0e476c369e4d9c5f191a6a46248',
-  caseSource: '44c17bbbc689b23bd1a24ba010b7890972ebf7a3312c7e902651a072c4c70f35',
-  productSource: '96b982d1904ac48a74f732f1f51fb952b4787d1ac5c21eb5a0e98639084c27aa',
-  warrantySource: 'b47044781a9b72333f4d12a71d108893a8c6d19d747fe53f8802d479ed465b7a',
+  instructions: '44a3c53492d21516f713b93f3c30c6c1f797ab404424a8d40a338807183f881c',
+  equipmentReview: 'd65da68c23a419e66808ff1eeeb17fe56090c02a42baa509ef04c9f42009389f',
+  claimsReview: '467c6ec0690287bf057067357518d8bc6c65d85dd6fd2834e1a955514d9033bd',
+  fulfillmentReview: 'e2aae079ea0fe41ba5b0c7d60b7b53a5a3af4accd9ba8a498b86f19767240d93',
 } as const;
-
-// typed facts are a reviewed extraction of the hash-bound case and policy sources
-const REVIEWED_FACTS = {
-  invoiceDate: '2026-01-12',
-  reportDate: '2026-09-27',
-  stockSnapshotDate: '2026-09-26',
-  stockDepot: 'East',
-  stockKits: 4,
-  reservedForCase: 0,
-  routeBusinessDaysMinimum: 3,
-  routeBusinessDaysMaximum: 5,
-} as const;
-
-const assertReviewed = (text: string, expectedHash: string): void => {
-  const actualHash = createHash('sha256').update(text).digest('hex');
-
-  if (actualHash !== expectedHash) {
-    throw new Error('An HS-214 preview input changed and must be reviewed.');
-  }
-};
 
 /**
- * Returns a reviewed, case-specific preview rather than invoking a model.
- * @param invocation The loaded canonical instruction and checked-in sources.
- * @returns A dealer draft and separate staff verification notes.
+ * Composes the reviewed HS-214 desk outputs without making a desk decision.
+ * @param invocation The writer instruction and three staff-only reviews.
+ * @returns A dealer draft, original desk reviews, and manager approval checks.
  * @throws
  * - An HS-214 preview input changed and must be reviewed.
  */
 export const previewDealerReply = async (
   invocation: IDealerReplyInvocation,
 ): Promise<IDealerReplyResult> => {
-  assertReviewed(invocation.instructions, REVIEWED_SHA256.instructions);
-  assertReviewed(invocation.caseSource.markdown, REVIEWED_SHA256.caseSource);
-  assertReviewed(invocation.productSource.markdown, REVIEWED_SHA256.productSource);
-  assertReviewed(invocation.warrantySource.markdown, REVIEWED_SHA256.warrantySource);
-
-  const reportingWindow = screenWarrantyReportingWindow(
-    REVIEWED_FACTS.invoiceDate,
-    REVIEWED_FACTS.reportDate,
+  assertReviewedSource(
+    { path: '/moldea/agents/dealer-reply/instruction.md', markdown: invocation.instructions },
+    '/moldea/agents/dealer-reply/instruction.md',
+    REVIEWED_SHA256.instructions,
   );
-  const reportingWindowNote =
-    reportingWindow === 'within-period'
-      ? `The authorized-dealer invoice is dated ${REVIEWED_FACTS.invoiceDate}, and the ${REVIEWED_FACTS.reportDate} report is within the 12-month reporting period. This time screen is not claim approval.`
-      : reportingWindow === 'outside-period'
-        ? `The ${REVIEWED_FACTS.reportDate} report appears outside the 12-month period from the ${REVIEWED_FACTS.invoiceDate} invoice. Staff must verify the dates and policy before deciding the claim.`
-        : `The ${REVIEWED_FACTS.reportDate} report is at an unsettled calendar boundary from the ${REVIEWED_FACTS.invoiceDate} invoice. Staff must interpret the policy before deciding the claim.`;
+  assertReviewedSource(
+    { path: 'equipment-review', markdown: JSON.stringify(invocation.equipmentReview) },
+    'equipment-review',
+    REVIEWED_SHA256.equipmentReview,
+  );
+  assertReviewedSource(
+    { path: 'claims-review', markdown: JSON.stringify(invocation.claimsReview) },
+    'claims-review',
+    REVIEWED_SHA256.claimsReview,
+  );
+  assertReviewedSource(
+    { path: 'fulfillment-review', markdown: JSON.stringify(invocation.fulfillmentReview) },
+    'fulfillment-review',
+    REVIEWED_SHA256.fulfillmentReview,
+  );
+
+  const { doorRevision, tearLocation } = invocation.equipmentReview.dealerSafeFacts;
 
   return {
     mode: 'deterministic-preview',
     dealerDraft: [
       'Hello Ridgeway Foodservice,',
       '',
-      'Thanks for sending the clearer HC-240 door-channel photo. It identifies a Rev B door channel, and you have reported a tear near the lower corner of the gasket. Our team will confirm the appropriate replacement part before advising you.',
+      `Thanks for sending the clearer HC-240 door-channel photo. It identifies a ${doorRevision} door channel, and you have reported a tear ${tearLocation} of the gasket. Our team will confirm the appropriate replacement part before advising you.`,
       '',
       'You mentioned that moisture appeared around the door edge after cleaning. That timing alone does not establish the cause. Could you share a measured cabinet temperature, let us know whether the door closes fully, and send a close-up photo of the torn area? If you know when the tear first appeared or observed what happened before it, please include that context.',
       '',
       'We will review those details and follow up.',
     ].join('\n'),
-    verificationNotes: {
-      fit: [
-        'The clear gasket-channel photo identifies the fitted door as Rev B; the product sheet maps Rev B to GS-240-B. Staff confirm the part before a dealer recommendation.',
-      ],
-      symptomFollowUp: [
-        'The gasket has a tear near the lower corner. Moisture after cleaning is reported timing, not evidence of what caused the tear or moisture.',
-        'Request a measured cabinet temperature, door-closure information, a close-up of the tear, and any known circumstances of its appearance. Staff follow their own food-safety and equipment-escalation procedures if the cabinet is not holding a safe temperature.',
-      ],
-      warrantyScreening: [
-        reportingWindowNote,
-        'The warranty covers manufacturing defects, and documented cleaning damage is excluded. Neither cause is established here. Staff decide whether the claim qualifies; keep this screening out of the dealer draft.',
-      ],
-      shipmentQuestions: [
-        `The ${REVIEWED_FACTS.stockSnapshotDate} snapshot listed ${REVIEWED_FACTS.stockKits} GS-240-B kits at the ${REVIEWED_FACTS.stockDepot} depot, with ${REVIEWED_FACTS.reservedForCase} reserved for HS-214. Confirm current availability and whether a kit can be reserved.`,
-        `The normal route is roughly ${REVIEWED_FACTS.routeBusinessDaysMinimum} to ${REVIEWED_FACTS.routeBusinessDaysMaximum} business days after dispatch. Confirm destination, dispatch, and timing before making a commitment; the snapshot is not a delivery promise.`,
-      ],
-      staffApproval: [
-        'Staff confirm the part, warranty outcome, current stock and timing, and any safety advice, then approve the dealer response before sending it. This preview has no send path.',
-      ],
+    deskReviews: {
+      equipment: invocation.equipmentReview,
+      claims: invocation.claimsReview,
+      fulfillment: invocation.fulfillmentReview,
     },
+    managerChecks: [
+      'Manager approves the dealer response and any part, claim, shipping, or safety commitment before staff send it.',
+      'This preview has no send path, live inventory, claim decision, or provider-backed conversation.',
+    ],
   };
 };

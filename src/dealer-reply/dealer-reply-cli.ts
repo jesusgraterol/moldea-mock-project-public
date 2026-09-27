@@ -1,15 +1,18 @@
-import { createDealerReplyAgent } from './dealer-reply-agent.ts';
-import { previewDealerReply } from './dealer-reply-preview.ts';
+import type { IDeskReview } from '../desk-review/index.ts';
+import { runHs214Preview } from '../hs-214/index.ts';
 
-const agent = createDealerReplyAgent(previewDealerReply);
-const result = await agent.invoke();
-const sections = [
-  ['Fit', result.verificationNotes.fit],
-  ['Symptom follow-up', result.verificationNotes.symptomFollowUp],
-  ['Preliminary warranty screening', result.verificationNotes.warrantyScreening],
-  ['Shipment questions', result.verificationNotes.shipmentQuestions],
-  ['Staff approval', result.verificationNotes.staffApproval],
-] as const;
+const formatReview = (heading: string, review: IDeskReview): string[] => [
+  `## ${heading} (staff only)`,
+  '',
+  'Findings:',
+  ...review.findings.map(({ text, sources }) => `- ${text} [Sources: ${sources.join(', ')}]`),
+  '',
+  'Open questions:',
+  ...review.openQuestions.map(({ text, sources }) => `- ${text} [Sources: ${sources.join(', ')}]`),
+  '',
+];
+
+const result = await runHs214Preview();
 
 process.stdout.write(
   [
@@ -19,12 +22,12 @@ process.stdout.write(
     '',
     '# Staff review packet',
     '',
-    ...sections.flatMap(([heading, notes]) => [
-      `## ${heading}`,
-      '',
-      ...notes.map((note) => `- ${note}`),
-      '',
-    ]),
+    ...formatReview('Equipment support', result.deskReviews.equipment),
+    ...formatReview('Claims', result.deskReviews.claims),
+    ...formatReview('Fulfillment', result.deskReviews.fulfillment),
+    '## Manager approval',
+    '',
+    ...result.managerChecks.map((check) => `- ${check}`),
     '',
   ].join('\n'),
 );
