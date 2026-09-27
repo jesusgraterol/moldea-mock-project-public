@@ -41,7 +41,10 @@ test('writer loads its instruction and receives desk reviews rather than their s
   assert.match(result.dealerDraft, /Rev B door channel/);
   assert.match(result.dealerDraft, /measured cabinet temperature/);
   assert.match(result.dealerDraft, /close-up photo of the torn area/);
-  assert.doesNotMatch(result.dealerDraft, /GS-240-[AB]|warranty|stock|business days|delivery/i);
+  assert.doesNotMatch(
+    result.dealerDraft,
+    /GS-240-[AB]|warranty|18.month|stock|business days|delivery/i,
+  );
   assert.deepEqual(result.deskReviews, {
     equipment: reviews.equipmentReview,
     claims: reviews.claimsReview,

@@ -17,7 +17,11 @@ test('HS-214 workflow combines three independent attributed reviews before the d
     ),
   );
   assert.match(packet.deskReviews.equipment.findings[0].text, /GS-240-B/);
+  assert.match(packet.deskReviews.claims.findings[0].text, /applicable 18-month reporting period/);
   assert.match(packet.deskReviews.claims.findings[0].text, /not claim approval/);
   assert.match(packet.deskReviews.fulfillment.findings[1].text, /not a dispatch date/);
-  assert.doesNotMatch(packet.dealerDraft, /GS-240-B|claim|warranty|2026-09-26|business days/i);
+  assert.doesNotMatch(
+    packet.dealerDraft,
+    /GS-240-B|claim|warranty|18.month|2026-09-26|business days/i,
+  );
 });

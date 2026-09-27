@@ -20,13 +20,17 @@ test('claims review loads only claims sources and keeps screening staff-only', a
   assert.equal(loaded.claimSource.path, '/records/hs-214-claims.md');
   assert.equal(loaded.policySource.path, '/policies/parts-warranty.md');
   assert.equal(review.audience, 'staff-only');
-  assert.match(review.findings[0].text, /within the 12-month reporting period/);
-  assert.match(review.findings[1].text, /neither a manufacturing defect nor documented cleaning damage/);
+  assert.match(review.findings[0].text, /HC-240 door gasket/);
+  assert.match(review.findings[0].text, /applicable 18-month reporting period/);
+  assert.match(
+    review.findings[1].text,
+    /neither a manufacturing defect nor documented cleaning damage/,
+  );
   assert.deepEqual(review.findings[0].sources, [
     '/records/hs-214-claims.md',
     '/policies/parts-warranty.md',
   ]);
-  assert.match(review.openQuestions[0].text, /staff decide/);
+  assert.match(review.openQuestions[0].text, /claims desk and support manager decide/);
 });
 
 test('claims review refuses changed evidence or instruction text', async () => {

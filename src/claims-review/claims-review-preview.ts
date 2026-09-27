@@ -4,14 +4,16 @@ import { screenWarrantyReportingWindow } from './claims-review-warranty.ts';
 import type { IClaimsReview, IClaimsReviewInvocation } from './types.ts';
 
 const REVIEWED_SHA256 = {
-  instructions: '5fed093f837e1b7204b1d678b93b1491e1be1a448295ab196af7da4fc7fda743',
+  instructions: '15216447276e8cfc0cc2ca167e9a1d25488b9c2614a2a47aad998bcf5c2f4b1f',
   claimSource: '4e1d628f64cdd8261a1f64273e26c51b72cd205310a101d208ae5ec61da2b6c2',
-  policySource: 'b47044781a9b72333f4d12a71d108893a8c6d19d747fe53f8802d479ed465b7a',
+  policySource: '8f0c00fa3d2a0d66ec85f96098eb3513d82183e40211481d4a571c60043f514b',
 } as const;
 
 // dates extracted from the reviewed claims evidence, not a live claim system
 const INVOICE_DATE = '2026-01-12';
 const REPORT_DATE = '2026-09-27';
+// HS-214 is an HC-240 door gasket under the reviewed open-case policy
+const REPORTING_MONTHS = 18;
 
 /**
  * Produces a preliminary claims screen, never a coverage decision.
@@ -40,13 +42,17 @@ export const previewClaimsReview = async (
     REVIEWED_SHA256.policySource,
   );
 
-  const reportingWindow = screenWarrantyReportingWindow(INVOICE_DATE, REPORT_DATE);
+  const reportingWindow = screenWarrantyReportingWindow(
+    INVOICE_DATE,
+    REPORT_DATE,
+    REPORTING_MONTHS,
+  );
   const windowFinding =
     reportingWindow === 'within-period'
-      ? `The authorized-dealer invoice is dated ${INVOICE_DATE}; the ${REPORT_DATE} report is within the 12-month reporting period. This is not claim approval.`
+      ? `HS-214 concerns an HC-240 door gasket. The authorized-dealer invoice is dated ${INVOICE_DATE}; the ${REPORT_DATE} report is within its applicable ${REPORTING_MONTHS}-month reporting period. This is not claim approval.`
       : reportingWindow === 'outside-period'
-        ? `The ${REPORT_DATE} report appears outside the 12-month period from the ${INVOICE_DATE} invoice. Staff must verify the dates and policy.`
-        : `The ${REPORT_DATE} report falls at an unsettled 12-month boundary from the ${INVOICE_DATE} invoice. Staff must interpret the policy.`;
+        ? `The ${REPORT_DATE} report appears outside the applicable ${REPORTING_MONTHS}-month period from the ${INVOICE_DATE} authorized-dealer invoice. The claims desk must verify the dates and policy.`
+        : `The ${REPORT_DATE} report falls at an unsettled ${REPORTING_MONTHS}-month boundary from the ${INVOICE_DATE} authorized-dealer invoice. The claims desk must interpret the policy.`;
 
   return {
     audience: 'staff-only',
@@ -60,7 +66,7 @@ export const previewClaimsReview = async (
     ],
     openQuestions: [
       {
-        text: 'Review the close-up and any known circumstances of the tear, then let staff decide whether the claim qualifies. Do not communicate a preliminary screen as approval.',
+        text: 'Review the close-up and any known circumstances of the tear. The claims desk and support manager decide whether the claim qualifies; do not communicate a preliminary screen as approval.',
         sources: ['/records/hs-214-claims.md', '/policies/parts-warranty.md'],
       },
     ],

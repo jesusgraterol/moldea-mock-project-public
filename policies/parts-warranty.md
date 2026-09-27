@@ -1,3 +1,3 @@
 # Parts warranty
 
-Harbor Supply's parts warranty covers manufacturing defects reported within 12 months of the invoice. Documented cleaning damage is excluded. Staff decide whether an individual claim qualifies; an invoice within the reporting period or a torn part alone does not establish a manufacturing defect or approve a claim.
+For open cases, HC-240 door gaskets may be reviewed for manufacturing defects reported within 18 months of the authorized-dealer invoice. Other parts retain the 12-month reporting window from the invoice. Documented cleaning damage remains excluded. The claims desk and support manager decide whether an individual claim qualifies; passing the time screen or reporting a torn part does not establish a manufacturing defect or approve a claim.

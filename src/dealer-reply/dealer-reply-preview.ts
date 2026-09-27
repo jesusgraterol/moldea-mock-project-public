@@ -5,7 +5,7 @@ import type { IDealerReplyInvocation, IDealerReplyResult } from './types.ts';
 const REVIEWED_SHA256 = {
   instructions: '44a3c53492d21516f713b93f3c30c6c1f797ab404424a8d40a338807183f881c',
   equipmentReview: 'd65da68c23a419e66808ff1eeeb17fe56090c02a42baa509ef04c9f42009389f',
-  claimsReview: '467c6ec0690287bf057067357518d8bc6c65d85dd6fd2834e1a955514d9033bd',
+  claimsReview: 'e776dc90eb8a1f1f4942c24e5808980adfb329dfb6a815734ffde06f8437791f',
   fulfillmentReview: 'e2aae079ea0fe41ba5b0c7d60b7b53a5a3af4accd9ba8a498b86f19767240d93',
 } as const;
 
