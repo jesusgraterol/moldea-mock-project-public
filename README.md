@@ -17,6 +17,9 @@ This is a source-only prototype. It needs no working service, deployment, creden
 Run `node scripts/list-records/index.mjs` to list the Markdown fact sheets in `records/` as ID and title, sorted by ID. Each file must start with a `# ID: Title` heading; a missing or malformed heading produces a file-specific error and a nonzero exit status. This local preparation utility does not call the model or change product-copy drafting.
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
+Installed skill: `v6.0.0` at `.agents/skills/moldea/`. Actor session: `01a0e3ef-b90c-7741-a939-4cde36ebe906`.
+
+Observed stopping point: the adopted project has a Google Gen AI copy-drafting path. A later CS-214 claim request changed its instruction and record; a separate request added the local record-listing utility without changing drafting. Typechecking and Moldea validation passed, while live model output and publication were not exercised.
 
 <!-- moldea:start -->
 
