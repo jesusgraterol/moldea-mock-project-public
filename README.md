@@ -19,7 +19,11 @@ A future invocation would transmit the relevant source records to the configured
 
 Direct dependency versions are pinned in `package.json` and `package-lock.json`. On Node.js 22.11 or later, `npm ci --ignore-scripts` installs them and `npm run typecheck` checks the source without invoking a provider. There is no application test suite or runnable drafting command.
 
+Typechecking uses `skipLibCheck` because the installed Claude Agent SDK declarations reference a Zod type absent from its installed peer. This check does not verify provider behavior.
+
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
+
+Construction record: repository-local Moldea skill `v6.0.0` at `.agents/skills/moldea/SKILL.md`; coding session `01a0e469-de56-7732-ace5-75f6b7298cfe`. The conversation reached drafting, a read-only role discussion, the held-record reviewer, and a later notification-classification rule. RC-44 remains held; neither SDK path was run live.
 
 <!-- moldea:start -->
 
