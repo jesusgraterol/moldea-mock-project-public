@@ -1,0 +1,12 @@
+{
+  "name": "trail-ledger-availability",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "example": "node --experimental-strip-types examples/check-availability.ts"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
+  }
+}

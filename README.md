@@ -6,4 +6,12 @@ A confirmed reservation blocks overlapping dates for the same item. Pickup dates
 
 Two useful cases in the records are `TL-T12`, a tent with an open pole-sleeve repair, and `TL-S03`, a stove whose repair was completed. The desk wants a small reservation check that explains availability for a requested item and date range.
 
+## Source-only availability prototype
+
+`src/availability/index.ts` exports `checkAvailability(request)`. Callers supply a specific equipment item, pickup and return dates in `YYYY-MM-DD` format, and current reservation and repair snapshots. The function rejects invalid requested dates or relevant confirmed-reservation dates, treats the rental interval as pickup-inclusive and return-exclusive, and explains every open repair or overlapping confirmed reservation for that item. A completed repair does not block availability.
+
+Install dependencies with `npm install`, run `npm run typecheck`, and run the fictional-record example with `npm run example`. The example checks `TL-T12` and reports its open repair.
+
+This is not a booking authority or a working service. The example copies values from the CSV fixtures; there is no CSV loader, persistence, synchronization, authentication, live-provider integration, or reservation write. A future staff tool must supply complete, current, validated records for the requested item and handle concurrent booking decisions before relying on the result. The check scans its supplied records once and does not cache them.
+
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
