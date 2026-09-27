@@ -10,6 +10,10 @@ With Node.js 24.12 or newer, run `npm ci --ignore-scripts` and then `npm run rep
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 
+## Attempt record
+
+This attempt used the published Moldea skill `v6.0.0` installed at `.agents/skills/moldea/SKILL.md`. The developer conversation reached foundation adoption, read-only agent-system planning, an HS-214 staff preview, a broader desk-owned review handoff, and an approved gasket-warranty policy change. It stopped after the claims screen and staff packet reflected the 18-month HC-240 door-gasket window. All four roles remain deterministic source-only previews; model execution and dealer delivery are unintegrated.
+
 <!-- moldea:start -->
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
