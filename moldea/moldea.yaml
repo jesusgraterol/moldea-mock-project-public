@@ -35,3 +35,25 @@ agents:
         resolution: Connect a host to runSg101, configure provider access outside source, and verify catalog-grounded behavior before claiming a working guide.
         related:
           - path: /src/store-guide/sg-101.ts
+  comparison-card:
+    runtime:
+      id: vercel-ai-sdk
+      guidance: /moldea/runtimes/vercel-ai-sdk.md
+    bindings:
+      runtimeAgent:
+        path: /src/store-guide/comparison-card/comparison-card.ts
+        symbol: runComparisonCard
+      instructionLoader:
+        path: /src/store-guide/comparison-card/comparison-card.ts
+        symbol: loadComparisonCardInstruction
+    affectedBy:
+      - /records/catalog.md
+      - /src/store-guide/catalog.ts
+    unresolved:
+      host-integration:
+        category: runtime-integration
+        effect: blocking
+        description: The staff-card invocation has no application host, configured provider access, or live output review.
+        resolution: Connect an authorized staff-review host, configure provider access outside source, and verify generated cards against returned catalog facts before showing one to a shopper.
+        related:
+          - path: /src/store-guide/comparison-card/comparison-card.ts

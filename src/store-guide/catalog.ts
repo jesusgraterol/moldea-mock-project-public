@@ -7,7 +7,8 @@ import { z } from 'zod';
 const LAPTOP_SIZE_INCHES = 16;
 const CATALOG_URL = new URL('../../records/catalog.md', import.meta.url);
 
-type ICatalogBag = {
+// product fields preserved from the local catalog table
+export type ICatalogBag = {
   sku: string;
   product: string;
   capacity: string;
