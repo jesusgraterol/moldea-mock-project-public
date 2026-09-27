@@ -1,0 +1,15 @@
+version: 1
+agents:
+  itinerary-options:
+    runtime:
+      id: openai-agents-sdk
+    bindings:
+      runtimeAgent:
+        path: /src/itinerary-options/itinerary-options.agent.ts
+        symbol: itineraryOptionsAgent
+      instructionLoader:
+        path: /src/itinerary-options/instructions.ts
+        symbol: loadItineraryOptionsInstruction
+    affectedBy:
+      - /records/tc-201.md
+      - /src/itinerary-options/run.ts

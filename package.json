@@ -1,0 +1,20 @@
+{
+  "name": "trip-care",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.11.0"
+  },
+  "dependencies": {
+    "@openai/agents": "0.18.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@moldea.ai/cli": "9.0.0",
+    "@types/node": "22.20.4",
+    "typescript": "5.9.3"
+  }
+}
