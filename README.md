@@ -18,6 +18,8 @@ No working service, deployment, credentials, live provider execution, or applica
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 
+Construction record: repository-local Moldea skill `v6.0.0` at `.agents/skills/moldea/SKILL.md`; coding session `01a0e488-2b21-77a2-8fa0-ec9f390d59f1`. The conversation reached itinerary guidance, a fare-rule specialist handoff, an explicitly read-only carrier-cancellation discussion, and later authorized TC-202 handling. The carrier-cancellation policy remains unknown; neither SDK path was run live.
+
 <!-- moldea:start -->
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
