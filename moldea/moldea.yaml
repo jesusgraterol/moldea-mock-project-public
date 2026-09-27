@@ -1,0 +1,12 @@
+version: 1
+agents:
+  catalog-copy:
+    runtime:
+      id: google-genai
+    bindings:
+      runtimeAgent:
+        path: /src/catalog-copy-agent/index.ts
+        symbol: draftCatalogCopy
+      instructionLoader:
+        path: /src/catalog-copy-agent/index.ts
+        symbol: loadCatalogCopyInstruction

@@ -6,4 +6,16 @@ The fictional records in `records/` cover the Harbor Linen Throw (`CS-214`) and 
 
 This is a source-only prototype. It needs no working service, deployment, credentials, live provider calls, or application test suite. The data is fictional and staff retain publication decisions.
 
+## Source-only assistant
+
+`src/catalog-copy-agent/index.ts` exports `draftCatalogCopy(factSheet, modelId)`. It reads the canonical instruction from `moldea/agents/catalog-copy/instruction.md`, then calls the direct Google Gen AI SDK's `models.generateContent` with the caller's fact sheet. The model text is a draft for staff review, not verified or publishable output. The function has no service endpoint, fact-sheet ingestion pipeline, provider credentials, output fact-checking, or publication integration. No live provider call has been made for this prototype.
+
+`@google/genai` 2.24.0 and TypeScript 7.0.2 are pinned as direct dependencies. Run `npm run typecheck` to check the source without invoking a model.
+
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
+
+<!-- moldea:start -->
+
+For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
+Canonical moldea project state lives under `/moldea/**`; start at `/moldea/project.md`.
+<!-- moldea:end -->

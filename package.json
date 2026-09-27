@@ -1,5 +1,16 @@
 {
   "name": "catalog-studio",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@moldea.ai/cli": "^9.0.0",
+    "@types/node": "24.19.0"
+  },
+  "dependencies": {
+    "@google/genai": "2.24.0",
+    "typescript": "7.0.2"
+  }
 }
