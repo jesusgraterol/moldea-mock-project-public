@@ -1,0 +1,7 @@
+{
+  "name": "cedar-workshop",
+  "private": true,
+  "devDependencies": {
+    "@moldea.ai/cli": "9.0.0"
+  }
+}
