@@ -1,0 +1,7 @@
+{
+  "name": "harbor-supply",
+  "private": true,
+  "devDependencies": {
+    "@moldea.ai/cli": "9.0.0"
+  }
+}
