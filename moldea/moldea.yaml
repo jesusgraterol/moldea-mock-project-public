@@ -3,3 +3,5 @@ context:
   /moldea/project.md:
     affectedBy:
       - /src/availability/index.ts
+      - /records/repairs.csv
+      - /records/safety-checks.csv

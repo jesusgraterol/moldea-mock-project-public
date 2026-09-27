@@ -16,7 +16,13 @@ export interface IRepair {
   id: string;
   equipmentId: string;
   issue: string;
-  completedOn: string | null;
+  completedAt: string | null;
+}
+
+export interface ISafetyCheck {
+  id: string;
+  equipmentId: string;
+  recordedAt: string;
 }
 
 export interface IAvailabilityRequest {
@@ -25,6 +31,7 @@ export interface IAvailabilityRequest {
   returnOn: string;
   reservations: readonly IReservation[];
   repairs: readonly IRepair[];
+  safetyChecks: readonly ISafetyCheck[];
 }
 
 export interface IAvailabilityDecision {
@@ -45,22 +52,61 @@ const requireDateRange = (pickupOn: string, returnOn: string): void => {
   }
 };
 
+const requireUtcTimestamp = (timestamp: string): void => {
+  const isCanonicalUtc = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(timestamp);
+  const parsed = new Date(timestamp);
+
+  if (
+    !isCanonicalUtc ||
+    Number.isNaN(parsed.getTime()) ||
+    parsed.toISOString() !== timestamp
+  ) {
+    throw new RangeError('Repair completion and safety check times must be valid UTC timestamps');
+  }
+};
+
 /**
  * Explains whether desk records block a specific item for a half-open rental date range.
  * @param request The item, requested dates, and complete current records relevant to that item.
  * @returns The availability decision and a staff-readable explanation.
- * @throws A RangeError if the requested dates or a relevant confirmed reservation are invalid.
+ * @throws A RangeError if relevant rental dates or repair and check timestamps are invalid.
  */
 export const checkAvailability = (request: IAvailabilityRequest): IAvailabilityDecision => {
-  const { equipment, pickupOn, returnOn, reservations, repairs } = request;
+  const { equipment, pickupOn, returnOn, reservations, repairs, safetyChecks } = request;
   requireDateRange(pickupOn, returnOn);
 
   const reasons: string[] = [];
+  let latestCompletedRepair: { id: string; completedAt: string } | undefined;
 
   for (const repair of repairs) {
-    if (repair.equipmentId === equipment.id && repair.completedOn === null) {
+    if (repair.equipmentId !== equipment.id) continue;
+
+    if (repair.completedAt === null) {
       reasons.push(`Open repair ${repair.id}: ${repair.issue}`);
+      continue;
     }
+
+    requireUtcTimestamp(repair.completedAt);
+    if (
+      latestCompletedRepair === undefined ||
+      repair.completedAt > latestCompletedRepair.completedAt
+    ) {
+      latestCompletedRepair = { id: repair.id, completedAt: repair.completedAt };
+    }
+  }
+
+  let hasLaterSafetyCheck = false;
+  for (const safetyCheck of safetyChecks) {
+    if (safetyCheck.equipmentId !== equipment.id) continue;
+
+    requireUtcTimestamp(safetyCheck.recordedAt);
+    if (latestCompletedRepair && safetyCheck.recordedAt > latestCompletedRepair.completedAt) {
+      hasLaterSafetyCheck = true;
+    }
+  }
+
+  if (latestCompletedRepair && !hasLaterSafetyCheck) {
+    reasons.push(`Completed repair ${latestCompletedRepair.id} needs a later safety check`);
   }
 
   for (const reservation of reservations) {
