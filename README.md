@@ -12,6 +12,10 @@ This is a source-only prototype. It needs no working service, deployment, creden
 
 `@google/genai` 2.24.0 and TypeScript 7.0.2 are pinned as direct dependencies. Run `npm run typecheck` to check the source without invoking a model.
 
+## List sample records
+
+Run `node scripts/list-records/index.mjs` to list the Markdown fact sheets in `records/` as ID and title, sorted by ID. Each file must start with a `# ID: Title` heading; a missing or malformed heading produces a file-specific error and a nonzero exit status. This local preparation utility does not call the model or change product-copy drafting.
+
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
 
 <!-- moldea:start -->
