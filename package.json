@@ -1,7 +1,17 @@
 {
   "name": "vendor-desk",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.128.0",
+    "zod": "4.6.5"
+  },
   "devDependencies": {
-    "@moldea.ai/cli": "9.0.0"
+    "@moldea.ai/cli": "9.0.0",
+    "@types/node": "24.19.0",
+    "typescript": "7.0.2"
   }
 }

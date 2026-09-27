@@ -1,1 +1,16 @@
 version: 1
+agents:
+  vendor-reviewer:
+    runtime:
+      id: anthropic
+    bindings:
+      runtimeAgent:
+        path: /src/vendor-reviewer/vendor-reviewer.ts
+        symbol: reviewSupplierPacket
+      instructionLoader:
+        path: /src/vendor-reviewer/instructions.ts
+        symbol: loadVendorReviewerInstruction
+    affectedBy:
+      - /src/vendor-reviewer/types.ts
+      - /src/vendor-reviewer/evidence.ts
+      - /package.json
