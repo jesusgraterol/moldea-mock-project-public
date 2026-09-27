@@ -1,0 +1,39 @@
+version: 1
+agents:
+  field-notes:
+    runtime:
+      id: eve
+    bindings:
+      runtimeAgent:
+        path: /agent/agent.ts
+        symbol: default
+      instructionLoader:
+        path: /agent/instructions.md
+    tools:
+      find-notes:
+        name: find_notes
+        description: Returns the checked-in FN-101 record and relevant operational notes.
+        implementation:
+          path: /agent/note-catalog.ts
+          symbol: getFn101Sources
+        registration:
+          path: /agent/tools/find_notes.ts
+          symbol: default
+        inputSchema:
+          path: /agent/contracts.ts
+          symbol: FindNotesInputSchema
+    mirrors:
+      - /agent/instructions.md
+    affectedBy:
+      - /notes/ingest-lag.md
+      - /notes/schema-rollout.md
+      - /records/fn-101.md
+      - /package.json
+    unresolved:
+      provider-invocation:
+        category: runtime-integration
+        effect: blocking
+        description: The agent is source-only; no service, credentials, or provider-backed turn demonstrates an engineer-facing invocation.
+        resolution: In a separately authorized integration, configure an access-controlled entry point and credentials, then verify a real turn loads these instructions and returns only the checked-in FN-101 sources.
+        related:
+          - path: /agent/agent.ts
