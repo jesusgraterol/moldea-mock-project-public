@@ -9,6 +9,9 @@ The caller supplies a packet ID, supplier name, category, review date, structure
 This repository is a source-only prototype. It has no working service, deployment, repository credentials, live provider execution, or application test suite. The packet records are fictional and contain no real supplier data. `npm run typecheck` checks the source without emitting an application build.
 
 Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
+Installed skill: `v6.0.0` at `.agents/skills/moldea/`. Actor session: `01a0e3d4-a25f-7321-ae2e-661372d809e4`.
+
+Observed stopping point: the adopted project has one Anthropic-backed reviewer with a visible instruction loader and a caller-invoked draft path. The later recycled-content requirement changed the packet contract and VD-104 case. Typechecking and Moldea validation passed; model-generated wording was not exercised with a live provider.
 
 <!-- moldea:start -->
 
