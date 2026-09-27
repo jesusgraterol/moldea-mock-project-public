@@ -7,7 +7,7 @@
     "example": "node --experimental-strip-types examples/check-availability.ts"
   },
   "devDependencies": {
-    "@moldea.ai/cli": "^9.0.0",
+    "@moldea.ai/cli": "9.0.0",
     "typescript": "7.0.2"
   }
 }
