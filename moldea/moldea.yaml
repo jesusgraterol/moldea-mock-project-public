@@ -21,3 +21,25 @@ agents:
         related:
           - path: /src/customer-conversation/customer-conversation.agent.ts
           - path: /src/customer-conversation/instructions.ts
+  staff-review:
+    runtime:
+      id: cloudflare-agents
+    bindings:
+      runtimeAgent:
+        path: /src/staff-review/staff-review.agent.ts
+        symbol: StaffReviewAgent
+      instructionLoader:
+        path: /src/staff-review/instructions.ts
+        symbol: loadStaffReviewInstruction
+    affectedBy:
+      - /src/staff-review/types.ts
+      - /src/staff-review/routing-policy.ts
+    unresolved:
+      source-only-integration:
+        category: runtime-integration
+        effect: blocking
+        description: The staff-review source has no Worker routing, Durable Object or Workers AI binding configuration, Markdown text-module rule, authenticated staff session boundary, client, live queue integration, or live verification.
+        resolution: Add and verify those integration pieces before staff use; authorize the case facts, isolate staff conversations, and map the prototype queue identifiers to real staff queues.
+        related:
+          - path: /src/staff-review/staff-review.agent.ts
+          - path: /src/staff-review/routing-policy.ts
