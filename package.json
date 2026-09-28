@@ -1,5 +1,8 @@
 {
   "name": "field-notes",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@moldea.ai/cli": "9.0.1"
+  }
 }
