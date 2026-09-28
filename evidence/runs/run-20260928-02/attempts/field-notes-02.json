@@ -197,6 +197,17 @@
         "git/c3ecda12e853b527a96c6ca81150083b0224643a/9f7224780efad79128950f23ab6d31ef41e1c5eb"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "draft Release asset download integrity",
+      "inputCommit": "9f7224780efad79128950f23ab6d31ef41e1c5eb",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20260928-02/field-session-01.jsonl.gz",
+        "run-20260928-02/field-identity-01.json"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -1608,7 +1619,7 @@
   "recovery": null,
   "predecessorAttemptId": null,
   "limitations": [
-    "Release assets are prepared and hashed locally but have not yet been uploaded and downloaded for integrity verification.",
+    "All declared assets were uploaded to a draft GitHub Release and downloaded with matching sizes and SHA-256 hashes; publication under the final tag remains pending.",
     "The per-turn package composition was reconstructed from committed lockfiles and installed files after the conversation, not sampled independently during each turn.",
     "No natural compaction event occurred; compaction behavior is not assessed.",
     "Independent skill-agent review is pending."

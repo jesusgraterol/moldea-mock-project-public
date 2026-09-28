@@ -49,7 +49,7 @@
   "reviewStatus": "pending",
   "review": null,
   "limitations": [
-    "Release asset upload, download and independent skill-agent review remain pending.",
+    "Draft Release assets were uploaded and downloaded with matching hashes; publication under the final tag and independent skill-agent review remain pending.",
     "This is real-session evidence, not semantic evaluation or adapter qualification."
   ]
 }
