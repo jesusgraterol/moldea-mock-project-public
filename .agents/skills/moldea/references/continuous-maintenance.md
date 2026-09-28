@@ -1,0 +1,86 @@
+# Initialization and maintenance
+
+Read this reference after explicit initialization intent or established post-adoption relevance for context assessment or authorized canonical synchronization.
+
+## Adoption
+
+Initialization requires explicit developer intent. Establish the repository root, reuse current project evidence, and confirm that adoption is absent or intentionally being replaced before writing. A complete initialized repository has bounded regular root files `/moldea/moldea.yaml` and `/moldea/project.md` plus exactly one canonical managed region in the bounded regular root README. A marker pair with divergent content is not adoption. Partial artifacts do not authorize automatic repair. Explicit project repair follows `project-repair.md` and requires evidence of prior initialization; it does not enter this initialization procedure.
+
+Do not recommend initialization during unrelated work. Do not treat generic knowledge, ordinary documentation, or a repository name as adoption intent.
+
+Create the smallest foundation that accurately represents established current truth. Zero agents, relationships, runtimes, and requirements are valid. Never create placeholder agents or speculative bindings to make a project appear complete.
+
+For initialization, reuse the entrypoint's `tooling-installation.md` preflight. An executable-installation hazard preempts foundation classification: follow that reference's complete blocked-install result and stop before invoking the package manager, asking for project purpose, or writing adoption artifacts. Preserve repository controls. Do not repeat completed metadata checks. This preflight does not apply to ordinary canonical maintenance when no tooling installation is required.
+
+## Decide whether foundation evidence is sufficient
+
+Before installing or changing a dependency, creating canonical state, or adding the managed README block, inspect the smallest high-information project-owned sources and classify the foundation:
+
+- **Insufficient:** reliable evidence does not establish what the project does and who or what it serves. Say explicitly that the project is not adopted or was not initialized because the complete adoption contract is absent or the evidence cannot support a truthful foundation; an indirect status such as paused or incomplete is not the adoption result. Identify the exact evidence inspected, state that the sources do not establish what the project is for, and ask one focused question: what does the project do, and who or what does it serve? Do not add generic product-benefit boilerplate to this concise blocked result.
+- **Partial:** evidence supports some useful foundation but leaves one material purpose, user, goal, authority, safety, value-bearing, or operating boundary unresolved, or supports consequential conflicting interpretations. Preserve every existing artifact. Name the present and missing adoption elements among `/moldea/moldea.yaml`, `/moldea/project.md`, and the owned README awareness block. Summarize the supported truth separately from the highest-value unresolved boundary, and ask one focused clarification that distinguishes the material alternatives.
+- **Sufficient:** evidence establishes a useful project purpose and served people or systems, and no unresolved material boundary would make the persisted foundation misleading. Proceed without a ceremonial question.
+
+Insufficient and partial foundations stop before every dependency, `/moldea/**`, and managed README write. Do not store developer-answerable ambiguity as an unresolved requirement. A repository name, generic label, brief package metadata, placeholder source, or empty export does not establish a foundation by itself. A concise authoritative source can be sufficient when it establishes the necessary truth. Developer-provided context in the initialization request may contribute when its intended authority is clear.
+
+Do not use successful structural validation to justify placeholder truth. Validation proves that files satisfy the repository format; it does not prove that their claims are meaningful or evidence-backed.
+
+After a sufficient foundation validates, report the project as adopted and map the project-owned evidence to the foundation it established. Identify the changed foundation files, validation status, and material diagnostics, including their absence. End with one short, evidence-supported `Next:` action. When no project-specific gap remains, tell the developer to continue normal repository work and add durable context only when a new project fact or agent design needs an owner. Do not suggest agent creation without a separate goal that requires one.
+
+## Establish required tooling before foundation writes
+
+After the foundation is sufficient, reuse the early bounded package-metadata finding. If it establishes a missing compatible local CLI, apply `tooling-installation.md` and complete its authorized safe installation before creating canonical files or the managed README block. Never invoke `validate` or `composition` merely to rediscover known absence. Keep the executable-configuration stop contract and disabled lifecycle scripts; do not bypass installation controls.
+
+An installation failure stops before foundation writes and validation. Preserve existing project files, report any package-manager changes and the exact blocker, and do not claim adoption or automatically roll back dependency changes. A reported installation success does not authorize ignoring known missing or incompatible package metadata. If compatible tooling was already present, do not reinstall it or add an availability probe. The final launcher call still owns executable-provenance verification.
+
+## Write and validate the complete foundation
+
+When repository evidence establishes no manifest relationship, the complete manifest is exactly:
+
+```yaml
+version: 1
+```
+
+The file ends with one LF. Do not add a project name, schema field, metadata, empty optional mappings, a `/moldea/project.md` registration, source globs, or any other relationship merely to describe the project or make the manifest look complete.
+
+When inspected implementation evidence establishes that a specific path materially governs a canonical foundation fact, record a narrow `affectedBy` relationship during this already-authorized initialization. Prefer exact paths or established subsystem boundaries. Do not infer a binding from a README link, project name, or nearby source, add a catch-all glob, or backfill unrelated context. Zero relationships and agents remain valid.
+
+Do not validate a partial foundation. Write `/moldea/moldea.yaml` and `/moldea/project.md`, then invoke only the bundled writer with `node <installed-skill-root>/scripts/managed-readme.mjs --repository <absolute-repository-root>`. It owns the exact managed text, validates the root README, creates or normalizes one safe region atomically, and preserves every byte outside that region. Never reproduce the block manually or use another README-writing path. A malformed, linked, invalid, non-regular, or over-limit README stops initialization without validation. Once the complete three-file foundation exists, use the installed skill's closed launcher for final `validate`. On success, stop without `inspect` or another moldea command. The writer is a bounded local skill operation, not a moldea CLI call. On structural failure, follow the entrypoint's supported recovery rule within the foundation scope: establish the complete correction from bounded diagnostics and necessary contract evidence, repair, and validate the resulting state. When the launcher succeeds, do not enumerate dependencies, inspect CLI internals, resolve executable links, search global installations, use transient tooling, or probe package-manager configuration. An unexpected unavailable or invalid tooling result selects `local-tooling.md` only when the authorized operation can establish it. Report the incomplete state if recovery cannot finish; never discard existing foundation files to hide a failed operation.
+
+## Maintain owned truth
+
+Relevance permits bounded assessment, not automatic persistence. Informational handoffs, feedback reviews, and read-only planning remain read-only; retain necessary maintenance obligations in the host's existing plan or handoff. An unambiguous developer correction to established project truth authorizes the minimal update to its existing canonical owner after adoption and ownership are established. No second request naming moldea or ceremonial confirmation is needed. An explicit read-only constraint still forbids writes. Correction authority does not extend to implementation changes, initialization, repair, new canonical assets, or a broader audit.
+
+A developer can select intended policy without proving that software already implements it. Preserve that distinction, proposals, and unresolved factual conflicts. Apply the existing authority rules instead of guessing. Do not ask whether incidental information should be saved unless the answer is necessary for the requested work.
+
+For an authorized relevant change, use one completion sequence:
+
+1. Retain the host task's authorized outcomes, negative constraints, exact implementation paths and hunks, selected canonical owners, declared mirrors, and affected requirement criteria. Identify owners from direct paths, bounded conversational assessment, or valid `scope` results. A read-only plan records likely obligations without authorizing writes.
+2. Read only selected owners and relevant implementation or consumers. Carry the selected owners and outstanding obligations through host planning, implementation, and handoff. Newly relevant path batches can add owners; unrelated misses cannot cancel earlier owners. Neither compaction summaries nor handoffs supply fresh evidence or write authority.
+3. Compare completed behavior with every still-applicable selected owner and mirror. Correct contradicted declarations, requirements, and documentation as the smallest coherent authorized change set. Preserve accurate and unrelated content and developer work. An implementation-only edit is incomplete while an established owner or mirror states the old behavior.
+4. During authorized context creation or maintenance, add or correct a narrow `affectedBy` declaration only when already-inspected implementation materially governs that owner's fact. Prefer exact paths or established subsystem boundaries; preserve valid declarations. Do not invent bindings, broaden globs for future work, or search unselected owners. Zero relationships remain valid.
+5. Compare the final state and diff with every authorized outcome, constraint, and path. Record material unresolved facts under their exact owners with resolution criteria and related paths. Finish required project-native checks, then run the narrowest launcher-backed structural validation after the final canonical or relationship write. Follow the entrypoint's bounded recovery rule for structural defects. Report actual results and limitations; structural validity does not prove semantic alignment.
+
+## Requirements and removal
+
+Before the first write, compare every affected requirement criterion with the authorized requested outcome and classify it as satisfied, outstanding, or evidence-blocked. A matched implementation change authorizes its necessary requirement-state update. When one criterion becomes satisfied, bind the canonical rewrite with the implementation and rewrite both `description` and `resolution` so neither still claims that condition, while retaining every outstanding or evidence-blocked condition. A direction to leave one condition for later preserves that condition and the requirement, not satisfied wording. Remove the requirement only when every criterion is established and the current operation authorizes the removal. Remove superseded declarations and stale relationships made unnecessary by the change; do not retain compatibility paths without an established supported consumer.
+
+A relationship requires reconsideration, not an automatic edit. If implementation remains aligned, leave canonical state byte-identical and report no more than one line identifying the canonical owner reconsidered, stating that behavior or contracts remain unchanged, and concluding that the owner remains accurate without an edit.
+
+Keep one owner for each fact. Link an existing authority instead of copying its policy into another canonical asset. Synchronize a declared mirror from its source; do not create undeclared distributed copies or cross-repository paths.
+
+## README marker ownership
+
+moldea owns only the content strictly between these exact markers:
+
+```markdown
+<!-- moldea:start -->
+<!-- moldea:end -->
+```
+
+The markers themselves establish the boundary. A README edit activates maintenance only when a changed hunk intersects the owned content. Changes elsewhere in README, including nearby design routing or a path-only match, are unrelated and must not load moldea resources or run the CLI.
+
+When initialization or an established project-repair correction is authorized, invoke the bundled writer for the canonical block. The asset embedded in that writer is the sole managed-text authority. Its first sentence is the repository-owned discovery bridge that makes the cheap gate reliable across compatible hosts without activating further `moldea` work on a miss. Its second sentence routes readers to canonical state. The intentional blank line after the opening marker separates the ownership marker from the Markdown paragraph. Do not add duplicated project context, tool versions, CLI commands, or other workflow rules to the block.
+
+Never rewrite README outside the markers as part of moldea maintenance. The writer rejects malformed, duplicated, or ambiguous marker layouts before writing; report its compact structural error and stop.
+
+After every canonical and mirror write is complete, validate schema-5 metadata as the final moldea command. A validation performed before a later repair does not verify the resulting state and cannot support completion. Inspect only the changed canonical owners, and do not run full-project content inspection.
