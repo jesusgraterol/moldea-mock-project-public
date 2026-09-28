@@ -5,3 +5,9 @@ Harbor Supply is a fictional dealer-support team for refrigerated display equipm
 The case concerns an HC-240 cabinet, moisture at the door edge, and a possible gasket replacement. Staff need a useful review packet while keeping uncertainty and team ownership visible.
 
 This is a source-only prototype. It needs no working service, deployment, credentials, live provider call, or dealer delivery.
+
+<!-- moldea:start -->
+
+For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
+Canonical moldea project state lives under `/moldea/**`; start at `/moldea/project.md`.
+<!-- moldea:end -->
