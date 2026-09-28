@@ -12,3 +12,11 @@ agents:
     affectedBy:
       - /notes/**
       - /records/**
+    unresolved:
+      quarantine-replay:
+        category: lifecycle-policy
+        effect: warning
+        description: Checked-in guidance does not establish whether a quarantined envelope can later be replayed, broker-acknowledged, or indexed.
+        resolution: Establish the replay contract in project-owned evidence, then update the shared ingest context and note lookup guidance.
+        related:
+          - path: /moldea/context/ingest-lifecycle.md
