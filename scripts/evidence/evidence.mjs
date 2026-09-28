@@ -493,11 +493,12 @@ const hashAndReadSession = async (file, onEvent) => {
 };
 
 const extractRequest = (event) => {
-  if (event.kind !== 'message' || event.payload.role !== 'developer') return null;
+  if (event.kind !== 'message' ||
+      !['developer', 'user'].includes(event.payload.role)) return null;
   const content = event.payload.content;
   if (!Array.isArray(content) || content.some((part) => part.type !== 'input_text' ||
       typeof part.text !== 'string')) {
-    fail('A developer message has unsupported content.');
+    fail('An input message has unsupported content.');
   }
   return content.map((part) => part.text).join('\n');
 };
@@ -520,7 +521,7 @@ const verifyAsset = async (asset, assetRoot, attempt, redactionsById, observedRe
   if (!inside(assetRoot, actual)) fail('An asset path escapes its root.');
   const identities = [];
   const effectiveTurns = [];
-  const developerEvents = new Map();
+  const inputEvents = new Map();
   let firstOrdinal = null;
   let lastOrdinal = null;
   const onEvent = asset.kind === 'session' ? (event) => {
@@ -544,7 +545,7 @@ const verifyAsset = async (asset, assetRoot, attempt, redactionsById, observedRe
       observedRedactionIds.add(id);
     }
     const requestText = extractRequest(event);
-    if (requestText !== null) developerEvents.set(event.ordinal, {
+    if (requestText !== null) inputEvents.set(event.ordinal, {
       text: requestText, redactionIds: event.redactionIds,
     });
   } : null;
@@ -578,7 +579,7 @@ const verifyAsset = async (asset, assetRoot, attempt, redactionsById, observedRe
   const ignored = unknown(attempt.ignoredDeveloperEvents) ? [] :
     attempt.ignoredDeveloperEvents.filter((entry) => entry.sessionId === asset.sessionId);
   for (const request of requests) {
-    const event = developerEvents.get(request.eventOrdinal);
+    const event = inputEvents.get(request.eventOrdinal);
     if (!event || event.text !== request.text) {
       fail('A request differs from its recorded session event.');
     }
@@ -588,16 +589,16 @@ const verifyAsset = async (asset, assetRoot, attempt, redactionsById, observedRe
     }
   }
   if (attempt.evidenceStatus === 'complete') {
-    for (const ordinal of developerEvents.keys()) {
+    for (const ordinal of inputEvents.keys()) {
       if (!requests.some((entry) => entry.eventOrdinal === ordinal) &&
           !ignored.some((entry) => entry.eventOrdinal === ordinal)) {
-        fail('A developer message lacks a request or exclusion record.');
+        fail('An input message lacks a request or exclusion record.');
       }
     }
     for (const entry of ignored) {
-      if (!developerEvents.has(entry.eventOrdinal) ||
+      if (!inputEvents.has(entry.eventOrdinal) ||
           requests.some((request) => request.eventOrdinal === entry.eventOrdinal)) {
-        fail('An ignored developer event locator is invalid.');
+        fail('An ignored input event locator is invalid.');
       }
     }
   }

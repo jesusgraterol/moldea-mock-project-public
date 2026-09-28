@@ -120,6 +120,38 @@ test('capture redacts every emitted copy and preserves ordered evidence', async 
   assert.ok(metadata.omissions.includes('encrypted compaction summary omitted'));
 });
 
+test('capture identifies user prompts alongside host input envelopes', async () => {
+  const paths = await setup();
+  const records = [
+    { type: 'session_meta', timestamp: '2026-09-27T00:00:00Z', payload: {
+      id: '0199c0b1-63da-73a1-b532-4e161922ea2f', cli_version: '0.157.1',
+    } },
+    { type: 'response_item', timestamp: '2026-09-27T00:00:01Z', payload: {
+      type: 'message', role: 'developer',
+      content: [{ type: 'input_text', text: '<host-instructions>' }],
+    } },
+    { type: 'response_item', timestamp: '2026-09-27T00:00:02Z', payload: {
+      type: 'message', role: 'user',
+      content: [{ type: 'input_text', text: '<environment-context>' }],
+    } },
+    { type: 'response_item', timestamp: '2026-09-27T00:00:03Z', payload: {
+      type: 'message', role: 'user',
+      content: [{ type: 'input_text', text: 'Build the example.' }],
+    } },
+  ];
+  await writeFile(paths.native, `${records.map((record) => JSON.stringify(record)).join('\n')}\n`);
+  await writeFile(paths.rules, JSON.stringify({ includeBaseInstructions: false, rules: [] }));
+
+  const result = runCapture(paths);
+  assert.equal(result.status, 0, result.stderr);
+  const metadata = JSON.parse(await readFile(join(paths.output, 'session-01.jsonl.gz.meta.json')));
+  assert.deepEqual(metadata.requests.map(({ eventOrdinal, text }) => ({ eventOrdinal, text })), [
+    { eventOrdinal: 1, text: '<host-instructions>' },
+    { eventOrdinal: 2, text: '<environment-context>' },
+    { eventOrdinal: 3, text: 'Build the example.' },
+  ]);
+});
+
 test('capture rejects malformed redactions without emitting a partial asset or sensitive input', async () => {
   const paths = await setup();
   const marker = 'SENSITIVE_MARKER';

@@ -69,7 +69,7 @@ const setup = async () => {
       model: 'gpt-6-sol', effort: 'xhigh', root_turn_id: 'turn-1',
     } },
     { type: 'response_item', timestamp: '2026-09-27T00:00:02Z', payload: {
-      type: 'message', role: 'developer', content: [{ type: 'input_text', text: 'Build the example.' }],
+      type: 'message', role: 'user', content: [{ type: 'input_text', text: 'Build the example.' }],
     } },
   ];
   await writeFile(native, `${events.map((event) => JSON.stringify(event)).join('\n')}\n`);
@@ -162,12 +162,12 @@ const setup = async () => {
     identitySource, identityLog };
 };
 
-const appendDeveloperMessage = async (fixture) => {
+const appendUserMessage = async (fixture) => {
   const assetPath = join(fixture.assetRoot, 'synthetic', 'session.jsonl.gz');
   const original = gunzipSync(await readFile(assetPath)).toString('utf8');
   const nextOrdinal = fixture.attempt.assets[0].lastEventOrdinal + 1;
   const event = { ordinal: nextOrdinal, timestamp: '2026-09-27T00:00:03Z',
-    redactionIds: [], kind: 'message', payload: { role: 'developer',
+    redactionIds: [], kind: 'message', payload: { role: 'user',
       content: [{ type: 'input_text', text: 'Build the example.' }] } };
   const compressed = gzipSync(`${original}${JSON.stringify(event)}\n`);
   await writeFile(assetPath, compressed);
@@ -443,7 +443,7 @@ test('verify binds redaction records to the exported event and field', async () 
 
 test('verify rejects a complete intervention without its original and assisted lineage', async () => {
   const fixture = await setup();
-  const secondEventOrdinal = await appendDeveloperMessage(fixture);
+  const secondEventOrdinal = await appendUserMessage(fixture);
   fixture.attempt.requests[0].afterCommit = fixture.baseCommit;
   fixture.attempt.requests.push({
     ...fixture.attempt.requests[0], id: 'request-two', ordinal: 2,
@@ -467,7 +467,7 @@ test('verify rejects a complete intervention without its original and assisted l
 
 test('verify requires manifest request order to follow native session events', async () => {
   const fixture = await setup();
-  const secondEventOrdinal = await appendDeveloperMessage(fixture);
+  const secondEventOrdinal = await appendUserMessage(fixture);
   fixture.attempt.requests[0].afterCommit = fixture.baseCommit;
   fixture.attempt.requests.push({
     ...fixture.attempt.requests[0], id: 'request-two', ordinal: 2,
