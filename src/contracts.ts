@@ -29,6 +29,11 @@ export const ObservationSchema = z.object({
   eventId: z.string(),
   statement: z.string(),
   aboveThreshold: z.boolean(),
+  normalizedDuration: z.object({
+    value: z.number().finite(),
+    threshold: z.number().finite(),
+    unit: z.literal('ms'),
+  }).optional(),
 });
 
 export const ModelReviewSchema = z.object({

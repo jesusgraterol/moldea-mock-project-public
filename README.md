@@ -10,6 +10,8 @@ The classifier is in `src/alert-classifier.ts`. It exports `alertClassifierGraph
 
 The separate `src/handoff-brief.ts` workflow exports `handoffBriefGraph` and `draftHandoffBrief(classification, synopsisModel)`. Pass the classifier result and another structured model. Its brief keeps the timestamped source timeline, observations, evidence gaps, and classification apart from the model-drafted synopsis. The brief requires human review and performs no operational action.
 
+For `ID-302`, `fixtures/id-302.json` retains both monitor events. The classifier adds comparable millisecond durations to each observation while retaining the original values, units, thresholds, and event IDs in `rawEvents`.
+
 <!-- moldea:start -->
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.

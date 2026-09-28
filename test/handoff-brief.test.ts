@@ -5,6 +5,7 @@ import { classifyAlertBatch } from '../src/alert-classifier.ts';
 import { draftHandoffBrief } from '../src/handoff-brief.ts';
 
 const id301 = JSON.parse(readFileSync(new URL('../fixtures/id-301.json', import.meta.url), 'utf8'));
+const id302 = JSON.parse(readFileSync(new URL('../fixtures/id-302.json', import.meta.url), 'utf8'));
 
 function fakeModel(answer, calls = []) {
   return {
@@ -71,4 +72,31 @@ test('rejects a synopsis that loses a selected raw event ID', async () => {
     draftHandoffBrief(input, fakeModel({ synopsis: 'P-771 needs review.' })),
     /cite each event/,
   );
+});
+
+test('ID-302 compares latency in milliseconds without merging source readings', async () => {
+  const classified = await classifyAlertBatch(id302, fakeModel({
+    reviewEventIds: ['P-773', 'M-302'],
+    hypotheses: [],
+  }));
+  assert.deepEqual(classified.rawEvents, id302.events);
+  assert.deepEqual(classified.observations.map((item) => item.eventId), ['P-773', 'M-302']);
+  assert.deepEqual(classified.observations.map((item) => item.normalizedDuration), [
+    { value: 2800, threshold: 1000, unit: 'ms' },
+    { value: 2800, threshold: 1000, unit: 'ms' },
+  ]);
+  assert.deepEqual(classified.observations.map((item) => item.aboveThreshold), [true, true]);
+  assert.match(classified.observations[0].statement, /2800 ms; supplied threshold 1000 ms/);
+  assert.match(classified.observations[1].statement, /2\.8 seconds; supplied threshold 1 seconds/);
+
+  const calls = [];
+  const brief = await draftHandoffBrief(classified, fakeModel({
+    synopsis: 'P-773 and M-302 each report 2800 ms p95 latency against a 1000 ms threshold; impact and cause remain unknown.',
+  }, calls));
+  assert.deepEqual(brief.sourceEvidence.rawEvents, id302.events);
+  assert.deepEqual(brief.sourceEvidence.timeline.filter((item) => item.eventId).map((item) => item.eventId), ['P-773', 'M-302']);
+  assert.deepEqual(brief.sourceEvidence.observations.map((item) => item.normalizedDuration.value), [2800, 2800]);
+  assert.deepEqual(brief.sourceEvidence.evidenceGaps, ['customer-impact count', 'causal evidence']);
+  assert.equal(brief.modelDraft.synopsis.includes('2800 ms'), true);
+  assert.match(calls[0][1].content, /"value":2\.8,"unit":"seconds"/);
 });

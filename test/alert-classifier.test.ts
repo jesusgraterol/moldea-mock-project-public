@@ -61,3 +61,12 @@ test('requires hypotheses to remain questions tied to supplied events', async ()
     /phrased as questions/,
   );
 });
+
+test('rejects unknown latency units instead of making an unsafe comparison', async () => {
+  const batch = structuredClone(id301);
+  batch.events[1].unit = 'ticks';
+  await assert.rejects(
+    classifyAlertBatch(batch, fakeModel({ reviewEventIds: [], hypotheses: [] })),
+    /Unsupported latency unit/,
+  );
+});

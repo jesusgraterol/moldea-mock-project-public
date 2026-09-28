@@ -1,0 +1,28 @@
+{
+  "batchId": "ID-302",
+  "capturedAt": "2026-09-27T09:22:00Z",
+  "events": [
+    {
+      "id": "P-773",
+      "source": "Pulse",
+      "observedAt": "2026-09-27T09:18:00Z",
+      "service": "booking-api",
+      "signal": "request_latency_p95",
+      "value": 2800,
+      "unit": "ms",
+      "threshold": 1000
+    },
+    {
+      "id": "M-302",
+      "source": "booking API monitor",
+      "observedAt": "2026-09-27T09:19:00Z",
+      "service": "booking-api",
+      "signal": "request_latency_p95",
+      "value": 2.8,
+      "unit": "seconds",
+      "threshold": 1
+    }
+  ],
+  "context": [],
+  "missingEvidence": ["customer-impact count", "causal evidence"]
+}

@@ -13,17 +13,35 @@ export function loadAlertClassifierInstruction() {
   return readFileSync(new URL('../moldea/agents/alert-classifier/instruction.md', import.meta.url), 'utf8');
 }
 
+function normalizeDuration(event) {
+  if (event.signal !== 'request_latency_p95') return undefined;
+  const factor = event.unit === 'ms' ? 1 : event.unit === 'seconds' ? 1000 : undefined;
+  if (factor === undefined) throw new Error(`Unsupported latency unit for ${event.id}: ${event.unit}`);
+  return {
+    value: event.value * factor,
+    threshold: event.threshold * factor,
+    unit: 'ms',
+  };
+}
+
 function observe({ batch }) {
   const parsed = BatchSchema.parse(batch);
   const ids = parsed.events.map((event) => event.id);
   if (new Set(ids).size !== ids.length) throw new Error('Event IDs must be unique within a batch');
 
   return {
-    observations: parsed.events.map((event) => ({
-      eventId: event.id,
-      statement: `${event.source} observed ${event.service} ${event.signal} at ${event.value} ${event.unit}; supplied threshold ${event.threshold} ${event.unit}.`,
-      aboveThreshold: event.value > event.threshold,
-    })),
+    observations: parsed.events.map((event) => {
+      const normalizedDuration = normalizeDuration(event);
+      return {
+        eventId: event.id,
+        statement: `${event.source} observed ${event.service} ${event.signal} at ${event.value} ${event.unit}; supplied threshold ${event.threshold} ${event.unit}.` +
+          (normalizedDuration ? ` Comparable duration: ${normalizedDuration.value} ms against ${normalizedDuration.threshold} ms.` : ''),
+        aboveThreshold: normalizedDuration
+          ? normalizedDuration.value > normalizedDuration.threshold
+          : event.value > event.threshold,
+        ...(normalizedDuration ? { normalizedDuration } : {}),
+      };
+    }),
   };
 }
 
