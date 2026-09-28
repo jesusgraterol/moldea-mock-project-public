@@ -4,6 +4,8 @@ Catalog Studio helps merchandisers at a fictional home-goods shop draft product 
 
 The checked-in records cover the Harbor Linen Throw (`CS-214`) and a stoneware mug (`CS-215`). Vendor slogans and proposed marketing lines are separate from confirmed product facts. The throw has no emissions evidence.
 
+Run `npm run list:fact-sheets` to list the checked-in fact sheets by ID and title.
+
 The [CS-214 editor review example](examples/cs-214-editor-review.md) shows a supported blurb and the claims that need verification.
 
 This is a source-only prototype. It needs no working service, deployment, credentials, live provider call, or storefront publication.

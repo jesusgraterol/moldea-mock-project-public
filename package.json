@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "list:fact-sheets": "node scripts/list-fact-sheets.mjs",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
