@@ -1,0 +1,5 @@
+{
+  "name": "harbor-supply",
+  "private": true,
+  "type": "module"
+}
