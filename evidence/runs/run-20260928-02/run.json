@@ -45,11 +45,11 @@
     "evidence/runs/run-20260928-02/attempts/field-notes-02.json",
     "evidence/runs/run-20260928-02/attempts/harbor-supply-02.json"
   ],
-  "evidenceStatus": "incomplete",
+  "evidenceStatus": "complete",
   "reviewStatus": "pending",
   "review": null,
   "limitations": [
-    "Draft Release assets were uploaded and downloaded with matching hashes; publication under the final tag and independent skill-agent review remain pending.",
+    "Independent skill-agent review is pending.",
     "This is real-session evidence, not semantic evaluation or adapter qualification."
   ]
 }

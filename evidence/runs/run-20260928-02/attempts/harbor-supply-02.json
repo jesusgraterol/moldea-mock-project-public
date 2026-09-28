@@ -14,7 +14,7 @@
   "observedSummary": "Three-turn Harbor Supply staff review prototype and policy correction; no provider call or publication occurred.",
   "actorOutcome": "concluded",
   "outcomeReason": null,
-  "evidenceStatus": "incomplete",
+  "evidenceStatus": "complete",
   "reviewStatus": "pending",
   "review": null,
   "sessions": [
@@ -774,7 +774,6 @@
   "recovery": null,
   "predecessorAttemptId": null,
   "limitations": [
-    "All declared assets were uploaded to a draft GitHub Release and downloaded with matching sizes and SHA-256 hashes; publication under the final tag remains pending.",
     "The per-turn package composition was reconstructed from committed lockfiles and installed files after the conversation, not sampled independently during each turn.",
     "No natural compaction event occurred; compaction behavior is not assessed.",
     "Independent skill-agent review is pending."
