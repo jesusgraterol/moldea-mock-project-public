@@ -20,3 +20,25 @@ agents:
     affectedBy:
       - /src/alert-classifier.ts
       - /src/contracts.ts
+  handoff-brief:
+    runtime:
+      id: langgraph
+      guidance: /moldea/runtimes/handoff-langgraph.md
+    bindings:
+      runtimeAgent:
+        path: /src/handoff-brief.ts
+        symbol: handoffBriefGraph
+      inputSchema:
+        path: /src/handoff-contracts.ts
+        symbol: HandoffInputSchema
+      outputSchema:
+        path: /src/handoff-contracts.ts
+        symbol: HandoffOutputSchema
+      instructionLoader:
+        path: /src/handoff-brief.ts
+        symbol: loadHandoffBriefInstruction
+    affectedBy:
+      - /src/handoff-brief.ts
+      - /src/handoff-contracts.ts
+      - /src/contracts.ts
+      - /src/alert-classifier.ts

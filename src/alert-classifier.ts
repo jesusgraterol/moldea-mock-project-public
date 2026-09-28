@@ -59,6 +59,7 @@ function assemble({ batch, observations, modelReview }) {
 
   return { result: AlertReviewSchema.parse({
     batchId: batch.batchId,
+    capturedAt: batch.capturedAt,
     rawEvents: batch.events,
     observations,
     context: batch.context,

@@ -8,6 +8,8 @@ This is a source-only prototype. It needs no working service, deployment, creden
 
 The classifier is in `src/alert-classifier.ts`. It exports `alertClassifierGraph` and `classifyAlertBatch(batch, reviewModel)`. Pass a model with `withStructuredOutput(schema).invoke(messages)` to the wrapper; `fixtures/id-301.json` is a sample batch. The graph returns raw events, threshold observations, event IDs selected for engineer review, and explicitly unverified hypothesis questions. Run `npm test` for the local fixture checks; no provider is called.
 
+The separate `src/handoff-brief.ts` workflow exports `handoffBriefGraph` and `draftHandoffBrief(classification, synopsisModel)`. Pass the classifier result and another structured model. Its brief keeps the timestamped source timeline, observations, evidence gaps, and classification apart from the model-drafted synopsis. The brief requires human review and performs no operational action.
+
 <!-- moldea:start -->
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.

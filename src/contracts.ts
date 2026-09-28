@@ -11,11 +11,17 @@ export const EventSchema = z.object({
   threshold: z.number().finite(),
 });
 
+export const ContextEventSchema = z.object({
+  occurredAt: z.string().min(1),
+  source: z.string().min(1),
+  statement: z.string().min(1),
+});
+
 export const BatchSchema = z.object({
   batchId: z.string().min(1),
   capturedAt: z.string().min(1),
   events: z.array(EventSchema).min(1),
-  context: z.array(z.string()),
+  context: z.array(ContextEventSchema),
   missingEvidence: z.array(z.string()),
 });
 
@@ -35,9 +41,10 @@ export const ModelReviewSchema = z.object({
 
 export const AlertReviewSchema = z.object({
   batchId: z.string(),
+  capturedAt: z.string(),
   rawEvents: z.array(EventSchema),
   observations: z.array(ObservationSchema),
-  context: z.array(z.string()),
+  context: z.array(ContextEventSchema),
   missingEvidence: z.array(z.string()),
   engineerReview: z.object({
     recommended: z.boolean(),

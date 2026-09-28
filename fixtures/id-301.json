@@ -23,6 +23,12 @@
       "threshold": 1000
     }
   ],
-  "context": ["booking-api release 2.14 completed at 09:08Z; temporal context only"],
+  "context": [
+    {
+      "occurredAt": "2026-09-27T09:08:00Z",
+      "source": "deployment log",
+      "statement": "booking-api release 2.14 completed; temporal context only"
+    }
+  ],
   "missingEvidence": ["customer-impact count", "database-health evidence"]
 }
