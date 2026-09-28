@@ -1,0 +1,12 @@
+version: 1
+agents:
+  product-copy-drafter:
+    runtime:
+      id: google-genai
+    bindings:
+      runtimeAgent:
+        path: /src/product-copy-drafter.ts
+        symbol: draftProductFactSheet
+      instructionLoader:
+        path: /src/instructions.ts
+        symbol: loadProductCopyInstruction
