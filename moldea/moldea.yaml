@@ -1,0 +1,14 @@
+version: 1
+context:
+  /moldea/context/ingest-lifecycle.md:
+    affectedBy:
+      - /notes/ingest-lifecycle.md
+agents:
+  note-lookup:
+    runtime:
+      id: custom
+    context:
+      - /moldea/context/ingest-lifecycle.md
+    affectedBy:
+      - /notes/**
+      - /records/**
