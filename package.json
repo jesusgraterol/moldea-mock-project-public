@@ -1,0 +1,17 @@
+{
+  "name": "moldea-mock-project-private",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "node --test scripts/evidence/evidence.test-unit.mjs",
+    "test:integration": "node --test scripts/evidence/evidence.test-integration.mjs"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  }
+}

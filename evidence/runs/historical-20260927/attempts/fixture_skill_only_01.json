@@ -1,0 +1,105 @@
+{
+  "formatVersion": 1,
+  "runId": "historical-20260927",
+  "scenarioId": "skill_only",
+  "attemptId": "fixture_skill_only_01",
+  "branch": "fixture_skill_only_01",
+  "baseCommit": "c3ecda12e853b527a96c6ca81150083b0224643a",
+  "finalCommit": "fde69e844b3aae3fc4d9ef7cbc65e699817d2b10",
+  "lastDurableCommit": "fde69e844b3aae3fc4d9ef7cbc65e699817d2b10",
+  "scenarioDefinition": {
+    "state": "unknown",
+    "reason": "Original scenario wording is in earlier planning records and native sessions, not imported here."
+  },
+  "observedSummary": "Repository-local skill selected in two read-only requests; project remains unadopted.",
+  "actorOutcome": "unknown",
+  "outcomeReason": "Historical outcome has not been independently classified in this repository record.",
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "unknown",
+  "review": {
+    "state": "unknown",
+    "reason": "The native skill review has not been imported into repository evidence."
+  },
+  "sessions": [
+    {
+      "id": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "hostVersion": "0.157.1",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "requestedEffort": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": {
+            "state": "unknown",
+            "reason": "Requested settings are not durably available in this record."
+          }
+        },
+        {
+          "eventOrdinal": 30,
+          "requestedModel": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "requestedEffort": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": {
+            "state": "unknown",
+            "reason": "Requested settings are not durably available in this record."
+          }
+        }
+      ]
+    }
+  ],
+  "requests": {
+    "state": "unknown",
+    "reason": "Exact developer requests and event mappings have not been imported."
+  },
+  "ignoredDeveloperEvents": {
+    "state": "unknown",
+    "reason": "Developer-event classification has not been imported."
+  },
+  "checks": {
+    "state": "unknown",
+    "reason": "Historical verification records have not been imported."
+  },
+  "installations": {
+    "state": "unknown",
+    "reason": "Actual resolved CLI/Core/adapter composition has not been imported."
+  },
+  "skillRelease": "v6.0.0",
+  "assets": {
+    "state": "unknown",
+    "reason": "No sanitized historical session asset has been published or indexed."
+  },
+  "interventions": {
+    "state": "unknown",
+    "reason": "Intervention lineage has not been mapped into this format."
+  },
+  "failures": {
+    "state": "unknown",
+    "reason": "Failure events have not been mapped into this format."
+  },
+  "redactions": [],
+  "recovery": {
+    "state": "unknown",
+    "reason": "No historical recovery record has been imported."
+  },
+  "predecessorAttemptId": null,
+  "limitations": [
+    "The branch and final commit are available in Git; the native session is still outside repository evidence.",
+    "Effective turn settings and host version were read from the identified native session, without importing its conversation.",
+    "Conversation, request-to-commit mapping, asset integrity and independent review remain unavailable from this index."
+  ]
+}

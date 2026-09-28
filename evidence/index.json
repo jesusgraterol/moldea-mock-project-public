@@ -1,0 +1,19 @@
+{
+  "formatVersion": 1,
+  "runs": [
+    {
+      "runId": "historical-20260927",
+      "manifestPath": "evidence/runs/historical-20260927/run.json",
+      "summary": "Fourteen original fixture attempts; branch history indexed, session assets and full reviews not imported.",
+      "evidenceStatus": "incomplete",
+      "reviewStatus": "unknown"
+    },
+    {
+      "runId": "run-20260928-02",
+      "manifestPath": "evidence/runs/run-20260928-02/run.json",
+      "summary": "Four projects and thirteen conversation turns, covering linked agent guidance, unrelated-work silence, shared context, and narrow permission to update it.",
+      "evidenceStatus": "complete",
+      "reviewStatus": "complete"
+    }
+  ]
+}

@@ -1,1 +1,31 @@
 # moldea-mock-project-public
+
+`main` indexes mock projects built in real coding-agent conversations. Each numbered `fixture_*` branch preserves the original source commits. The latest run includes sanitized session transcripts and identity logs as Release assets; older attempts remain explicitly incomplete historical records.
+
+The base for fresh project attempts is `c3ecda12e853b527a96c6ca81150083b0224643a`. Planning and index commits on `main` are separate from that base.
+
+## Project blueprint
+
+- Fixture branches hold each project's source and canonical moldea state with its Git history. `main` holds the cross-run index, scenario definitions, and evidence records.
+- [`evidence/index.json`](evidence/index.json) is the durable entry point for run and attempt records. [`evidence/README.md`](evidence/README.md) defines the evidence format, capture/privacy workflow, verification, later review, and public export contract. The 14 existing attempts are indexed as incomplete historical evidence; their branches and native sessions remain unchanged.
+- `scripts/evidence/` contains a small Node 24 capture and verification utility with focused synthetic tests. `npm test` checks that utility only. It does not test the fixture applications or the moldea skill.
+- `/docs` is reserved for concise, quickly scannable documentation of essential, durable project concepts and processes. API and HTTP endpoint documentation belongs in the established location outside `/docs`.
+
+Core 5.0.1, CLI 9.0.1 and Skill 6.0.1 were verified as published before the 2026-09-28 run. That run contains four new fixture attempts with complete captured evidence in the repository index and [the GitHub Release tagged `run-20260928-02`](https://github.com/jesusgraterol/moldea-mock-project-public/releases/tag/run-20260928-02). [Independent review](evidence/runs/run-20260928-02/reviews/skill-review.md) is complete. It found no new skill or package defect requiring a change; an actor gate-order miss and the limits of this evidence remain explicit.
+
+| Scenario | Branch | Date | Skill release | Commit | Actor session | Observed state |
+| --- | --- | --- | --- | --- | --- | --- |
+| Skill only | `fixture_skill_only_01` | 2026-09-27 | `v6.0.0` | `fde69e844b3aae3fc4d9ef7cbc65e699817d2b10` | `01a0e3b1-634b-7351-b532-4e161922ea2f` | Repository-local skill selected in two read-only requests; project remains unadopted. |
+| Cedar Workshop | `fixture_initialized_01` | 2026-09-27 | `v6.0.0` | `ec65ab326e5196c6fb77ce2e765c60ebac3881cf` | `01a0e3b7-4902-7e80-bd22-cc8737e962f5` | Foundation initialized, then waitlist policy clarified; no source or agents. |
+| Trail Ledger | `fixture_context_only_01` | 2026-09-27 | `v6.0.0` | `6a667a606e9cf6e2ea0dc18195178c0fd6fd05a8` | `01a0e3c0-b17d-7d00-aa06-8989ad5b6471` | Adopted a zero-agent availability prototype; a later repair-rule request led to timestamped safety checks after a clarification. |
+| Vendor Desk | `fixture_anthropic_01` | 2026-09-27 | `v6.0.0` | `37024935217dd5f555356aa6f1031811c4a8a91a` | `01a0e3d4-a25f-7321-ae2e-661372d809e4` | Adopted an Anthropic reviewer; a later evidence request led to structured recycled-content claims and independent-document gaps. |
+| Catalog Studio | `fixture_google_genai_01` | 2026-09-27 | `v6.0.0` | `33934ac766e6cecdc9f68e51182d616729a03b86` | `01a0e3ef-b90c-7741-a939-4cde36ebe906` | Adopted a Google copy assistant, refined unsupported-claim guidance, then added a separate local record-listing utility. |
+| Parcel Desk | `fixture_openai_01` | 2026-09-27 | `v6.0.0` | `a63fa9326f478300dade3840c780dcdaa94f253c` | `01a0e3ff-bfb1-71d2-8391-34269dac7fab` | Adopted a direct OpenAI shipment explainer; a later stale-scan case added date-only scans and passed-estimate guidance. |
+| Case Router | `fixture_langchain_01` | 2026-09-27 | `v6.0.0` | `e2bbb4930c180276ca230054f9526e86054e4cdb` | `01a0e416-2f59-7dd3-904c-ea705ecf79b7` | Adopted a LangChain queue recommender; a later mixed deletion and billing request gave privacy review priority. |
+| Mesa Help | `fixture_cloudflare_agents_01` | 2026-09-27 | `v6.0.0` | `c42f414761603563fb43c637f77b4ce91b7b84f6` | `01a0e425-7b70-7561-95ba-91cdd5b0dc66` | Adopted customer chat, added staff routing, then moved staff review to a Think policy lookup for a delivery-scan conflict. |
+| Incident Desk | `fixture_langgraph_01` | 2026-09-27 | `v6.0.0` | `db1f871fe49b878cb3d31650627fed61a536d1f9` | `01a0e440-2914-7e21-9831-8e560431a241` | Adopted alert classification, added a handoff brief, then normalized two separate monitor readings with different duration units. |
+| Store Guide | `fixture_vercel_ai_sdk_01` | 2026-09-27 | `v6.0.0` | `3ed3dabc1baea2db4d9f7390c2079dbd5ac51356` | `01a0e45a-1457-74d2-8c13-508aafa811e0` | Adopted a lookup-assisted catalog guide, then added a one-shot staff comparison card from the same product facts. |
+| Release Desk | `fixture_claude_agent_sdk_01` | 2026-09-27 | `v6.0.0` | `799408d1bf3186bc60c1e8563bc13677eddab6cf` | `01a0e469-de56-7732-ace5-75f6b7298cfe` | Adopted a release-note drafter, discussed a reviewer read-only, then added held-record subagent review and refined notification classification. |
+| Trip Care | `fixture_openai_agents_sdk_01` | 2026-09-27 | `v6.0.0` | `8068749e8d1f6b761446dfe1c9255ba8837fd537` | `01a0e488-2b21-77a2-8fa0-ec9f390d59f1` | Adopted itinerary guidance, added a fare-rule handoff, discussed carrier cancellation read-only, then added TC-202 handling after authorization. |
+| Field Notes | `fixture_eve_01` | 2026-09-27 | `v6.0.0` | `372922c076fc9fadbf74c04bbd8169c2a842023a` | `01a0e49c-596a-72a1-bf2d-123680befeaf` | Adopted operational note guidance, added a knowledge subagent with curated lookup, then added note-only search by former stream name. Native session includes natural compaction. |
+| Harbor Supply | `fixture_custom_complex_01` | 2026-09-27 | `v6.0.0` | `5cb001618a0f6e7ad2ddaddb86ef2ff3ce7dc897` | `01a0e4ba-01a6-7db0-ab0c-544e22c55dd3` | Adopted a dealer-support foundation, planned read-only, built equipment/claims/fulfillment review handoffs into a reply preview, then applied an 18-month gasket-warranty policy. Source-only model integration remains unresolved; native session includes natural compaction. |
