@@ -1,0 +1,39 @@
+{
+  "formatVersion": 1,
+  "runId": "historical-20260927",
+  "date": "2026-09-27",
+  "summary": "Fourteen original fixture attempts; branch history indexed, session assets and full reviews not imported.",
+  "expectedActor": {
+    "state": "unknown",
+    "reason": "A single run-wide requested model and effort was not established for these historical attempts."
+  },
+  "prerequisites": {
+    "state": "unknown",
+    "reason": "The original run used skill v6.0.0; its full installed package composition is not indexed."
+  },
+  "attempts": [
+    "evidence/runs/historical-20260927/attempts/fixture_skill_only_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_initialized_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_context_only_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_anthropic_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_google_genai_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_openai_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_langchain_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_cloudflare_agents_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_langgraph_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_vercel_ai_sdk_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_claude_agent_sdk_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_openai_agents_sdk_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_eve_01.json",
+    "evidence/runs/historical-20260927/attempts/fixture_custom_complex_01.json"
+  ],
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "unknown",
+  "review": {
+    "state": "unknown",
+    "reason": "A native review exists but is not imported as durable repository evidence."
+  },
+  "limitations": [
+    "Native conversations remain local; no asset locations or hashes are claimed."
+  ]
+}

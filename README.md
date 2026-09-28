@@ -4,6 +4,15 @@
 
 The base for fresh project attempts is `c3ecda12e853b527a96c6ca81150083b0224643a`. Planning and index commits on `main` are separate from that base.
 
+## Project blueprint
+
+- Fixture branches hold each project's source and canonical moldea state with its Git history. `main` holds the cross-run index, scenario definitions, and evidence records.
+- [`evidence/index.json`](evidence/index.json) is the durable entry point for run and attempt records. [`evidence/README.md`](evidence/README.md) defines the evidence format, capture/privacy workflow, verification, later review, and public export contract. The 14 existing attempts are indexed as incomplete historical evidence; their branches and native sessions remain unchanged.
+- `scripts/evidence/` contains a small Node 24 capture and verification utility with focused synthetic tests. `npm test` checks that utility only. It does not test the fixture applications or the moldea skill.
+- `/docs` is reserved for concise, quickly scannable documentation of essential, durable project concepts and processes. API and HTTP endpoint documentation belongs in the established location outside `/docs`.
+
+Repository evidence preparation can proceed while Core 5.0.1, CLI 9.0.1 and Skill 6.0.1 are finished separately. A later actor run requires those releases to be published and their installed identities verified, plus separate execution authorization. No new run is represented by the prepared scenarios.
+
 | Scenario | Branch | Date | Skill release | Commit | Actor session | Observed state |
 | --- | --- | --- | --- | --- | --- | --- |
 | Skill only | `fixture_skill_only_01` | 2026-09-27 | `v6.0.0` | `fde69e844b3aae3fc4d9ef7cbc65e699817d2b10` | `01a0e3b1-634b-7351-b532-4e161922ea2f` | Repository-local skill selected in two read-only requests; project remains unadopted. |

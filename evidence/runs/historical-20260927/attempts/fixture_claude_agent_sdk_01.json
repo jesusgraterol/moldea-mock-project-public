@@ -1,0 +1,173 @@
+{
+  "formatVersion": 1,
+  "runId": "historical-20260927",
+  "scenarioId": "claude_agent_sdk",
+  "attemptId": "fixture_claude_agent_sdk_01",
+  "branch": "fixture_claude_agent_sdk_01",
+  "baseCommit": "c3ecda12e853b527a96c6ca81150083b0224643a",
+  "finalCommit": "799408d1bf3186bc60c1e8563bc13677eddab6cf",
+  "lastDurableCommit": "799408d1bf3186bc60c1e8563bc13677eddab6cf",
+  "scenarioDefinition": {
+    "state": "unknown",
+    "reason": "Original scenario wording is in earlier planning records and native sessions, not imported here."
+  },
+  "observedSummary": "Adopted a release-note drafter, discussed a reviewer read-only, then added held-record subagent review and refined notification classification.",
+  "actorOutcome": "unknown",
+  "outcomeReason": "Historical outcome has not been independently classified in this repository record.",
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "unknown",
+  "review": {
+    "state": "unknown",
+    "reason": "The native skill review has not been imported into repository evidence."
+  },
+  "sessions": [
+    {
+      "id": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "hostVersion": "0.157.1",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "requestedEffort": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": {
+            "state": "unknown",
+            "reason": "Requested settings are not durably available in this record."
+          }
+        },
+        {
+          "eventOrdinal": 320,
+          "requestedModel": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "requestedEffort": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": {
+            "state": "unknown",
+            "reason": "Requested settings are not durably available in this record."
+          }
+        },
+        {
+          "eventOrdinal": 387,
+          "requestedModel": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "requestedEffort": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": {
+            "state": "unknown",
+            "reason": "Requested settings are not durably available in this record."
+          }
+        },
+        {
+          "eventOrdinal": 425,
+          "requestedModel": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "requestedEffort": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": {
+            "state": "unknown",
+            "reason": "Requested settings are not durably available in this record."
+          }
+        },
+        {
+          "eventOrdinal": 655,
+          "requestedModel": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "requestedEffort": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": {
+            "state": "unknown",
+            "reason": "Requested settings are not durably available in this record."
+          }
+        },
+        {
+          "eventOrdinal": 786,
+          "requestedModel": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "requestedEffort": {
+            "state": "unknown",
+            "reason": "The historical driver request is not imported."
+          },
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": {
+            "state": "unknown",
+            "reason": "Requested settings are not durably available in this record."
+          }
+        }
+      ]
+    }
+  ],
+  "requests": {
+    "state": "unknown",
+    "reason": "Exact developer requests and event mappings have not been imported."
+  },
+  "ignoredDeveloperEvents": {
+    "state": "unknown",
+    "reason": "Developer-event classification has not been imported."
+  },
+  "checks": {
+    "state": "unknown",
+    "reason": "Historical verification records have not been imported."
+  },
+  "installations": {
+    "state": "unknown",
+    "reason": "Actual resolved CLI/Core/adapter composition has not been imported."
+  },
+  "skillRelease": "v6.0.0",
+  "assets": {
+    "state": "unknown",
+    "reason": "No sanitized historical session asset has been published or indexed."
+  },
+  "interventions": {
+    "state": "unknown",
+    "reason": "Intervention lineage has not been mapped into this format."
+  },
+  "failures": {
+    "state": "unknown",
+    "reason": "Failure events have not been mapped into this format."
+  },
+  "redactions": [],
+  "recovery": {
+    "state": "unknown",
+    "reason": "No historical recovery record has been imported."
+  },
+  "predecessorAttemptId": null,
+  "limitations": [
+    "The branch and final commit are available in Git; the native session is still outside repository evidence.",
+    "Effective turn settings and host version were read from the identified native session, without importing its conversation.",
+    "Conversation, request-to-commit mapping, asset integrity and independent review remain unavailable from this index."
+  ]
+}
