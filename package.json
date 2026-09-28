@@ -2,6 +2,10 @@
   "name": "harbor-supply",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "node scripts/build-review.mjs",
+    "test": "npm run build && node --test"
+  },
   "devDependencies": {
     "@moldea.ai/cli": "9.0.1"
   }

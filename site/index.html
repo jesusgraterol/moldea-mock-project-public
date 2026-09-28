@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102638">
+  <meta name="description" content="Staff review and dealer reply preview for Harbor Supply case HS-214.">
+  <title>HS-214 review · Harbor Supply</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script id="case-data" type="application/json"><!-- CASE_DATA --></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand" aria-label="Harbor Supply">H<span class="brand-mark">/</span>S <span class="brand-name">Harbor Supply</span></div>
+    <div class="header-label">Dealer support <span aria-hidden="true">/</span> Case review</div>
+  </header>
+
+  <main>
+    <section class="case-heading" aria-labelledby="case-title">
+      <div>
+        <p class="eyebrow">CASE HS-214 <span class="eyebrow-sep">·</span> 27 SEP 2026</p>
+        <h1 id="case-title">Door-edge moisture<br><span>HC-240 cabinet</span></h1>
+        <p class="case-summary">Ridgeway Foodservice <span aria-hidden="true">→</span> Goldfinch Market</p>
+      </div>
+      <div class="decision-note" role="status">
+        <span class="decision-icon" aria-hidden="true">!</span>
+        <div><strong>Manager decision pending</strong><span>Every dealer reply and part, claim, shipment, or safety commitment needs approval.</span></div>
+      </div>
+    </section>
+
+    <div class="workspace">
+      <section class="review-column" aria-labelledby="review-title">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / STAFF EVIDENCE</p><h2 id="review-title">Desk reviews</h2></div>
+          <p>Findings and unanswered questions stay with the desk that owns them.</p>
+        </div>
+        <div id="reviews" class="review-list"></div>
+      </section>
+
+      <aside class="reply-column" aria-labelledby="reply-title">
+        <div class="reply-panel">
+          <div class="reply-topline"><span>02 / DEALER REPLY</span><span class="preview-pill">PREVIEW ONLY</span></div>
+          <h2 id="reply-title">Draft for manager review</h2>
+          <p class="reply-source">Assembled from Equipment, Claims, and Fulfillment desk handoffs.</p>
+          <div class="mail-meta"><span>To</span><strong id="reply-recipient"></strong><span>Subject</span><strong id="reply-subject"></strong></div>
+          <div id="reply-body" class="reply-body"></div>
+          <div class="approval-bar"><span class="approval-lock" aria-hidden="true">●</span><div><strong>Not approved for sending</strong><span>The manager makes the final decision.</span></div></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>Harbor Supply <span aria-hidden="true">/</span> Source-only staff prototype <span aria-hidden="true">/</span> HS-214</footer>
+</body>
+</html>
