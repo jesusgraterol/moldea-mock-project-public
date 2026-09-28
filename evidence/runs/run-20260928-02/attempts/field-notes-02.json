@@ -11,12 +11,12 @@
     "path": "evidence/scenarios/field-notes.md",
     "commit": "2cde56d0c5acf0d0b0ddcc03c43607832a805285"
   },
-  "observedSummary": "Four-turn Field Notes focused context and later narrow write authorization; one agent-owned replay requirement remains unresolved.",
+  "observedSummary": "Kept ingest policy in shared project context. Two discussion turns made no edits; a later correction updated the agreed policy and left replay undecided.",
   "actorOutcome": "concluded",
   "outcomeReason": null,
   "evidenceStatus": "complete",
-  "reviewStatus": "pending",
-  "review": null,
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20260928-02/reviews/skill-review.md",
   "sessions": [
     {
       "id": "01a0e5d3-e614-7bb3-81d9-ed7835e2a761",
@@ -194,7 +194,8 @@
         "run-20260928-02/field-session-01.jsonl.gz",
         "run-20260928-02/field-identity-01.json",
         "git/97ae2f7f6d2e5b39afae07ab4ce95667ebde503c/9f7224780efad79128950f23ab6d31ef41e1c5eb",
-        "git/c3ecda12e853b527a96c6ca81150083b0224643a/9f7224780efad79128950f23ab6d31ef41e1c5eb"
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/9f7224780efad79128950f23ab6d31ef41e1c5eb",
+        "evidence/runs/run-20260928-02/reviews/skill-review.md"
       ],
       "asset": null
     },
@@ -206,6 +207,16 @@
       "coveredArtifacts": [
         "run-20260928-02/field-session-01.jsonl.gz",
         "run-20260928-02/field-identity-01.json"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "independent skill review",
+      "inputCommit": "9f7224780efad79128950f23ab6d31ef41e1c5eb",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20260928-02/reviews/skill-review.md"
       ],
       "asset": null
     }
@@ -1621,6 +1632,6 @@
   "limitations": [
     "The per-turn package composition was reconstructed from committed lockfiles and installed files after the conversation, not sampled independently during each turn.",
     "No natural compaction event occurred; compaction behavior is not assessed.",
-    "Independent skill-agent review is pending."
+    "This attempt uses a custom file-reading arrangement, not an Eve SDK integration."
   ]
 }

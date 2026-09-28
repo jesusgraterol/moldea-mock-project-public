@@ -11,12 +11,12 @@
     "path": "evidence/scenarios/harbor-supply.md",
     "commit": "2cde56d0c5acf0d0b0ddcc03c43607832a805285"
   },
-  "observedSummary": "Three-turn Harbor Supply staff review prototype and policy correction; no provider call or publication occurred.",
+  "observedSummary": "Built a staff review screen with deterministic desk handoffs. An 18-month warranty correction updated the claims packet while approval and shipping promises stayed with the manager.",
   "actorOutcome": "concluded",
   "outcomeReason": null,
   "evidenceStatus": "complete",
-  "reviewStatus": "pending",
-  "review": null,
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20260928-02/reviews/skill-review.md",
   "sessions": [
     {
       "id": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
@@ -159,7 +159,8 @@
         "run-20260928-02/harbor-session-01.jsonl.gz",
         "run-20260928-02/harbor-identity-01.json",
         "git/3297e16dda8853e4ff7cd70ddf11066dd83e9a9b/3392532c8cb43d29abe97e6d25e7c180988b13f7",
-        "git/c3ecda12e853b527a96c6ca81150083b0224643a/3392532c8cb43d29abe97e6d25e7c180988b13f7"
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/3392532c8cb43d29abe97e6d25e7c180988b13f7",
+        "evidence/runs/run-20260928-02/reviews/skill-review.md"
       ],
       "asset": null
     },
@@ -171,6 +172,16 @@
       "coveredArtifacts": [
         "run-20260928-02/harbor-session-01.jsonl.gz",
         "run-20260928-02/harbor-identity-01.json"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "independent skill review",
+      "inputCommit": "3392532c8cb43d29abe97e6d25e7c180988b13f7",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20260928-02/reviews/skill-review.md"
       ],
       "asset": null
     }
@@ -776,6 +787,6 @@
   "limitations": [
     "The per-turn package composition was reconstructed from committed lockfiles and installed files after the conversation, not sampled independently during each turn.",
     "No natural compaction event occurred; compaction behavior is not assessed.",
-    "Independent skill-agent review is pending."
+    "The preview is deterministic application code with no model calls or declared agents; it does not establish multi-agent provider behavior."
   ]
 }

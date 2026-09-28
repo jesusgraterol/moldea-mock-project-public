@@ -11,12 +11,12 @@
     "path": "evidence/scenarios/catalog-studio.md",
     "commit": "2cde56d0c5acf0d0b0ddcc03c43607832a805285"
   },
-  "observedSummary": "Three-turn Catalog Studio direct SDK drafting and unrelated listing work; canonical state remained unchanged on the last request.",
+  "observedSummary": "Created a product-copy drafter and tightened unsupported-claim guidance. A later, unrelated listing command left canonical context untouched.",
   "actorOutcome": "concluded",
   "outcomeReason": null,
   "evidenceStatus": "complete",
-  "reviewStatus": "pending",
-  "review": null,
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20260928-02/reviews/skill-review.md",
   "sessions": [
     {
       "id": "01a0e5cb-c62a-70e1-8b54-fbb8fc6eda6b",
@@ -172,7 +172,8 @@
         "run-20260928-02/catalog-session-01.jsonl.gz",
         "run-20260928-02/catalog-identity-01.json",
         "git/fb7930dd840f19d1e595f0878206ec74e947899d/911a00f93024ab9c108c45d404fe60ca430a350a",
-        "git/c3ecda12e853b527a96c6ca81150083b0224643a/911a00f93024ab9c108c45d404fe60ca430a350a"
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/911a00f93024ab9c108c45d404fe60ca430a350a",
+        "evidence/runs/run-20260928-02/reviews/skill-review.md"
       ],
       "asset": null
     },
@@ -184,6 +185,16 @@
       "coveredArtifacts": [
         "run-20260928-02/catalog-session-01.jsonl.gz",
         "run-20260928-02/catalog-identity-01.json"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "independent skill review",
+      "inputCommit": "911a00f93024ab9c108c45d404fe60ca430a350a",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20260928-02/reviews/skill-review.md"
       ],
       "asset": null
     }
@@ -1366,6 +1377,6 @@
   "limitations": [
     "The per-turn package composition was reconstructed from committed lockfiles and installed files after the conversation, not sampled independently during each turn.",
     "No natural compaction event occurred; compaction behavior is not assessed.",
-    "Independent skill-agent review is pending."
+    "Provider instruction wiring was inspected in source; no live Google Gen AI call was verified."
   ]
 }

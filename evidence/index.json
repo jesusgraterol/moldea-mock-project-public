@@ -11,9 +11,9 @@
     {
       "runId": "run-20260928-02",
       "manifestPath": "evidence/runs/run-20260928-02/run.json",
-      "summary": "Four new real-session mock-project attempts across Incident Desk, Catalog Studio, Field Notes and Harbor Supply.",
+      "summary": "Four projects and thirteen conversation turns, covering linked agent guidance, unrelated-work silence, shared context, and narrow permission to update it.",
       "evidenceStatus": "complete",
-      "reviewStatus": "pending"
+      "reviewStatus": "complete"
     }
   ]
 }

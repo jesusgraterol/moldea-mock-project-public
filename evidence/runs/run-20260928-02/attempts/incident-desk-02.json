@@ -11,12 +11,12 @@
     "path": "evidence/scenarios/incident-desk.md",
     "commit": "2cde56d0c5acf0d0b0ddcc03c43607832a805285"
   },
-  "observedSummary": "Three-turn Incident Desk classifier and handoff workflow; final tests pass and human incident decisions remain explicit.",
+  "observedSummary": "Built an alert classifier and a separate handoff workflow. A later latency fix updated both agents’ guidance while preserving raw evidence and human incident decisions.",
   "actorOutcome": "concluded",
   "outcomeReason": null,
   "evidenceStatus": "complete",
-  "reviewStatus": "pending",
-  "review": null,
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20260928-02/reviews/skill-review.md",
   "sessions": [
     {
       "id": "01a0e5bb-f697-79b0-a11f-4828011a6553",
@@ -159,7 +159,8 @@
         "run-20260928-02/incident-session-01.jsonl.gz",
         "run-20260928-02/incident-identity-01.json",
         "git/ca487de80576c79ae032505c43573332cca9f0ce/f4091634548bd3aee82a1e797a73aea54f34c3d1",
-        "git/c3ecda12e853b527a96c6ca81150083b0224643a/f4091634548bd3aee82a1e797a73aea54f34c3d1"
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/f4091634548bd3aee82a1e797a73aea54f34c3d1",
+        "evidence/runs/run-20260928-02/reviews/skill-review.md"
       ],
       "asset": null
     },
@@ -171,6 +172,16 @@
       "coveredArtifacts": [
         "run-20260928-02/incident-session-01.jsonl.gz",
         "run-20260928-02/incident-identity-01.json"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "independent skill review",
+      "inputCommit": "f4091634548bd3aee82a1e797a73aea54f34c3d1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20260928-02/reviews/skill-review.md"
       ],
       "asset": null
     }
@@ -920,6 +931,6 @@
   "limitations": [
     "The per-turn package composition was reconstructed from committed lockfiles and installed files after the conversation, not sampled independently during each turn.",
     "No natural compaction event occurred; compaction behavior is not assessed.",
-    "Independent skill-agent review is pending."
+    "The actor read canonical metadata before the relationship gate on the third request; the existing gate-first instruction already covers this ordering."
   ]
 }

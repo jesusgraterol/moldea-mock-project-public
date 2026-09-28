@@ -11,7 +11,7 @@ The base for fresh project attempts is `c3ecda12e853b527a96c6ca81150083b0224643a
 - `scripts/evidence/` contains a small Node 24 capture and verification utility with focused synthetic tests. `npm test` checks that utility only. It does not test the fixture applications or the moldea skill.
 - `/docs` is reserved for concise, quickly scannable documentation of essential, durable project concepts and processes. API and HTTP endpoint documentation belongs in the established location outside `/docs`.
 
-Core 5.0.1, CLI 9.0.1 and Skill 6.0.1 were verified as published before the 2026-09-28 run. That run contains four new fixture attempts with complete captured evidence in the repository index and the private GitHub Release tagged `run-20260928-02`. Independent skill-agent review is pending; evidence completeness is not a verdict on skill behavior.
+Core 5.0.1, CLI 9.0.1 and Skill 6.0.1 were verified as published before the 2026-09-28 run. That run contains four new fixture attempts with complete captured evidence in the repository index and the private GitHub Release tagged `run-20260928-02`. [Independent review](evidence/runs/run-20260928-02/reviews/skill-review.md) is complete. It found no new skill or package defect requiring a change; an actor gate-order miss and the limits of this evidence remain explicit.
 
 | Scenario | Branch | Date | Skill release | Commit | Actor session | Observed state |
 | --- | --- | --- | --- | --- | --- | --- |
