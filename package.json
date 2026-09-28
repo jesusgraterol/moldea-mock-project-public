@@ -2,7 +2,15 @@
   "name": "incident-desk",
   "private": true,
   "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.ts"
+  },
   "devDependencies": {
     "@moldea.ai/cli": "9.0.1"
+  },
+  "dependencies": {
+    "@langchain/core": "1.2.13",
+    "@langchain/langgraph": "1.4.18",
+    "zod": "4.6.5"
   }
 }

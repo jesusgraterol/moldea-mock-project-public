@@ -1,0 +1,28 @@
+{
+  "batchId": "ID-301",
+  "capturedAt": "2026-09-27T09:16:00Z",
+  "events": [
+    {
+      "id": "P-771",
+      "source": "Pulse",
+      "observedAt": "2026-09-27T09:12:00Z",
+      "service": "booking-api",
+      "signal": "http_5xx_rate",
+      "value": 12,
+      "unit": "percent",
+      "threshold": 5
+    },
+    {
+      "id": "P-772",
+      "source": "Pulse",
+      "observedAt": "2026-09-27T09:14:00Z",
+      "service": "booking-api",
+      "signal": "request_latency_p95",
+      "value": 2800,
+      "unit": "ms",
+      "threshold": 1000
+    }
+  ],
+  "context": ["booking-api release 2.14 completed at 09:08Z; temporal context only"],
+  "missingEvidence": ["customer-impact count", "database-health evidence"]
+}

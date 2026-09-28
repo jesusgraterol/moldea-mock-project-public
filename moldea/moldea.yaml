@@ -1,0 +1,22 @@
+version: 1
+agents:
+  alert-classifier:
+    runtime:
+      id: langgraph
+      guidance: /moldea/runtimes/langgraph.md
+    bindings:
+      runtimeAgent:
+        path: /src/alert-classifier.ts
+        symbol: alertClassifierGraph
+      inputSchema:
+        path: /src/contracts.ts
+        symbol: GraphInputSchema
+      outputSchema:
+        path: /src/contracts.ts
+        symbol: GraphOutputSchema
+      instructionLoader:
+        path: /src/alert-classifier.ts
+        symbol: loadAlertClassifierInstruction
+    affectedBy:
+      - /src/alert-classifier.ts
+      - /src/contracts.ts
