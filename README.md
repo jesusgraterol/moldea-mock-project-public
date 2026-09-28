@@ -7,7 +7,7 @@ The base for fresh project attempts is `c3ecda12e853b527a96c6ca81150083b0224643a
 ## Project blueprint
 
 - Fixture branches hold each project's source and canonical moldea state with its Git history. `main` holds the cross-run index, scenario definitions, and evidence records.
-- [`evidence/index.json`](evidence/index.json) is the durable entry point for run and attempt records. [`evidence/README.md`](evidence/README.md) defines the evidence format, capture/privacy workflow, verification, later review, and public export contract. The 14 original attempts remain incomplete historical evidence. Ten unique conversations have prepared sanitized session assets; the branches and native sessions remain unchanged.
+- [`evidence/index.json`](evidence/index.json) is the durable entry point for run and attempt records. [`evidence/README.md`](evidence/README.md) defines the evidence format, capture/privacy workflow, verification, later review, and public export contract. The 14 original attempts remain incomplete historical evidence. Ten unique conversations have published sanitized session assets; the branches and native sessions remain unchanged.
 - `scripts/evidence/` contains a small Node 24 capture and verification utility with focused synthetic tests. `npm test` checks that utility only. It does not test the fixture applications or the moldea skill.
 - `/docs` is reserved for concise, quickly scannable documentation of essential, durable project concepts and processes. API and HTTP endpoint documentation belongs in the established location outside `/docs`.
 
