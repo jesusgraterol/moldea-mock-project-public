@@ -1,6 +1,6 @@
 # Run evidence
 
-[`index.json`](index.json) is the single repository entry point for run records. Follow each `manifestPath` to a run, then its `attempts` paths. The 2026-09-27 historical records point to existing fixture commits and native session IDs; they are explicitly incomplete because the conversations, exact requests, asset hashes, and independent review have not been imported. Do not treat a branch tip or a native session ID as complete evidence.
+[`index.json`](index.json) is the single repository entry point for run records. Follow each `manifestPath` to a run, then its `attempts` paths. The 2026-09-27 historical records point to existing fixture commits and native session IDs. Ten conversations have prepared sanitized session assets and recorded hashes; four superseded attempts have no imported assets. All historical attempts remain incomplete because exact request mappings, installed composition, and independent review have not been imported. Do not treat a branch tip or a native session ID as complete evidence.
 
 This is a version 1 JSON format with Markdown scenario and review files. Paths in JSON are repository relative. `unknown` values use `{ "state": "unknown", "reason": "..." }`; record missing facts this way instead of inferring them. A nullable commit or asset locator needs a reason in the attempt's outcome, recovery gaps, or limitations. Do not replace an earlier attempt after a retry or intervention.
 
@@ -44,7 +44,7 @@ Put small records and source/canonical project history in Git. Put sanitized ful
 node scripts/evidence/evidence.mjs verify --run evidence/runs/<run-id>/run.json --asset-root <download-root>
 ```
 
-For the historical run, which has no imported assets, omit `--asset-root`. Verification checks the index and manifests, Git commits/ancestry, request and session locators, effective turn records, evidence status, recovery claims and asset bytes/hashes. It does not audit source correctness, prove privacy, or establish actor behavior. An incomplete run can pass structural verification while remaining explicitly incomplete.
+For the historical run, provide `--asset-root` with the ten prepared session assets. Verification checks the index and manifests, Git commits/ancestry, request and session locators, effective turn records, evidence status, recovery claims and asset bytes/hashes. It does not audit source correctness, prove privacy, or establish actor behavior. An incomplete run can pass structural verification while remaining explicitly incomplete.
 
 Use portable lowercase path components for generated evidence names and paths. Recovery inventories preserve existing source paths such as `README.md` and `.agents/skills/moldea/SKILL.md`; the verifier still rejects traversal, escapes from the repository root, and paths under `_archive`, `_archives`, `_backup`, or `_backups`. Do not include credentials, private machine paths, or unrelated native-session content in names or records. Generated evidence paths also reject reserved names and symlinked repository files; referenced lists reject case collisions.
 

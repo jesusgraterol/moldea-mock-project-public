@@ -79,10 +79,19 @@
     "reason": "Actual resolved CLI/Core/adapter composition has not been imported."
   },
   "skillRelease": "v6.0.0",
-  "assets": {
-    "state": "unknown",
-    "reason": "No sanitized historical session asset has been published or indexed."
-  },
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "historical-20260927",
+      "name": "fixture_skill_only_01-session-01.jsonl.gz",
+      "sizeBytes": 8667,
+      "sha256": "423c32c2ba768b9b3f0ef035d3051e68846aaba1e5a98b98195a07c29562f9eb",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 67
+    }
+  ],
   "interventions": {
     "state": "unknown",
     "reason": "Intervention lineage has not been mapped into this format."
@@ -91,15 +100,473 @@
     "state": "unknown",
     "reason": "Failure events have not been mapped into this format."
   },
-  "redactions": [],
+  "redactions": [
+    {
+      "id": "r0001",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0002",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0003",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0004",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0005",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0006",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0007",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0008",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0009",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0010",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0011",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0012",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0013",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0014",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0015",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0016",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0017",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0018",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0019",
+      "reason": "Private machine path",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 12,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0020",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 27,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0021",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 27,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0022",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 27,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0023",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 27,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0024",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 27,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0025",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 28,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0026",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 28,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0027",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 28,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0028",
+      "reason": "Private machine path",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 35,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0029",
+      "reason": "Private machine path",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 42,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0030",
+      "reason": "Private machine path",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 42,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0031",
+      "reason": "Private machine path",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 49,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0032",
+      "reason": "Private machine path",
+      "sessionId": "01a0e3b1-634b-7351-b532-4e161922ea2f",
+      "eventOrdinal": 56,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_skill_only_01-session-01.jsonl.gz"
+      ]
+    }
+  ],
   "recovery": {
     "state": "unknown",
     "reason": "No historical recovery record has been imported."
   },
   "predecessorAttemptId": null,
   "limitations": [
-    "The branch and final commit are available in Git; the native session is still outside repository evidence.",
-    "Effective turn settings and host version were read from the identified native session, without importing its conversation.",
-    "Conversation, request-to-commit mapping, asset integrity and independent review remain unavailable from this index."
+    "The sanitized conversation is prepared for publication; exact request-to-commit mapping and independent review remain unavailable in this record.",
+    "base instructions omitted",
+    "encrypted reasoning and host-private world state omitted",
+    "Effective turn settings and host version were read from the identified native session, without importing its conversation."
   ]
 }

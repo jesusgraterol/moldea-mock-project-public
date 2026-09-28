@@ -79,10 +79,19 @@
     "reason": "Actual resolved CLI/Core/adapter composition has not been imported."
   },
   "skillRelease": "v6.0.0",
-  "assets": {
-    "state": "unknown",
-    "reason": "No sanitized historical session asset has been published or indexed."
-  },
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "historical-20260927",
+      "name": "fixture_langchain_01-session-01.jsonl.gz",
+      "sizeBytes": 66168,
+      "sha256": "1d6898e24d27df270f22949f51c0c0aeec7ffaa27c891d36b2cb138c6d3583f9",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 339
+    }
+  ],
   "interventions": {
     "state": "unknown",
     "reason": "Intervention lineage has not been mapped into this format."
@@ -91,15 +100,1078 @@
     "state": "unknown",
     "reason": "Failure events have not been mapped into this format."
   },
-  "redactions": [],
+  "redactions": [
+    {
+      "id": "r0001",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0002",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0003",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0004",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0005",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0006",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0007",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0008",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0009",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0010",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0011",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0012",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0013",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0014",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0015",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0016",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0017",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0018",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0019",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 12,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0020",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 15,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0021",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 19,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0022",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 26,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0023",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 33,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0024",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 58,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0025",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 65,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0026",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 65,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0027",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 72,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0028",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 79,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0029",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 86,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0030",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0031",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 100,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0032",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 111,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0033",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 118,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0034",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0035",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0036",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0037",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0038",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0039",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0040",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0041",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0042",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0043",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 150,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0044",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0045",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0046",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0047",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 159,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0048",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 163,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0049",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 170,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0050",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 170,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0051",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 170,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0052",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 177,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0053",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 184,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0054",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 191,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0055",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0056",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 205,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0057",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 210,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0058",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 219,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0059",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 219,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0060",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 219,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0061",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 219,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0062",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 226,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0063",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0064",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0065",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0066",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0067",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0068",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 271,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0069",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 278,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0070",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 285,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0071",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 307,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0072",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 307,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0073",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 307,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0074",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 307,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0075",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 307,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0076",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 314,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0077",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 321,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0078",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0079",
+      "reason": "Private machine path",
+      "sessionId": "01a0e416-2f59-7dd3-904c-ea705ecf79b7",
+      "eventOrdinal": 328,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_langchain_01-session-01.jsonl.gz"
+      ]
+    }
+  ],
   "recovery": {
     "state": "unknown",
     "reason": "No historical recovery record has been imported."
   },
   "predecessorAttemptId": null,
   "limitations": [
-    "The branch and final commit are available in Git; the native session is still outside repository evidence.",
-    "Effective turn settings and host version were read from the identified native session, without importing its conversation.",
-    "Conversation, request-to-commit mapping, asset integrity and independent review remain unavailable from this index."
+    "The sanitized conversation is prepared for publication; exact request-to-commit mapping and independent review remain unavailable in this record.",
+    "base instructions omitted",
+    "encrypted reasoning and host-private world state omitted",
+    "Effective turn settings and host version were read from the identified native session, without importing its conversation."
   ]
 }

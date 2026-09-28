@@ -147,10 +147,19 @@
     "reason": "Actual resolved CLI/Core/adapter composition has not been imported."
   },
   "skillRelease": "v6.0.0",
-  "assets": {
-    "state": "unknown",
-    "reason": "No sanitized historical session asset has been published or indexed."
-  },
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "historical-20260927",
+      "name": "fixture_claude_agent_sdk_01-session-01.jsonl.gz",
+      "sizeBytes": 177297,
+      "sha256": "217f4eeafe35097cb90fda589518104416c416115f986c0837be264d47e5330c",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 841
+    }
+  ],
   "interventions": {
     "state": "unknown",
     "reason": "Intervention lineage has not been mapped into this format."
@@ -159,15 +168,2270 @@
     "state": "unknown",
     "reason": "Failure events have not been mapped into this format."
   },
-  "redactions": [],
+  "redactions": [
+    {
+      "id": "r0001",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0002",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0003",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0004",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0005",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0006",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0007",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0008",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0009",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0010",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0011",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0012",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0013",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0014",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0015",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0016",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0017",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0018",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0019",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 12,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0020",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 15,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0021",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 19,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0022",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 22,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0023",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 26,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0024",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 35,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0025",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 63,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0026",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 70,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0027",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 77,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0028",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 84,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0029",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 91,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0030",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 96,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0031",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 103,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0032",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 103,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0033",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 108,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0034",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 115,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0035",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 122,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0036",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 129,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0037",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 145,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0038",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0039",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0040",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0041",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0042",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0043",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 152,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0044",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 152,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0045",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 152,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0046",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 159,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0047",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 159,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0048",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 159,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0049",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 166,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0050",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 171,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0051",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0052",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0053",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0054",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0055",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0056",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0057",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0058",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0059",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 201,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0060",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 201,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0061",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 208,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0062",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 211,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0063",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 211,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0064",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 211,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0065",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 211,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0066",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 211,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0067",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 211,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0068",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 215,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0069",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 224,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0070",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 231,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0071",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 238,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0072",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 247,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0073",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0074",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0075",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0076",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0077",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 267,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0078",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 267,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0079",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 270,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0080",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 274,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0081",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 281,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0082",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 296,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0083",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 296,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0084",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 303,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0085",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 325,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0086",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 332,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0087",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 343,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0088",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 350,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0089",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 357,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0090",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 364,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0091",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0092",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0093",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0094",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 396,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0095",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 423,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0096",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 423,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0097",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 423,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0098",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 454,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0099",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 467,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0100",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 480,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0101",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0102",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0103",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0104",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0105",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0106",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0107",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 496,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0108",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 503,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0109",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 510,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0110",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 519,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0111",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 526,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0112",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 544,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0113",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 544,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0114",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 544,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0115",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 544,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0116",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 544,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0117",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 553,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0118",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 553,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0119",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 560,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0120",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 569,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0121",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 569,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0122",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 578,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0123",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 583,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0124",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 590,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0125",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 599,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0126",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 608,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0127",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 608,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0128",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 617,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0129",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 624,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0130",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 633,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0131",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 640,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0132",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 647,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0133",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 653,
+      "path": [
+        "payload",
+        "replacementHistory",
+        3,
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0134",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 653,
+      "path": [
+        "payload",
+        "replacementHistory",
+        3,
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0135",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 653,
+      "path": [
+        "payload",
+        "replacementHistory",
+        3,
+        "content",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0136",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 653,
+      "path": [
+        "payload",
+        "replacementHistory",
+        3,
+        "content",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0137",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 653,
+      "path": [
+        "payload",
+        "replacementHistory",
+        4,
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0138",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 653,
+      "path": [
+        "payload",
+        "replacementHistory",
+        5,
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0139",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 653,
+      "path": [
+        "payload",
+        "replacementHistory",
+        6,
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0140",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 661,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0141",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 668,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0142",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 675,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0143",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 682,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0144",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 687,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0145",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 694,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0146",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 699,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0147",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 706,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0148",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 711,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0149",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 720,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0150",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 727,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0151",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 734,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0152",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 741,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0153",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 748,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0154",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 757,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0155",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 764,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0156",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 771,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0157",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 791,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0158",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 798,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0159",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 805,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0160",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 816,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0161",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 816,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0162",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 816,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0163",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 816,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0164",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 823,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0165",
+      "reason": "Private machine path",
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "eventOrdinal": 830,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0166",
+      "reason": "Local filesystem owner and directory metadata",
+      "eventOrdinal": 15,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a0e469-de56-7732-ace5-75f6b7298cfe",
+      "affectedLocations": [
+        "historical-20260927/fixture_claude_agent_sdk_01-session-01.jsonl.gz"
+      ]
+    }
+  ],
   "recovery": {
     "state": "unknown",
     "reason": "No historical recovery record has been imported."
   },
   "predecessorAttemptId": null,
   "limitations": [
-    "The branch and final commit are available in Git; the native session is still outside repository evidence.",
-    "Effective turn settings and host version were read from the identified native session, without importing its conversation.",
-    "Conversation, request-to-commit mapping, asset integrity and independent review remain unavailable from this index."
+    "The sanitized conversation is prepared for publication; exact request-to-commit mapping and independent review remain unavailable in this record.",
+    "base instructions omitted",
+    "encrypted compaction summary omitted",
+    "encrypted reasoning and host-private world state omitted",
+    "Effective turn settings and host version were read from the identified native session, without importing its conversation."
   ]
 }

@@ -113,10 +113,19 @@
     "reason": "Actual resolved CLI/Core/adapter composition has not been imported."
   },
   "skillRelease": "v6.0.0",
-  "assets": {
-    "state": "unknown",
-    "reason": "No sanitized historical session asset has been published or indexed."
-  },
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "historical-20260927",
+      "name": "fixture_openai_agents_sdk_01-session-01.jsonl.gz",
+      "sizeBytes": 90267,
+      "sha256": "3e51be9493251fa6db2c3417d1aaa5c03ecf94c193da8a12101ec9072398565a",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 682
+    }
+  ],
   "interventions": {
     "state": "unknown",
     "reason": "Intervention lineage has not been mapped into this format."
@@ -125,15 +134,2073 @@
     "state": "unknown",
     "reason": "Failure events have not been mapped into this format."
   },
-  "redactions": [],
+  "redactions": [
+    {
+      "id": "r0001",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0002",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0003",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0004",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0005",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0006",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0007",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0008",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0009",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0010",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0011",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0012",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0013",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0014",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0015",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0016",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0017",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0018",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0019",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 12,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0020",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 15,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0021",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 19,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0022",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 26,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0023",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 33,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0024",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 33,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0025",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 82,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0026",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0027",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0028",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0029",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0030",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0031",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0032",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0033",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0034",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0035",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0036",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0037",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 100,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0038",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 100,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0039",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 100,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0040",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 107,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0041",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 112,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0042",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 112,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0043",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 131,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0044",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 131,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0045",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 136,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0046",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 136,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0047",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0048",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0049",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 150,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0050",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 150,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0051",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0052",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 171,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0053",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 171,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0054",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 180,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0055",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 180,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0056",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 180,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0057",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 187,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0058",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 187,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0059",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 194,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0060",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 194,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0061",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 201,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0062",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 201,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0063",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0064",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0065",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0066",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0067",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0068",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0069",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0070",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0071",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 216,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0072",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 223,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0073",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 223,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0074",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0075",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0076",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0077",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0078",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0079",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 262,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0080",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 269,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0081",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 276,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0082",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 291,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0083",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 291,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0084",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 298,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0085",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 313,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0086",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 320,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0087",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 320,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0088",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 327,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0089",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 327,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0090",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 338,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0091",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 342,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0092",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 374,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0093",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 374,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0094",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 381,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0095",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 381,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0096",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 386,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0097",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 386,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0098",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0099",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0100",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 400,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0101",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 415,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0102",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0103",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0104",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0105",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0106",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0107",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0108",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0109",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0110",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0111",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0112",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0113",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 434,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0114",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 441,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0115",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 441,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0116",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 456,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0117",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 456,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0118",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 463,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0119",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 483,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0120",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 483,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0121",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 488,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0122",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 488,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0123",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 495,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0124",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 504,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0125",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 504,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0126",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 534,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0127",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 556,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0128",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 567,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0129",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 567,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0130",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 567,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0131",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 572,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0132",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 572,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0133",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 583,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0134",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 583,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0135",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 583,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0136",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 590,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0137",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 601,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0138",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 601,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0139",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 601,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0140",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 601,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0141",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 601,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0142",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 601,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0143",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 601,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0144",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 608,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0145",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 623,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0146",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 630,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0147",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 630,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0148",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 635,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0149",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 635,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0150",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 642,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0151",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 649,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0152",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 656,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0153",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 656,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0154",
+      "reason": "Private machine path",
+      "sessionId": "01a0e488-2b21-77a2-8fa0-ec9f390d59f1",
+      "eventOrdinal": 671,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_openai_agents_sdk_01-session-01.jsonl.gz"
+      ]
+    }
+  ],
   "recovery": {
     "state": "unknown",
     "reason": "No historical recovery record has been imported."
   },
   "predecessorAttemptId": null,
   "limitations": [
-    "The branch and final commit are available in Git; the native session is still outside repository evidence.",
-    "Effective turn settings and host version were read from the identified native session, without importing its conversation.",
-    "Conversation, request-to-commit mapping, asset integrity and independent review remain unavailable from this index."
+    "The sanitized conversation is prepared for publication; exact request-to-commit mapping and independent review remain unavailable in this record.",
+    "base instructions omitted",
+    "encrypted reasoning and host-private world state omitted",
+    "Effective turn settings and host version were read from the identified native session, without importing its conversation."
   ]
 }

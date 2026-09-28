@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "runId": "historical-20260927",
   "date": "2026-09-27",
-  "summary": "Fourteen original fixture attempts; branch history indexed, session assets and full reviews not imported.",
+  "summary": "Fourteen original fixture attempts; ten unique historical conversations prepared as sanitized assets, with full reviews still incomplete.",
   "expectedActor": {
     "state": "unknown",
     "reason": "A single run-wide requested model and effort was not established for these historical attempts."
@@ -34,6 +34,7 @@
     "reason": "A native review exists but is not imported as durable repository evidence."
   },
   "limitations": [
-    "Native conversations remain local; no asset locations or hashes are claimed."
+    "The four original attempts superseded by the selected run have no imported session assets.",
+    "Exact request-to-commit mapping, installed composition, and independent review remain incomplete for historical attempts."
   ]
 }

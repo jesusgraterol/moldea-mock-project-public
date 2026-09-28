@@ -79,10 +79,19 @@
     "reason": "Actual resolved CLI/Core/adapter composition has not been imported."
   },
   "skillRelease": "v6.0.0",
-  "assets": {
-    "state": "unknown",
-    "reason": "No sanitized historical session asset has been published or indexed."
-  },
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "historical-20260927",
+      "name": "fixture_vercel_ai_sdk_01-session-01.jsonl.gz",
+      "sizeBytes": 77053,
+      "sha256": "4707f071da3b35cbe3bc8d3d2bd9e5f7c1f7592271149315be81163a1b01af80",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 384
+    }
+  ],
   "interventions": {
     "state": "unknown",
     "reason": "Intervention lineage has not been mapped into this format."
@@ -91,15 +100,1641 @@
     "state": "unknown",
     "reason": "Failure events have not been mapped into this format."
   },
-  "redactions": [],
+  "redactions": [
+    {
+      "id": "r0001",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0002",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0003",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0004",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0005",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0006",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0007",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0008",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0009",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0010",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0011",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0012",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0013",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0014",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0015",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0016",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "role"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0017",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "type"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0018",
+      "reason": "Host instructions or local environment envelope",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0019",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 12,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0020",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 15,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0021",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 19,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0022",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 26,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0023",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 35,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0024",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 56,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0025",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0026",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0027",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0028",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0029",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0030",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0031",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0032",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0033",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0034",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0035",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0036",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0037",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0038",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0039",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0040",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0041",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0042",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0043",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0044",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 59,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0045",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 63,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0046",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 63,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0047",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 63,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0048",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 63,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0049",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 63,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0050",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 63,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0051",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0052",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0053",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0054",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 85,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0055",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 92,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0056",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 92,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0057",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0058",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 112,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0059",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 112,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0060",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 119,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0061",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 126,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0062",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 133,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0063",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0064",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0065",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0066",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0067",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0068",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0069",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 162,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0070",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 171,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0071",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 178,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0072",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 178,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0073",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 178,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0074",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 178,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0075",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 178,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0076",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 185,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0077",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 192,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0078",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 199,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0079",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 206,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0080",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 215,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0081",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 224,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0082",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 224,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0083",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 224,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0084",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 231,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0085",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0086",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0087",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0088",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0089",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 238,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0090",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 245,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0091",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 248,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0092",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0093",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 276,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0094",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 283,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0095",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 298,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0096",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 309,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0097",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 309,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0098",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 309,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0099",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 309,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0100",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 316,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0101",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 325,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0102",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 325,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0103",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 325,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0104",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 325,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0105",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 325,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0106",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 325,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0107",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 325,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0108",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 334,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0109",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 337,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0110",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 337,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0111",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 341,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0112",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 344,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0113",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 344,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0114",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 348,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0115",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 357,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0116",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 364,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0117",
+      "reason": "Private machine path",
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "eventOrdinal": 373,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "r0118",
+      "reason": "Local filesystem owner and directory metadata",
+      "eventOrdinal": 29,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a0e45a-1457-74d2-8c13-508aafa811e0",
+      "affectedLocations": [
+        "historical-20260927/fixture_vercel_ai_sdk_01-session-01.jsonl.gz"
+      ]
+    }
+  ],
   "recovery": {
     "state": "unknown",
     "reason": "No historical recovery record has been imported."
   },
   "predecessorAttemptId": null,
   "limitations": [
-    "The branch and final commit are available in Git; the native session is still outside repository evidence.",
-    "Effective turn settings and host version were read from the identified native session, without importing its conversation.",
-    "Conversation, request-to-commit mapping, asset integrity and independent review remain unavailable from this index."
+    "The sanitized conversation is prepared for publication; exact request-to-commit mapping and independent review remain unavailable in this record.",
+    "base instructions omitted",
+    "encrypted reasoning and host-private world state omitted",
+    "Effective turn settings and host version were read from the identified native session, without importing its conversation."
   ]
 }
