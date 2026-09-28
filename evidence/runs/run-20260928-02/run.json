@@ -1,0 +1,55 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20260928-02",
+  "date": "2026-09-28",
+  "summary": "Four new real-session mock-project attempts across Incident Desk, Catalog Studio, Field Notes and Harbor Supply.",
+  "expectedActor": {
+    "model": "gpt-6-sol",
+    "effort": "xhigh"
+  },
+  "prerequisites": [
+    {
+      "component": "core",
+      "version": "5.0.1",
+      "integrity": "sha512-IVKOQ8tVJLME06gButXu4o+nq6SzJwzlmWonoLmxoXge7vTZyfl+6lYvsRVTbNWsy/k1gwfORc0msbFrRfaLuQ==",
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "incident-identity-01.json",
+        "locator": "/release/core"
+      }
+    },
+    {
+      "component": "cli",
+      "version": "9.0.1",
+      "integrity": "sha512-6PsPqmkg3Np+n7/IYVCPX9X2/lM9uYEEXWIXW71KEdipwh1wr6e00/iSfxe2XaIK7f46mJyFEvODvOWdHqkcxA==",
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "incident-identity-01.json",
+        "locator": "/release/cli"
+      }
+    },
+    {
+      "component": "skill",
+      "version": "v6.0.1",
+      "integrity": "git-tag:a19d063d34d3125428951bf07b06a5d6f645fe9f;commit:6519df2f9acab924fe67ece0e436ac25988d5b2a",
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "incident-identity-01.json",
+        "locator": "/release/skill"
+      }
+    }
+  ],
+  "attempts": [
+    "evidence/runs/run-20260928-02/attempts/incident-desk-02.json",
+    "evidence/runs/run-20260928-02/attempts/catalog-studio-02.json",
+    "evidence/runs/run-20260928-02/attempts/field-notes-02.json",
+    "evidence/runs/run-20260928-02/attempts/harbor-supply-02.json"
+  ],
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "pending",
+  "review": null,
+  "limitations": [
+    "Release asset upload, download and independent skill-agent review remain pending.",
+    "This is real-session evidence, not semantic evaluation or adapter qualification."
+  ]
+}

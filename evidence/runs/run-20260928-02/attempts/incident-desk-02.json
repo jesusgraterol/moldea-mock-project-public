@@ -1,0 +1,915 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20260928-02",
+  "scenarioId": "incident-desk",
+  "attemptId": "incident-desk-02",
+  "branch": "fixture_langgraph_02",
+  "baseCommit": "ca487de80576c79ae032505c43573332cca9f0ce",
+  "finalCommit": "f4091634548bd3aee82a1e797a73aea54f34c3d1",
+  "lastDurableCommit": "f4091634548bd3aee82a1e797a73aea54f34c3d1",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/incident-desk.md",
+    "commit": "2cde56d0c5acf0d0b0ddcc03c43607832a805285"
+  },
+  "observedSummary": "Three-turn Incident Desk classifier and handoff workflow; final tests pass and human incident decisions remain explicit.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "pending",
+  "review": null,
+  "sessions": [
+    {
+      "id": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "hostVersion": "0.157.1",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 209,
+          "requestedModel": "gpt-6-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 299,
+          "requestedModel": "gpt-6-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "incident-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Incident Desk and build a small LangGraph alert classifier for ID-301. The model should identify signals worth engineer review, keep observations separate from hypotheses, preserve raw event IDs, and leave paging and incident decisions to people.\n",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 8,
+      "beforeCommit": "ca487de80576c79ae032505c43573332cca9f0ce",
+      "afterCommit": "9e242a53908f7f7146b19fa70baed072d2e4c3dc",
+      "observedResult": "Classifier and canonical instructions created; actor tests passed.",
+      "redactionIds": []
+    },
+    {
+      "id": "incident-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "The on-call engineer also needs a short handoff brief. Add a separate workflow that uses the classification, explains the timeline and evidence gaps, and drafts a synopsis for human review. Keep the model's contribution distinct from the source observations.\n",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 210,
+      "beforeCommit": "9e242a53908f7f7146b19fa70baed072d2e4c3dc",
+      "afterCommit": "bcf2ef79d52037b9a5d11cb2a89d7b7cec442404",
+      "observedResult": "Separate handoff brief workflow added; actor tests passed.",
+      "redactionIds": []
+    },
+    {
+      "id": "incident-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "The ID-302 brief is showing inconsistent latency durations from the two monitors. Please investigate the source path and make the readings comparable while keeping the original readings and IDs inspectable.\n",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 300,
+      "beforeCommit": "bcf2ef79d52037b9a5d11cb2a89d7b7cec442404",
+      "afterCommit": "f4091634548bd3aee82a1e797a73aea54f34c3d1",
+      "observedResult": "ID-302 latency normalization corrected while retaining source readings; actor tests passed.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 2,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 3,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 4,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 5,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 206,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 207,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "command",
+      "description": "npm test",
+      "inputCommit": "f4091634548bd3aee82a1e797a73aea54f34c3d1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20260928-02/incident-identity-01.json"
+      ],
+      "asset": {
+        "tag": "run-20260928-02",
+        "name": "incident-identity-01.json"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <fixture-root> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "f4091634548bd3aee82a1e797a73aea54f34c3d1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20260928-02/incident-identity-01.json"
+      ],
+      "asset": {
+        "tag": "run-20260928-02",
+        "name": "incident-identity-01.json"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "f4091634548bd3aee82a1e797a73aea54f34c3d1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20260928-02/run.json",
+        "evidence/runs/run-20260928-02/attempts/incident-desk-02.json",
+        "evidence/scenarios/incident-desk.md",
+        "run-20260928-02/incident-session-01.jsonl.gz",
+        "run-20260928-02/incident-identity-01.json",
+        "git/ca487de80576c79ae032505c43573332cca9f0ce/f4091634548bd3aee82a1e797a73aea54f34c3d1",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/f4091634548bd3aee82a1e797a73aea54f34c3d1"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "incident-identity-01.json",
+        "locator": "/observations/0"
+      },
+      "skill": {
+        "ref": "v6.0.1",
+        "contentHash": "ed1ea07926aaae26edebd6e2df2df45dee1d2762b1cf0b776046be4e704d9f80"
+      },
+      "cli": {
+        "version": "9.0.1",
+        "integrity": "sha512-6PsPqmkg3Np+n7/IYVCPX9X2/lM9uYEEXWIXW71KEdipwh1wr6e00/iSfxe2XaIK7f46mJyFEvODvOWdHqkcxA=="
+      },
+      "core": {
+        "version": "5.0.1",
+        "integrity": "sha512-IVKOQ8tVJLME06gButXu4o+nq6SzJwzlmWonoLmxoXge7vTZyfl+6lYvsRVTbNWsy/k1gwfORc0msbFrRfaLuQ=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/adapter-anthropic",
+          "version": "5.1.0",
+          "integrity": "sha512-vhSb8HD/js0BKbUPLm3wHHZB64+j/Rp1DXaxxGSdP9PZX3wmZEcBgILDmxzCouoZkCa/NQnVGBueAxgPFOXWEA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-claude-agent-sdk",
+          "version": "4.1.0",
+          "integrity": "sha512-YMQDDKTr16sRjxpt0Pu+k7nkcYeKRB/TxPkv+sbwJv2KKdVoKzBKSt6jioewZPUOkzUaubwHFZDy6zpKQ9KkZA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-cloudflare-agents",
+          "version": "4.0.0",
+          "integrity": "sha512-C1AjNZC6C/gSGo4a8KifpMCH5kEb+UR66PyjmMNPd3dMfbPASUTHExLKbuJojEASGupWOkAziFLLmMndI9F0Wg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-eve",
+          "version": "4.0.1",
+          "integrity": "sha512-SvvfOU0Ga6Jorwge7qV6hQefHXD9FWNtOBm8L4S++/YjwVLrbpNSm2GV4Qm8Yfzi5KQ+fZv2j32/lB9lvYE7+A=="
+        },
+        {
+          "name": "@moldea.ai/adapter-google-genai",
+          "version": "4.1.0",
+          "integrity": "sha512-UqS/PdZhhgVkFuAtk0sqGvIofAAC0nUYTIu0eVWXFz47cJxqdj1uCq8WF0qzxG1VqH50h2zd5v8B63j2R0UVYg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langchain",
+          "version": "4.0.0",
+          "integrity": "sha512-vCobQ2BkPPVhAAg0ih9xPPX4yheamVFFrGQ9iJnHQyNiEwvq/Eg/KMBvAqW4yj4mZoGpfMUOGm12vCOTv9Dz4Q=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langgraph",
+          "version": "4.0.0",
+          "integrity": "sha512-Z2VyVT2lBNSOMVUwJMsMcJKacdD2sfyqxbrSMdfcYR8xywNkzTLMlPGT43V9niAurC5HzQN1x4UXjmofzdXd4g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai",
+          "version": "5.1.0",
+          "integrity": "sha512-Dqk2Kjs5e3Z5mH8343abDlPGp+Mg3DbzH0pudmizAqO6YD1pWjQZDDydr4QBnz/DVPuLGUVdg4OanU+xBrM23g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai-agents-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-y0fKVpp/46jMqlsNLSd55XqHfynQVkbGXG2n4z3uHhvCPHLgGA0n9a/g36JDXpnlTm2gG+Ws8X75Efpi8eD5zA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-vercel-ai-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-4e2CnLT3+k4okusF1bA/KhTBVFxE84zh60gDL05+CKLgocaKWBurN6ogez8o/PZYdWrumPxIuTX3MeN9U8FXzw=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 209,
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "incident-identity-01.json",
+        "locator": "/observations/1"
+      },
+      "skill": {
+        "ref": "v6.0.1",
+        "contentHash": "ed1ea07926aaae26edebd6e2df2df45dee1d2762b1cf0b776046be4e704d9f80"
+      },
+      "cli": {
+        "version": "9.0.1",
+        "integrity": "sha512-6PsPqmkg3Np+n7/IYVCPX9X2/lM9uYEEXWIXW71KEdipwh1wr6e00/iSfxe2XaIK7f46mJyFEvODvOWdHqkcxA=="
+      },
+      "core": {
+        "version": "5.0.1",
+        "integrity": "sha512-IVKOQ8tVJLME06gButXu4o+nq6SzJwzlmWonoLmxoXge7vTZyfl+6lYvsRVTbNWsy/k1gwfORc0msbFrRfaLuQ=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/adapter-anthropic",
+          "version": "5.1.0",
+          "integrity": "sha512-vhSb8HD/js0BKbUPLm3wHHZB64+j/Rp1DXaxxGSdP9PZX3wmZEcBgILDmxzCouoZkCa/NQnVGBueAxgPFOXWEA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-claude-agent-sdk",
+          "version": "4.1.0",
+          "integrity": "sha512-YMQDDKTr16sRjxpt0Pu+k7nkcYeKRB/TxPkv+sbwJv2KKdVoKzBKSt6jioewZPUOkzUaubwHFZDy6zpKQ9KkZA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-cloudflare-agents",
+          "version": "4.0.0",
+          "integrity": "sha512-C1AjNZC6C/gSGo4a8KifpMCH5kEb+UR66PyjmMNPd3dMfbPASUTHExLKbuJojEASGupWOkAziFLLmMndI9F0Wg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-eve",
+          "version": "4.0.1",
+          "integrity": "sha512-SvvfOU0Ga6Jorwge7qV6hQefHXD9FWNtOBm8L4S++/YjwVLrbpNSm2GV4Qm8Yfzi5KQ+fZv2j32/lB9lvYE7+A=="
+        },
+        {
+          "name": "@moldea.ai/adapter-google-genai",
+          "version": "4.1.0",
+          "integrity": "sha512-UqS/PdZhhgVkFuAtk0sqGvIofAAC0nUYTIu0eVWXFz47cJxqdj1uCq8WF0qzxG1VqH50h2zd5v8B63j2R0UVYg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langchain",
+          "version": "4.0.0",
+          "integrity": "sha512-vCobQ2BkPPVhAAg0ih9xPPX4yheamVFFrGQ9iJnHQyNiEwvq/Eg/KMBvAqW4yj4mZoGpfMUOGm12vCOTv9Dz4Q=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langgraph",
+          "version": "4.0.0",
+          "integrity": "sha512-Z2VyVT2lBNSOMVUwJMsMcJKacdD2sfyqxbrSMdfcYR8xywNkzTLMlPGT43V9niAurC5HzQN1x4UXjmofzdXd4g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai",
+          "version": "5.1.0",
+          "integrity": "sha512-Dqk2Kjs5e3Z5mH8343abDlPGp+Mg3DbzH0pudmizAqO6YD1pWjQZDDydr4QBnz/DVPuLGUVdg4OanU+xBrM23g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai-agents-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-y0fKVpp/46jMqlsNLSd55XqHfynQVkbGXG2n4z3uHhvCPHLgGA0n9a/g36JDXpnlTm2gG+Ws8X75Efpi8eD5zA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-vercel-ai-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-4e2CnLT3+k4okusF1bA/KhTBVFxE84zh60gDL05+CKLgocaKWBurN6ogez8o/PZYdWrumPxIuTX3MeN9U8FXzw=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 299,
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "incident-identity-01.json",
+        "locator": "/observations/2"
+      },
+      "skill": {
+        "ref": "v6.0.1",
+        "contentHash": "ed1ea07926aaae26edebd6e2df2df45dee1d2762b1cf0b776046be4e704d9f80"
+      },
+      "cli": {
+        "version": "9.0.1",
+        "integrity": "sha512-6PsPqmkg3Np+n7/IYVCPX9X2/lM9uYEEXWIXW71KEdipwh1wr6e00/iSfxe2XaIK7f46mJyFEvODvOWdHqkcxA=="
+      },
+      "core": {
+        "version": "5.0.1",
+        "integrity": "sha512-IVKOQ8tVJLME06gButXu4o+nq6SzJwzlmWonoLmxoXge7vTZyfl+6lYvsRVTbNWsy/k1gwfORc0msbFrRfaLuQ=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/adapter-anthropic",
+          "version": "5.1.0",
+          "integrity": "sha512-vhSb8HD/js0BKbUPLm3wHHZB64+j/Rp1DXaxxGSdP9PZX3wmZEcBgILDmxzCouoZkCa/NQnVGBueAxgPFOXWEA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-claude-agent-sdk",
+          "version": "4.1.0",
+          "integrity": "sha512-YMQDDKTr16sRjxpt0Pu+k7nkcYeKRB/TxPkv+sbwJv2KKdVoKzBKSt6jioewZPUOkzUaubwHFZDy6zpKQ9KkZA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-cloudflare-agents",
+          "version": "4.0.0",
+          "integrity": "sha512-C1AjNZC6C/gSGo4a8KifpMCH5kEb+UR66PyjmMNPd3dMfbPASUTHExLKbuJojEASGupWOkAziFLLmMndI9F0Wg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-eve",
+          "version": "4.0.1",
+          "integrity": "sha512-SvvfOU0Ga6Jorwge7qV6hQefHXD9FWNtOBm8L4S++/YjwVLrbpNSm2GV4Qm8Yfzi5KQ+fZv2j32/lB9lvYE7+A=="
+        },
+        {
+          "name": "@moldea.ai/adapter-google-genai",
+          "version": "4.1.0",
+          "integrity": "sha512-UqS/PdZhhgVkFuAtk0sqGvIofAAC0nUYTIu0eVWXFz47cJxqdj1uCq8WF0qzxG1VqH50h2zd5v8B63j2R0UVYg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langchain",
+          "version": "4.0.0",
+          "integrity": "sha512-vCobQ2BkPPVhAAg0ih9xPPX4yheamVFFrGQ9iJnHQyNiEwvq/Eg/KMBvAqW4yj4mZoGpfMUOGm12vCOTv9Dz4Q=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langgraph",
+          "version": "4.0.0",
+          "integrity": "sha512-Z2VyVT2lBNSOMVUwJMsMcJKacdD2sfyqxbrSMdfcYR8xywNkzTLMlPGT43V9niAurC5HzQN1x4UXjmofzdXd4g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai",
+          "version": "5.1.0",
+          "integrity": "sha512-Dqk2Kjs5e3Z5mH8343abDlPGp+Mg3DbzH0pudmizAqO6YD1pWjQZDDydr4QBnz/DVPuLGUVdg4OanU+xBrM23g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai-agents-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-y0fKVpp/46jMqlsNLSd55XqHfynQVkbGXG2n4z3uHhvCPHLgGA0n9a/g36JDXpnlTm2gG+Ws8X75Efpi8eD5zA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-vercel-ai-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-4e2CnLT3+k4okusF1bA/KhTBVFxE84zh60gDL05+CKLgocaKWBurN6ogez8o/PZYdWrumPxIuTX3MeN9U8FXzw=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v6.0.1",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20260928-02",
+      "name": "incident-session-01.jsonl.gz",
+      "sizeBytes": 70018,
+      "sha256": "06a610fa368d83fb5bcac9928a9208768718a042dd6eb50f9242c3120b19b2c9",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 394
+    },
+    {
+      "kind": "log",
+      "tag": "run-20260928-02",
+      "name": "incident-identity-01.json",
+      "sizeBytes": 17538,
+      "sha256": "4a4ae9d328c93c38f74659498e31ef6b319eaf37afb82e5e96e39fd64ce31577",
+      "mediaType": "application/json",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "environment",
+      "requestId": "incident-01",
+      "description": "Initial npm cache access returned EROFS in the first turn (session event 105); the actor used a task-local cache and continued.",
+      "asset": {
+        "tag": "run-20260928-02",
+        "name": "incident-session-01.jsonl.gz"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "incident-2-0",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-2-1",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-3-2",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-4-3",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-5-4",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-25-5",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 25,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-36-6",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 36,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-84-7",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 84,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-89-8",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 89,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-96-9",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 96,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-101-10",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 101,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-105-11",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-105-12",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-105-13",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-105-14",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-105-15",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-105-16",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-105-17",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-111-18",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 111,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-119-19",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 119,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-119-20",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 119,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-147-21",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 147,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-181-22",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 181,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-199-23",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 199,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-206-24",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 206,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-207-25",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 207,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-231-26",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 231,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-272-27",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-292-28",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 292,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-319-29",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 319,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-324-30",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-356-31",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 356,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-383-32",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 383,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "incident-391-33",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5bb-f697-79b0-a11f-4828011a6553",
+      "eventOrdinal": 391,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/incident-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Release assets are prepared and hashed locally but have not yet been uploaded and downloaded for integrity verification.",
+    "The per-turn package composition was reconstructed from committed lockfiles and installed files after the conversation, not sampled independently during each turn.",
+    "No natural compaction event occurred; compaction behavior is not assessed.",
+    "Independent skill-agent review is pending."
+  ]
+}

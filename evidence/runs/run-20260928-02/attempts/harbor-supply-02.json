@@ -1,0 +1,771 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20260928-02",
+  "scenarioId": "harbor-supply",
+  "attemptId": "harbor-supply-02",
+  "branch": "fixture_custom_complex_02",
+  "baseCommit": "3297e16dda8853e4ff7cd70ddf11066dd83e9a9b",
+  "finalCommit": "3392532c8cb43d29abe97e6d25e7c180988b13f7",
+  "lastDurableCommit": "3392532c8cb43d29abe97e6d25e7c180988b13f7",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/harbor-supply.md",
+    "commit": "2cde56d0c5acf0d0b0ddcc03c43607832a805285"
+  },
+  "observedSummary": "Three-turn Harbor Supply staff review prototype and policy correction; no provider call or publication occurred.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "pending",
+  "review": null,
+  "sessions": [
+    {
+      "id": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "hostVersion": "0.157.1",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 125,
+          "requestedModel": "gpt-6-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 314,
+          "requestedModel": "gpt-6-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "harbor-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Harbor Supply. Before building the response, help me think through which responsibilities should review equipment fit, the reported symptoms, warranty and shipment facts for HS-214. Keep manager approval as the final decision.\n",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 8,
+      "beforeCommit": "3297e16dda8853e4ff7cd70ddf11066dd83e9a9b",
+      "afterCommit": "06bdcb4eff0e7fd136291b93437bac4b6e50dd5a",
+      "observedResult": "Moldea initialized and staff responsibilities discussed without a site implementation.",
+      "redactionIds": []
+    },
+    {
+      "id": "harbor-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Build a small staff-facing HS-214 review and dealer-reply preview from the checked-in evidence. Keep each desk's findings and open questions separate, and let the reply writer use the staff reviews rather than reading every source directly.\n",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 126,
+      "beforeCommit": "06bdcb4eff0e7fd136291b93437bac4b6e50dd5a",
+      "afterCommit": "1fb3ba4f6c9c8f96083543a19cc0e29b055c7f5d",
+      "observedResult": "Staff review and dealer-reply preview built from checked-in evidence.",
+      "redactionIds": []
+    },
+    {
+      "id": "harbor-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "The HC-240 door-gasket warranty window in the checked-in policy is now 18 months. Update the affected claims screen and staff packet without turning a preliminary review into an approved claim or dealer promise.\n",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 315,
+      "beforeCommit": "1fb3ba4f6c9c8f96083543a19cc0e29b055c7f5d",
+      "afterCommit": "3392532c8cb43d29abe97e6d25e7c180988b13f7",
+      "observedResult": "HC-240 gasket policy updated to 18 months; timing reflected without approval or warranty promise.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 2,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 3,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 4,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 5,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 122,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    },
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 123,
+      "reason": "Host-supplied instructions or environment envelope, not a developer scenario request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "command",
+      "description": "npm test",
+      "inputCommit": "3392532c8cb43d29abe97e6d25e7c180988b13f7",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20260928-02/harbor-identity-01.json"
+      ],
+      "asset": {
+        "tag": "run-20260928-02",
+        "name": "harbor-identity-01.json"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <fixture-root> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "3392532c8cb43d29abe97e6d25e7c180988b13f7",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20260928-02/harbor-identity-01.json"
+      ],
+      "asset": {
+        "tag": "run-20260928-02",
+        "name": "harbor-identity-01.json"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "3392532c8cb43d29abe97e6d25e7c180988b13f7",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20260928-02/run.json",
+        "evidence/runs/run-20260928-02/attempts/harbor-supply-02.json",
+        "evidence/scenarios/harbor-supply.md",
+        "run-20260928-02/harbor-session-01.jsonl.gz",
+        "run-20260928-02/harbor-identity-01.json",
+        "git/3297e16dda8853e4ff7cd70ddf11066dd83e9a9b/3392532c8cb43d29abe97e6d25e7c180988b13f7",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/3392532c8cb43d29abe97e6d25e7c180988b13f7"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "harbor-identity-01.json",
+        "locator": "/observations/0"
+      },
+      "skill": {
+        "ref": "v6.0.1",
+        "contentHash": "ed1ea07926aaae26edebd6e2df2df45dee1d2762b1cf0b776046be4e704d9f80"
+      },
+      "cli": {
+        "version": "9.0.1",
+        "integrity": "sha512-6PsPqmkg3Np+n7/IYVCPX9X2/lM9uYEEXWIXW71KEdipwh1wr6e00/iSfxe2XaIK7f46mJyFEvODvOWdHqkcxA=="
+      },
+      "core": {
+        "version": "5.0.1",
+        "integrity": "sha512-IVKOQ8tVJLME06gButXu4o+nq6SzJwzlmWonoLmxoXge7vTZyfl+6lYvsRVTbNWsy/k1gwfORc0msbFrRfaLuQ=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/adapter-anthropic",
+          "version": "5.1.0",
+          "integrity": "sha512-vhSb8HD/js0BKbUPLm3wHHZB64+j/Rp1DXaxxGSdP9PZX3wmZEcBgILDmxzCouoZkCa/NQnVGBueAxgPFOXWEA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-claude-agent-sdk",
+          "version": "4.1.0",
+          "integrity": "sha512-YMQDDKTr16sRjxpt0Pu+k7nkcYeKRB/TxPkv+sbwJv2KKdVoKzBKSt6jioewZPUOkzUaubwHFZDy6zpKQ9KkZA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-cloudflare-agents",
+          "version": "4.0.0",
+          "integrity": "sha512-C1AjNZC6C/gSGo4a8KifpMCH5kEb+UR66PyjmMNPd3dMfbPASUTHExLKbuJojEASGupWOkAziFLLmMndI9F0Wg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-eve",
+          "version": "4.0.1",
+          "integrity": "sha512-SvvfOU0Ga6Jorwge7qV6hQefHXD9FWNtOBm8L4S++/YjwVLrbpNSm2GV4Qm8Yfzi5KQ+fZv2j32/lB9lvYE7+A=="
+        },
+        {
+          "name": "@moldea.ai/adapter-google-genai",
+          "version": "4.1.0",
+          "integrity": "sha512-UqS/PdZhhgVkFuAtk0sqGvIofAAC0nUYTIu0eVWXFz47cJxqdj1uCq8WF0qzxG1VqH50h2zd5v8B63j2R0UVYg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langchain",
+          "version": "4.0.0",
+          "integrity": "sha512-vCobQ2BkPPVhAAg0ih9xPPX4yheamVFFrGQ9iJnHQyNiEwvq/Eg/KMBvAqW4yj4mZoGpfMUOGm12vCOTv9Dz4Q=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langgraph",
+          "version": "4.0.0",
+          "integrity": "sha512-Z2VyVT2lBNSOMVUwJMsMcJKacdD2sfyqxbrSMdfcYR8xywNkzTLMlPGT43V9niAurC5HzQN1x4UXjmofzdXd4g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai",
+          "version": "5.1.0",
+          "integrity": "sha512-Dqk2Kjs5e3Z5mH8343abDlPGp+Mg3DbzH0pudmizAqO6YD1pWjQZDDydr4QBnz/DVPuLGUVdg4OanU+xBrM23g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai-agents-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-y0fKVpp/46jMqlsNLSd55XqHfynQVkbGXG2n4z3uHhvCPHLgGA0n9a/g36JDXpnlTm2gG+Ws8X75Efpi8eD5zA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-vercel-ai-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-4e2CnLT3+k4okusF1bA/KhTBVFxE84zh60gDL05+CKLgocaKWBurN6ogez8o/PZYdWrumPxIuTX3MeN9U8FXzw=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 125,
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "harbor-identity-01.json",
+        "locator": "/observations/1"
+      },
+      "skill": {
+        "ref": "v6.0.1",
+        "contentHash": "ed1ea07926aaae26edebd6e2df2df45dee1d2762b1cf0b776046be4e704d9f80"
+      },
+      "cli": {
+        "version": "9.0.1",
+        "integrity": "sha512-6PsPqmkg3Np+n7/IYVCPX9X2/lM9uYEEXWIXW71KEdipwh1wr6e00/iSfxe2XaIK7f46mJyFEvODvOWdHqkcxA=="
+      },
+      "core": {
+        "version": "5.0.1",
+        "integrity": "sha512-IVKOQ8tVJLME06gButXu4o+nq6SzJwzlmWonoLmxoXge7vTZyfl+6lYvsRVTbNWsy/k1gwfORc0msbFrRfaLuQ=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/adapter-anthropic",
+          "version": "5.1.0",
+          "integrity": "sha512-vhSb8HD/js0BKbUPLm3wHHZB64+j/Rp1DXaxxGSdP9PZX3wmZEcBgILDmxzCouoZkCa/NQnVGBueAxgPFOXWEA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-claude-agent-sdk",
+          "version": "4.1.0",
+          "integrity": "sha512-YMQDDKTr16sRjxpt0Pu+k7nkcYeKRB/TxPkv+sbwJv2KKdVoKzBKSt6jioewZPUOkzUaubwHFZDy6zpKQ9KkZA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-cloudflare-agents",
+          "version": "4.0.0",
+          "integrity": "sha512-C1AjNZC6C/gSGo4a8KifpMCH5kEb+UR66PyjmMNPd3dMfbPASUTHExLKbuJojEASGupWOkAziFLLmMndI9F0Wg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-eve",
+          "version": "4.0.1",
+          "integrity": "sha512-SvvfOU0Ga6Jorwge7qV6hQefHXD9FWNtOBm8L4S++/YjwVLrbpNSm2GV4Qm8Yfzi5KQ+fZv2j32/lB9lvYE7+A=="
+        },
+        {
+          "name": "@moldea.ai/adapter-google-genai",
+          "version": "4.1.0",
+          "integrity": "sha512-UqS/PdZhhgVkFuAtk0sqGvIofAAC0nUYTIu0eVWXFz47cJxqdj1uCq8WF0qzxG1VqH50h2zd5v8B63j2R0UVYg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langchain",
+          "version": "4.0.0",
+          "integrity": "sha512-vCobQ2BkPPVhAAg0ih9xPPX4yheamVFFrGQ9iJnHQyNiEwvq/Eg/KMBvAqW4yj4mZoGpfMUOGm12vCOTv9Dz4Q=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langgraph",
+          "version": "4.0.0",
+          "integrity": "sha512-Z2VyVT2lBNSOMVUwJMsMcJKacdD2sfyqxbrSMdfcYR8xywNkzTLMlPGT43V9niAurC5HzQN1x4UXjmofzdXd4g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai",
+          "version": "5.1.0",
+          "integrity": "sha512-Dqk2Kjs5e3Z5mH8343abDlPGp+Mg3DbzH0pudmizAqO6YD1pWjQZDDydr4QBnz/DVPuLGUVdg4OanU+xBrM23g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai-agents-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-y0fKVpp/46jMqlsNLSd55XqHfynQVkbGXG2n4z3uHhvCPHLgGA0n9a/g36JDXpnlTm2gG+Ws8X75Efpi8eD5zA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-vercel-ai-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-4e2CnLT3+k4okusF1bA/KhTBVFxE84zh60gDL05+CKLgocaKWBurN6ogez8o/PZYdWrumPxIuTX3MeN9U8FXzw=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 314,
+      "source": {
+        "tag": "run-20260928-02",
+        "name": "harbor-identity-01.json",
+        "locator": "/observations/2"
+      },
+      "skill": {
+        "ref": "v6.0.1",
+        "contentHash": "ed1ea07926aaae26edebd6e2df2df45dee1d2762b1cf0b776046be4e704d9f80"
+      },
+      "cli": {
+        "version": "9.0.1",
+        "integrity": "sha512-6PsPqmkg3Np+n7/IYVCPX9X2/lM9uYEEXWIXW71KEdipwh1wr6e00/iSfxe2XaIK7f46mJyFEvODvOWdHqkcxA=="
+      },
+      "core": {
+        "version": "5.0.1",
+        "integrity": "sha512-IVKOQ8tVJLME06gButXu4o+nq6SzJwzlmWonoLmxoXge7vTZyfl+6lYvsRVTbNWsy/k1gwfORc0msbFrRfaLuQ=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/adapter-anthropic",
+          "version": "5.1.0",
+          "integrity": "sha512-vhSb8HD/js0BKbUPLm3wHHZB64+j/Rp1DXaxxGSdP9PZX3wmZEcBgILDmxzCouoZkCa/NQnVGBueAxgPFOXWEA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-claude-agent-sdk",
+          "version": "4.1.0",
+          "integrity": "sha512-YMQDDKTr16sRjxpt0Pu+k7nkcYeKRB/TxPkv+sbwJv2KKdVoKzBKSt6jioewZPUOkzUaubwHFZDy6zpKQ9KkZA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-cloudflare-agents",
+          "version": "4.0.0",
+          "integrity": "sha512-C1AjNZC6C/gSGo4a8KifpMCH5kEb+UR66PyjmMNPd3dMfbPASUTHExLKbuJojEASGupWOkAziFLLmMndI9F0Wg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-eve",
+          "version": "4.0.1",
+          "integrity": "sha512-SvvfOU0Ga6Jorwge7qV6hQefHXD9FWNtOBm8L4S++/YjwVLrbpNSm2GV4Qm8Yfzi5KQ+fZv2j32/lB9lvYE7+A=="
+        },
+        {
+          "name": "@moldea.ai/adapter-google-genai",
+          "version": "4.1.0",
+          "integrity": "sha512-UqS/PdZhhgVkFuAtk0sqGvIofAAC0nUYTIu0eVWXFz47cJxqdj1uCq8WF0qzxG1VqH50h2zd5v8B63j2R0UVYg=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langchain",
+          "version": "4.0.0",
+          "integrity": "sha512-vCobQ2BkPPVhAAg0ih9xPPX4yheamVFFrGQ9iJnHQyNiEwvq/Eg/KMBvAqW4yj4mZoGpfMUOGm12vCOTv9Dz4Q=="
+        },
+        {
+          "name": "@moldea.ai/adapter-langgraph",
+          "version": "4.0.0",
+          "integrity": "sha512-Z2VyVT2lBNSOMVUwJMsMcJKacdD2sfyqxbrSMdfcYR8xywNkzTLMlPGT43V9niAurC5HzQN1x4UXjmofzdXd4g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai",
+          "version": "5.1.0",
+          "integrity": "sha512-Dqk2Kjs5e3Z5mH8343abDlPGp+Mg3DbzH0pudmizAqO6YD1pWjQZDDydr4QBnz/DVPuLGUVdg4OanU+xBrM23g=="
+        },
+        {
+          "name": "@moldea.ai/adapter-openai-agents-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-y0fKVpp/46jMqlsNLSd55XqHfynQVkbGXG2n4z3uHhvCPHLgGA0n9a/g36JDXpnlTm2gG+Ws8X75Efpi8eD5zA=="
+        },
+        {
+          "name": "@moldea.ai/adapter-vercel-ai-sdk",
+          "version": "4.0.0",
+          "integrity": "sha512-4e2CnLT3+k4okusF1bA/KhTBVFxE84zh60gDL05+CKLgocaKWBurN6ogez8o/PZYdWrumPxIuTX3MeN9U8FXzw=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v6.0.1",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20260928-02",
+      "name": "harbor-session-01.jsonl.gz",
+      "sizeBytes": 81628,
+      "sha256": "9f4bb9ac72518dbb36b2c834045871efc20251fadc7931f7be6c22d334ef7aba",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 379
+    },
+    {
+      "kind": "log",
+      "tag": "run-20260928-02",
+      "name": "harbor-identity-01.json",
+      "sizeBytes": 15593,
+      "sha256": "0be8a7330592ccc211ea35d0fa5a95108a63ed325a46dafd376b22e63eea0798",
+      "mediaType": "application/json",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [],
+  "redactions": [
+    {
+      "id": "harbor-2-0",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-2-1",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-3-2",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 3,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-4-3",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 4,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-5-4",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-87-5",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 87,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-94-6",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 94,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-115-7",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 115,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-115-8",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 115,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-115-9",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 115,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-122-10",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 122,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-122-11",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 122,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-123-12",
+      "reason": "Remove unrelated host envelope and private machine configuration; project guidance remains in Git or request records.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 123,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-145-13",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 145,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-154-14",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 154,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-164-15",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 164,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-171-16",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 171,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-250-17",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 250,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-307-18",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 307,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-307-19",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 307,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-331-20",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 331,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-376-21",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 376,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-376-22",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 376,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "harbor-376-23",
+      "reason": "Remove absolute private machine path prefix while retaining the project-relative evidence.",
+      "sessionId": "01a0e5dc-e053-70e3-88be-88f2b5104a94",
+      "eventOrdinal": 376,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20260928-02/harbor-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Release assets are prepared and hashed locally but have not yet been uploaded and downloaded for integrity verification.",
+    "The per-turn package composition was reconstructed from committed lockfiles and installed files after the conversation, not sampled independently during each turn.",
+    "No natural compaction event occurred; compaction behavior is not assessed.",
+    "Independent skill-agent review is pending."
+  ]
+}
