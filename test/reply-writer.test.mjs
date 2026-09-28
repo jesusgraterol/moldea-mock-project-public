@@ -18,3 +18,13 @@ test('reply preview uses desk handoffs and keeps commitments pending', () => {
 test('reply preview requires all three desks', () => {
   assert.throws(() => buildReplyPreview(packet.reviews.filter((review) => review.id !== 'claims')), /Missing claims desk handoff/);
 });
+
+test('claims review reflects the gasket window without approving the claim', () => {
+  const claims = packet.reviews.find((review) => review.id === 'claims');
+  assert.match(claims.findings[0].text, /18-month reporting period/);
+  assert.match(claims.findings[0].text, /not claim eligibility/);
+  assert.equal(claims.state, 'Assessment open');
+  assert.match(claims.handoff.statement, /coverage has not been confirmed/);
+  assert.doesNotMatch(packet.reply.paragraphs.join(' '), /18.month|claim approved|shipping confirmed/i);
+  assert.match(packet.reply.status, /manager approval required/);
+});

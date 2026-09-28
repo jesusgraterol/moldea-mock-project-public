@@ -42,7 +42,7 @@ export function reviewClaims(caseReport, claims, warranty) {
   requireEvidence(claims, 'authorized dealer', 'records/hs-214-claims.md');
   requireEvidence(claims, 'tear near the lower corner', 'records/hs-214-claims.md');
   requireEvidence(claims, 'there is no evidence establishing what caused the tear', 'records/hs-214-claims.md');
-  requireEvidence(warranty, 'manufacturing defects reported within 12 months of the invoice', 'policies/parts-warranty.md');
+  requireEvidence(warranty, 'For HC-240 door gaskets, the reporting window is 18 months from the invoice', 'policies/parts-warranty.md');
   requireEvidence(warranty, 'Documented cleaning damage is excluded', 'policies/parts-warranty.md');
 
   return {
@@ -51,7 +51,7 @@ export function reviewClaims(caseReport, claims, warranty) {
     scope: 'Warranty and claim evidence',
     state: 'Assessment open',
     findings: [
-      { text: 'An authorized-dealer invoice dated 12 January 2026 was supplied. The 27 September report falls within the policy’s 12-month reporting period.', source: 'records/hs-214-claims.md · policies/parts-warranty.md' },
+      { text: 'An authorized-dealer invoice dated 12 January 2026 was supplied. The 27 September report falls within the HC-240 door-gasket policy’s 18-month reporting period; this establishes timing only, not claim eligibility.', source: 'records/hs-214-claims.md · policies/parts-warranty.md' },
       { text: 'A tear near the gasket’s lower corner was reported. The evidence does not establish manufacturing defect or cleaning damage.', source: 'records/hs-214-claims.md' },
       { text: 'The policy covers manufacturing defects and excludes documented cleaning damage. Staff must decide whether this individual claim qualifies.', source: 'policies/parts-warranty.md' }
     ],
