@@ -1,4 +1,4 @@
-# Parcel Desk
+# Parcel Desk (personal!)
 
 Parcel Desk helps support staff at a small online stationery shop explain shipment delays from a locally supplied tracking snapshot. A draft should distinguish recorded carrier events from estimates and unknowns, so staff can answer a customer without inventing a current location or promising delivery. Staff handle refunds, reroutes, and carrier contact themselves.
 
@@ -25,4 +25,5 @@ Observed stopping point: the adopted project has a direct OpenAI Responses draft
 
 For every repository task, select the repository-installed `moldea` skill so its two-byte relevance gate can test the host-known paths. If the gate does not match, continue without `moldea`.
 Canonical moldea project state lives under `/moldea/**`; start at `/moldea/project.md`.
+
 <!-- moldea:end -->
