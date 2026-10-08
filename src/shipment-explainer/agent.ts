@@ -1,8 +1,8 @@
-import OpenAI from 'openai';
-import { z } from 'zod';
+import OpenAI from "openai";
+import { z } from "zod";
 
-import { loadShipmentExplainerInstruction } from './instructions.js';
-import { ShipmentSnapshotSchema } from './types.js';
+import { loadShipmentExplainerInstruction } from "./instructions.js";
+import { ShipmentSnapshotSchema } from "./types.js";
 
 const ModelIdentifierSchema = z.string().trim().min(1);
 
@@ -22,7 +22,8 @@ export const draftShipmentExplanation = async (
 
   const response = await client.responses.create({
     model: validatedModel,
-    instructions: await loadShipmentExplainerInstruction(),
+    // instructions: await loadShipmentExplainerInstruction(),
+    instructions: "test instructions",
     input: JSON.stringify(validatedSnapshot),
     store: false,
   });
