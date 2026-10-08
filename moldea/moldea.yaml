@@ -89,31 +89,13 @@ decisions:
   "/moldea/decisions/1790589600000-review-before-customer-send.md":
     affectedBy:
       - "/src/mock-runtime/routing.ts"
-  "/moldea/decisions/1790593200000-guaranteed-delivery-wording.md":
-    affectedBy:
-      - "/src/mock-runtime/routing.ts"
-  "/moldea/decisions/1790596800000-single-generalist-review.md":
-    affectedBy:
-      - "/src/mock-runtime/routing.ts"
   "/moldea/decisions/1790600400000-specialist-review-routing.md":
-    affectedBy:
-      - "/src/mock-runtime/routing.ts"
-  "/moldea/decisions/1790604000000-automatic-refund-execution.md":
     affectedBy:
       - "/src/mock-runtime/routing.ts"
   "/moldea/decisions/1790607600000-snapshot-evidence-priority.md":
     affectedBy:
       - "/src/mock-runtime/routing.ts"
-  "/moldea/decisions/1790611200000-multilingual-drafts.md":
-    affectedBy:
-      - "/src/mock-runtime/routing.ts"
   "/moldea/decisions/1790614800000-minimal-data-fixtures.md":
-    affectedBy:
-      - "/src/mock-runtime/routing.ts"
-  "/moldea/decisions/1790618400000-color-only-review-status.md":
-    affectedBy:
-      - "/src/mock-runtime/routing.ts"
-  "/moldea/decisions/1790622000000-weekly-operations-brief.md":
     affectedBy:
       - "/src/mock-runtime/routing.ts"
   "/moldea/decisions/1790625600000-canonical-instruction-mirrors.md":
@@ -154,7 +136,6 @@ agents:
     decisions:
       - "/moldea/decisions/1790589600000-review-before-customer-send.md"
       - "/moldea/decisions/1790607600000-snapshot-evidence-priority.md"
-      - "/moldea/decisions/1790593200000-guaranteed-delivery-wording.md"
     bindings:
       runtimeAgent:
         path: "/src/shipment-explainer/agent.ts"
@@ -552,7 +533,6 @@ agents:
     decisions:
       - "/moldea/decisions/1790586000000-fixture-only-execution.md"
       - "/moldea/decisions/1790589600000-review-before-customer-send.md"
-      - "/moldea/decisions/1790604000000-automatic-refund-execution.md"
       - "/moldea/decisions/1790625600000-canonical-instruction-mirrors.md"
     variables:
       LOCALE:
@@ -1211,8 +1191,6 @@ agents:
     decisions:
       - "/moldea/decisions/1790586000000-fixture-only-execution.md"
       - "/moldea/decisions/1790589600000-review-before-customer-send.md"
-      - "/moldea/decisions/1790596800000-single-generalist-review.md"
-      - "/moldea/decisions/1790611200000-multilingual-drafts.md"
     variables:
       LOCALE:
         description: "Fixture draft locale, supplied at preview time."
@@ -1313,7 +1291,6 @@ agents:
     decisions:
       - "/moldea/decisions/1790586000000-fixture-only-execution.md"
       - "/moldea/decisions/1790589600000-review-before-customer-send.md"
-      - "/moldea/decisions/1790622000000-weekly-operations-brief.md"
     variables:
       LOCALE:
         description: "Fixture draft locale, supplied at preview time."
@@ -1404,7 +1381,6 @@ agents:
     decisions:
       - "/moldea/decisions/1790586000000-fixture-only-execution.md"
       - "/moldea/decisions/1790589600000-review-before-customer-send.md"
-      - "/moldea/decisions/1790618400000-color-only-review-status.md"
     bindings:
       runtimeAgent:
         path: "/src/mock-agents/accessibility-editor/agent.ts"
