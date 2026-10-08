@@ -1,0 +1,21 @@
+{
+  "reference": "PD-446",
+  "summary": "The fictional period contains 18 shipment reviews and 7 return reviews.",
+  "evidence": [
+    "The fictional period contains 18 shipment reviews and 7 return reviews."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "metrics": [
+    {
+      "label": "shipment review cases",
+      "count": 18
+    },
+    {
+      "label": "return review cases",
+      "count": 7
+    }
+  ]
+}

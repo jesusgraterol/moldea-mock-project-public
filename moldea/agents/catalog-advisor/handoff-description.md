@@ -1,0 +1,1 @@
+Transfer a fictional case to `catalog-advisor` when this responsibility is needed: Suggests fictional stationery products that match a supplied use case and the recorded catalog snapshot. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

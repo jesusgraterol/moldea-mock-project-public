@@ -1,0 +1,1 @@
+Transfer a fictional case to `stock-watcher` when this responsibility is needed: Identifies fictional low-stock observations and drafts replenishment review notes for staff. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

@@ -1,23 +1,1450 @@
+# Fictional repository explorer fixture. Version 1 shapes follow the installed moldea contract.
 version: 1
+context:
+  "/moldea/project.md":
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/shipment-explainer/agent.ts"
+  "/moldea/context/support/policies.md":
+    affectedBy:
+      - "/src/mock-agents/support-triage/agent.ts"
+      - "/src/mock-agents/refund-reviewer/agent.ts"
+      - "/src/mock-agents/address-change-reviewer/agent.ts"
+      - "/src/mock-agents/reply-composer/agent.ts"
+  "/moldea/context/support/escalation.md":
+    affectedBy:
+      - "/src/mock-agents/support-triage/agent.ts"
+      - "/src/mock-agents/delivery-investigator/agent.ts"
+      - "/src/mock-agents/escalation-coordinator/agent.ts"
+  "/moldea/context/support/voice.md":
+    affectedBy:
+      - "/src/shipment-explainer/agent.ts"
+      - "/src/mock-agents/reply-composer/agent.ts"
+      - "/src/mock-agents/accessibility-editor/agent.ts"
+  "/moldea/context/commerce/orders.md":
+    affectedBy:
+      - "/src/mock-agents/order-lookup/agent.ts"
+      - "/src/mock-agents/support-triage/agent.ts"
+  "/moldea/context/commerce/returns.md":
+    affectedBy:
+      - "/src/mock-agents/returns-guide/agent.ts"
+      - "/src/mock-agents/refund-reviewer/agent.ts"
+  "/moldea/context/commerce/refunds.md":
+    affectedBy:
+      - "/src/mock-agents/refund-reviewer/agent.ts"
+      - "/src/mock-agents/quality-auditor/agent.ts"
+  "/moldea/context/commerce/address-changes.md":
+    affectedBy:
+      - "/src/mock-agents/address-change-reviewer/agent.ts"
+  "/moldea/context/commerce/catalog.md":
+    affectedBy:
+      - "/src/mock-agents/catalog-advisor/agent.ts"
+      - "/src/mock-agents/stock-watcher/agent.ts"
+  "/moldea/context/commerce/inventory.md":
+    affectedBy:
+      - "/src/mock-agents/stock-watcher/agent.ts"
+      - "/src/mock-agents/operations-reporter/agent.ts"
+  "/moldea/context/shipping/tracking.md":
+    affectedBy:
+      - "/src/shipment-explainer/agent.ts"
+      - "/src/mock-agents/delivery-investigator/agent.ts"
+  "/moldea/context/shipping/carrier-exceptions.md":
+    affectedBy:
+      - "/src/mock-agents/delivery-investigator/agent.ts"
+      - "/src/mock-agents/escalation-coordinator/agent.ts"
+  "/moldea/context/trust/privacy.md":
+    affectedBy:
+      - "/src/mock-agents/fraud-screener/agent.ts"
+      - "/src/mock-agents/knowledge-curator/agent.ts"
+      - "/src/mock-agents/quality-auditor/agent.ts"
+  "/moldea/context/trust/risk-review.md":
+    affectedBy:
+      - "/src/mock-agents/fraud-screener/agent.ts"
+      - "/src/mock-agents/escalation-coordinator/agent.ts"
+  "/moldea/context/quality/human-review.md":
+    affectedBy:
+      - "/src/mock-agents/quality-auditor/agent.ts"
+      - "/src/mock-agents/reply-composer/agent.ts"
+      - "/src/mock-agents/escalation-coordinator/agent.ts"
+  "/moldea/context/quality/accessibility.md":
+    affectedBy:
+      - "/src/mock-agents/accessibility-editor/agent.ts"
+      - "/src/mock-agents/reply-composer/agent.ts"
+  "/moldea/context/knowledge/editorial.md":
+    affectedBy:
+      - "/src/mock-agents/knowledge-curator/agent.ts"
+      - "/src/mock-agents/quality-auditor/agent.ts"
+  "/moldea/context/operations/reporting.md":
+    affectedBy:
+      - "/src/mock-agents/operations-reporter/agent.ts"
+      - "/src/mock-agents/stock-watcher/agent.ts"
+  "/moldea/context/platform/fixture-contract.md":
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+decisions:
+  "/moldea/decisions/1790586000000-fixture-only-execution.md":
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+  "/moldea/decisions/1790589600000-review-before-customer-send.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790593200000-guaranteed-delivery-wording.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790596800000-single-generalist-review.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790600400000-specialist-review-routing.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790604000000-automatic-refund-execution.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790607600000-snapshot-evidence-priority.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790611200000-multilingual-drafts.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790614800000-minimal-data-fixtures.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790618400000-color-only-review-status.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790622000000-weekly-operations-brief.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+  "/moldea/decisions/1790625600000-canonical-instruction-mirrors.md":
+    affectedBy:
+      - "/src/mock-runtime/routing.ts"
+unresolved:
+  operational-use:
+    category: "runtime-integration"
+    effect: "blocking"
+    description: "The expanded branch is a repository explorer mock and has no end-to-end operational service."
+    resolution: "Implement and verify a separately authorized service, runtime, credentials, review flow, and live capabilities before any operational use."
+    related:
+      - path: "/src/mock-runtime/agent.ts"
+      - path: "/moldea/runtimes/custom.md"
+  staff-acceptance:
+    category: "review-evidence"
+    effect: "warning"
+    description: "The fixture drafts have not established acceptance criteria from operational staff."
+    resolution: "Review representative workflows with staff and record their acceptance evidence if operational adoption is later requested."
+    related:
+      - path: "/moldea/context/quality/human-review.md"
+  explorer-feedback:
+    category: "fixture-visibility"
+    effect: "informational"
+    description: "The branch intentionally includes varied text lengths, decision states, nested context, shared skills, and mirror relationships for UI feedback."
+    resolution: "Retain representative samples while collecting explorer feedback; retire redundant samples after visual coverage is agreed."
+    related:
+      - path: "/fixtures/explorer/README.md"
 agents:
   shipment-explainer:
     runtime:
-      id: openai
+      id: "openai"
+      guidance: "/moldea/runtimes/openai.md"
+    context:
+      - "/moldea/context/shipping/tracking.md"
+      - "/moldea/context/support/voice.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790607600000-snapshot-evidence-priority.md"
+      - "/moldea/decisions/1790593200000-guaranteed-delivery-wording.md"
     bindings:
       runtimeAgent:
-        path: /src/shipment-explainer/agent.ts
-        symbol: draftShipmentExplanation
+        path: "/src/shipment-explainer/agent.ts"
+        symbol: "draftShipmentExplanation"
       instructionLoader:
-        path: /src/shipment-explainer/instructions.ts
-        symbol: loadShipmentExplainerInstruction
+        path: "/src/shipment-explainer/instructions.ts"
+        symbol: "loadShipmentExplainerInstruction"
+      inputSchema:
+        path: "/src/shipment-explainer/types.ts"
+        symbol: "ShipmentSnapshotSchema"
     affectedBy:
-      - /src/shipment-explainer/types.ts
-      - /package.json
+      - "/src/shipment-explainer/types.ts"
+      - "/package.json"
     unresolved:
       live-integration:
-        category: runtime-integration
-        effect: blocking
-        description: The source-only assistant has no application caller, credential configuration, staff-review flow, or verified live provider behavior.
-        resolution: Connect an authorized caller and staff-review flow, vet supplied text for personal data, configure credentials outside the repository, and verify the provider path before treating the agent as operational.
+        category: "runtime-integration"
+        effect: "blocking"
+        description: "The source-only assistant has no application caller, credential configuration, staff-review flow, or verified live provider behavior."
+        resolution: "Connect an authorized caller and staff-review flow, vet supplied text for personal data, configure credentials outside the repository, and verify the provider path before treating the agent as operational."
         related:
-          - path: /src/shipment-explainer/agent.ts
+          - path: "/src/shipment-explainer/agent.ts"
+  support-triage:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/support/policies.md"
+      - "/moldea/context/support/escalation.md"
+      - "/moldea/context/commerce/orders.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790600400000-specialist-review-routing.md"
+      - "/moldea/decisions/1790625600000-canonical-instruction-mirrors.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/support-triage/agent.ts"
+        symbol: "supportTriageAgent"
+      inputSchema:
+        path: "/src/mock-agents/support-triage/schemas.ts"
+        symbol: "SupportTriageInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/support-triage/schemas.ts"
+        symbol: "SupportTriageOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/support-triage/instructions.ts"
+        symbol: "loadSupportTriageInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/support-triage/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/support-triage/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-case-summary:
+        name: "read_case_summary"
+        description: "Inspect fictional read case summary records for support-triage; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-case-summary.ts"
+          symbol: "readCaseSummary"
+        registration:
+          path: "/src/mock-agents/support-triage/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-case-summary.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-case-summary.ts"
+          symbol: "ToolOutputSchema"
+      list-review-queues:
+        name: "list_review_queues"
+        description: "Inspect fictional list review queues records for support-triage; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/list-review-queues.ts"
+          symbol: "listReviewQueues"
+        registration:
+          path: "/src/mock-agents/support-triage/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/list-review-queues.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/list-review-queues.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      evidence-summary:
+        name: "evidence-summary"
+        description: "Summarize supplied fictional evidence with an explicit distinction between recorded facts, estimates, and unknowns."
+        implementation:
+          path: "/fixtures/skills/evidence-summary/SKILL.md"
+        registration:
+          path: "/src/mock-agents/support-triage/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/evidence-summary/references/**"
+      case-routing:
+        name: "case-routing"
+        description: "Recommend a review owner for fictional support cases when a supplied intent or conflict requires a specialist handoff."
+        implementation:
+          path: "/fixtures/skills/case-routing/SKILL.md"
+        registration:
+          path: "/src/mock-agents/support-triage/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/case-routing/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    mirrors:
+      - "/fixtures/instruction-mirrors/support-triage.md"
+    unresolved:
+      fixture-readiness:
+        category: "fixture-visibility"
+        effect: "informational"
+        description: "This intentionally static example supplies an informational requirement for explorer visibility."
+        resolution: "Retain this fixture while the explorer needs informational requirement examples; remove it when that visual coverage is no longer required."
+        related:
+          - path: "/src/mock-agents/support-triage/agent.ts"
+          - path: "/fixtures/explorer/agents/support-triage/output.json"
+  order-lookup:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/commerce/orders.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/order-lookup/agent.ts"
+        symbol: "orderLookupAgent"
+      inputSchema:
+        path: "/src/mock-agents/order-lookup/schemas.ts"
+        symbol: "OrderLookupInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/order-lookup/schemas.ts"
+        symbol: "OrderLookupOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/order-lookup/instructions.ts"
+        symbol: "loadOrderLookupInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/order-lookup/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/order-lookup/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-order-snapshot:
+        name: "read_order_snapshot"
+        description: "Inspect fictional read order snapshot records for order-lookup; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-order-snapshot.ts"
+          symbol: "readOrderSnapshot"
+        registration:
+          path: "/src/mock-agents/order-lookup/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-order-snapshot.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-order-snapshot.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      evidence-summary:
+        name: "evidence-summary"
+        description: "Summarize supplied fictional evidence with an explicit distinction between recorded facts, estimates, and unknowns."
+        implementation:
+          path: "/fixtures/skills/evidence-summary/SKILL.md"
+        registration:
+          path: "/src/mock-agents/order-lookup/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/evidence-summary/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+  delivery-investigator:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/support/escalation.md"
+      - "/moldea/context/shipping/tracking.md"
+      - "/moldea/context/shipping/carrier-exceptions.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790607600000-snapshot-evidence-priority.md"
+      - "/moldea/decisions/1790625600000-canonical-instruction-mirrors.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/delivery-investigator/agent.ts"
+        symbol: "deliveryInvestigatorAgent"
+      inputSchema:
+        path: "/src/mock-agents/delivery-investigator/schemas.ts"
+        symbol: "DeliveryInvestigatorInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/delivery-investigator/schemas.ts"
+        symbol: "DeliveryInvestigatorOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/delivery-investigator/instructions.ts"
+        symbol: "loadDeliveryInvestigatorInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/delivery-investigator/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/delivery-investigator/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-tracking-history:
+        name: "read_tracking_history"
+        description: "Inspect fictional read tracking history records for delivery-investigator; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-tracking-history.ts"
+          symbol: "readTrackingHistory"
+        registration:
+          path: "/src/mock-agents/delivery-investigator/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-tracking-history.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-tracking-history.ts"
+          symbol: "ToolOutputSchema"
+      read-carrier-exceptions:
+        name: "read_carrier_exceptions"
+        description: "Inspect fictional read carrier exceptions records for delivery-investigator; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-carrier-exceptions.ts"
+          symbol: "readCarrierExceptions"
+        registration:
+          path: "/src/mock-agents/delivery-investigator/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-carrier-exceptions.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-carrier-exceptions.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      timeline-review:
+        name: "timeline-review"
+        description: "Review fictional date-only and timestamped events when staff need a tracking chronology or stale-scan explanation."
+        implementation:
+          path: "/fixtures/skills/timeline-review/SKILL.md"
+        registration:
+          path: "/src/mock-agents/delivery-investigator/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/timeline-review/references/**"
+      evidence-summary:
+        name: "evidence-summary"
+        description: "Summarize supplied fictional evidence with an explicit distinction between recorded facts, estimates, and unknowns."
+        implementation:
+          path: "/fixtures/skills/evidence-summary/SKILL.md"
+        registration:
+          path: "/src/mock-agents/delivery-investigator/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/evidence-summary/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    mirrors:
+      - "/fixtures/instruction-mirrors/delivery-investigator.md"
+    unresolved:
+      fixture-readiness:
+        category: "runtime-integration"
+        effect: "blocking"
+        description: "This agent has no live integration, and its predetermined output cannot establish operational behavior."
+        resolution: "Establish an authorized runtime, real canonical-loading path, capability behavior, and focused staff-review evidence before live use."
+        related:
+          - path: "/src/mock-agents/delivery-investigator/agent.ts"
+          - path: "/fixtures/explorer/agents/delivery-investigator/output.json"
+  returns-guide:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/commerce/returns.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/returns-guide/agent.ts"
+        symbol: "returnsGuideAgent"
+      inputSchema:
+        path: "/src/mock-agents/returns-guide/schemas.ts"
+        symbol: "ReturnsGuideInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/returns-guide/schemas.ts"
+        symbol: "ReturnsGuideOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/returns-guide/instructions.ts"
+        symbol: "loadReturnsGuideInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/returns-guide/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/returns-guide/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-return-policy:
+        name: "read_return_policy"
+        description: "Inspect fictional read return policy records for returns-guide; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-return-policy.ts"
+          symbol: "readReturnPolicy"
+        registration:
+          path: "/src/mock-agents/returns-guide/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-return-policy.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-return-policy.ts"
+          symbol: "ToolOutputSchema"
+      preview-return-checklist:
+        name: "preview_return_checklist"
+        description: "Inspect fictional preview return checklist records for returns-guide; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/preview-return-checklist.ts"
+          symbol: "previewReturnChecklist"
+        registration:
+          path: "/src/mock-agents/returns-guide/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/preview-return-checklist.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/preview-return-checklist.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      policy-comparison:
+        name: "policy-comparison"
+        description: "Compare supplied fictional eligibility facts with a named fixture policy for a return, refund, or quality review."
+        implementation:
+          path: "/fixtures/skills/policy-comparison/SKILL.md"
+        registration:
+          path: "/src/mock-agents/returns-guide/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/policy-comparison/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    unresolved:
+      fixture-readiness:
+        category: "review-evidence"
+        effect: "warning"
+        description: "The local draft has no independent staff acceptance evidence for live use."
+        resolution: "Review representative real input and record the staff acceptance criteria before operational adoption."
+        related:
+          - path: "/src/mock-agents/returns-guide/agent.ts"
+          - path: "/fixtures/explorer/agents/returns-guide/output.json"
+  refund-reviewer:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/support/policies.md"
+      - "/moldea/context/commerce/returns.md"
+      - "/moldea/context/commerce/refunds.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790604000000-automatic-refund-execution.md"
+      - "/moldea/decisions/1790625600000-canonical-instruction-mirrors.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/refund-reviewer/agent.ts"
+        symbol: "refundReviewerAgent"
+      inputSchema:
+        path: "/src/mock-agents/refund-reviewer/schemas.ts"
+        symbol: "RefundReviewerInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/refund-reviewer/schemas.ts"
+        symbol: "RefundReviewerOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/refund-reviewer/instructions.ts"
+        symbol: "loadRefundReviewerInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/refund-reviewer/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/refund-reviewer/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-payment-summary:
+        name: "read_payment_summary"
+        description: "Inspect fictional read payment summary records for refund-reviewer; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-payment-summary.ts"
+          symbol: "readPaymentSummary"
+        registration:
+          path: "/src/mock-agents/refund-reviewer/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-payment-summary.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-payment-summary.ts"
+          symbol: "ToolOutputSchema"
+      preview-refund-review:
+        name: "preview_refund_review"
+        description: "Inspect fictional preview refund review records for refund-reviewer; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/preview-refund-review.ts"
+          symbol: "previewRefundReview"
+        registration:
+          path: "/src/mock-agents/refund-reviewer/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/preview-refund-review.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/preview-refund-review.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      policy-comparison:
+        name: "policy-comparison"
+        description: "Compare supplied fictional eligibility facts with a named fixture policy for a return, refund, or quality review."
+        implementation:
+          path: "/fixtures/skills/policy-comparison/SKILL.md"
+        registration:
+          path: "/src/mock-agents/refund-reviewer/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/policy-comparison/references/**"
+      money-formatting:
+        name: "money-formatting"
+        description: "Render integer minor-unit fixture amounts with their explicit currency in refund reviews and operations drafts."
+        implementation:
+          path: "/fixtures/skills/money-formatting/SKILL.md"
+        registration:
+          path: "/src/mock-agents/refund-reviewer/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/money-formatting/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    mirrors:
+      - "/fixtures/instruction-mirrors/refund-reviewer.md"
+    unresolved:
+      fixture-readiness:
+        category: "runtime-integration"
+        effect: "blocking"
+        description: "This agent has no live integration, and its predetermined output cannot establish operational behavior."
+        resolution: "Establish an authorized runtime, real canonical-loading path, capability behavior, and focused staff-review evidence before live use."
+        related:
+          - path: "/src/mock-agents/refund-reviewer/agent.ts"
+          - path: "/fixtures/explorer/agents/refund-reviewer/output.json"
+  address-change-reviewer:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/support/policies.md"
+      - "/moldea/context/commerce/address-changes.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/address-change-reviewer/agent.ts"
+        symbol: "addressChangeReviewerAgent"
+      inputSchema:
+        path: "/src/mock-agents/address-change-reviewer/schemas.ts"
+        symbol: "AddressChangeReviewerInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/address-change-reviewer/schemas.ts"
+        symbol: "AddressChangeReviewerOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/address-change-reviewer/instructions.ts"
+        symbol: "loadAddressChangeReviewerInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/address-change-reviewer/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/address-change-reviewer/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-dispatch-state:
+        name: "read_dispatch_state"
+        description: "Inspect fictional read dispatch state records for address-change-reviewer; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-dispatch-state.ts"
+          symbol: "readDispatchState"
+        registration:
+          path: "/src/mock-agents/address-change-reviewer/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-dispatch-state.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-dispatch-state.ts"
+          symbol: "ToolOutputSchema"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    unresolved:
+      fixture-readiness:
+        category: "review-evidence"
+        effect: "warning"
+        description: "The local draft has no independent staff acceptance evidence for live use."
+        resolution: "Review representative real input and record the staff acceptance criteria before operational adoption."
+        related:
+          - path: "/src/mock-agents/address-change-reviewer/agent.ts"
+          - path: "/fixtures/explorer/agents/address-change-reviewer/output.json"
+  catalog-advisor:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/commerce/catalog.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/catalog-advisor/agent.ts"
+        symbol: "catalogAdvisorAgent"
+      inputSchema:
+        path: "/src/mock-agents/catalog-advisor/schemas.ts"
+        symbol: "CatalogAdvisorInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/catalog-advisor/schemas.ts"
+        symbol: "CatalogAdvisorOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/catalog-advisor/instructions.ts"
+        symbol: "loadCatalogAdvisorInstruction"
+    tools:
+      search-catalog:
+        name: "search_catalog"
+        description: "Inspect fictional search catalog records for catalog-advisor; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/search-catalog.ts"
+          symbol: "searchCatalog"
+        registration:
+          path: "/src/mock-agents/catalog-advisor/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/search-catalog.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/search-catalog.ts"
+          symbol: "ToolOutputSchema"
+      read-product-details:
+        name: "read_product_details"
+        description: "Inspect fictional read product details records for catalog-advisor; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-product-details.ts"
+          symbol: "readProductDetails"
+        registration:
+          path: "/src/mock-agents/catalog-advisor/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-product-details.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-product-details.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      catalog-comparison:
+        name: "catalog-comparison"
+        description: "Compare listed fictional stationery products when a supplied use case asks for a catalog recommendation."
+        implementation:
+          path: "/fixtures/skills/catalog-comparison/SKILL.md"
+        registration:
+          path: "/src/mock-agents/catalog-advisor/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/catalog-comparison/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+  stock-watcher:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/commerce/catalog.md"
+      - "/moldea/context/commerce/inventory.md"
+      - "/moldea/context/operations/reporting.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/stock-watcher/agent.ts"
+        symbol: "stockWatcherAgent"
+      inputSchema:
+        path: "/src/mock-agents/stock-watcher/schemas.ts"
+        symbol: "StockWatcherInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/stock-watcher/schemas.ts"
+        symbol: "StockWatcherOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/stock-watcher/instructions.ts"
+        symbol: "loadStockWatcherInstruction"
+    tools:
+      read-inventory-snapshot:
+        name: "read_inventory_snapshot"
+        description: "Inspect fictional read inventory snapshot records for stock-watcher; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-inventory-snapshot.ts"
+          symbol: "readInventorySnapshot"
+        registration:
+          path: "/src/mock-agents/stock-watcher/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-inventory-snapshot.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-inventory-snapshot.ts"
+          symbol: "ToolOutputSchema"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    unresolved:
+      fixture-readiness:
+        category: "fixture-visibility"
+        effect: "informational"
+        description: "This intentionally static example supplies an informational requirement for explorer visibility."
+        resolution: "Retain this fixture while the explorer needs informational requirement examples; remove it when that visual coverage is no longer required."
+        related:
+          - path: "/src/mock-agents/stock-watcher/agent.ts"
+          - path: "/fixtures/explorer/agents/stock-watcher/output.json"
+  fraud-screener:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/trust/privacy.md"
+      - "/moldea/context/trust/risk-review.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790614800000-minimal-data-fixtures.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/fraud-screener/agent.ts"
+        symbol: "fraudScreenerAgent"
+      inputSchema:
+        path: "/src/mock-agents/fraud-screener/schemas.ts"
+        symbol: "FraudScreenerInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/fraud-screener/schemas.ts"
+        symbol: "FraudScreenerOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/fraud-screener/instructions.ts"
+        symbol: "loadFraudScreenerInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/fraud-screener/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/fraud-screener/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-case-signals:
+        name: "read_case_signals"
+        description: "Inspect fictional read case signals records for fraud-screener; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-case-signals.ts"
+          symbol: "readCaseSignals"
+        registration:
+          path: "/src/mock-agents/fraud-screener/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-case-signals.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-case-signals.ts"
+          symbol: "ToolOutputSchema"
+      read-review-history:
+        name: "read_review_history"
+        description: "Inspect fictional read review history records for fraud-screener; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-review-history.ts"
+          symbol: "readReviewHistory"
+        registration:
+          path: "/src/mock-agents/fraud-screener/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-review-history.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-review-history.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      risk-language:
+        name: "risk-language"
+        description: "Edit fictional risk and quality findings when unsupported accusations or guarantees need evidence-based wording."
+        implementation:
+          path: "/fixtures/skills/risk-language/SKILL.md"
+        registration:
+          path: "/src/mock-agents/fraud-screener/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/risk-language/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    unresolved:
+      fixture-readiness:
+        category: "runtime-integration"
+        effect: "blocking"
+        description: "This agent has no live integration, and its predetermined output cannot establish operational behavior."
+        resolution: "Establish an authorized runtime, real canonical-loading path, capability behavior, and focused staff-review evidence before live use."
+        related:
+          - path: "/src/mock-agents/fraud-screener/agent.ts"
+          - path: "/fixtures/explorer/agents/fraud-screener/output.json"
+  escalation-coordinator:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/support/escalation.md"
+      - "/moldea/context/shipping/carrier-exceptions.md"
+      - "/moldea/context/trust/risk-review.md"
+      - "/moldea/context/quality/human-review.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790600400000-specialist-review-routing.md"
+      - "/moldea/decisions/1790625600000-canonical-instruction-mirrors.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/escalation-coordinator/agent.ts"
+        symbol: "escalationCoordinatorAgent"
+      inputSchema:
+        path: "/src/mock-agents/escalation-coordinator/schemas.ts"
+        symbol: "EscalationCoordinatorInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/escalation-coordinator/schemas.ts"
+        symbol: "EscalationCoordinatorOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/escalation-coordinator/instructions.ts"
+        symbol: "loadEscalationCoordinatorInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/escalation-coordinator/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/escalation-coordinator/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-escalation-matrix:
+        name: "read_escalation_matrix"
+        description: "Inspect fictional read escalation matrix records for escalation-coordinator; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-escalation-matrix.ts"
+          symbol: "readEscalationMatrix"
+        registration:
+          path: "/src/mock-agents/escalation-coordinator/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-escalation-matrix.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-escalation-matrix.ts"
+          symbol: "ToolOutputSchema"
+      preview-handoff-note:
+        name: "preview_handoff_note"
+        description: "Inspect fictional preview handoff note records for escalation-coordinator; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/preview-handoff-note.ts"
+          symbol: "previewHandoffNote"
+        registration:
+          path: "/src/mock-agents/escalation-coordinator/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/preview-handoff-note.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/preview-handoff-note.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      case-routing:
+        name: "case-routing"
+        description: "Recommend a review owner for fictional support cases when a supplied intent or conflict requires a specialist handoff."
+        implementation:
+          path: "/fixtures/skills/case-routing/SKILL.md"
+        registration:
+          path: "/src/mock-agents/escalation-coordinator/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/case-routing/references/**"
+      evidence-summary:
+        name: "evidence-summary"
+        description: "Summarize supplied fictional evidence with an explicit distinction between recorded facts, estimates, and unknowns."
+        implementation:
+          path: "/fixtures/skills/evidence-summary/SKILL.md"
+        registration:
+          path: "/src/mock-agents/escalation-coordinator/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/evidence-summary/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    mirrors:
+      - "/fixtures/instruction-mirrors/escalation-coordinator.md"
+    unresolved:
+      fixture-readiness:
+        category: "review-evidence"
+        effect: "warning"
+        description: "The local draft has no independent staff acceptance evidence for live use."
+        resolution: "Review representative real input and record the staff acceptance criteria before operational adoption."
+        related:
+          - path: "/src/mock-agents/escalation-coordinator/agent.ts"
+          - path: "/fixtures/explorer/agents/escalation-coordinator/output.json"
+  reply-composer:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/support/policies.md"
+      - "/moldea/context/support/voice.md"
+      - "/moldea/context/quality/human-review.md"
+      - "/moldea/context/quality/accessibility.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790607600000-snapshot-evidence-priority.md"
+      - "/moldea/decisions/1790625600000-canonical-instruction-mirrors.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/reply-composer/agent.ts"
+        symbol: "replyComposerAgent"
+      inputSchema:
+        path: "/src/mock-agents/reply-composer/schemas.ts"
+        symbol: "ReplyComposerInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/reply-composer/schemas.ts"
+        symbol: "ReplyComposerOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/reply-composer/instructions.ts"
+        symbol: "loadReplyComposerInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/reply-composer/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/reply-composer/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-approved-brief:
+        name: "read_approved_brief"
+        description: "Inspect fictional read approved brief records for reply-composer; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-approved-brief.ts"
+          symbol: "readApprovedBrief"
+        registration:
+          path: "/src/mock-agents/reply-composer/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-approved-brief.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-approved-brief.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      plain-language:
+        name: "plain-language"
+        description: "Simplify fictional customer-facing drafts when readability or accessibility review is requested."
+        implementation:
+          path: "/fixtures/skills/plain-language/SKILL.md"
+        registration:
+          path: "/src/mock-agents/reply-composer/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/plain-language/references/**"
+      evidence-summary:
+        name: "evidence-summary"
+        description: "Summarize supplied fictional evidence with an explicit distinction between recorded facts, estimates, and unknowns."
+        implementation:
+          path: "/fixtures/skills/evidence-summary/SKILL.md"
+        registration:
+          path: "/src/mock-agents/reply-composer/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/evidence-summary/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    mirrors:
+      - "/fixtures/instruction-mirrors/reply-composer.md"
+    unresolved:
+      fixture-readiness:
+        category: "review-evidence"
+        effect: "warning"
+        description: "The local draft has no independent staff acceptance evidence for live use."
+        resolution: "Review representative real input and record the staff acceptance criteria before operational adoption."
+        related:
+          - path: "/src/mock-agents/reply-composer/agent.ts"
+          - path: "/fixtures/explorer/agents/reply-composer/output.json"
+  quality-auditor:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/commerce/refunds.md"
+      - "/moldea/context/trust/privacy.md"
+      - "/moldea/context/quality/human-review.md"
+      - "/moldea/context/knowledge/editorial.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790607600000-snapshot-evidence-priority.md"
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/quality-auditor/agent.ts"
+        symbol: "qualityAuditorAgent"
+      inputSchema:
+        path: "/src/mock-agents/quality-auditor/schemas.ts"
+        symbol: "QualityAuditorInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/quality-auditor/schemas.ts"
+        symbol: "QualityAuditorOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/quality-auditor/instructions.ts"
+        symbol: "loadQualityAuditorInstruction"
+    tools:
+      read-draft-evidence:
+        name: "read_draft_evidence"
+        description: "Inspect fictional read draft evidence records for quality-auditor; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-draft-evidence.ts"
+          symbol: "readDraftEvidence"
+        registration:
+          path: "/src/mock-agents/quality-auditor/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-draft-evidence.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-draft-evidence.ts"
+          symbol: "ToolOutputSchema"
+      read-review-rubric:
+        name: "read_review_rubric"
+        description: "Inspect fictional read review rubric records for quality-auditor; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-review-rubric.ts"
+          symbol: "readReviewRubric"
+        registration:
+          path: "/src/mock-agents/quality-auditor/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-review-rubric.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-review-rubric.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      risk-language:
+        name: "risk-language"
+        description: "Edit fictional risk and quality findings when unsupported accusations or guarantees need evidence-based wording."
+        implementation:
+          path: "/fixtures/skills/risk-language/SKILL.md"
+        registration:
+          path: "/src/mock-agents/quality-auditor/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/risk-language/references/**"
+      policy-comparison:
+        name: "policy-comparison"
+        description: "Compare supplied fictional eligibility facts with a named fixture policy for a return, refund, or quality review."
+        implementation:
+          path: "/fixtures/skills/policy-comparison/SKILL.md"
+        registration:
+          path: "/src/mock-agents/quality-auditor/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/policy-comparison/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+  knowledge-curator:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/trust/privacy.md"
+      - "/moldea/context/knowledge/editorial.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790596800000-single-generalist-review.md"
+      - "/moldea/decisions/1790611200000-multilingual-drafts.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/knowledge-curator/agent.ts"
+        symbol: "knowledgeCuratorAgent"
+      inputSchema:
+        path: "/src/mock-agents/knowledge-curator/schemas.ts"
+        symbol: "KnowledgeCuratorInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/knowledge-curator/schemas.ts"
+        symbol: "KnowledgeCuratorOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/knowledge-curator/instructions.ts"
+        symbol: "loadKnowledgeCuratorInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/knowledge-curator/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/knowledge-curator/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-knowledge-source:
+        name: "read_knowledge_source"
+        description: "Inspect fictional read knowledge source records for knowledge-curator; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-knowledge-source.ts"
+          symbol: "readKnowledgeSource"
+        registration:
+          path: "/src/mock-agents/knowledge-curator/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-knowledge-source.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-knowledge-source.ts"
+          symbol: "ToolOutputSchema"
+      preview-knowledge-edit:
+        name: "preview_knowledge_edit"
+        description: "Inspect fictional preview knowledge edit records for knowledge-curator; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/preview-knowledge-edit.ts"
+          symbol: "previewKnowledgeEdit"
+        registration:
+          path: "/src/mock-agents/knowledge-curator/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/preview-knowledge-edit.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/preview-knowledge-edit.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      evidence-summary:
+        name: "evidence-summary"
+        description: "Summarize supplied fictional evidence with an explicit distinction between recorded facts, estimates, and unknowns."
+        implementation:
+          path: "/fixtures/skills/evidence-summary/SKILL.md"
+        registration:
+          path: "/src/mock-agents/knowledge-curator/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/evidence-summary/references/**"
+      plain-language:
+        name: "plain-language"
+        description: "Simplify fictional customer-facing drafts when readability or accessibility review is requested."
+        implementation:
+          path: "/fixtures/skills/plain-language/SKILL.md"
+        registration:
+          path: "/src/mock-agents/knowledge-curator/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/plain-language/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    unresolved:
+      fixture-readiness:
+        category: "fixture-visibility"
+        effect: "informational"
+        description: "This intentionally static example supplies an informational requirement for explorer visibility."
+        resolution: "Retain this fixture while the explorer needs informational requirement examples; remove it when that visual coverage is no longer required."
+        related:
+          - path: "/src/mock-agents/knowledge-curator/agent.ts"
+          - path: "/fixtures/explorer/agents/knowledge-curator/output.json"
+  operations-reporter:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/commerce/inventory.md"
+      - "/moldea/context/operations/reporting.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790622000000-weekly-operations-brief.md"
+    variables:
+      LOCALE:
+        description: "Fixture draft locale, supplied at preview time."
+      REVIEW_TEAM:
+        description: "Display label for the fictional staff-review owner."
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/operations-reporter/agent.ts"
+        symbol: "operationsReporterAgent"
+      inputSchema:
+        path: "/src/mock-agents/operations-reporter/schemas.ts"
+        symbol: "OperationsReporterInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/operations-reporter/schemas.ts"
+        symbol: "OperationsReporterOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/operations-reporter/instructions.ts"
+        symbol: "loadOperationsReporterInstruction"
+      variableProviders:
+        LOCALE:
+          path: "/src/mock-agents/operations-reporter/variables.ts"
+          symbol: "provideLocale"
+        REVIEW_TEAM:
+          path: "/src/mock-agents/operations-reporter/variables.ts"
+          symbol: "provideReviewTeam"
+    tools:
+      read-support-metrics:
+        name: "read_support_metrics"
+        description: "Inspect fictional read support metrics records for operations-reporter; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-support-metrics.ts"
+          symbol: "readSupportMetrics"
+        registration:
+          path: "/src/mock-agents/operations-reporter/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-support-metrics.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-support-metrics.ts"
+          symbol: "ToolOutputSchema"
+      read-stock-alerts:
+        name: "read_stock_alerts"
+        description: "Inspect fictional read stock alerts records for operations-reporter; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-stock-alerts.ts"
+          symbol: "readStockAlerts"
+        registration:
+          path: "/src/mock-agents/operations-reporter/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-stock-alerts.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-stock-alerts.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      money-formatting:
+        name: "money-formatting"
+        description: "Render integer minor-unit fixture amounts with their explicit currency in refund reviews and operations drafts."
+        implementation:
+          path: "/fixtures/skills/money-formatting/SKILL.md"
+        registration:
+          path: "/src/mock-agents/operations-reporter/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/money-formatting/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"
+    unresolved:
+      fixture-readiness:
+        category: "review-evidence"
+        effect: "warning"
+        description: "The local draft has no independent staff acceptance evidence for live use."
+        resolution: "Review representative real input and record the staff acceptance criteria before operational adoption."
+        related:
+          - path: "/src/mock-agents/operations-reporter/agent.ts"
+          - path: "/fixtures/explorer/agents/operations-reporter/output.json"
+  accessibility-editor:
+    runtime:
+      id: "custom"
+      guidance: "/moldea/runtimes/custom.md"
+    context:
+      - "/moldea/context/support/voice.md"
+      - "/moldea/context/quality/accessibility.md"
+      - "/moldea/context/platform/fixture-contract.md"
+    decisions:
+      - "/moldea/decisions/1790586000000-fixture-only-execution.md"
+      - "/moldea/decisions/1790589600000-review-before-customer-send.md"
+      - "/moldea/decisions/1790618400000-color-only-review-status.md"
+    bindings:
+      runtimeAgent:
+        path: "/src/mock-agents/accessibility-editor/agent.ts"
+        symbol: "accessibilityEditorAgent"
+      inputSchema:
+        path: "/src/mock-agents/accessibility-editor/schemas.ts"
+        symbol: "AccessibilityEditorInputSchema"
+      outputSchema:
+        path: "/src/mock-agents/accessibility-editor/schemas.ts"
+        symbol: "AccessibilityEditorOutputSchema"
+      instructionLoader:
+        path: "/src/mock-agents/accessibility-editor/instructions.ts"
+        symbol: "loadAccessibilityEditorInstruction"
+    tools:
+      read-readability-rubric:
+        name: "read_readability_rubric"
+        description: "Inspect fictional read readability rubric records for accessibility-editor; return an inert preview without side effects."
+        implementation:
+          path: "/src/mock-tools/read-readability-rubric.ts"
+          symbol: "readReadabilityRubric"
+        registration:
+          path: "/src/mock-agents/accessibility-editor/agent.ts"
+          symbol: "registeredTools"
+        inputSchema:
+          path: "/src/mock-tools/read-readability-rubric.ts"
+          symbol: "ToolInputSchema"
+        outputSchema:
+          path: "/src/mock-tools/read-readability-rubric.ts"
+          symbol: "ToolOutputSchema"
+    skills:
+      plain-language:
+        name: "plain-language"
+        description: "Simplify fictional customer-facing drafts when readability or accessibility review is requested."
+        implementation:
+          path: "/fixtures/skills/plain-language/SKILL.md"
+        registration:
+          path: "/src/mock-agents/accessibility-editor/agent.ts"
+          symbol: "registeredSkills"
+        affectedBy:
+          - "/fixtures/skills/plain-language/references/**"
+    affectedBy:
+      - "/src/mock-runtime/agent.ts"
+      - "/src/mock-runtime/routing.ts"

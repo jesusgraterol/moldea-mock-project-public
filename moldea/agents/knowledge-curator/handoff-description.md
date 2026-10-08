@@ -1,0 +1,1 @@
+Transfer a fictional case to `knowledge-curator` when this responsibility is needed: Proposes evidence-linked changes to fictional support knowledge while preserving canonical ownership. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

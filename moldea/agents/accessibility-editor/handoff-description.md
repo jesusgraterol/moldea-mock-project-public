@@ -1,0 +1,1 @@
+Transfer a fictional case to `accessibility-editor` when this responsibility is needed: Simplifies fictional support drafts for readability while preserving dates, amounts, facts, and uncertainty. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

@@ -1,0 +1,14 @@
+{
+  "reference": "PD-440",
+  "summary": "One fictional SKU is below the supplied reorder threshold.",
+  "evidence": [
+    "One fictional SKU is below the supplied reorder threshold."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "lowStockSkus": [
+    "CARD-THANKS-06"
+  ]
+}

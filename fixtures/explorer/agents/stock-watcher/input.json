@@ -1,0 +1,8 @@
+{
+  "reference": "PD-440",
+  "snapshotTakenAt": "2026-10-08T12:00:00Z",
+  "facts": [
+    "One fictional SKU is below the supplied reorder threshold."
+  ],
+  "thresholdUnits": 12
+}

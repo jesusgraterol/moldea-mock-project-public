@@ -1,0 +1,1 @@
+Transfer a fictional case to `order-lookup` when this responsibility is needed: Summarizes a fictional order snapshot while keeping payment, packing, shipment, and delivery states distinct. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

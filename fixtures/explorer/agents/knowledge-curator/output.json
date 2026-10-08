@@ -1,0 +1,12 @@
+{
+  "reference": "PD-445",
+  "summary": "A proposed clarification keeps carrier estimates distinct from loss claims.",
+  "evidence": [
+    "A proposed clarification keeps carrier estimates distinct from loss claims."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "proposedChange": "Clarify that a passed carrier estimate does not establish parcel loss."
+}

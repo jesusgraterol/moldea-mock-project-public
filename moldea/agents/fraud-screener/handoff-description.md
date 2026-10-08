@@ -1,0 +1,1 @@
+Transfer a fictional case to `fraud-screener` when this responsibility is needed: Describes observable inconsistencies in fictional case data as review signals without accusing customers. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

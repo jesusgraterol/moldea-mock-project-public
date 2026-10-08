@@ -1,0 +1,8 @@
+{
+  "reference": "PD-439",
+  "snapshotTakenAt": "2026-10-08T12:00:00Z",
+  "facts": [
+    "Two listed stationery SKUs match the journaling use case."
+  ],
+  "useCase": "journaling"
+}

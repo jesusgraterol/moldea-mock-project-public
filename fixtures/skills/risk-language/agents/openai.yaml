@@ -1,0 +1,6 @@
+interface:
+  display_name: "Risk language"
+  short_description: "Inspect a fictional Parcel Desk review artifact."
+  default_prompt: "Use $risk-language to review the supplied Parcel Desk fixture."
+policy:
+  allow_implicit_invocation: false

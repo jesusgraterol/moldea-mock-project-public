@@ -1,0 +1,12 @@
+{
+  "reference": "PD-438",
+  "summary": "Address edit feasibility is unknown after carrier handoff.",
+  "evidence": [
+    "Address edit feasibility is unknown after carrier handoff."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "feasibility": "unknown-after-handoff"
+}

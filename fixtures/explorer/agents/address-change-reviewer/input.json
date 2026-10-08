@@ -1,0 +1,8 @@
+{
+  "reference": "PD-438",
+  "snapshotTakenAt": "2026-10-08T12:00:00Z",
+  "facts": [
+    "Address edit feasibility is unknown after carrier handoff."
+  ],
+  "dispatchState": "handed-to-carrier"
+}

@@ -1,0 +1,1 @@
+Transfer a fictional case to `delivery-investigator` when this responsibility is needed: Reviews stale scans, passed estimates, and carrier exceptions to prepare a staff investigation brief. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

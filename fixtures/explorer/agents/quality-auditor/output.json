@@ -1,0 +1,14 @@
+{
+  "reference": "PD-444",
+  "summary": "The supplied draft promises delivery without supporting evidence.",
+  "evidence": [
+    "The supplied draft promises delivery without supporting evidence."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "findings": [
+    "Unsupported delivery guarantee; no confirmed delivery date is supplied."
+  ]
+}

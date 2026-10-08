@@ -1,25 +1,33 @@
-# Parcel Desk
+# Parcel Desk — repository explorer mock
 
-Parcel Desk helps support staff at a small online stationery shop explain shipment delays from a locally supplied tracking snapshot. A draft should distinguish recorded carrier events from estimates and unknowns, so staff can answer a customer without inventing a current location or promising delivery. Staff handle refunds, reroutes, and carrier contact themselves.
+This branch is a populated, fictional moldea repository for reviewing the cloud repository explorer UI. It needs no working service, deployment, credentials, or live model execution. Every new capability is an inert local fixture, and every result remains a staff-review draft.
 
-The fictional `PD-431` shipment in `records/` has a carrier handoff and a later regional-hub scan. Its estimated delivery date has not passed. `PD-432` has a passed carrier estimate and an older last scan, but no delivery scan or newer location. The desk wants short, calm explanations of what the known scans show and what remains uncertain. No customer address or other real personal data is included.
+The original Parcel Desk shipment explainer is preserved. The expanded mock adds support triage, order review, delivery investigation, returns, refund review, address-change review, catalog advice, inventory observations, risk screening, escalation, reply composition, quality review, knowledge curation, reporting, and accessibility editing.
 
-This is a source-only prototype. It needs no working service, deployment, credentials, live provider calls, or application test suite. No reply is sent to a customer by this repository.
+## What's populated
 
-## Project blueprint
+- 16 agents with descriptions, canonical instructions, and routing-facing handoff descriptions.
+- 18 focused context documents organized into eight nested topic groups.
+- 12 timestamped decisions covering accepted, proposed, rejected, and superseded states.
+- 2 runtime guidance documents for the existing OpenAI prototype and custom fixtures.
+- 25 local tool implementations with registration and input/output schema relationships.
+- 8 reusable skill source artifacts shared across agents.
+- 22 declared variables and providers, 5 exact instruction mirrors, and project/agent requirements at all three effects.
+- Sample inputs and outputs, fictional support records, and real source targets for explorer navigation.
 
-- `records/` contains fictional case notes, including PD-431 and PD-432. The source does not load these records automatically.
-- `src/shipment-explainer/` validates a caller-supplied snapshot, reads the canonical instruction, and constructs a direct OpenAI Responses request using a caller-supplied model identifier. The draft text is returned for staff review, not sent to a customer.
-- `draftShipmentExplanation(model, snapshot)` requires a reference, carrier, snapshot timestamp, nullable estimated delivery date, scan dates or timestamps and descriptions, and explicit unknowns. Its strict snapshot schema rejects extra properties; callers must still keep personal data out of allowed text fields.
-- `moldea/` owns the project context and shipment-explainer instruction. Its manifest records the missing live integration as blocking operational readiness.
-- `npm run typecheck` checks the TypeScript source. There is no service entry point, credential setup, live provider verification, deployment, or application test suite.
+## Browse the mock
 
-`/docs` is reserved for concise, quickly scannable documentation of essential, durable project concepts and processes. API and HTTP endpoint documentation belongs in its established location outside `/docs` if those surfaces are added later.
+- [Canonical project overview](moldea/project.md)
+- [Manifest](moldea/moldea.yaml)
+- [Explorer coverage and visual review scenarios](fixtures/explorer/README.md)
+- [Machine-readable inventory](fixtures/explorer/inventory.json)
+- [Fixture documentation](docs/explorer-fixtures.md)
 
-Attempt base: `c3ecda12e853b527a96c6ca81150083b0224643a`.
-Installed skill: `v6.0.0` at `.agents/skills/moldea/`. Actor session: `01a0e3ff-bfb1-71d2-8391-34269dac7fab`.
+`src/mock-agents/`, `src/mock-tools/`, and `src/mock-runtime/` provide typed fixture definitions. New agents do not call providers or perform business actions. `src/shipment-explainer/` remains the original caller-supplied snapshot prototype; this task does not execute it. No reply is sent to a customer by this repository.
 
-Observed stopping point: the adopted project has a direct OpenAI Responses draft path. A later PD-432 request added date-only scans and guidance for a passed carrier estimate. Typechecking and Moldea validation passed; live model output, staff review integration, and customer delivery were not exercised.
+`npm run typecheck` checks the source. The installed moldea skill launcher validates the repository format. Passing these checks does not establish live model behavior or operational readiness.
+
+`/docs` is reserved for concise documentation of essential, durable project concepts and processes. API and HTTP endpoint documentation belongs outside `/docs` if those surfaces are added later.
 
 <!-- moldea:start -->
 

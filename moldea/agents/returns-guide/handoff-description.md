@@ -1,0 +1,1 @@
+Transfer a fictional case to `returns-guide` when this responsibility is needed: Explains fixture return-review criteria and identifies missing product-condition evidence for staff. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

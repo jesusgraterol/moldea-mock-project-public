@@ -1,0 +1,10 @@
+{
+  "reference": "PD-441",
+  "snapshotTakenAt": "2026-10-08T12:00:00Z",
+  "facts": [
+    "The mismatched references are a review signal, not proof of fraud."
+  ],
+  "signals": [
+    "order and shipment references differ"
+  ]
+}

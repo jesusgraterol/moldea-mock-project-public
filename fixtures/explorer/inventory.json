@@ -1,0 +1,26 @@
+{
+  "fixtureOnly": true,
+  "agents": 16,
+  "contextDocuments": 18,
+  "decisions": 12,
+  "runtimeGuidanceDocuments": 2,
+  "toolImplementations": 25,
+  "toolRegistrations": 25,
+  "skillArtifacts": 8,
+  "skillRegistrations": 20,
+  "variables": 22,
+  "mirrors": 5,
+  "projectRequirements": 3,
+  "agentRequirements": 12,
+  "decisionStatuses": [
+    "accepted",
+    "proposed",
+    "rejected",
+    "superseded"
+  ],
+  "requirementEffects": [
+    "blocking",
+    "warning",
+    "informational"
+  ]
+}

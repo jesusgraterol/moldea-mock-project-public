@@ -1,0 +1,1 @@
+Transfer a fictional case to `support-triage` when this responsibility is needed: Classifies fictional support requests and recommends the specialist who should review the recorded facts. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

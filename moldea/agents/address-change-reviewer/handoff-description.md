@@ -1,0 +1,1 @@
+Transfer a fictional case to `address-change-reviewer` when this responsibility is needed: Assesses whether a fictional address-change request has enough dispatch evidence for staff review. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

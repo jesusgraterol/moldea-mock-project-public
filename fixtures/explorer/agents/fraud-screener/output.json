@@ -1,0 +1,12 @@
+{
+  "reference": "PD-441",
+  "summary": "The mismatched references are a review signal, not proof of fraud.",
+  "evidence": [
+    "The mismatched references are a review signal, not proof of fraud."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "riskBand": "review"
+}

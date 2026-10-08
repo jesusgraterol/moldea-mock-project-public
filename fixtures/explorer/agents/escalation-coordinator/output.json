@@ -1,0 +1,12 @@
+{
+  "reference": "PD-442",
+  "summary": "The supplied stale tracking evidence fits the shipping review queue.",
+  "evidence": [
+    "The supplied stale tracking evidence fits the shipping review queue."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "reviewQueue": "shipping-review"
+}

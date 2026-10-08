@@ -1,0 +1,8 @@
+{
+  "reference": "PD-442",
+  "snapshotTakenAt": "2026-10-08T12:00:00Z",
+  "facts": [
+    "The supplied stale tracking evidence fits the shipping review queue."
+  ],
+  "priority": "attention"
+}

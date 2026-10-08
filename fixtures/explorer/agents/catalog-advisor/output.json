@@ -1,0 +1,15 @@
+{
+  "reference": "PD-439",
+  "summary": "Two listed stationery SKUs match the journaling use case.",
+  "evidence": [
+    "Two listed stationery SKUs match the journaling use case."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "suggestedSkus": [
+    "NOTE-A5-DOT",
+    "PEN-BLK-02"
+  ]
+}

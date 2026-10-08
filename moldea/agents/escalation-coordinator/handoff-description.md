@@ -1,0 +1,1 @@
+Transfer a fictional case to `escalation-coordinator` when this responsibility is needed: Assembles a concise fictional case handoff with an owner, evidence, missing facts, and a suggested review priority. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

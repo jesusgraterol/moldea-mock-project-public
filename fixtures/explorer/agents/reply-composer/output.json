@@ -1,0 +1,12 @@
+{
+  "reference": "PD-443",
+  "summary": "A short evidence-based shipment explanation is ready for staff review.",
+  "evidence": [
+    "A short evidence-based shipment explanation is ready for staff review."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "draftText": "The carrier estimate has passed. The latest recorded scan is dated October 3; the snapshot contains no newer scan or confirmed current location."
+}

@@ -1,0 +1,12 @@
+{
+  "reference": "PD-435",
+  "summary": "The estimate has passed and the latest supplied scan is five days old.",
+  "evidence": [
+    "The estimate has passed and the latest supplied scan is five days old."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "reviewReason": "estimate-passed"
+}

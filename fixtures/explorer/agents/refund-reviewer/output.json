@@ -1,0 +1,12 @@
+{
+  "reference": "PD-437",
+  "summary": "USD 18.90 is recorded; refund eligibility still requires staff review.",
+  "evidence": [
+    "USD 18.90 is recorded; refund eligibility still requires staff review."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "recommendation": "review-eligibility"
+}

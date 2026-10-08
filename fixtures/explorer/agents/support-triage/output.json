@@ -1,0 +1,12 @@
+{
+  "reference": "PD-433",
+  "summary": "Shipment evidence should be reviewed by the shipment explainer.",
+  "evidence": [
+    "Shipment evidence should be reviewed by the shipment explainer."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "route": "shipment-explainer"
+}

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Catalog comparison"
+  short_description: "Inspect a fictional Parcel Desk review artifact."
+  default_prompt: "Use $catalog-comparison to review the supplied Parcel Desk fixture."
+policy:
+  allow_implicit_invocation: false

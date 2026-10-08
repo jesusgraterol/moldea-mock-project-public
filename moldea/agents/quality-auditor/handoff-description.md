@@ -1,0 +1,1 @@
+Transfer a fictional case to `quality-auditor` when this responsibility is needed: Checks fictional support drafts for unsupported claims, missing uncertainty, and intervention promises. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

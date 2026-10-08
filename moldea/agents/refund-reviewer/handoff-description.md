@@ -1,0 +1,1 @@
+Transfer a fictional case to `refund-reviewer` when this responsibility is needed: Prepares a refund recommendation from fictional amounts and eligibility evidence without approving or issuing money. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

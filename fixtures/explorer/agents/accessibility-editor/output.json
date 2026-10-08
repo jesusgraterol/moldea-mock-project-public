@@ -1,0 +1,12 @@
+{
+  "reference": "PD-447",
+  "summary": "The revised wording expands ETA and keeps missing scans explicit.",
+  "evidence": [
+    "The revised wording expands ETA and keeps missing scans explicit."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "editedText": "The carrier estimate has passed. No newer carrier scan is recorded."
+}

@@ -1,0 +1,1 @@
+Transfer a fictional case to `reply-composer` when this responsibility is needed: Turns an approved fictional evidence brief into a short customer-facing draft for staff review. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.

@@ -1,0 +1,1 @@
+Transfer a fictional shipment case to `shipment-explainer` when staff need a short explanation of recorded scans, a carrier estimate, or unknown delivery status. Supply the validated tracking snapshot. The result is a staff-review draft; refunds, reroutes, and carrier contact remain staff responsibilities.

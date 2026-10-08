@@ -1,0 +1,8 @@
+{
+  "reference": "PD-436",
+  "snapshotTakenAt": "2026-10-08T12:00:00Z",
+  "facts": [
+    "The damaged-item request needs a staff review of condition evidence."
+  ],
+  "productCondition": "damaged"
+}

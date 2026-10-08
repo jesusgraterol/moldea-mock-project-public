@@ -1,0 +1,8 @@
+{
+  "reference": "PD-433",
+  "snapshotTakenAt": "2026-10-08T12:00:00Z",
+  "facts": [
+    "Shipment evidence should be reviewed by the shipment explainer."
+  ],
+  "intent": "shipment"
+}

@@ -22,8 +22,8 @@ export const draftShipmentExplanation = async (
 
   const response = await client.responses.create({
     model: validatedModel,
-    // instructions: await loadShipmentExplainerInstruction(),
-    instructions: "test instructions",
+    instructions: await loadShipmentExplainerInstruction(),
+    // instructions: "test instructions",
     input: JSON.stringify(validatedSnapshot),
     store: false,
   });

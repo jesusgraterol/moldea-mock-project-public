@@ -1,0 +1,12 @@
+{
+  "reference": "PD-434",
+  "summary": "The fictional order is paid and recorded as handed to the carrier.",
+  "evidence": [
+    "The fictional order is paid and recorded as handed to the carrier."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "orderState": "handed-to-carrier"
+}

@@ -1,0 +1,12 @@
+{
+  "reference": "PD-436",
+  "summary": "The damaged-item request needs a staff review of condition evidence.",
+  "evidence": [
+    "The damaged-item request needs a staff review of condition evidence."
+  ],
+  "unknowns": [
+    "Live integration and staff outcome are outside this fixture."
+  ],
+  "requiresReview": true,
+  "reviewOutcome": "staff-review"
+}

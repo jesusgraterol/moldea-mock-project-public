@@ -1,0 +1,1 @@
+Prepares a refund recommendation from fictional amounts and eligibility evidence without approving or issuing money. This agent is an inert explorer fixture; every result remains a staff-review draft.

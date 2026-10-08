@@ -1,0 +1,6 @@
+interface:
+  display_name: "Timeline review"
+  short_description: "Inspect a fictional Parcel Desk review artifact."
+  default_prompt: "Use $timeline-review to review the supplied Parcel Desk fixture."
+policy:
+  allow_implicit_invocation: false

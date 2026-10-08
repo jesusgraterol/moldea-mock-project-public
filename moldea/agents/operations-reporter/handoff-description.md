@@ -1,0 +1,1 @@
+Transfer a fictional case to `operations-reporter` when this responsibility is needed: Summarizes fictional support volumes and inventory observations over a supplied reporting period. Supply the case reference, snapshot time, recorded facts, and task-specific fields. Transfer only the review responsibility; no business intervention is authorized.
