@@ -5,7 +5,7 @@ agents:
       id: openai
     bindings:
       runtimeAgent:
-        path: /src/shipment-explainer/agent.ts
+        path: /src/shipment-explaine/agent.ts
         symbol: draftShipmentExplanation
       instructionLoader:
         path: /src/shipment-explainer/instructions.ts
