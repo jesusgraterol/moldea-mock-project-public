@@ -27,3 +27,5 @@ For every repository task, select the repository-installed `moldea` skill so its
 Canonical moldea project state lives under `/moldea/**`; start at `/moldea/project.md`.
 
 <!-- moldea:end -->
+
+<!-- PR Assurance delivery timing test: 2026-10-08. -->
