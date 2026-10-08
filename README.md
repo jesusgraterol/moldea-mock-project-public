@@ -28,4 +28,4 @@ Canonical moldea project state lives under `/moldea/**`; start at `/moldea/proje
 
 <!-- moldea:end -->
 
-<!-- PR Assurance delivery timing test: 2026-10-08. -->
+<!-- PR Assurance delivery timing test: 2026-10-08, traced delivery. -->
