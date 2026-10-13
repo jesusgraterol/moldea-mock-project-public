@@ -2,6 +2,7 @@
 
 /**
  * Build a local watering proposal without performing any equipment operations.
+ * Selected zones use exact JavaScript string order, stable for equal IDs.
  *
  * @param {Array<{id: string, moisturePercent: number, requestedLitres: number}>} zones
  * @returns {{zones: Array<{id: string, requestedLitres: number}>, totalLitres: number}}
@@ -47,6 +48,12 @@ export function planWatering(zones) {
       selectedZones.push({ id, requestedLitres });
     }
   }
+
+  selectedZones.sort((left, right) => {
+    if (left.id < right.id) return -1;
+    if (left.id > right.id) return 1;
+    return 0;
+  });
 
   return { zones: selectedZones, totalLitres };
 }

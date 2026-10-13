@@ -24,8 +24,11 @@ in sparse arrays are invalid too. Wrong types and nonfinite numbers throw
 ## Selection and output
 
 - Select a zone exactly when `moisturePercent < 20`. A reading of 20 is excluded.
-- Keep selected zones in input order and return their supplied `id` and
-  `requestedLitres`, including zero-litre requests.
+- Order selected zones by their exact `id` using JavaScript string order (UTF-16
+  code units), without trimming, normalization, locale collation, or numeric sorting.
+  Preserve input order for equal IDs.
+- Return each selected zone's supplied `id` and `requestedLitres`, including
+  zero-litre requests.
 - Return `{ zones: [{ id, requestedLitres }], totalLitres }`, where `totalLitres`
   sums only selected requests using JavaScript number arithmetic without rounding.
 - An empty input or no selected zones returns `{ zones: [], totalLitres: 0 }`.

@@ -4,7 +4,7 @@ import { planWatering } from '../src/water-plan.mjs';
 
 const validZone = { id: 'herb-bed', moisturePercent: 10, requestedLitres: 3 };
 
-test('selects only moisture below 20, retaining supplied litres and input order', () => {
+test('selects only moisture below 20, retaining supplied litres in ID order', () => {
   assert.deepEqual(planWatering([
     { id: 'dry-bed', moisturePercent: 0, requestedLitres: 3 },
     { id: 'threshold-bed', moisturePercent: 20, requestedLitres: 50 },
@@ -13,11 +13,40 @@ test('selects only moisture below 20, retaining supplied litres and input order'
     { id: 'zero-request', moisturePercent: 5, requestedLitres: 0 },
   ]), {
     zones: [
-      { id: 'dry-bed', requestedLitres: 3 },
       { id: 'almost-threshold', requestedLitres: 2.5 },
+      { id: 'dry-bed', requestedLitres: 3 },
       { id: 'zero-request', requestedLitres: 0 },
     ],
     totalLitres: 5.5,
+  });
+});
+
+test('orders exact IDs by JavaScript strings, without locale or normalization rules', () => {
+  const ids = ['é', 'zone-2', 'a', '\uE000', 'Z-bed', 'zone-10', '😀', 'e\u0301', ' a', 'a '];
+  const plan = planWatering(ids.map((id) => ({ ...validZone, id })));
+
+  assert.deepEqual(plan.zones.map((zone) => zone.id), [
+    ' a', 'Z-bed', 'a', 'a ', 'e\u0301', 'zone-10', 'zone-2', 'é', '😀', '\uE000',
+  ]);
+});
+
+test('preserves input order for equal IDs among selected zones', () => {
+  assert.deepEqual(planWatering([
+    { ...validZone, id: 'b', requestedLitres: 9 },
+    { ...validZone, id: 'a', requestedLitres: 5 },
+    { ...validZone, id: 'b', moisturePercent: 20, requestedLitres: 99 },
+    { ...validZone, id: 'b', requestedLitres: 3 },
+    { ...validZone, id: 'a', requestedLitres: 2 },
+    { ...validZone, id: 'b', requestedLitres: 0 },
+  ]), {
+    zones: [
+      { id: 'a', requestedLitres: 5 },
+      { id: 'a', requestedLitres: 2 },
+      { id: 'b', requestedLitres: 9 },
+      { id: 'b', requestedLitres: 3 },
+      { id: 'b', requestedLitres: 0 },
+    ],
+    totalLitres: 19,
   });
 });
 
@@ -28,13 +57,18 @@ test('returns an empty plan for no zones or no dry zones', () => {
 });
 
 test('is deterministic and does not mutate or expose input records', () => {
-  const zone = Object.freeze({ ...validZone });
-  const input = Object.freeze([zone]);
+  const input = Object.freeze([
+    Object.freeze({ ...validZone, id: 'z-bed', requestedLitres: 5 }),
+    Object.freeze({ ...validZone, id: 'a-bed', requestedLitres: 3 }),
+    Object.freeze({ ...validZone, id: 'm-bed', moisturePercent: 20, requestedLitres: 7 }),
+  ]);
+  const originalInput = structuredClone(input);
   const firstPlan = planWatering(input);
+  const originalPlan = structuredClone(firstPlan);
   assert.deepEqual(planWatering(input), firstPlan);
   firstPlan.zones[0].requestedLitres = 99;
-  assert.equal(zone.requestedLitres, 3);
-  assert.equal(planWatering(input).totalLitres, 3);
+  assert.deepEqual(input, originalInput);
+  assert.deepEqual(planWatering(input), originalPlan);
 });
 
 test('rejects missing facts, including on zones that would not be selected', () => {
