@@ -40,7 +40,7 @@ export function planWatering(zones) {
       throw new RangeError(`zones[${index}].requestedLitres must be nonnegative`);
     }
 
-    if (moisturePercent < 20) {
+    if (moisturePercent < 25) {
       totalLitres += requestedLitres;
       if (!Number.isFinite(totalLitres)) {
         throw new RangeError('totalLitres must remain finite');

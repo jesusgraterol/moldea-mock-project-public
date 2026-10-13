@@ -5,7 +5,7 @@
 This document owns River Gauge's durable watering contract. Its selection
 threshold reflects the garden coordinators' approved policy, confirmed by the
 developer. The deterministic local planner produces a proposal only. Garden
-coordinators still approve execution; the planner performs no equipment
+coordinators approve execution; the planner performs no equipment
 operations or external I/O and needs no credentials.
 
 ## Supplied facts
@@ -24,7 +24,7 @@ in sparse arrays are invalid too. Wrong types and nonfinite numbers throw
 
 ## Selection and output
 
-- The approved policy selects a zone exactly when `moisturePercent < 25`.
+- Select a zone exactly when `moisturePercent < 25`.
   A reading of exactly 25 is excluded.
 - Order selected zones by their exact `id` using JavaScript string order (UTF-16
   code units), without trimming, normalization, locale collation, or numeric sorting.
@@ -37,18 +37,6 @@ in sparse arrays are invalid too. Wrong types and nonfinite numbers throw
 - Reject an overflowing, nonfinite total with `RangeError`.
 - Do not mutate input records; return fresh plan records. Identical supplied
   facts produce identical plans.
-
-## Outstanding implementation requirement
-
-The [planner source](../../src/water-plan.mjs) and
-[real-module tests](../../test/water-plan.test.mjs) still encode the previous
-below-20% threshold. They do not yet implement the approved below-25% policy.
-
-Resolution criteria: align the planner and its real-module tests with the approved
-threshold, proving that readings of 20 and 24.999 are selected and exactly 25 is
-excluded. Preserve strict validation without guessed missing readings, exact-ID
-ordering with stable equal IDs, untouched caller input, and coordinator approval
-of execution.
 
 ## Implementation and maintenance
 

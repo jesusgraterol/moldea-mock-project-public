@@ -4,20 +4,22 @@ import { planWatering } from '../src/water-plan.mjs';
 
 const validZone = { id: 'herb-bed', moisturePercent: 10, requestedLitres: 3 };
 
-test('selects only moisture below 20, retaining supplied litres in ID order', () => {
+test('selects 20 and 24.999 but not 25, retaining supplied litres in ID order', () => {
   assert.deepEqual(planWatering([
     { id: 'dry-bed', moisturePercent: 0, requestedLitres: 3 },
-    { id: 'threshold-bed', moisturePercent: 20, requestedLitres: 50 },
-    { id: 'almost-threshold', moisturePercent: 19.999, requestedLitres: 2.5 },
+    { id: 'threshold-bed', moisturePercent: 25, requestedLitres: 50 },
+    { id: 'almost-threshold', moisturePercent: 24.999, requestedLitres: 2.5 },
+    { id: 'twenty-percent-bed', moisturePercent: 20, requestedLitres: 4 },
     { id: 'saturated-bed', moisturePercent: 100, requestedLitres: 20 },
     { id: 'zero-request', moisturePercent: 5, requestedLitres: 0 },
   ]), {
     zones: [
       { id: 'almost-threshold', requestedLitres: 2.5 },
       { id: 'dry-bed', requestedLitres: 3 },
+      { id: 'twenty-percent-bed', requestedLitres: 4 },
       { id: 'zero-request', requestedLitres: 0 },
     ],
-    totalLitres: 5.5,
+    totalLitres: 9.5,
   });
 });
 
@@ -34,7 +36,7 @@ test('preserves input order for equal IDs among selected zones', () => {
   assert.deepEqual(planWatering([
     { ...validZone, id: 'b', requestedLitres: 9 },
     { ...validZone, id: 'a', requestedLitres: 5 },
-    { ...validZone, id: 'b', moisturePercent: 20, requestedLitres: 99 },
+    { ...validZone, id: 'b', moisturePercent: 25, requestedLitres: 99 },
     { ...validZone, id: 'b', requestedLitres: 3 },
     { ...validZone, id: 'a', requestedLitres: 2 },
     { ...validZone, id: 'b', requestedLitres: 0 },
@@ -53,14 +55,14 @@ test('preserves input order for equal IDs among selected zones', () => {
 test('returns an empty plan for no zones or no dry zones', () => {
   const emptyPlan = { zones: [], totalLitres: 0 };
   assert.deepEqual(planWatering([]), emptyPlan);
-  assert.deepEqual(planWatering([{ ...validZone, moisturePercent: 20 }]), emptyPlan);
+  assert.deepEqual(planWatering([{ ...validZone, moisturePercent: 25 }]), emptyPlan);
 });
 
 test('is deterministic and does not mutate or expose input records', () => {
   const input = Object.freeze([
     Object.freeze({ ...validZone, id: 'z-bed', requestedLitres: 5 }),
     Object.freeze({ ...validZone, id: 'a-bed', requestedLitres: 3 }),
-    Object.freeze({ ...validZone, id: 'm-bed', moisturePercent: 20, requestedLitres: 7 }),
+    Object.freeze({ ...validZone, id: 'm-bed', moisturePercent: 25, requestedLitres: 7 }),
   ]);
   const originalInput = structuredClone(input);
   const firstPlan = planWatering(input);

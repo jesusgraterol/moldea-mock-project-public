@@ -17,10 +17,17 @@ Import the real JavaScript module directly:
 import { planWatering } from './src/water-plan.mjs';
 
 const plan = planWatering([
-  { id: 'herb-bed', moisturePercent: 12, requestedLitres: 3 },
-  { id: 'flower-bed', moisturePercent: 20, requestedLitres: 5 },
+  { id: 'herb-bed', moisturePercent: 20, requestedLitres: 3 },
+  { id: 'flower-bed', moisturePercent: 24.999, requestedLitres: 5 },
+  { id: 'border-bed', moisturePercent: 25, requestedLitres: 9 },
 ]);
-// { zones: [{ id: 'herb-bed', requestedLitres: 3 }], totalLitres: 3 }
+// {
+//   zones: [
+//     { id: 'flower-bed', requestedLitres: 5 },
+//     { id: 'herb-bed', requestedLitres: 3 },
+//   ],
+//   totalLitres: 8,
+// }
 ```
 
 The [watering policy](moldea/context/watering-policy.md) owns the input and
