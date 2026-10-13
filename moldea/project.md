@@ -4,7 +4,7 @@ Juniper Pantry is a fictional community pantry coordinating volunteer shifts. It
 
 ## Operating context
 
-- Volunteer shifts currently last two hours.
+- Volunteer shifts currently last three hours.
 - Coordinators approve every assignment.
 - Volunteers should ask a coordinator about scheduling exceptions rather than assume those exceptions are approved.
 
