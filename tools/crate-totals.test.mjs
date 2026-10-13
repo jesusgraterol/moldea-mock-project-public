@@ -124,6 +124,17 @@ test('rejects raw fractional counts that round to safe integers', () => {
   }
 });
 
+test('validates long raw numeric tokens without rounding away fractional digits', () => {
+  const zeros = '0'.repeat(100_000);
+  rejects(
+    `[{"label":"valid","count":2},{"label":"rice","count":1.${zeros}1}]`,
+    /entry 2 count must be a nonnegative safe integer/,
+  );
+  succeedsRaw(`[{"label":"rice","count":1.${zeros}}]`, [
+    { label: 'rice', count: 1 },
+  ]);
+});
+
 test('rejects raw nonzero counts that underflow to zero', () => {
   for (const input of [
     '[{"label":"valid","count":2},{"label":"rice","count":-1e-400}]',

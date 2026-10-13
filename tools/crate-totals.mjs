@@ -8,7 +8,11 @@ function isNonnegativeIntegralSource(source) {
   const digits = (integer + fraction).replace(/^0+/, '');
   if (digits.length === 0) return true; // Exact zero, including -0.
   if (sign === '-') return false;
-  const trailingZeros = digits.length - digits.replace(/0+$/, '').length;
+  // Scan once from the end; an unanchored trailing-zero regex can retry
+  // quadratically on a long run of zeros followed by a nonzero digit.
+  let end = digits.length;
+  while (end > 0 && digits[end - 1] === '0') end -= 1;
+  const trailingZeros = digits.length - end;
   return Number(exponent) + trailingZeros >= fraction.length;
 }
 
