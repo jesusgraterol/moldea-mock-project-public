@@ -152,6 +152,74 @@ test('capture retains a completed web search item and rejects unrecognized exten
   assert.match(runCapture(paths).stderr, /completed native extension needs manual inspection/i);
 });
 
+test('capture retains delegation and clock calls, lifecycle and messages with explicit prompt redaction', async () => {
+  const paths = await setup();
+  const privatePrompt = 'ENCRYPTED_HOST_PROMPT';
+  const input = JSON.stringify({ task_name: 'label-check', message: privatePrompt });
+  const lifecycle = { type: 'SubAgentActivity', id: 'call-1', kind: 'started',
+    agent_thread_id: '0199c0b1-63da-73a1-b532-4e161922ea2f', agent_path: '/root/label-check',
+    model: 'test-model', reasoning_effort: 'test-effort' };
+  const message = { type: 'agent_message', author: '/root/label-check', recipient: '/root',
+    content: [{ type: 'input_text', text: 'Sender: /root/label-check\nFive informal cases inspected.' }] };
+  const records = [
+    { type: 'session_meta', payload: { id: '0199c0b1-63da-73a1-b532-4e161922ea2f',
+      cli_version: 'test-host' } },
+    { type: 'response_item', payload: { type: 'function_call', name: 'spawn_agent',
+      namespace: 'collaboration', call_id: 'call-1', arguments: input } },
+    { type: 'event_msg', payload: { type: 'item_completed', item: lifecycle } },
+    { type: 'response_item', payload: { type: 'function_call_output', call_id: 'call-1',
+      output: '{"task_name":"/root/label-check"}' } },
+    { type: 'event_msg', payload: { type: 'item_completed', item: { ...lifecycle,
+      id: 'completed-1', kind: 'completed', model: null, reasoning_effort: null } } },
+    { type: 'inter_agent_communication_metadata', payload: { trigger_turn: false } },
+    { type: 'response_item', payload: message },
+    { type: 'response_item', payload: { type: 'function_call', name: 'sleep', namespace: 'clock',
+      call_id: 'clock-1', arguments: '{"duration_ms":1000}' } },
+    { type: 'event_msg', payload: { type: 'item_completed', item: {
+      type: 'Extension', kind: 'clock.sleep', id: 'clock-1', durationMs: 1000 } } },
+    { type: 'response_item', payload: { type: 'function_call_output', call_id: 'clock-1',
+      output: 'Wall time: 1.0001 seconds\nSleep completed.' } },
+  ];
+  await writeFile(paths.native, records.map((record) => JSON.stringify(record)).join('\n') + '\n');
+  await writeFile(paths.rules, JSON.stringify({ includeBaseInstructions: false, rules: [{
+    id: 'delegation-prompt', reason: 'Encrypted host prompt is unavailable as plaintext.',
+    eventOrdinal: 1, path: ['payload', 'input'],
+    start: input.indexOf(privatePrompt), end: input.indexOf(privatePrompt) + privatePrompt.length,
+  }] }));
+  const result = runCapture(paths);
+  assert.equal(result.status, 0, result.stderr);
+  const text = gunzipSync(await readFile(join(paths.output, 'session-01.jsonl.gz'))).toString();
+  const events = text.trim().split('\n').map(JSON.parse);
+  assert.equal(text.includes(privatePrompt), false);
+  assert.deepEqual(events.map(({ ordinal }) => ordinal), [0, 1, 2, 3, 4, 6, 7, 9]);
+  assert.equal(events[1].payload.name, 'collaboration.spawn_agent');
+  assert.equal(events[1].payload.status, 'recorded');
+  assert.deepEqual(JSON.parse(events[1].payload.input), { task_name: 'label-check', message: '[redacted]' });
+  assert.deepEqual(JSON.parse(events[2].payload.content[0].text), lifecycle);
+  assert.deepEqual(events[3].payload.output, [{ type: 'output_text', text: '{"task_name":"/root/label-check"}' }]);
+  assert.deepEqual(JSON.parse(events[4].payload.content[0].text).model, null);
+  assert.deepEqual(events[5].payload, { role: 'assistant', author: message.author,
+    recipient: message.recipient, content: message.content });
+  assert.equal(events[6].payload.name, 'clock.sleep');
+  assert.equal(events[6].payload.input, '{"duration_ms":1000}');
+  assert.deepEqual(events[7].payload.output,
+    [{ type: 'output_text', text: 'Wall time: 1.0001 seconds\nSleep completed.' }]);
+  const metadataText = await readFile(join(paths.output, 'session-01.jsonl.gz.meta.json'), 'utf8');
+  const metadata = JSON.parse(metadataText);
+  assert.deepEqual(metadata.requests.map(({ eventOrdinal }) => eventOrdinal), [2, 4]);
+  assert.ok(metadata.omissions.includes('non-content agent-delivery metadata omitted'));
+  assert.equal(`${metadataText}${result.stdout}${result.stderr}`.includes(privatePrompt), false);
+
+  await rm(join(paths.output, 'session-01.jsonl.gz'));
+  await rm(join(paths.output, 'session-01.jsonl.gz.meta.json'));
+  records[1].payload.arguments = { message: privatePrompt };
+  await writeFile(paths.native, records.map((record) => JSON.stringify(record)).join('\n') + '\n');
+  const invalid = runCapture(paths);
+  assert.match(invalid.stderr, /native function call has unsupported fields/i);
+  assert.equal(`${invalid.stdout}${invalid.stderr}`.includes(privatePrompt), false);
+  assert.deepEqual(await readdir(paths.output), []);
+});
+
 test('capture identifies user prompts alongside host input envelopes', async () => {
   const paths = await setup();
   const records = [

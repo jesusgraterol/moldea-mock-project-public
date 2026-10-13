@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "runId": "run-20261013-01",
   "date": "2026-10-13",
-  "summary": "Lantern Loans pilot: fresh adoption, real LangGraph instruction/tool/schema execution, fourteen-day policy maintenance and unrelated-work silence.",
+  "summary": "Four projects and 24 conversation turns: real LangGraph instruction execution, standalone skill work, operating foundations, connected context, approved policy maintenance and unrelated-work silence, with recorded assistance and limits.",
   "expectedActor": {
     "model": "gpt-6.1-sol",
     "effort": "xhigh"
@@ -30,12 +30,16 @@
     }
   ],
   "attempts": [
-    "evidence/runs/run-20261013-01/attempts/lantern-loans-01.json"
+    "evidence/runs/run-20261013-01/attempts/lantern-loans-01.json",
+    "evidence/runs/run-20261013-01/attempts/moss-atlas-01.json",
+    "evidence/runs/run-20261013-01/attempts/juniper-pantry-01.json",
+    "evidence/runs/run-20261013-01/attempts/river-gauge-01.json"
   ],
   "evidenceStatus": "complete",
   "reviewStatus": "complete",
   "review": "evidence/runs/run-20261013-01/reviews/skill-review.md",
   "limitations": [
+    "Combined full browser replay is pending; the pilot full replay passed before expansion.",
     "No live provider calls, natural compaction, semantic reliability evaluation or adapter qualification is established."
   ]
 }

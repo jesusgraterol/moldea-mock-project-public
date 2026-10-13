@@ -1,0 +1,1401 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261013-01",
+  "scenarioId": "river-gauge",
+  "attemptId": "river-gauge-01",
+  "branch": "fixture_context_only_xs_river_gauge_01",
+  "baseCommit": "7d2e42c1398ea62cf0895617e4126b09ff3abffd",
+  "finalCommit": "3f85989937e5413ca2c8a2964dc9512776f41f53",
+  "lastDurableCommit": "3f85989937e5413ca2c8a2964dc9512776f41f53",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/river-gauge.md",
+    "commit": "b6f16e4f9a8641ab80702c62a5486e071c5a0679"
+  },
+  "observedSummary": "A deterministic watering planner uses canonical policy linked to its real source and tests. Ordinary sorting work activated that relationship and kept notes aligned. The approved threshold change was recorded first, then explicitly implemented and checked at 20, 24.999 and 25 percent. moldea stayed silent after gate misses on a separate utility and its docs. Ten planner and six subprocess tests pass; coordinators retain execution authority.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261013-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "hostVersion": "0.162.1",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 141,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 205,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 256,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 330,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 380,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "river-gauge-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Use npm. Initialize moldea for River Gauge, a fictional garden team's deterministic local watering planner, and build its first JavaScript slice. Export planWatering(zones) from src/water-plan.mjs. Each supplied zone has a nonempty id, moisturePercent from 0 through 100, and nonnegative requestedLitres; numeric facts must be finite. Select zones whose moisture is below 20 percent and return their IDs with requested litres and the total. Never guess missing readings. Coordinators approve execution; this planner does not operate equipment. Keep the durable watering policy connected to the planner source so code and notes can be maintained together. Include focused Node tests that execute the real module. Keep this local and credential-free; no model provider, database or UI is needed.\n",
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 8,
+      "beforeCommit": "7d2e42c1398ea62cf0895617e4126b09ff3abffd",
+      "afterCommit": "385c037945fa8a56d7e471d49723070f1e28f31f",
+      "observedResult": "Initialized moldea and built a deterministic read-only watering planner with eight passing real-module tests. A focused canonical watering-policy owner is connected to source and tests through affectedBy relationships. Validation passed with zero errors or warnings; coordinators retain execution authority and no in-app model or equipment operation was added.",
+      "redactionIds": []
+    },
+    {
+      "id": "river-gauge-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Please make src/water-plan.mjs return the selected zones ordered by their exact id using JavaScript string order. Preserve input order for equal IDs and leave the caller's input untouched. Extend the real-module tests for this change.\n",
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 142,
+      "beforeCommit": "385c037945fa8a56d7e471d49723070f1e28f31f",
+      "afterCommit": "a7ce77ab023367570e6c603b2c69a75f7f7dcc1c",
+      "observedResult": "Sorted selected zones by exact JavaScript string order with stable equal-ID order and immutable inputs. The ordinary-file relevance gate returned 1, loaded the affected canonical policy, and kept its contract aligned with code. Ten real-module tests and moldea validation passed. Its progress announcement preceded the gate; actual owner access and editing followed the positive result.",
+      "redactionIds": []
+    },
+    {
+      "id": "river-gauge-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "The garden coordinators have approved watering proposals for zones below 25 percent moisture, effective now. A reading of exactly 25 percent is excluded. They still approve execution, and missing readings must never be guessed.\n",
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 206,
+      "beforeCommit": "a7ce77ab023367570e6c603b2c69a75f7f7dcc1c",
+      "afterCommit": "5bda93701b8b4e72f53e8d2f6316c5b78abc92d3",
+      "observedResult": "Updated canonical policy to the approved below-25 threshold and preserved coordinator authority and missing-data rejection. Explicitly recorded that planner, tests and example still used below 20 rather than claiming implementation was synchronized. Validation passed; the following product request authorizes aligning implementation.",
+      "redactionIds": []
+    },
+    {
+      "id": "river-gauge-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "Please implement the approved below-25-percent policy in the planner, synchronize its real-module tests and README example, and resolve the documented implementation requirement. Preserve strict validation, exact-ID sorting with stable equal IDs, immutable inputs and coordinator execution authority. Demonstrate that 20 and 24.999 qualify and exactly 25 does not. Keep the canonical policy focused on the resulting current contract.\n",
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 257,
+      "beforeCommit": "5bda93701b8b4e72f53e8d2f6316c5b78abc92d3",
+      "afterCommit": "44070f1b4f778196dff6904b4104aa3fb3a1fdc3",
+      "observedResult": "Implemented below-25 selection and synchronized real-module tests, canonical policy and the checked README example. Ten tests establish that 20 and 24.999 qualify while exactly 25 does not. The outstanding requirement was resolved, authority remained intact and validation passed.",
+      "redactionIds": []
+    },
+    {
+      "id": "river-gauge-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Add a standalone tools/unique-zones.mjs utility for preparing a local zone-name list. Read a JSON array of nonempty strings from stdin and write a JSON array keeping the first occurrence of each exact string in input order. Preserve case and whitespace; do not trim or coerce. Empty arrays are valid. Malformed JSON, non-array input, empty strings or non-string entries should fail with a concise stderr message and nonzero exit code without partial stdout. Include focused subprocess tests runnable with node --test tools/unique-zones.test.mjs. It needs no planner imports or npm script.\n",
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 331,
+      "beforeCommit": "44070f1b4f778196dff6904b4104aa3fb3a1fdc3",
+      "afterCommit": "2fd1b91d19f3ffaf0336347507bdf80d3bbff269",
+      "observedResult": "Added the standalone exact-string zone-name deduplicator and six passing subprocess tests. The relevance gate returned 0; no further moldea activity or announcement followed. Planner, canonical policy and installed tooling stayed unchanged.",
+      "redactionIds": []
+    },
+    {
+      "id": "river-gauge-request-06",
+      "ordinal": 6,
+      "kind": "follow-up",
+      "text": "Write a short tools/README.md for the unique-zone-name utility. Explain JSON input/output, exact first-seen deduplication, preserved case and whitespace, empty arrays and errors without partial stdout. Include small copyable valid and invalid examples that you check against the utility. Keep this to the standalone utility documentation.\n",
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 381,
+      "beforeCommit": "2fd1b91d19f3ffaf0336347507bdf80d3bbff269",
+      "afterCommit": "3f85989937e5413ca2c8a2964dc9512776f41f53",
+      "observedResult": "Added only standalone utility documentation and checked all four valid/invalid examples against actual output and exit status. The relevance gate returned 0; no further moldea activity or announcement followed, and planner/canonical state stayed unchanged.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 2,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 3,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 4,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 5,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 138,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 139,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "command",
+      "description": "npm test (eight real-module planner tests)",
+      "inputCommit": "385c037945fa8a56d7e471d49723070f1e28f31f",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "385c037945fa8a56d7e471d49723070f1e28f31f",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test (ten real-module planner tests after sorting)",
+      "inputCommit": "a7ce77ab023367570e6c603b2c69a75f7f7dcc1c",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "a7ce77ab023367570e6c603b2c69a75f7f7dcc1c",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "5bda93701b8b4e72f53e8d2f6316c5b78abc92d3",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test (ten real-module tests including 20, 24.999 and 25 percent boundaries)",
+      "inputCommit": "44070f1b4f778196dff6904b4104aa3fb3a1fdc3",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Execute the root README planner example and compare the selected zones, exact order and totalLitres.",
+      "inputCommit": "44070f1b4f778196dff6904b4104aa3fb3a1fdc3",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "44070f1b4f778196dff6904b4104aa3fb3a1fdc3",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/unique-zones.test.mjs (six subprocess tests)",
+      "inputCommit": "2fd1b91d19f3ffaf0336347507bdf80d3bbff269",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Execute all four tools/README.md valid/invalid examples and compare stdout, stderr and exit status.",
+      "inputCommit": "3f85989937e5413ca2c8a2964dc9512776f41f53",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent source and skill-behavior review; original findings, assistance and scope limits retained in the run review.",
+      "inputCommit": "3f85989937e5413ca2c8a2964dc9512776f41f53",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261013-01/reviews/skill-review.md"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "3f85989937e5413ca2c8a2964dc9512776f41f53",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261013-01/run.json",
+        "evidence/runs/run-20261013-01/attempts/river-gauge-01.json",
+        "evidence/scenarios/river-gauge.md",
+        "evidence/runs/run-20261013-01/reviews/skill-review.md",
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz",
+        "run-20261013-01/river-gauge-identities-01.txt",
+        "git/7d2e42c1398ea62cf0895617e4126b09ff3abffd/3f85989937e5413ca2c8a2964dc9512776f41f53",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/3f85989937e5413ca2c8a2964dc9512776f41f53"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-identities-01.txt",
+        "locator": "before-request-01"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No CLI declaration, root lockfile or installed CLI package at seed."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No Core declaration, root lockfile or installed Core package at seed."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 141,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-identities-01.txt",
+        "locator": "before-request-02"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 205,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-identities-01.txt",
+        "locator": "before-request-03"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 256,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-identities-01.txt",
+        "locator": "before-request-04"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 330,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-identities-01.txt",
+        "locator": "before-request-05"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "eventOrdinal": 380,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-identities-01.txt",
+        "locator": "before-request-06"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    }
+  ],
+  "skillRelease": "v8.1.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261013-01",
+      "name": "river-gauge-01-session-01.jsonl.gz",
+      "sizeBytes": 75970,
+      "sha256": "c0bcedc334016fa47e038e8a622d96219dd024029be787288c76de87bdcbbb5b",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 413
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261013-01",
+      "name": "river-gauge-identities-01.txt",
+      "sizeBytes": 5340,
+      "sha256": "d4a6587bea86940e644fe67899f0feb4d3f3ad6e7fca5f10e2922a0d7063ba13",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "actor",
+      "requestId": "river-gauge-request-02",
+      "description": "A progress announcement at native event 145 promised connected policy maintenance before the relevance gate at 146\u2013149 returned 1. Actual owner access and edits followed the gate hit. Independent review classifies this as a nonblocking presentation-order issue; the original message is retained.",
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "river-path-2-1",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-2-2",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-2-3",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-2-4",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-2-5",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-2-6",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-5-7",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-5-8",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-5-9",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-5-10",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-5-11",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-5-12",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-5-13",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-12-14",
+      "reason": "Private machine path.",
+      "eventOrdinal": 12,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-16-15",
+      "reason": "Private machine path.",
+      "eventOrdinal": 16,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-20-16",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-20-17",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-20-18",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-20-19",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-20-20",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-78-21",
+      "reason": "Private machine path.",
+      "eventOrdinal": 78,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-78-22",
+      "reason": "Private machine path.",
+      "eventOrdinal": 78,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-78-23",
+      "reason": "Private machine path.",
+      "eventOrdinal": 78,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-78-24",
+      "reason": "Private machine path.",
+      "eventOrdinal": 78,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-93-25",
+      "reason": "Private machine path.",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-93-26",
+      "reason": "Private machine path.",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-93-27",
+      "reason": "Private machine path.",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-93-28",
+      "reason": "Private machine path.",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-103-29",
+      "reason": "Private machine path.",
+      "eventOrdinal": 103,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-110-30",
+      "reason": "Private machine path.",
+      "eventOrdinal": 110,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-123-31",
+      "reason": "Private machine path.",
+      "eventOrdinal": 123,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-131-32",
+      "reason": "Private machine path.",
+      "eventOrdinal": 131,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-131-33",
+      "reason": "Private machine path.",
+      "eventOrdinal": 131,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-138-34",
+      "reason": "Private machine path.",
+      "eventOrdinal": 138,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-139-35",
+      "reason": "Private machine path.",
+      "eventOrdinal": 139,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-139-36",
+      "reason": "Private machine path.",
+      "eventOrdinal": 139,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-146-37",
+      "reason": "Private machine path.",
+      "eventOrdinal": 146,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-153-38",
+      "reason": "Private machine path.",
+      "eventOrdinal": 153,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-161-39",
+      "reason": "Private machine path.",
+      "eventOrdinal": 161,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-173-40",
+      "reason": "Private machine path.",
+      "eventOrdinal": 173,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-173-41",
+      "reason": "Private machine path.",
+      "eventOrdinal": 173,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-173-42",
+      "reason": "Private machine path.",
+      "eventOrdinal": 173,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-190-43",
+      "reason": "Private machine path.",
+      "eventOrdinal": 190,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-198-44",
+      "reason": "Private machine path.",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-210-45",
+      "reason": "Private machine path.",
+      "eventOrdinal": 210,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-219-46",
+      "reason": "Private machine path.",
+      "eventOrdinal": 219,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-233-47",
+      "reason": "Private machine path.",
+      "eventOrdinal": 233,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-241-48",
+      "reason": "Private machine path.",
+      "eventOrdinal": 241,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-249-49",
+      "reason": "Private machine path.",
+      "eventOrdinal": 249,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-261-50",
+      "reason": "Private machine path.",
+      "eventOrdinal": 261,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-268-51",
+      "reason": "Private machine path.",
+      "eventOrdinal": 268,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-276-52",
+      "reason": "Private machine path.",
+      "eventOrdinal": 276,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-290-53",
+      "reason": "Private machine path.",
+      "eventOrdinal": 290,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-290-54",
+      "reason": "Private machine path.",
+      "eventOrdinal": 290,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-290-55",
+      "reason": "Private machine path.",
+      "eventOrdinal": 290,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-307-56",
+      "reason": "Private machine path.",
+      "eventOrdinal": 307,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-315-57",
+      "reason": "Private machine path.",
+      "eventOrdinal": 315,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-335-58",
+      "reason": "Private machine path.",
+      "eventOrdinal": 335,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-355-59",
+      "reason": "Private machine path.",
+      "eventOrdinal": 355,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-355-60",
+      "reason": "Private machine path.",
+      "eventOrdinal": 355,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-373-61",
+      "reason": "Private machine path.",
+      "eventOrdinal": 373,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-385-62",
+      "reason": "Private machine path.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-401-63",
+      "reason": "Private machine path.",
+      "eventOrdinal": 401,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "river-path-410-64",
+      "reason": "Private machine path.",
+      "eventOrdinal": 410,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136ce-89da-7431-b413-c0999eea5bca",
+      "affectedLocations": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Request 3 updated the approved policy and explicitly documented the implementation gap; request 4 separately authorized implementing it. No unassisted one-turn source synchronization is claimed.",
+    "Request 2 announced canonical maintenance before establishing relevance; actual access was gated. Instruction compliance is not claimed to be perfect.",
+    "No in-app agent/model runtime, live application-provider call, natural compaction or adapter qualification is established.",
+    "Configuration isolation permits outside-worktree reads; host system/plugin catalogs can change."
+  ]
+}

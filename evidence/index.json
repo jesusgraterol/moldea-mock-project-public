@@ -17,7 +17,7 @@
     },
     {
       "runId": "run-20261013-01",
-      "summary": "Lantern Loans pilot: fresh adoption, real LangGraph instruction/tool/schema execution, fourteen-day policy maintenance and unrelated-work silence.",
+      "summary": "Four projects and 24 conversation turns: real LangGraph instruction execution, standalone skill work, operating foundations, connected context, approved policy maintenance and unrelated-work silence, with recorded assistance and limits.",
       "evidenceStatus": "complete",
       "reviewStatus": "complete",
       "manifestPath": "evidence/runs/run-20261013-01/run.json"

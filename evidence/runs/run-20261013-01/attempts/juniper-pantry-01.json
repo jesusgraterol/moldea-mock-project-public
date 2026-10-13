@@ -1,0 +1,1368 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261013-01",
+  "scenarioId": "juniper-pantry",
+  "attemptId": "juniper-pantry-01",
+  "branch": "fixture_foundation_only_xs_juniper_pantry_01",
+  "baseCommit": "b84d159dc752979965c09a2b3d38a35ddb662155",
+  "finalCommit": "638ff3d1eed01eb503b27ab8f07d52057a38b35b",
+  "lastDurableCommit": "638ff3d1eed01eb503b27ab8f07d52057a38b35b",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/juniper-pantry.md",
+    "commit": "b6f16e4f9a8641ab80702c62a5486e071c5a0679"
+  },
+  "observedSummary": "A pantry operating foundation was adopted after package-manager clarification and maintained from two-hour to three-hour shifts while preserving coordinator authority. moldea stayed silent after gate misses during standalone crate utility and documentation work. Two recorded source-review repair interventions corrected numeric precision and performance defects in that separate utility; all 14 final subprocess tests pass.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261013-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "hostVersion": "0.162.1",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 73,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 159,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 202,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 243,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 284,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 342,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "juniper-pantry-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Juniper Pantry, a fictional community pantry coordinating volunteer shifts. Shifts currently last two hours, coordinators approve every assignment, and volunteers should ask a coordinator about scheduling exceptions rather than assume they are approved. Start with the operating context and a short explanation of what you set up. Hold off on application implementation or agent design until separately requested.\n",
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 8,
+      "beforeCommit": "b84d159dc752979965c09a2b3d38a35ddb662155",
+      "afterCommit": "b84d159dc752979965c09a2b3d38a35ddb662155",
+      "observedResult": "Read the explicit initialization route and inert tooling evidence, then asked which package manager to establish because no root manager declaration or lockfile existed. No dependency, canonical or source writes occurred; CLI/Core remained absent.",
+      "redactionIds": []
+    },
+    {
+      "id": "juniper-pantry-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Use npm. Please continue initialization with the pantry operating facts already supplied, keeping this to the operating context and setup.\n",
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 74,
+      "beforeCommit": "b84d159dc752979965c09a2b3d38a35ddb662155",
+      "afterCommit": "ddc82175e5626ee0dc8b75ec05daf1c598eb9d8c",
+      "observedResult": "With npm explicitly chosen, installed CLI 11.0.2 and Core 7.0.3, created the minimal operating foundation and managed README/AGENTS bridge, and validated with zero errors or warnings. Two-hour shifts, coordinator approval and scheduling-exception authority were recorded; no application or agents were created.",
+      "redactionIds": []
+    },
+    {
+      "id": "juniper-pantry-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Add a standalone tools/crate-totals.mjs utility that reads a JSON array of {label, count} crate entries from stdin and writes totals grouped by exact label, sorted by label. Require nonempty string labels and nonnegative safe-integer counts, reject unsafe totals, and give concise errors without partial stdout for invalid input. An empty array should produce an empty array. Include focused subprocess tests runnable with node --test tools/crate-totals.test.mjs. It needs no application imports or npm script.\n",
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 160,
+      "beforeCommit": "ddc82175e5626ee0dc8b75ec05daf1c598eb9d8c",
+      "afterCommit": "9a54d005a7a5ae17be2cdeef85992d6ef9d4b0a9",
+      "observedResult": "Added the standalone exact-label crate aggregator and ten passing subprocess tests, including unsafe-total rejection and no partial output. The relevance gate returned 0; no further moldea activity or announcement followed. Only two tools files changed, leaving canonical state and tooling unchanged.",
+      "redactionIds": []
+    },
+    {
+      "id": "juniper-pantry-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "The pantry has approved three-hour volunteer shifts, effective now. Coordinators still approve every assignment, and scheduling exceptions still need a coordinator rather than an assumption of approval.\n",
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 203,
+      "beforeCommit": "9a54d005a7a5ae17be2cdeef85992d6ef9d4b0a9",
+      "afterCommit": "fb057a622a506c65fb6ff3e0c14c9abba42f3d4c",
+      "observedResult": "The approved current fact triggered adopted-context maintenance without an explicit update request. Changed only project.md to three-hour shifts, preserving coordinator assignment approval and exception authority. The direct adoption gate returned 1 and final validation passed with zero errors or warnings.",
+      "redactionIds": []
+    },
+    {
+      "id": "juniper-pantry-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Write a short tools/README.md for the crate-total utility. Explain its JSON input/output, exact-label grouping and sorting, safe-integer limits, empty input arrays and error behavior. Include small copyable examples that you check against the utility. Keep this to the standalone utility documentation.\n",
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 244,
+      "beforeCommit": "fb057a622a506c65fb6ff3e0c14c9abba42f3d4c",
+      "afterCommit": "99d427264ff31804539e0f827900476ad994621f",
+      "observedResult": "Added only the standalone crate utility README; all three copyable examples matched actual output and exit status. The relevance gate returned 0, followed by no further moldea work or announcement. Canonical context and installed tooling stayed unchanged.",
+      "redactionIds": []
+    },
+    {
+      "id": "juniper-pantry-request-06",
+      "ordinal": 6,
+      "kind": "intervention",
+      "text": "Source review found that raw JSON counts such as 9007199254740991.1 and -1e-400 are accepted after JSON.parse rounds them to an integer or zero. Fix the crate utility so fractional or negative source values cannot become valid counts through rounding or underflow. Keep valid integral numeric representations working, preserve exact-label grouping and the safe-total limit, and add regression tests using literal raw JSON so the test inputs do not lose precision before parsing. Keep this a small standalone correction.\n",
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 285,
+      "beforeCommit": "99d427264ff31804539e0f827900476ad994621f",
+      "afterCommit": "ab5fe13cc37063f7995b94556e5eabee263253b2",
+      "observedResult": "Corrected rounding and underflow acceptance by checking original JSON numeric tokens; all 13 literal-JSON and subprocess tests passed. The gate returned 0 and canonical state stayed unchanged. Independent source review then found quadratic trailing-zero regex processing; the next intervention addresses that remaining performance defect.",
+      "redactionIds": []
+    },
+    {
+      "id": "juniper-pantry-request-07",
+      "ordinal": 7,
+      "kind": "intervention",
+      "text": "The follow-up source review found that a count written as 1. followed by 100,000 zeros and a final 1 takes about 5.5 seconds to reject because the trailing-zero regular expression retries quadratically. Replace that trailing-zero check with linear processing, keep the original-number validation and valid integral forms intact, and add a focused regression for a long raw numeric token without a brittle timing assertion. Keep this correction confined to the crate utility and its tests.\n",
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 343,
+      "beforeCommit": "ab5fe13cc37063f7995b94556e5eabee263253b2",
+      "afterCommit": "638ff3d1eed01eb503b27ab8f07d52057a38b35b",
+      "observedResult": "Replaced quadratic trailing-zero regex processing with a linear backward scan. Literal 100,000-zero fractional and integral regressions and all 14 subprocess tests passed. Only utility and tests changed; the gate returned 0 and canonical state stayed unchanged.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 2,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 3,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 4,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 5,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 156,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 157,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 340,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "ddc82175e5626ee0dc8b75ec05daf1c598eb9d8c",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/crate-totals.test.mjs (10 tests at the original result)",
+      "inputCommit": "9a54d005a7a5ae17be2cdeef85992d6ef9d4b0a9",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "fb057a622a506c65fb6ff3e0c14c9abba42f3d4c",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Execute all three standalone tools/README.md examples and compare actual output and exit status.",
+      "inputCommit": "99d427264ff31804539e0f827900476ad994621f",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/crate-totals.test.mjs (13 tests after raw-number correction)",
+      "inputCommit": "ab5fe13cc37063f7995b94556e5eabee263253b2",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/crate-totals.test.mjs (14 tests including literal 100,000-zero tokens)",
+      "inputCommit": "638ff3d1eed01eb503b27ab8f07d52057a38b35b",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent source and skill-behavior review; original findings, assistance and scope limits retained in the run review.",
+      "inputCommit": "638ff3d1eed01eb503b27ab8f07d52057a38b35b",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261013-01/reviews/skill-review.md"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "638ff3d1eed01eb503b27ab8f07d52057a38b35b",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261013-01/run.json",
+        "evidence/runs/run-20261013-01/attempts/juniper-pantry-01.json",
+        "evidence/scenarios/juniper-pantry.md",
+        "evidence/runs/run-20261013-01/reviews/skill-review.md",
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz",
+        "run-20261013-01/juniper-pantry-identities-01.txt",
+        "git/b84d159dc752979965c09a2b3d38a35ddb662155/638ff3d1eed01eb503b27ab8f07d52057a38b35b",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/638ff3d1eed01eb503b27ab8f07d52057a38b35b"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-identities-01.txt",
+        "locator": "before-request-01"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No CLI declaration, root lockfile or installed CLI package at seed."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No Core declaration, root lockfile or installed Core package at seed."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 73,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-identities-01.txt",
+        "locator": "before-request-02"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No root CLI declaration, lockfile or installed CLI package."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No root Core declaration, lockfile or installed Core package."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 159,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-identities-01.txt",
+        "locator": "before-request-03"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 202,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-identities-01.txt",
+        "locator": "before-request-04"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 243,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-identities-01.txt",
+        "locator": "before-request-05"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 284,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-identities-01.txt",
+        "locator": "before-request-06"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "eventOrdinal": 342,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-identities-01.txt",
+        "locator": "before-request-07"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    }
+  ],
+  "skillRelease": "v8.1.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261013-01",
+      "name": "juniper-pantry-01-session-01.jsonl.gz",
+      "sizeBytes": 51356,
+      "sha256": "0829ab5fbc9a570be8913facd597108995875e7e35661bd30f1aa2d493a7036e",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 375
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261013-01",
+      "name": "juniper-pantry-identities-01.txt",
+      "sizeBytes": 5767,
+      "sha256": "fee37becdd95621b46300ddaf8762c0277487b5dcc420f1cbe9fa233415e9753",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [
+    {
+      "requestId": "juniper-pantry-request-03",
+      "interventionRequestId": "juniper-pantry-request-06",
+      "originalResult": "The crate utility accepted fractional or negative raw JSON numbers after rounding or underflow.",
+      "assistedResult": "Original numeric-token validation rejects those inputs while preserving integral forms.",
+      "originalCommit": "9a54d005a7a5ae17be2cdeef85992d6ef9d4b0a9",
+      "assistedCommit": "ab5fe13cc37063f7995b94556e5eabee263253b2"
+    },
+    {
+      "requestId": "juniper-pantry-request-06",
+      "interventionRequestId": "juniper-pantry-request-07",
+      "originalResult": "The first correction used a trailing-zero regex with quadratic rejection time on long numeric tokens.",
+      "assistedResult": "A linear backward scan and literal long-token regressions replace the regex.",
+      "originalCommit": "ab5fe13cc37063f7995b94556e5eabee263253b2",
+      "assistedCommit": "638ff3d1eed01eb503b27ab8f07d52057a38b35b"
+    }
+  ],
+  "failures": [
+    {
+      "kind": "actor",
+      "requestId": "juniper-pantry-request-03",
+      "description": "Original utility accepted raw fractional and negative-underflow JSON counts after Number rounding. Source review reproduced the defect; request 6 explicitly corrected it.",
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "actor",
+      "requestId": "juniper-pantry-request-06",
+      "description": "The first numeric correction introduced quadratic trailing-zero regex processing; source review measured about 5.5 seconds for a 100 KB token. Request 7 explicitly corrected it with a linear scan.",
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": "juniper-pantry-request-01",
+      "description": "First capture stopped on a duplicate native clock-completion extension. Focused capture support omits that duplicate while retaining actual function call and elapsed-time result; capture and reader reconciliation passed before dependent follow-ups.",
+      "asset": null
+    }
+  ],
+  "redactions": [
+    {
+      "id": "juniper-path-2-1",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-2-2",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-2-3",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-5-4",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-5-5",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-5-6",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-5-7",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-5-8",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-5-9",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-5-10",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-16-11",
+      "reason": "Private machine path.",
+      "eventOrdinal": 16,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-20-12",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-20-13",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-20-14",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-20-15",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-20-16",
+      "reason": "Private machine path.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-43-17",
+      "reason": "Private machine path.",
+      "eventOrdinal": 43,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-66-18",
+      "reason": "Private machine path.",
+      "eventOrdinal": 66,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-114-19",
+      "reason": "Private machine path.",
+      "eventOrdinal": 114,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-114-20",
+      "reason": "Private machine path.",
+      "eventOrdinal": 114,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-121-21",
+      "reason": "Private machine path.",
+      "eventOrdinal": 121,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-126-22",
+      "reason": "Private machine path.",
+      "eventOrdinal": 126,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-133-23",
+      "reason": "Private machine path.",
+      "eventOrdinal": 133,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-141-24",
+      "reason": "Private machine path.",
+      "eventOrdinal": 141,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-141-25",
+      "reason": "Private machine path.",
+      "eventOrdinal": 141,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-149-26",
+      "reason": "Private machine path.",
+      "eventOrdinal": 149,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-156-27",
+      "reason": "Private machine path.",
+      "eventOrdinal": 156,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-157-28",
+      "reason": "Private machine path.",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-157-29",
+      "reason": "Private machine path.",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-157-30",
+      "reason": "Private machine path.",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-157-31",
+      "reason": "Private machine path.",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-157-32",
+      "reason": "Private machine path.",
+      "eventOrdinal": 157,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-164-33",
+      "reason": "Private machine path.",
+      "eventOrdinal": 164,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-164-34",
+      "reason": "Private machine path.",
+      "eventOrdinal": 164,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-178-35",
+      "reason": "Private machine path.",
+      "eventOrdinal": 178,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-178-36",
+      "reason": "Private machine path.",
+      "eventOrdinal": 178,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-195-37",
+      "reason": "Private machine path.",
+      "eventOrdinal": 195,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-207-38",
+      "reason": "Private machine path.",
+      "eventOrdinal": 207,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-207-39",
+      "reason": "Private machine path.",
+      "eventOrdinal": 207,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-221-40",
+      "reason": "Private machine path.",
+      "eventOrdinal": 221,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-228-41",
+      "reason": "Private machine path.",
+      "eventOrdinal": 228,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-228-42",
+      "reason": "Private machine path.",
+      "eventOrdinal": 228,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-236-43",
+      "reason": "Private machine path.",
+      "eventOrdinal": 236,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-248-44",
+      "reason": "Private machine path.",
+      "eventOrdinal": 248,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-248-45",
+      "reason": "Private machine path.",
+      "eventOrdinal": 248,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-262-46",
+      "reason": "Private machine path.",
+      "eventOrdinal": 262,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-277-47",
+      "reason": "Private machine path.",
+      "eventOrdinal": 277,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-289-48",
+      "reason": "Private machine path.",
+      "eventOrdinal": 289,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-289-49",
+      "reason": "Private machine path.",
+      "eventOrdinal": 289,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-318-50",
+      "reason": "Private machine path.",
+      "eventOrdinal": 318,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-318-51",
+      "reason": "Private machine path.",
+      "eventOrdinal": 318,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-318-52",
+      "reason": "Private machine path.",
+      "eventOrdinal": 318,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-333-53",
+      "reason": "Private machine path.",
+      "eventOrdinal": 333,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-340-54",
+      "reason": "Private machine path.",
+      "eventOrdinal": 340,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-340-55",
+      "reason": "Private machine path.",
+      "eventOrdinal": 340,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-347-56",
+      "reason": "Private machine path.",
+      "eventOrdinal": 347,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-347-57",
+      "reason": "Private machine path.",
+      "eventOrdinal": 347,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-359-58",
+      "reason": "Private machine path.",
+      "eventOrdinal": 359,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "juniper-path-359-59",
+      "reason": "Private machine path.",
+      "eventOrdinal": 359,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a136a0-3264-7d23-a7e0-2e1c93e7a1b1",
+      "affectedLocations": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "The final standalone crate utility is assisted by two recorded review-driven repair requests; original results are preserved and not presented as correct or unassisted.",
+    "No in-app agent/model runtime, live application-provider call, natural compaction or adapter qualification is established.",
+    "Configuration isolation permits outside-worktree reads; host system/plugin catalogs can change."
+  ]
+}

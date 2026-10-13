@@ -769,6 +769,35 @@ const projectEvent = (record, ordinal, includeBaseInstructions) => {
         content: payload.content,
       } };
     }
+    if (payload.type === 'function_call') {
+      if (typeof payload.name !== 'string' || typeof payload.call_id !== 'string' ||
+          typeof payload.arguments !== 'string' ||
+          (payload.namespace !== undefined && typeof payload.namespace !== 'string')) {
+        fail('A native function call has unsupported fields.');
+      }
+      return { ...base, kind: 'tool-call', payload: {
+        name: payload.namespace === undefined ? payload.name : `${payload.namespace}.${payload.name}`,
+        callId: payload.call_id, input: payload.arguments, status: 'recorded',
+      } };
+    }
+    if (payload.type === 'function_call_output') {
+      if (typeof payload.call_id !== 'string' || typeof payload.output !== 'string') {
+        fail('A native function result has unsupported fields.');
+      }
+      return { ...base, kind: 'tool-result', payload: {
+        callId: payload.call_id, output: [{ type: 'output_text', text: payload.output }],
+      } };
+    }
+    if (payload.type === 'agent_message') {
+      if (typeof payload.author !== 'string' || typeof payload.recipient !== 'string' ||
+          !Array.isArray(payload.content)) {
+        fail('A native agent message has unsupported fields.');
+      }
+      return { ...base, kind: 'message', payload: {
+        role: 'assistant', author: payload.author, recipient: payload.recipient,
+        content: payload.content,
+      } };
+    }
     if (payload.type === 'custom_tool_call') {
       if (typeof payload.name !== 'string' || typeof payload.call_id !== 'string' ||
           typeof payload.input !== 'string') {
@@ -799,8 +828,26 @@ const projectEvent = (record, ordinal, includeBaseInstructions) => {
     if (payload.type === 'task_started' || payload.type === 'task_complete') {
       return { ...base, kind: payload.type, payload: { turnId: payload.turn_id } };
     }
+    if (payload.type === 'item_completed' && payload.item?.type === 'SubAgentActivity') {
+      const item = payload.item;
+      if (typeof item.id !== 'string' || !['started', 'completed'].includes(item.kind) ||
+          typeof item.agent_thread_id !== 'string' || typeof item.agent_path !== 'string' ||
+          (item.model !== null && typeof item.model !== 'string') ||
+          (item.reasoning_effort !== null && typeof item.reasoning_effort !== 'string')) {
+        fail('A native sub-agent lifecycle event needs manual inspection.');
+      }
+      return { ...base, kind: 'message', payload: {
+        role: 'developer', content: [{ type: 'input_text', text: JSON.stringify({
+          type: item.type, id: item.id, kind: item.kind,
+          agent_thread_id: item.agent_thread_id, agent_path: item.agent_path,
+          model: item.model, reasoning_effort: item.reasoning_effort,
+        }) }],
+      } };
+    }
     if (payload.type === 'item_completed' && payload.item?.type === 'Extension') {
       const item = payload.item;
+      if (item.kind === 'clock.sleep' && typeof item.id === 'string' &&
+          Number.isFinite(item.durationMs) && item.durationMs >= 0) return null;
       if (item.kind !== 'web.search' || typeof item.id !== 'string' ||
           !item.action || typeof item.action !== 'object' || !Array.isArray(item.results)) {
         fail('A completed native extension needs manual inspection.');
@@ -815,6 +862,8 @@ const projectEvent = (record, ordinal, includeBaseInstructions) => {
     fail('A native event type needs manual inspection.');
   }
   if (record.type === 'world_state' || record.type === 'token_usage_record') return null;
+  if (record.type === 'inter_agent_communication_metadata' &&
+      typeof payload.trigger_turn === 'boolean') return null;
   fail('A native record type needs manual inspection.');
 };
 
@@ -930,6 +979,9 @@ const capture = async (options) => {
       if (!nativeResult.success) fail('A native session event has unsupported fields.');
       record = nativeResult.data;
       const event = projectEvent(record, ordinal, rules.includeBaseInstructions);
+      if (record.type === 'inter_agent_communication_metadata') {
+        omissions.add('non-content agent-delivery metadata omitted');
+      }
       if (event) {
         const eventRules = rulesByOrdinal.get(ordinal) ?? [];
         redactEvent(event, eventRules);

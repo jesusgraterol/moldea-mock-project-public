@@ -1,8 +1,8 @@
 # Review of run-20261013-01
 
-Reviewed on 2026-10-13 against six delivered requests, their source checkpoints, the full sanitized native conversation and contemporaneous installation observations. A fresh, read-only reviewer assessed skill behavior independently of the actor and driver summaries. A separate code review found no actionable defects; type checking and all 26 tests passed, including assistant tests against a fresh temporary build.
+Reviewed on 2026-10-13 against 24 delivered requests across four projects, their source checkpoints, sanitized parent conversations and contemporaneous installation observations. Fresh read-only behavior reviewers assessed each project independently of actor/driver summaries. Separate source reviews completed 26 Lantern Loans tests, 18 Moss Atlas sorter tests, 14 final Juniper Pantry tests and 16 River Gauge tests.
 
-No material product or skill defect was found. The pilot supports bounded expansion on Skill 8.1.0. Published asset integrity, complete-evidence verification and full browser replay passed. No skill change or new retry is indicated.
+All final source reviews are clean. Manual selection is supported with explicit assistance and limitations: Moss wording needed an editorial intervention and its helper claims are qualified; Juniper's two utility defects needed recorded repairs; River announced canonical maintenance prematurely but gated actual access correctly. No unresolved distribution defect or new skill instructions are indicated. The pilot's public full replay passed before expansion; combined publication and browser replay are the remaining checkpoints.
 
 ## Lantern Loans
 
@@ -41,10 +41,84 @@ The dedicated actor home was authenticated by the developer, with workspace-writ
 
 There were no live provider calls, natural compaction, semantic reliability evaluations or adapter qualifications. Native web items contain result metadata rather than complete retrieved pages. Encrypted reasoning and host-private world state are omitted. The independent behavior reviewer made no edits/installations and assessed recorded checks; the separate code review reran type checking and all 26 tests. Source/application checks, file/export validation and controlled runtime execution support different conclusions.
 
+## Complementary project review
+
+The pilot was followed by three distinct purposes rather than another SDK matrix: a standalone Agent Skill (Moss Atlas), an operating foundation (Juniper Pantry), and connected project context for a deterministic module (River Gauge). Independent source and behavior reviews are complete; final publication and combined replay remain pending. The source results below distinguish natural follow-ups from explicit repair/editorial interventions.
+
+### Moss Atlas
+
+A fictional volunteer herbarium needs consistent labels from supplied specimen notes. The actor created `skills/moss-labels/SKILL.md` and grounded examples, maintained the accession format from MA- plus four digits to MOSS- plus five, and preserved missing-data and uncertainty rules. The project remained unadopted: no CLI/Core or canonical foundation was introduced. Unrelated stable volunteer sorting and its documentation received no moldea calls or announcements.
+
+| Request / native event | Source result and evidence |
+| --- | --- |
+| 1 / 8 | Artifact creation at `7281bdba4dd0d9b6b03c0f8f0ce3e3838ab112ec`; structural validation and an actor-reported informal helper check. Parent delegation/lifecycle and returned message are recorded; the native prompt is encrypted and explicitly redacted, and separate child internals are outside the public recording. |
+| 2 / 94 | Standalone sorter at `4a05ff1238ed92a313a96932e5787056385d5972`; 18 real subprocess tests pass. No moldea activity. |
+| 3 / 136 | Format maintenance at `313600a600e4660737efb5ed38d7a795b67e7f50`; structural/fixture checks and assertions over a second helper-produced response pass; six informal helper cases are not independent behavioral qualification. Extra historical-format/conversion prose was added. |
+| 4 / 201 | Explicit driver editorial intervention at `414825f50fb2d9ee748a9b9bd3961d172d2f04bd` removes that extra prose, preserving current regex and factual safeguards. Final wording is assisted. |
+| 5 / 240 | Final source `5053d4f5ef318cbd1ff080432d5dfed8e76d01e5`; all five documentation examples checked against the sorter. No moldea activity. |
+
+The source review reran all 18 sorter tests and found no actionable defect. This is a standalone instruction artifact plus a Node utility, with no in-app agent/model runtime or live application provider qualification. Both helper passes (request 1, report 76/assertions 79–83; request 3, report 182/assertions 185–188) are informal, helper-reported checking. The original actor claims remain visible; assertions over helper-produced responses do not independently demonstrate application/model behavior. Both delegation prompts are encrypted and redacted. The independent review found a conditional authorization basis in the actually loaded system skill-creator and moldea instructions, together with the host's skill-instruction exception; capability alone is not authorization. The behavior audit's exact Node test command encountered sandbox `EPERM`, although it replayed the same 18 utility cases and all five examples successfully; the separate source review completed the actual 18-test command. Final source has no actionable defect, and manual selection as an assisted artifact-only result is supported.
+
+### Juniper Pantry
+
+A fictional pantry needs volunteer-shift operating context, with coordinator authority over assignments and exceptions. The first request sought npm authority before writing; the second established CLI 11.0.2/Core 7.0.3 and the minimal foundation. Two-hour shifts were maintained to the approved three-hour fact without introducing an application or agents. Standalone crate totals and documentation remained outside canonical scope.
+
+| Request / native event | Source result and evidence |
+| --- | --- |
+| 1 / 8 | Manager clarification, no writes; seed `b84d159dc752979965c09a2b3d38a35ddb662155` and CLI/Core absence retained. |
+| 2 / 74 | Foundation at `ddc82175e5626ee0dc8b75ec05daf1c598eb9d8c`; validation has zero errors/warnings. |
+| 3 / 160 | Standalone crate utility at `9a54d005a7a5ae17be2cdeef85992d6ef9d4b0a9`; ten original tests pass, but later source review reproduces acceptance of fractional/negative raw numbers after rounding/underflow. Gate 164–167 returns 0, with no further moldea work or announcement. |
+| 4 / 203 | Only `moldea/project.md` changes at `fb057a622a506c65fb6ff3e0c14c9abba42f3d4c`; three-hour shifts replace two-hour shifts, preserving coordinator authority. Gate 207–210 returns 1; validation passes. |
+| 5 / 244 | Crate documentation at `99d427264ff31804539e0f827900476ad994621f`; three examples checked, gate 248–251 returns 0, no further moldea activity. |
+| 6 / 285 | Explicit numeric repair at `ab5fe13cc37063f7995b94556e5eabee263253b2`; original JSON number-token validation and 13 passing tests. Gate 289–292 returns 0. Source review then reproduces quadratic regex processing on a long numeric token. |
+| 7 / 343 | Explicit performance repair, final `638ff3d1eed01eb503b27ab8f07d52057a38b35b`; linear trailing-zero scan, 14 passing tests including literal 100,000-zero cases. Gate 347–350 returns 0. |
+
+Source review preserved both findings and original results. The third source review reran 14 tests, additional numeric checks and foundation validation and found no actionable defect. The independent behavior reviewer reproduced both defects and final repairs and found no new final-source issue; its fresh full-suite attempt was stopped without completion, so that audit does not claim another 14-test pass. The final utility is assisted by two recorded review-driven requests. These standalone utility defects are attributed to actor product code; the evidence does not establish a moldea package defect.
+
+### River Gauge
+
+A fictional garden team needs a deterministic read-only watering proposal, with strict supplied readings and coordinator execution approval. The canonical watering policy is connected to actual planner source/tests through `affectedBy`. Ordinary stable exact-ID ordering activated that relationship, loaded the focused owner, and synchronized policy and implementation. An approved 25% fact first updated canonical policy and explicitly recorded the implementation gap; a separate follow-up authorized implementation and resolved it in code, tests and the checked README example. No hidden synchronization or unassisted one-turn implementation is claimed.
+
+| Request / native event | Source checkpoint and observed result | Evidence anchors |
+| --- | --- | --- |
+| 1 / 8 | `385c037945fa8a56d7e471d49723070f1e28f31f`: Planner and connected policy; eight real-module tests and validation pass. | Initial request 8. |
+| 2 / 142 | `a7ce77ab023367570e6c603b2c69a75f7f7dcc1c`: Stable exact-ID ordering; ten tests and validation pass; focused owner stays aligned. | Ordinary gate 146–149 returns 1. |
+| 3 / 206 | `5bda93701b8b4e72f53e8d2f6316c5b78abc92d3`: Approved canonical below-25 policy and explicit implementation gap; validation passes. | Adoption-only gate 210–213 returns 1. |
+| 4 / 257 | `44070f1b4f778196dff6904b4104aa3fb3a1fdc3`: Below-25 planner, tests, checked README example and current canonical contract synchronized. | Gate 261–264 returns 1; boundaries 20, 24.999 and 25 checked. |
+| 5 / 331 | `2fd1b91d19f3ffaf0336347507bdf80d3bbff269`: Standalone exact-string deduplicator; six subprocess tests pass, canonical state unchanged. | Gate 335–338 returns 0, no further moldea work or announcement. |
+| 6 / 381 | `3f85989937e5413ca2c8a2964dc9512776f41f53`: Only utility documentation added; all four valid/invalid examples checked. | Gate 385–388 returns 0, no further moldea work or announcement. |
+
+The separate source review found no actionable defect, ran all 16 tests and validated the project context. The independent behavior review supports bounded selection. It found a low-severity premature maintenance announcement at event 145, before gate 146–149; actual scope/content access at 153–165 and editing at 173 followed the gate hit. This presentation-order issue remains visible and does not establish a canonical-access bypass. Request 3's policy-only correction follows the skill's scope rule; request 4 supplies explicit implementation authority. Combined replay remains pending.
+
+## Batch verification and limits
+
+The selected Skill 8.1.0 distribution is unchanged across all four projects. Each project has contemporaneous before-turn evidence, exact requested/effective `gpt-6.1-sol`/`xhigh` settings and source transitions. Moss remains unadopted with absent CLI/Core; Juniper and River establish their own CLI 11.0.2/Core 7.0.3 baselines. Those actual versions satisfy the distributed support ranges and CLI dependency closure, and actual launcher-backed validation reports schema 7. There is no shared Core version requirement or host-version policy. Canonical validation has zero runtime bindings in Juniper/River and does not qualify their standalone utilities; the pilot separately establishes real LangGraph wiring under a controlled model boundary.
+
+Moss's first capture stopped on native function/delegation records; focused projection preserves namespaced calls/results, host lifecycle messages and returned agent messages. Juniper's first capture stopped on duplicate clock-completion snapshots; the actual clock function call and elapsed result are retained. Both actual first captures were reconciled before dependent follow-ups. The evidence suite has 22 passing tests. Raw parent/child histories, authentication, rules and sidecars stay private. Encrypted delegation prompts are explicitly redacted; separate child internals are outside the public parent recordings.
+
+| Project | Parent turns | Retained events | Reader rows / tools | Native end | Gzip / expanded bytes |
+| --- | --- | --- | --- | --- | --- |
+| Lantern Loans | 6 | 176 | 117 / 62 | 559 | 154,026 / 585,462 |
+| Moss Atlas | 5 | 94 | 71 / 23 | 273 | 44,906 / 164,307 |
+| Juniper Pantry | 7 | 128 | 91 / 37 | 375 | 51,356 / 200,616 |
+| River Gauge | 6 | 129 | 89 / 40 | 413 | 75,970 / 299,667 |
+
+The complete parent exports parse in the corrected reader: 368 rows, 162 tools and 527 retained events in total. This is parser reconciliation, not a claim that combined browser replay has passed. All metadata and compressed/expanded sessions are within 8 MiB. Privacy inspection covers proposed records/prose, assets and all introduced source commits including seeds; private-path and credential-pattern scans found no matches. Scans support inspection rather than proving absence of arbitrary private information.
+
+Configuration isolation permits outside-worktree reads and changing host system/plugin catalogs. The three complementary projects deliberately receive a writable temporary npm cache; source installations remain project-local. There are no live application-provider calls, natural compaction tests, adapter qualification or universal reliability claims. Recorded web completions preserve query/action and result metadata; surrounding tool results preserve whatever text the host returned, including any host truncation.
+
 ## Publication handoff
 
-- Run: `run-20261013-01`. Manually selected attempt: `lantern-loans-01`, based on the completed source/code/behavior reviews; the complete replay gate passed.
-- Exact public pilot snapshot: [`869f266f8344be86d817a4a51b79e337360589be`](https://github.com/jesusgraterol/moldea-mock-project-public/tree/869f266f8344be86d817a4a51b79e337360589be). Use that immutable snapshot for the run/attempt/review records; this review need not name its own containing commit.
-- Source: [`f78e0e93559969b3fa254cc5856c6e958e6442d4`](https://github.com/jesusgraterol/moldea-mock-project-public/tree/f78e0e93559969b3fa254cc5856c6e958e6442d4). Recording and identity-log links above name the exact published Release assets. Manifest: `evidence/runs/run-20261013-01/run.json`; attempt: `attempts/lantern-loans-01.json`; review: `reviews/skill-review.md`.
-- Website refresh requires the approved reader change, the exact published snapshot/run selection, a complete replay check and retained rollback selection. Deployed selection and deployment are separate work.
-- Expansion decision: proceed with a complementary bounded batch. Behavior/source reviews, published asset integrity, complete-evidence verification and full browser replay are complete; retain all stated limitations. Final combined batch selection will be recorded during Milestone 3 before a website refresh request.
+Run `run-20261013-01`; manually selected attempts: `lantern-loans-01`, `moss-atlas-01`, `juniper-pantry-01`, `river-gauge-01`. Selection is based on source/code/behavior reviews with all assistance and nonblocking findings above retained. The pilot replay passed; combined replay must pass before the website refresh.
+
+| Project / purpose and skill contribution | Final source | Recording / identity log |
+| --- | --- | --- |
+| Lantern Loans: controlled LangGraph instruction/tool execution and policy maintenance | [`f78e0e93559969b3fa254cc5856c6e958e6442d4`](https://github.com/jesusgraterol/moldea-mock-project-public/tree/f78e0e93559969b3fa254cc5856c6e958e6442d4) | [Parent recording](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261013-01/lantern-loans-01-session-01.jsonl.gz), [identity log](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261013-01/lantern-identities-01.txt) |
+| Moss Atlas: standalone label skill and sustained unrelated-work silence | [`5053d4f5ef318cbd1ff080432d5dfed8e76d01e5`](https://github.com/jesusgraterol/moldea-mock-project-public/tree/5053d4f5ef318cbd1ff080432d5dfed8e76d01e5) | [Parent recording](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261013-01/moss-atlas-01-session-01.jsonl.gz), [identity log](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261013-01/moss-atlas-identities-01.txt) |
+| Juniper Pantry: operating foundation and approved fact maintenance; utility repairs recorded | [`638ff3d1eed01eb503b27ab8f07d52057a38b35b`](https://github.com/jesusgraterol/moldea-mock-project-public/tree/638ff3d1eed01eb503b27ab8f07d52057a38b35b) | [Parent recording](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261013-01/juniper-pantry-01-session-01.jsonl.gz), [identity log](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261013-01/juniper-pantry-identities-01.txt) |
+| River Gauge: connected context, ordinary relationship hit and explicitly authorized threshold implementation | [`3f85989937e5413ca2c8a2964dc9512776f41f53`](https://github.com/jesusgraterol/moldea-mock-project-public/tree/3f85989937e5413ca2c8a2964dc9512776f41f53) | [Parent recording](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261013-01/river-gauge-01-session-01.jsonl.gz), [identity log](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261013-01/river-gauge-identities-01.txt) |
+
+- Publication checkpoint: source branches are published. Pilot assets remain published and unchanged; six complementary assets are staged privately for reviewed publication. The run Release tag remains on pilot evidence commit `869f266f8344be86d817a4a51b79e337360589be`; distinct asset names extend that Release without moving its tag or replacing evidence.
+- Exact combined public snapshot and selection are pending the scoped publication review/push. Records: `evidence/index.json`, `evidence/runs/run-20261013-01/run.json`, its four `attempts/<attempt-id>.json`, and this `reviews/skill-review.md`. A review need not name its own containing commit.
+- Reader prerequisite: published branch `fix/project-run-interleaved-tools`, final [`10a5909cb3edd25b1f74720ced1bbcb802ef8479`](https://github.com/moldea-ai/skill/commit/10a5909cb3edd25b1f74720ced1bbcb802ef8479). It includes interleaved pairing, inline web results and correct retained-event counts. The distributed skill and deployed website selection are unchanged.
+- Retain the exact deployed rollback selection: `{ "run": { "commit": "3f6a75b9e7372635c745d1b8048224aefd2266e5", "runId": "run-20260928-02" }, "history": ["historical-20260927"] }`. The combined preview will add the selected run while retaining intended published history. Website selection/deployment is a separate maintainer action.

@@ -1,0 +1,1352 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261013-01",
+  "scenarioId": "moss-atlas",
+  "attemptId": "moss-atlas-01",
+  "branch": "fixture_skill_only_xs_moss_atlas_01",
+  "baseCommit": "9ed705a7294bc483dcae9a408984c9b5262b1f43",
+  "finalCommit": "5053d4f5ef318cbd1ff080432d5dfed8e76d01e5",
+  "lastDurableCommit": "5053d4f5ef318cbd1ff080432d5dfed8e76d01e5",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/moss-atlas.md",
+    "commit": "b6f16e4f9a8641ab80702c62a5486e071c5a0679"
+  },
+  "observedSummary": "A standalone specimen-label Agent Skill preserves supplied facts and uncertainty and was maintained from MA- plus four digits to MOSS- plus five digits. moldea used its independent-artifact route while the project remained unadopted, and abstained during unrelated sorter work and documentation. A narrow driver editorial intervention is retained; 18 real subprocess tests support the separate sorter. The two actor-reported informal helper passes do not establish independent behavioral qualification.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261013-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "hostVersion": "0.162.1",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 93,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 135,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 200,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 239,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "moss-atlas-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Use moldea to create a standalone Agent Skill named moss-labels under skills/moss-labels/ for Moss Atlas, a fictional volunteer herbarium. It should turn supplied specimen notes into consistent accession-label text without inventing taxonomy or collection facts. Labels currently use an MA- prefix followed by four digits. Include SKILL.md and a small reference file with grounded examples and a missing-data example. Keep this deliverable to the skill artifact and its examples.\n",
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 8,
+      "beforeCommit": "9ed705a7294bc483dcae9a408984c9b5262b1f43",
+      "afterCommit": "7281bdba4dd0d9b6b03c0f8f0ce3e3838ab112ec",
+      "observedResult": "Created the two-file standalone moss-labels skill with grounded examples and missing-data handling. Used the independent Agent Skill route without moldea initialization, CLI/gate calls or canonical state. Structural validation passed; the actor also reported an informal five-case host sub-agent check, whose encrypted prompt is explicitly redacted and whose separate internal history is outside the parent recording.",
+      "redactionIds": []
+    },
+    {
+      "id": "moss-atlas-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Add a standalone tools/sort-volunteers.mjs utility that reads a JSON array of volunteer names from stdin and writes the names as a JSON array sorted alphabetically without regard to case. Preserve input order for names that compare equally. An empty array is valid; malformed JSON, non-array input or non-string names should fail with a concise stderr message and nonzero exit code. Include focused subprocess tests runnable with node --test tools/sort-volunteers.test.mjs. It needs no application imports or npm script.\n",
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 94,
+      "beforeCommit": "7281bdba4dd0d9b6b03c0f8f0ce3e3838ab112ec",
+      "afterCommit": "4a05ff1238ed92a313a96932e5787056385d5972",
+      "observedResult": "Added a standalone stable, case-insensitive volunteer-name sorter and 18 passing subprocess tests. Only the two tools files changed. The project remained unadopted, and the actor made no moldea gate/CLI/canonical calls or announcements.",
+      "redactionIds": []
+    },
+    {
+      "id": "moss-atlas-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Moss Atlas has adopted MOSS- followed by five digits as the accession format, effective now. Please update the standalone skill and examples for that format. Keep all supplied specimen facts and uncertainty grounded, and continue to flag invalid accessions instead of inventing or padding them.\n",
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 136,
+      "beforeCommit": "4a05ff1238ed92a313a96932e5787056385d5972",
+      "afterCommit": "313600a600e4660737efb5ed38d7a795b67e7f50",
+      "observedResult": "Updated the standalone skill and grounded examples to MOSS- plus five digits, preserving other specimen facts and uncertainty. Structural validation and fixture comparison passed. A second helper reported six informal cases; parent assertions check helper-produced response artifacts rather than independently demonstrating application/model executions. Extra historical-format/conversion prose was simplified in the next recorded intervention.",
+      "redactionIds": []
+    },
+    {
+      "id": "moss-atlas-request-04",
+      "ordinal": 4,
+      "kind": "intervention",
+      "text": "Please keep the skill and examples focused on the current MOSS format. Remove the extra historical-format and conversion paragraphs; the general invalid-accession rule already covers nonmatching input. Preserve the current regex, grounded fixture values, missing-data handling and all specimen-fact safeguards.\n",
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 201,
+      "beforeCommit": "313600a600e4660737efb5ed38d7a795b67e7f50",
+      "afterCommit": "414825f50fb2d9ee748a9b9bd3961d172d2f04bd",
+      "observedResult": "Applied the recorded driver editorial intervention: removed historical-format/conversion paragraphs while preserving the current MOSS regex, grounded fixture values, missing-data handling and factual safeguards. Structural validation passed; no foundation or CLI/Core was introduced.",
+      "redactionIds": []
+    },
+    {
+      "id": "moss-atlas-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Write a short tools/README.md for the volunteer-name sorter, covering its JSON input/output, case-insensitive alphabetical comparison, stable equal-name order and error behavior. Include small copyable examples that you check against the utility, including an empty list. Keep this to the standalone sorter documentation.\n",
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 240,
+      "beforeCommit": "414825f50fb2d9ee748a9b9bd3961d172d2f04bd",
+      "afterCommit": "5053d4f5ef318cbd1ff080432d5dfed8e76d01e5",
+      "observedResult": "Added only the standalone sorter README. All five copyable valid/invalid examples matched actual output and exit status. The actor made no moldea gate/CLI/canonical calls or announcements, and the skill artifact stayed unchanged.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 2,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 3,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 4,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 5,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 46,
+      "reason": "Host sub-agent lifecycle metadata, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 71,
+      "reason": "Host sub-agent lifecycle metadata, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 159,
+      "reason": "Host sub-agent lifecycle metadata, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 177,
+      "reason": "Host sub-agent lifecycle metadata, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 198,
+      "reason": "Host-provided instruction/environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "command",
+      "description": "python3 <system-skill-creator>/scripts/quick_validate.py skills/moss-labels",
+      "inputCommit": "7281bdba4dd0d9b6b03c0f8f0ce3e3838ab112ec",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Actor-reported informal five-case host-sub-agent check, returned in native event 76; encrypted prompt and separate child internals limit inspection.",
+      "inputCommit": "7281bdba4dd0d9b6b03c0f8f0ce3e3838ab112ec",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/sort-volunteers.test.mjs",
+      "inputCommit": "4a05ff1238ed92a313a96932e5787056385d5972",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Request 3 structural/fixture comparison and assertions over a helper-produced response artifact (native events 182, 185, 188). Six helper-reported informal cases do not establish independent behavioral qualification.",
+      "inputCommit": "313600a600e4660737efb5ed38d7a795b67e7f50",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "python3 <system-skill-creator>/scripts/quick_validate.py skills/moss-labels",
+      "inputCommit": "414825f50fb2d9ee748a9b9bd3961d172d2f04bd",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Execute all five tools/README.md valid/invalid shell examples and compare stdout, stderr and exit status.",
+      "inputCommit": "5053d4f5ef318cbd1ff080432d5dfed8e76d01e5",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent source review reran all 18 sorter tests and found no actionable defects.",
+      "inputCommit": "5053d4f5ef318cbd1ff080432d5dfed8e76d01e5",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent source and skill-behavior review; original findings, assistance and scope limits retained in the run review.",
+      "inputCommit": "5053d4f5ef318cbd1ff080432d5dfed8e76d01e5",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261013-01/reviews/skill-review.md"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "5053d4f5ef318cbd1ff080432d5dfed8e76d01e5",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261013-01/run.json",
+        "evidence/runs/run-20261013-01/attempts/moss-atlas-01.json",
+        "evidence/scenarios/moss-atlas.md",
+        "evidence/runs/run-20261013-01/reviews/skill-review.md",
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz",
+        "run-20261013-01/moss-atlas-identities-01.txt",
+        "git/9ed705a7294bc483dcae9a408984c9b5262b1f43/5053d4f5ef318cbd1ff080432d5dfed8e76d01e5",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/5053d4f5ef318cbd1ff080432d5dfed8e76d01e5"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-identities-01.txt",
+        "locator": "before-request-01"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No root CLI declaration, lockfile or installed CLI package at the seed."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No root Core declaration, lockfile or installed Core package at the seed."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 93,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-identities-01.txt",
+        "locator": "before-request-02"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No CLI declaration, root lockfile or installed root CLI package."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No Core declaration, root lockfile or installed root Core package."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 135,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-identities-01.txt",
+        "locator": "before-request-03"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No CLI declaration, root lockfile or installed root CLI package."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No Core declaration, root lockfile or installed root Core package."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 200,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-identities-01.txt",
+        "locator": "before-request-04"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No CLI declaration, root lockfile or installed root CLI package."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No Core declaration, root lockfile or installed root Core package."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "eventOrdinal": 239,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-identities-01.txt",
+        "locator": "before-request-05"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No CLI declaration, root lockfile or installed root CLI package."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No Core declaration, root lockfile or installed root Core package."
+      },
+      "adapters": []
+    }
+  ],
+  "skillRelease": "v8.1.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261013-01",
+      "name": "moss-atlas-01-session-01.jsonl.gz",
+      "sizeBytes": 44906,
+      "sha256": "10e9eb5f811018625b2cdaafaecc2bd2b6e82e03818a1737a5544299742723df",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 273
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261013-01",
+      "name": "moss-atlas-identities-01.txt",
+      "sizeBytes": 5142,
+      "sha256": "65cb32c18830221bcb00a7a8e37c949be49467293a91353a421a9f1f728e7d65",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [
+    {
+      "requestId": "moss-atlas-request-03",
+      "interventionRequestId": "moss-atlas-request-04",
+      "originalResult": "The format update was functionally correct but added historical-format/conversion prose beyond the current-format scope.",
+      "assistedResult": "The actor removed that prose after the explicit driver clarification, retaining current-format behavior and specimen facts.",
+      "originalCommit": "313600a600e4660737efb5ed38d7a795b67e7f50",
+      "assistedCommit": "414825f50fb2d9ee748a9b9bd3961d172d2f04bd"
+    }
+  ],
+  "failures": [
+    {
+      "kind": "driver",
+      "requestId": "moss-atlas-request-01",
+      "description": "First capture stopped on native function/delegation records. Focused capture support was added and tested before dependent follow-ups; parent calls, lifecycle metadata and returned messages are retained.",
+      "asset": null
+    },
+    {
+      "kind": "actor",
+      "requestId": "moss-atlas-request-03",
+      "description": "Requests 1 and 3 called assertions over helper-produced response artifacts behavioral checks. Independent review found that wording insufficiently qualified; public summaries now label both passes informal and helper-reported, without independently demonstrated application/model execution. Original actor responses remain visible.",
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "moss-atlas-01-session-01.jsonl.gz"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "moss-path-2-1",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-2-2",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-2-3",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-2-4",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-2-5",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-2-6",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-5-7",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-5-8",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-5-9",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-5-10",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-5-11",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-5-12",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-5-13",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-12-14",
+      "reason": "Private machine path.",
+      "eventOrdinal": 12,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-17-15",
+      "reason": "Private machine path.",
+      "eventOrdinal": 17,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-23-16",
+      "reason": "Private machine path.",
+      "eventOrdinal": 23,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-23-17",
+      "reason": "Private machine path.",
+      "eventOrdinal": 23,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-23-18",
+      "reason": "Private machine path.",
+      "eventOrdinal": 23,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-23-19",
+      "reason": "Private machine path.",
+      "eventOrdinal": 23,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-23-20",
+      "reason": "Private machine path.",
+      "eventOrdinal": 23,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-23-21",
+      "reason": "Private machine path.",
+      "eventOrdinal": 23,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-38-22",
+      "reason": "Private machine path.",
+      "eventOrdinal": 38,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-38-23",
+      "reason": "Private machine path.",
+      "eventOrdinal": 38,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-51-24",
+      "reason": "Private machine path.",
+      "eventOrdinal": 51,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-76-25",
+      "reason": "Private machine path.",
+      "eventOrdinal": 76,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-79-26",
+      "reason": "Private machine path.",
+      "eventOrdinal": 79,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-86-27",
+      "reason": "Private machine path.",
+      "eventOrdinal": 86,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-86-28",
+      "reason": "Private machine path.",
+      "eventOrdinal": 86,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-98-29",
+      "reason": "Private machine path.",
+      "eventOrdinal": 98,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-98-30",
+      "reason": "Private machine path.",
+      "eventOrdinal": 98,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-98-31",
+      "reason": "Private machine path.",
+      "eventOrdinal": 98,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-98-32",
+      "reason": "Private machine path.",
+      "eventOrdinal": 98,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-98-33",
+      "reason": "Private machine path.",
+      "eventOrdinal": 98,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-98-34",
+      "reason": "Private machine path.",
+      "eventOrdinal": 98,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-110-35",
+      "reason": "Private machine path.",
+      "eventOrdinal": 110,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-110-36",
+      "reason": "Private machine path.",
+      "eventOrdinal": 110,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-128-37",
+      "reason": "Private machine path.",
+      "eventOrdinal": 128,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-128-38",
+      "reason": "Private machine path.",
+      "eventOrdinal": 128,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-140-39",
+      "reason": "Private machine path.",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-140-40",
+      "reason": "Private machine path.",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-140-41",
+      "reason": "Private machine path.",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-140-42",
+      "reason": "Private machine path.",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-140-43",
+      "reason": "Private machine path.",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-140-44",
+      "reason": "Private machine path.",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-151-45",
+      "reason": "Private machine path.",
+      "eventOrdinal": 151,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-151-46",
+      "reason": "Private machine path.",
+      "eventOrdinal": 151,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-164-47",
+      "reason": "Private machine path.",
+      "eventOrdinal": 164,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-191-48",
+      "reason": "Private machine path.",
+      "eventOrdinal": 191,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-191-49",
+      "reason": "Private machine path.",
+      "eventOrdinal": 191,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-198-50",
+      "reason": "Private machine path.",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-198-51",
+      "reason": "Private machine path.",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-215-52",
+      "reason": "Private machine path.",
+      "eventOrdinal": 215,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-215-53",
+      "reason": "Private machine path.",
+      "eventOrdinal": 215,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-222-54",
+      "reason": "Private machine path.",
+      "eventOrdinal": 222,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-244-55",
+      "reason": "Private machine path.",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-244-56",
+      "reason": "Private machine path.",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-244-57",
+      "reason": "Private machine path.",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-244-58",
+      "reason": "Private machine path.",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-244-59",
+      "reason": "Private machine path.",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-244-60",
+      "reason": "Private machine path.",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-254-61",
+      "reason": "Private machine path.",
+      "eventOrdinal": 254,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-path-270-62",
+      "reason": "Private machine path.",
+      "eventOrdinal": 270,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-encrypted-prompt-45",
+      "reason": "Native delegation prompt is encrypted host content; plaintext is unavailable in this recording.",
+      "eventOrdinal": 45,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "moss-encrypted-prompt-158",
+      "reason": "Native delegation prompt is encrypted host content; plaintext is unavailable in this recording.",
+      "eventOrdinal": 158,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1367e-298f-7da2-a3d5-620ba00d6f46",
+      "affectedLocations": [
+        "run-20261013-01/moss-atlas-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "The parent conversation is exported in full. Both native delegation prompts are encrypted and explicitly redacted; separate child internals are not exported. Requests 1 and 3 report five and six informal helper cases respectively, with parent assertions over helper-produced responses. Neither pass independently qualifies skill behavior.",
+    "Request 4 is a recorded driver editorial intervention; the final artifact wording is not presented as unassisted.",
+    "The project remained unadopted with evidenced CLI/Core absence throughout. No in-app agent/model runtime, live application-provider call, natural compaction or adapter qualification is established.",
+    "Configuration isolation permits outside-worktree reads; host system/plugin catalogs can change."
+  ]
+}
