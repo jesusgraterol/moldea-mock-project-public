@@ -13,8 +13,11 @@ The base for fresh project attempts is `c3ecda12e853b527a96c6ca81150083b0224643a
 
 Core 5.0.1, CLI 9.0.1 and Skill 6.0.1 were verified as published before the 2026-09-28 run. That run contains four new fixture attempts with complete captured evidence in the repository index and [the GitHub Release tagged `run-20260928-02`](https://github.com/jesusgraterol/moldea-mock-project-public/releases/tag/run-20260928-02). [Independent review](evidence/runs/run-20260928-02/reviews/skill-review.md) is complete. It found no new skill or package defect requiring a change; an actor gate-order miss and the limits of this evidence remain explicit.
 
+The 2026-10-13 [Lantern Loans pilot](evidence/runs/run-20261013-01/reviews/skill-review.md) uses Skill 8.1.0 and fresh CLI 11.0.2 adoption. Its independent source/behavior reviews support the observed LangGraph instruction loading, policy maintenance and unrelated-work silence. Evidence publication and full replay are pending; expansion remains held.
+
 | Scenario | Branch | Date | Skill release | Commit | Actor session | Observed state |
 | --- | --- | --- | --- | --- | --- | --- |
+| Lantern Loans | `fixture_langgraph_xs_lantern_loans_01` | 2026-10-13 | `v8.1.0` | `f78e0e93559969b3fa254cc5856c6e958e6442d4` | `01a1360b-551f-7a11-b092-2114901804cf` | Real compiled LangGraph with a controlled model boundary; fourteen-day policy maintained and three unrelated exporter requests abstained. |
 | Skill only | `fixture_skill_only_01` | 2026-09-27 | `v6.0.0` | `fde69e844b3aae3fc4d9ef7cbc65e699817d2b10` | `01a0e3b1-634b-7351-b532-4e161922ea2f` | Repository-local skill selected in two read-only requests; project remains unadopted. |
 | Cedar Workshop | `fixture_initialized_01` | 2026-09-27 | `v6.0.0` | `ec65ab326e5196c6fb77ce2e765c60ebac3881cf` | `01a0e3b7-4902-7e80-bd22-cc8737e962f5` | Foundation initialized, then waitlist policy clarified; no source or agents. |
 | Trail Ledger | `fixture_context_only_01` | 2026-09-27 | `v6.0.0` | `6a667a606e9cf6e2ea0dc18195178c0fd6fd05a8` | `01a0e3c0-b17d-7d00-aa06-8989ad5b6471` | Adopted a zero-agent availability prototype; a later repair-rule request led to timestamped safety checks after a clarification. |

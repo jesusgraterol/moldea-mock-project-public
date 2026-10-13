@@ -799,6 +799,18 @@ const projectEvent = (record, ordinal, includeBaseInstructions) => {
     if (payload.type === 'task_started' || payload.type === 'task_complete') {
       return { ...base, kind: payload.type, payload: { turnId: payload.turn_id } };
     }
+    if (payload.type === 'item_completed' && payload.item?.type === 'Extension') {
+      const item = payload.item;
+      if (item.kind !== 'web.search' || typeof item.id !== 'string' ||
+          !item.action || typeof item.action !== 'object' || !Array.isArray(item.results)) {
+        fail('A completed native extension needs manual inspection.');
+      }
+      return { ...base, kind: 'tool-call', payload: {
+        name: item.kind, callId: item.id,
+        input: JSON.stringify({ query: item.query, action: item.action }),
+        output: [{ type: 'input_text', text: JSON.stringify(item.results) }], status: 'completed',
+      } };
+    }
     if (['item_completed', 'token_count', 'thread_settings_applied'].includes(payload.type)) return null;
     fail('A native event type needs manual inspection.');
   }

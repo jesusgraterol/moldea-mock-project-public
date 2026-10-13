@@ -1,0 +1,1638 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261013-01",
+  "scenarioId": "lantern-loans",
+  "attemptId": "lantern-loans-01",
+  "branch": "fixture_langgraph_xs_lantern_loans_01",
+  "baseCommit": "4566fe82c3a2f23e9d98c3b85ca67796039afcc6",
+  "finalCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+  "lastDurableCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/lantern-loans.md",
+    "commit": "75142f5d87b9d2710cdcdb768c6dfd1a0470fe60"
+  },
+  "observedSummary": "A staff-facing tool-library assistant uses real LangGraph execution, a read-only lookup and grounded structured answers. moldea was adopted from absent tooling, maintained the seven-to-fourteen-day loan-policy change across canonical guidance, code and checks, and stayed silent after three unrelated exporter requests. Controlled-model tests verify that both model calls receive the maintained instruction and actual schemas; staff retain approval authority.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261013-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a1360b-551f-7a11-b092-2114901804cf",
+      "hostVersion": "0.162.1",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 164,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 350,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 395,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 464,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 518,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "lantern-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Lantern Loans, a small staff-facing TypeScript/LangGraph assistant for a community tool library. It should look up fictional tool records, help staff explain availability and the seven-day loan policy, and flag missing facts instead of guessing. Staff approve every loan; the assistant must not reserve equipment, change loan records, or promise a tool is safe. Start by setting up moldea and proposing a small implementation approach. Hold off on implementing the assistant until we settle that approach.\n",
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 8,
+      "beforeCommit": "4566fe82c3a2f23e9d98c3b85ca67796039afcc6",
+      "afterCommit": "41116aa74bf6e083ca4270c2e224d37f6a7e67f9",
+      "observedResult": "Installed moldea CLI 11.0.2, created project context and managed README/AGENTS integration, and passed validation. Proposed a deterministic LangGraph approach; assistant implementation remained on hold. Recovered from a read-only default npm cache error (EROFS) using a temporary cache.",
+      "redactionIds": []
+    },
+    {
+      "id": "lantern-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "I want the assistant to use a model for staff questions, with LangGraph coordinating a read-only tool lookup and a grounded structured response. Please build that first slice. Use a few fictional checked-in tool records, including one whose availability is unknown, and keep the seven-day policy and staff-only authority limits. Run the real compiled LangGraph and actual application instruction-loading and tool/schema path in tests, substituting only a controlled model boundary so we need no provider credentials. Show that the model receives the maintained instruction and lookup schema. No database, reservations, loan writes, UI, or live provider call is needed.\n",
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 165,
+      "beforeCommit": "41116aa74bf6e083ca4270c2e224d37f6a7e67f9",
+      "afterCommit": "d0f21e1ffb2a5b444e5ba8454654776a98458ead",
+      "observedResult": "Built a real compiled LangGraph assistant with one read-only lookup and grounded structured output. Both model calls receive the maintained instruction and actual tool/response schemas. Fifteen controlled-model tests passed; moldea validation checked eight file/export bindings with no errors or warnings. No provider was called.",
+      "redactionIds": []
+    },
+    {
+      "id": "lantern-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Add a standalone workshop-desk utility at tools/workshop-csv.mjs. It should read a JSON array from stdin and write CSV to stdout with workshop,name,seats columns, preserving row order and correctly escaping commas, quotes, and newlines. An empty array should produce the header; malformed JSON or rows should fail with a concise stderr message and a nonzero exit code. Include focused tests runnable with node --test tools/workshop-csv.test.mjs. It needs no application imports or npm script.\n",
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 351,
+      "beforeCommit": "d0f21e1ffb2a5b444e5ba8454654776a98458ead",
+      "afterCommit": "405b5ac1eddac706d1f8c708f327da273f16ca75",
+      "observedResult": "Added a standalone stdin-to-CSV workshop utility and seven passing subprocess tests. The relevance gate returned 0; the actor did no further moldea work or announcement. Only the two tools files changed; canonical project and agent state remained byte-identical.",
+      "redactionIds": []
+    },
+    {
+      "id": "lantern-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "The library has adopted a fourteen-day standard loan period, effective now. Update the assistant behavior and staff-facing explanations to use that policy, including the checks that show what reaches the model. Staff still approve every loan, and the assistant still cannot reserve, write loan records, or make safety promises.\n",
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 396,
+      "beforeCommit": "405b5ac1eddac706d1f8c708f327da273f16ca75",
+      "afterCommit": "4fbd68e3228a8fefb698da1720950659febabb88",
+      "observedResult": "Updated the maintained instruction, response schema, project purpose, agent description, runtime guidance, and staff documentation to the fourteen-day policy. Fifteen real-graph controlled-model tests passed, asserting the updated instruction at both model calls and rejecting seven-day responses. Validation checked eight bindings with no errors or warnings; authority limits were preserved.",
+      "redactionIds": []
+    },
+    {
+      "id": "lantern-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Add an optional --sort=name flag to the workshop CSV exporter so the desk can sort by attendee name. Use a stable case-insensitive alphabetical comparison; keep input order when the flag is absent and preserve order for equal names. Unsupported flags should fail clearly. Extend the subprocess tests for the flag and default behavior.\n",
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 465,
+      "beforeCommit": "4fbd68e3228a8fefb698da1720950659febabb88",
+      "afterCommit": "3db46529455902d9eef1e98dae165811cc213631",
+      "observedResult": "Added stable case-insensitive attendee sorting through --sort=name while preserving the default row order and rejecting unsupported arguments. Eleven subprocess tests passed. The relevance gate returned 0 and no further moldea activity or announcement followed; only the two exporter files changed.",
+      "redactionIds": []
+    },
+    {
+      "id": "lantern-request-06",
+      "ordinal": 6,
+      "kind": "follow-up",
+      "text": "Write a short tools/README.md for the workshop desk explaining the CSV input shape, ordinary and --sort=name usage, row validation, escaping, and exit/error behavior. Include small copyable examples that you check against the utility. Keep this to the standalone exporter documentation.\n",
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 519,
+      "beforeCommit": "3db46529455902d9eef1e98dae165811cc213631",
+      "afterCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+      "observedResult": "Added only tools/README.md with exporter input, sorting, validation, CSV escaping, and error documentation. Both copyable examples matched actual output, and empty-input/error cases were checked. The relevance gate returned 0 and the actor did no further moldea work or announcement; agent and project state remained unchanged.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 2,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 3,
+      "reason": "Host-provided agent execution instructions, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 4,
+      "reason": "Host-provided agent execution instructions, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 5,
+      "reason": "Host-provided environment and permission context, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 162,
+      "reason": "Host-loaded managed project AGENTS.md instructions, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 348,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 393,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 462,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 516,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "command",
+      "description": "npm run build",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "npm test",
+      "inputCommit": "d0f21e1ffb2a5b444e5ba8454654776a98458ead",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/workshop-csv.test.mjs",
+      "inputCommit": "405b5ac1eddac706d1f8c708f327da273f16ca75",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "npm test",
+      "inputCommit": "4fbd68e3228a8fefb698da1720950659febabb88",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/workshop-csv.test.mjs",
+      "inputCommit": "3db46529455902d9eef1e98dae165811cc213631",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Execute both tools/README.md shell examples and compare their CSV blocks; check empty input, escaping and invalid-input exit behavior (native event 548).",
+      "inputCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+      "result": "passed",
+      "coveredArtifacts": [
+        "tools"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Independent code review: type checking, all 26 tests, and assistant tests against a fresh temporary build.",
+      "inputCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+      "result": "passed",
+      "coveredArtifacts": [
+        "src",
+        "test",
+        "tools"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "41116aa74bf6e083ca4270c2e224d37f6a7e67f9",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "d0f21e1ffb2a5b444e5ba8454654776a98458ead",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository <actor-worktree> -- validate --json --max-output-bytes 65536",
+      "inputCommit": "4fbd68e3228a8fefb698da1720950659febabb88",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "independent skill review",
+      "inputCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261013-01/reviews/skill-review.md"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261013-01/run.json",
+        "evidence/runs/run-20261013-01/attempts/lantern-loans-01.json",
+        "evidence/scenarios/lantern-loans.md",
+        "evidence/runs/run-20261013-01/reviews/skill-review.md",
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz",
+        "run-20261013-01/lantern-identities-01.txt",
+        "git/4566fe82c3a2f23e9d98c3b85ca67796039afcc6/f78e0e93559969b3fa254cc5856c6e958e6442d4",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/f78e0e93559969b3fa254cc5856c6e958e6442d4"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "lantern-identities-01.txt",
+        "locator": "before-request-01"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "No root declaration, lockfile or installed CLI package before the initial request."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "No root declaration, lockfile or installed Core package before the initial request."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 164,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "lantern-identities-01.txt",
+        "locator": "before-request-02"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 350,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "lantern-identities-01.txt",
+        "locator": "before-request-03"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 395,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "lantern-identities-01.txt",
+        "locator": "before-request-04"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 464,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "lantern-identities-01.txt",
+        "locator": "before-request-05"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    },
+    {
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "eventOrdinal": 518,
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "lantern-identities-01.txt",
+        "locator": "before-request-06"
+      },
+      "skill": {
+        "ref": "v8.1.0",
+        "contentHash": "6caa6c4106ce3d1db2f14f27c8ac2320f3b7b6253a6eef0af90f30c2b84abf6f"
+      },
+      "adapters": [],
+      "cli": {
+        "version": "11.0.2",
+        "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA=="
+      },
+      "core": {
+        "version": "7.0.3",
+        "integrity": "sha512-28h6lUU82sK5dg+MkImB2tRJKCQlEAxcZHK+exTKKpytuvsEx2VSmlPdllRlcgoEJsJERRMo0tebgpyiBXoXIA=="
+      }
+    }
+  ],
+  "skillRelease": "v8.1.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261013-01",
+      "name": "lantern-loans-01-session-01.jsonl.gz",
+      "sizeBytes": 154026,
+      "sha256": "bbb26fb7662652d1622673c4a6cf30b00849df21860df64ccfeca795db4be373",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 559
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261013-01",
+      "name": "lantern-identities-01.txt",
+      "sizeBytes": 6724,
+      "sha256": "ff1b20bb6d961201cf8a4d91ec0f1330959eea0972ba6d78f180dc4f3c3ac0f9",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "environment",
+      "requestId": "lantern-request-01",
+      "description": "Default npm cache was not writable in the actor sandbox; actor inspected remaining state and installed CLI 11.0.2 using a disposable cache. Native events 57\u201390.",
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "lantern-loans-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "actor",
+      "requestId": "lantern-request-01",
+      "description": "An atomic patch expected package.json without its existing private:true field and failed. Actor read actual state and applied the missing foundation files. Native events 101\u2013116.",
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "lantern-loans-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "actor",
+      "requestId": "lantern-request-02",
+      "description": "The first TypeScript build lacked explicit Node types. Actor corrected tsconfig.json and subsequent build and fifteen assistant tests passed. Native events 266\u2013295.",
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "lantern-loans-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": "lantern-request-01",
+      "description": "First-turn capture initially omitted native web-search completion items; capture was corrected and the full conversation recaptured. Replay then exposed adjacency-only tool-result pairing, fixed in approved reader commit bcd00a6e1bc02d52e855d6a602dc67941ad56d35.",
+      "asset": null
+    }
+  ],
+  "redactions": [
+    {
+      "id": "machine-path-2-1",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-2-2",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-2-3",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-2-4",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-2-5",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-2-6",
+      "reason": "Private machine path.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-5-7",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-5-8",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-5-9",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-5-10",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-5-11",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-5-12",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-5-13",
+      "reason": "Private machine path.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-16-14",
+      "reason": "Private machine path.",
+      "eventOrdinal": 16,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-60-15",
+      "reason": "Private machine path.",
+      "eventOrdinal": 60,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-60-16",
+      "reason": "Private machine path.",
+      "eventOrdinal": 60,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-60-17",
+      "reason": "Private machine path.",
+      "eventOrdinal": 60,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-101-18",
+      "reason": "Private machine path.",
+      "eventOrdinal": 101,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-101-19",
+      "reason": "Private machine path.",
+      "eventOrdinal": 101,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-101-20",
+      "reason": "Private machine path.",
+      "eventOrdinal": 101,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-103-21",
+      "reason": "Private machine path.",
+      "eventOrdinal": 103,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-114-22",
+      "reason": "Private machine path.",
+      "eventOrdinal": 114,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-114-23",
+      "reason": "Private machine path.",
+      "eventOrdinal": 114,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-155-24",
+      "reason": "Private machine path.",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-162-25",
+      "reason": "Private machine path.",
+      "eventOrdinal": 162,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-177-26",
+      "reason": "Private machine path.",
+      "eventOrdinal": 177,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-27",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-28",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-29",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-30",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-31",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-32",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-33",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-34",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-35",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-36",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-37",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-259-38",
+      "reason": "Private machine path.",
+      "eventOrdinal": 259,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-279-39",
+      "reason": "Private machine path.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-279-40",
+      "reason": "Private machine path.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-312-41",
+      "reason": "Private machine path.",
+      "eventOrdinal": 312,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-312-42",
+      "reason": "Private machine path.",
+      "eventOrdinal": 312,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-312-43",
+      "reason": "Private machine path.",
+      "eventOrdinal": 312,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-312-44",
+      "reason": "Private machine path.",
+      "eventOrdinal": 312,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-312-45",
+      "reason": "Private machine path.",
+      "eventOrdinal": 312,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-341-46",
+      "reason": "Private machine path.",
+      "eventOrdinal": 341,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-341-47",
+      "reason": "Private machine path.",
+      "eventOrdinal": 341,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-341-48",
+      "reason": "Private machine path.",
+      "eventOrdinal": 341,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-348-49",
+      "reason": "Private machine path.",
+      "eventOrdinal": 348,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-348-50",
+      "reason": "Private machine path.",
+      "eventOrdinal": 348,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-355-51",
+      "reason": "Private machine path.",
+      "eventOrdinal": 355,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-371-52",
+      "reason": "Private machine path.",
+      "eventOrdinal": 371,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-371-53",
+      "reason": "Private machine path.",
+      "eventOrdinal": 371,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-386-54",
+      "reason": "Private machine path.",
+      "eventOrdinal": 386,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-393-55",
+      "reason": "Private machine path.",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-393-56",
+      "reason": "Private machine path.",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-393-57",
+      "reason": "Private machine path.",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-393-58",
+      "reason": "Private machine path.",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-393-59",
+      "reason": "Private machine path.",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-408-60",
+      "reason": "Private machine path.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-432-61",
+      "reason": "Private machine path.",
+      "eventOrdinal": 432,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-432-62",
+      "reason": "Private machine path.",
+      "eventOrdinal": 432,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-432-63",
+      "reason": "Private machine path.",
+      "eventOrdinal": 432,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-432-64",
+      "reason": "Private machine path.",
+      "eventOrdinal": 432,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-432-65",
+      "reason": "Private machine path.",
+      "eventOrdinal": 432,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-432-66",
+      "reason": "Private machine path.",
+      "eventOrdinal": 432,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-432-67",
+      "reason": "Private machine path.",
+      "eventOrdinal": 432,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-462-68",
+      "reason": "Private machine path.",
+      "eventOrdinal": 462,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-462-69",
+      "reason": "Private machine path.",
+      "eventOrdinal": 462,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-469-70",
+      "reason": "Private machine path.",
+      "eventOrdinal": 469,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-489-71",
+      "reason": "Private machine path.",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-489-72",
+      "reason": "Private machine path.",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-516-73",
+      "reason": "Private machine path.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-516-74",
+      "reason": "Private machine path.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-516-75",
+      "reason": "Private machine path.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-516-76",
+      "reason": "Private machine path.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-516-77",
+      "reason": "Private machine path.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-523-78",
+      "reason": "Private machine path.",
+      "eventOrdinal": 523,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-541-79",
+      "reason": "Private machine path.",
+      "eventOrdinal": 541,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "machine-path-556-80",
+      "reason": "Private machine path.",
+      "eventOrdinal": 556,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1360b-551f-7a11-b092-2114901804cf",
+      "affectedLocations": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Controlled model-boundary tests execute the actual compiled LangGraph, instruction loader, tool and schemas; no live provider behavior, semantic model quality or moldea adapter qualification is established.",
+    "No natural compaction occurred; compaction behavior is not assessed.",
+    "Configuration isolation permits outside-worktree reads. Host-provided system/plugin skill catalogs changed during the conversation; no plugin skill was invoked.",
+    "The native web-search completion items contain result metadata, not full retrieved-page bodies. Encrypted reasoning and host-private world state are omitted; private machine-path redactions preserve project-relative details.",
+    "The failed intermediate build has inputCommit null because its uncommitted input bytes were not checkpointed; native request 2 events retain the actual error and correction.",
+    "Full browser replay and exact public snapshot references remain pending; batch expansion is held until that checkpoint."
+  ]
+}

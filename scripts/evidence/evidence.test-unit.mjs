@@ -120,6 +120,38 @@ test('capture redacts every emitted copy and preserves ordered evidence', async 
   assert.ok(metadata.omissions.includes('encrypted compaction summary omitted'));
 });
 
+test('capture retains a completed web search item and rejects unrecognized extensions', async () => {
+  const paths = await setup();
+  const item = { type: 'Extension', kind: 'web.search', id: 'search-1',
+    query: 'SDK graph documentation', action: { type: 'search', queries: ['SDK graph documentation'] },
+    results: [{ type: 'text_result', title: 'Graph API', url: 'https://example.test/graph',
+      snippet: 'Recorded search snippet.' }] };
+  const records = [
+    { type: 'session_meta', timestamp: '2026-10-13T00:00:00Z', payload: {
+      id: '0199c0b1-63da-73a1-b532-4e161922ea2f', cli_version: 'test-host' } },
+    { type: 'event_msg', timestamp: '2026-10-13T00:00:01Z',
+      payload: { type: 'item_completed', item } },
+  ];
+  await writeFile(paths.native, records.map((record) => JSON.stringify(record)).join('\n') + '\n');
+  await writeFile(paths.rules, JSON.stringify({ includeBaseInstructions: false, rules: [] }));
+  const result = runCapture(paths);
+  assert.equal(result.status, 0, result.stderr);
+  const events = gunzipSync(await readFile(join(paths.output, 'session-01.jsonl.gz')))
+    .toString('utf8').trim().split('\n').map(JSON.parse);
+  assert.equal(events[1].kind, 'tool-call');
+  assert.equal(events[1].payload.name, 'web.search');
+  assert.equal(events[1].payload.callId, 'search-1');
+  assert.equal(events[1].payload.status, 'completed');
+  assert.deepEqual(JSON.parse(events[1].payload.input), { query: item.query, action: item.action });
+  assert.deepEqual(JSON.parse(events[1].payload.output[0].text), item.results);
+
+  await rm(join(paths.output, 'session-01.jsonl.gz'));
+  await rm(join(paths.output, 'session-01.jsonl.gz.meta.json'));
+  item.kind = 'unrecognized';
+  await writeFile(paths.native, records.map((record) => JSON.stringify(record)).join('\n') + '\n');
+  assert.match(runCapture(paths).stderr, /completed native extension needs manual inspection/i);
+});
+
 test('capture identifies user prompts alongside host input envelopes', async () => {
   const paths = await setup();
   const records = [

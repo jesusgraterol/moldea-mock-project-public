@@ -1,0 +1,42 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261013-01",
+  "date": "2026-10-13",
+  "summary": "Lantern Loans pilot: fresh adoption, real LangGraph instruction/tool/schema execution, fourteen-day policy maintenance and unrelated-work silence.",
+  "expectedActor": {
+    "model": "gpt-6.1-sol",
+    "effort": "xhigh"
+  },
+  "prerequisites": [
+    {
+      "component": "skill",
+      "version": "v8.1.0",
+      "integrity": "git-tag:0617f5c65f1f8bd0ed7681fd03a7bce0641821cf;commit:c2bb924653d5d27943feb5d2103e154ad8131079",
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "lantern-identities-01.txt",
+        "locator": "release-skill; release-tag"
+      }
+    },
+    {
+      "component": "cli",
+      "version": "11.0.2",
+      "integrity": "sha512-BhorKLvJZ+55k7AWZIzZ00g1c9sBgJtxxY3wHhJZ8wM55DIdoeij51mzVZ2aIeDD6oG23BV29xhyDbcdwBbOtA==",
+      "source": {
+        "tag": "run-20261013-01",
+        "name": "lantern-identities-01.txt",
+        "locator": "release-cli"
+      }
+    }
+  ],
+  "attempts": [
+    "evidence/runs/run-20261013-01/attempts/lantern-loans-01.json"
+  ],
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261013-01/reviews/skill-review.md",
+  "limitations": [
+    "Pilot full browser replay and publication references remain pending; batch expansion is held.",
+    "No live provider calls, natural compaction, semantic reliability evaluation or adapter qualification is established."
+  ]
+}

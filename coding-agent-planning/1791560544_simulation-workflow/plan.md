@@ -166,6 +166,8 @@ Inspect full replay in the browser. Keep the one-session and 8 MiB metadata/comp
 
 Manually choose successful attempts from review and application results, recording chosen IDs, reasons, and review anchors in scenario/review prose. The website favors its selected run and history order; it does not infer success. Confirm it displays the chosen IDs. Hand unsupported selection mixtures to its maintainer without inventing runs or rearranging evidence into a success claim. Website selection and deployment remain separate work. Rollback restores the exact evidence commit/run selection while retaining source and assets.
 
+During the pilot on 2026-10-13, the developer approved a focused Milestone 2 website-reader correction in an isolated skill-repository worktree. Actual native history interleaves completed web-search items with shell calls/results. Preserve each completed web item as one tool event with its recorded query/action and inline result metadata; pair separate calls/results by call identity without requiring adjacency. Verify the real first-turn capture and focused regression cases, then run scoped review/fix cycles and exact-path signed commit/push for the reader change. Keep the published skill distribution, deployed selection, and deployment unchanged. This amendment follows an observed capture/replay integration problem and introduces no general exporter.
+
 ## Files and phased delivery
 
 | Phase | Work and likely files |

@@ -14,6 +14,13 @@
       "summary": "Four projects and thirteen conversation turns, covering linked agent guidance, unrelated-work silence, shared context, and narrow permission to update it.",
       "evidenceStatus": "complete",
       "reviewStatus": "complete"
+    },
+    {
+      "runId": "run-20261013-01",
+      "summary": "Lantern Loans pilot: fresh adoption, real LangGraph instruction/tool/schema execution, fourteen-day policy maintenance and unrelated-work silence.",
+      "evidenceStatus": "complete",
+      "reviewStatus": "complete",
+      "manifestPath": "evidence/runs/run-20261013-01/run.json"
     }
   ]
 }
