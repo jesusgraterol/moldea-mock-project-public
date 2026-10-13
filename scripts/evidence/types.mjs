@@ -118,6 +118,14 @@ const FailureSchema = z.strictObject({
   asset: AssetLocatorSchema.nullable(),
 });
 
+const ComponentSchema = z.union([
+  z.strictObject({
+    version: z.string().min(1),
+    integrity: knownOrUnknown(z.string().min(1)),
+  }),
+  z.strictObject({ state: z.literal('absent'), reason: z.string().min(1) }),
+]);
+
 const InstallationSchema = z.strictObject({
   sessionId: z.uuid(),
   eventOrdinal: EventOrdinalSchema,
@@ -126,14 +134,8 @@ const InstallationSchema = z.strictObject({
     ref: z.string().min(1),
     contentHash: Sha256Schema,
   }),
-  cli: z.strictObject({
-    version: z.string().min(1),
-    integrity: knownOrUnknown(z.string().min(1)),
-  }),
-  core: z.strictObject({
-    version: z.string().min(1),
-    integrity: knownOrUnknown(z.string().min(1)),
-  }),
+  cli: ComponentSchema,
+  core: ComponentSchema,
   adapters: z.array(z.strictObject({
     name: z.string().min(1),
     version: z.string().min(1),

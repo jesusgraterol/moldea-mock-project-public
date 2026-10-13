@@ -27,7 +27,7 @@ const sha256 = (content) => createHash('sha256').update(content).digest('hex');
 const unknown = (reason) => ({ state: 'unknown', reason });
 const writeJson = async (path, record) => writeFile(path, `${JSON.stringify(record, null, 2)}\n`);
 
-const setup = async () => {
+const setup = async ({ model = 'gpt-6.1-sol', runId = 'synthetic' } = {}) => {
   const root = join(tmpdir(), `moldea-verify-${randomUUID()}`);
   await mkdir(root);
   temporaryRoots.push(root);
@@ -39,23 +39,24 @@ const setup = async () => {
   await writeFile(join(root, 'README.md'), '# Original project\n');
   await mkdir(join(root, '.agents', 'skills', 'moldea'), { recursive: true });
   await writeFile(join(root, '.agents', 'skills', 'moldea', 'SKILL.md'), '# Original skill\n');
-  git(root, 'add', '.');
-  git(root, 'commit', '-m', 'test base');
+  const basePaths = ['changed.txt', 'deleted.txt', 'README.md', '.agents/skills/moldea/SKILL.md'];
+  git(root, 'add', '--', ...basePaths);
+  git(root, 'commit', '-m', 'test base', '--', ...basePaths);
   const baseCommit = git(root, 'rev-parse', 'HEAD');
   git(root, 'branch', 'fixture_one_01');
   await mkdir(join(root, 'evidence', 'scenarios'), { recursive: true });
   await writeFile(join(root, 'evidence', 'scenarios', 'example.md'), '# Example\n');
-  git(root, 'add', '.');
-  git(root, 'commit', '-m', 'test scenario');
+  git(root, 'add', '--', 'evidence/scenarios/example.md');
+  git(root, 'commit', '-m', 'test scenario', '--', 'evidence/scenarios/example.md');
   const scenarioCommit = git(root, 'rev-parse', 'HEAD');
   git(root, 'switch', 'fixture_one_01');
   await writeFile(join(root, 'changed.txt'), 'actor result\n');
-  git(root, 'add', '.');
-  git(root, 'commit', '-m', 'test actor result');
+  git(root, 'add', '--', 'changed.txt');
+  git(root, 'commit', '-m', 'test actor result', '--', 'changed.txt');
   const finalCommit = git(root, 'rev-parse', 'HEAD');
   git(root, 'switch', 'main');
 
-  const runDirectory = join(root, 'evidence', 'runs', 'synthetic');
+  const runDirectory = join(root, 'evidence', 'runs', runId);
   await mkdir(join(runDirectory, 'attempts'), { recursive: true });
   const assetRoot = join(root, 'downloads');
   await mkdir(join(assetRoot, 'synthetic'), { recursive: true });
@@ -66,7 +67,7 @@ const setup = async () => {
       id: sessionId, cli_version: 'test-host',
     } },
     { type: 'turn_context', timestamp: '2026-09-27T00:00:01Z', payload: {
-      model: 'gpt-6-sol', effort: 'xhigh', root_turn_id: 'turn-1',
+      model, effort: 'xhigh', root_turn_id: 'turn-1',
     } },
     { type: 'response_item', timestamp: '2026-09-27T00:00:02Z', payload: {
       type: 'message', role: 'user', content: [{ type: 'input_text', text: 'Build the example.' }],
@@ -102,17 +103,17 @@ const setup = async () => {
   const attemptPath = join(runDirectory, 'attempts', 'one.json');
   const runPath = join(runDirectory, 'run.json');
   const indexPath = join(root, 'evidence', 'index.json');
-  const runRelativePath = 'evidence/runs/synthetic/run.json';
-  const attemptRelativePath = 'evidence/runs/synthetic/attempts/one.json';
+  const runRelativePath = `evidence/runs/${runId}/run.json`;
+  const attemptRelativePath = `evidence/runs/${runId}/attempts/one.json`;
   const attempt = {
-    formatVersion: 1, runId: 'synthetic', scenarioId: 'example', attemptId: 'one',
+    formatVersion: 1, runId, scenarioId: 'example', attemptId: 'one',
     branch: 'fixture_one_01', baseCommit, finalCommit, lastDurableCommit: finalCommit,
     scenarioDefinition: { path: 'evidence/scenarios/example.md', commit: scenarioCommit },
     observedSummary: 'Synthetic example completed.', actorOutcome: 'concluded',
     outcomeReason: null, evidenceStatus: 'complete', reviewStatus: 'pending', review: null,
     sessions: [{ id: sessionId, hostVersion: 'test-host', turns: [{
-      eventOrdinal: 1, requestedModel: 'gpt-6-sol', requestedEffort: 'xhigh',
-      effectiveModel: 'gpt-6-sol', effectiveEffort: 'xhigh', deviation: false,
+      eventOrdinal: 1, requestedModel: model, requestedEffort: 'xhigh',
+      effectiveModel: model, effectiveEffort: 'xhigh', deviation: false,
     }] }],
     requests: [{ id: 'request-one', ordinal: 1, kind: 'initial', text: 'Build the example.',
       sessionId, eventOrdinal: 2, beforeCommit: baseCommit, afterCommit: finalCommit,
@@ -132,11 +133,9 @@ const setup = async () => {
     redactions: [], recovery: null, predecessorAttemptId: null, limitations: [],
   };
   const run = {
-    formatVersion: 1, runId: 'synthetic', date: '2026-09-27',
+    formatVersion: 1, runId, date: '2026-09-27',
     summary: 'Synthetic evidence verification.',
-    expectedActor: { model: 'gpt-6-sol', effort: 'xhigh' }, prerequisites: [
-      { component: 'core', version: 'test-core', integrity: 'sha256:test',
-        source: identitySource('core-release') },
+    expectedActor: { model, effort: 'xhigh' }, prerequisites: [
       { component: 'cli', version: 'test-cli', integrity: 'sha256:test',
         source: identitySource('cli-release') },
       { component: 'skill', version: 'test-release', integrity: 'sha256:test',
@@ -145,7 +144,7 @@ const setup = async () => {
     attempts: [attemptRelativePath], evidenceStatus: 'complete', reviewStatus: 'pending',
     review: null, limitations: [],
   };
-  const index = { formatVersion: 1, runs: [{ runId: 'synthetic',
+  const index = { formatVersion: 1, runs: [{ runId,
     manifestPath: runRelativePath, summary: run.summary,
     evidenceStatus: run.evidenceStatus, reviewStatus: run.reviewStatus }] };
   const save = async () => {
@@ -177,6 +176,231 @@ const appendUserMessage = async (fixture) => {
   return nextOrdinal;
 };
 
+const appendTurn = async (fixture, composition) => {
+  const asset = fixture.attempt.assets[0];
+  const assetPath = join(fixture.assetRoot, asset.tag, asset.name);
+  const original = gunzipSync(await readFile(assetPath)).toString('utf8');
+  const ordinal = asset.lastEventOrdinal + 1;
+  const settings = { ...fixture.attempt.sessions[0].turns[0], eventOrdinal: ordinal };
+  const requestOrdinal = fixture.attempt.requests.length + 1;
+  const text = 'Continue the example.';
+  const events = [
+    { ordinal, timestamp: '2026-09-27T00:01:00Z', kind: 'turn', redactionIds: [],
+      payload: { rootTurnId: 'turn-' + requestOrdinal, model: settings.effectiveModel,
+        effort: settings.effectiveEffort } },
+    { ordinal: ordinal + 1, timestamp: '2026-09-27T00:01:01Z', kind: 'message',
+      redactionIds: [], payload: { role: 'user', content: [{ type: 'input_text', text }] } },
+  ];
+  const compressed = gzipSync(original + events.map((event) => JSON.stringify(event)).join('\n') + '\n');
+  await writeFile(assetPath, compressed);
+  asset.sizeBytes = compressed.length;
+  asset.sha256 = sha256(compressed);
+  asset.lastEventOrdinal = ordinal + 1;
+  fixture.attempt.sessions[0].turns.push(settings);
+  fixture.attempt.requests.push({ id: 'request-' + requestOrdinal, ordinal: requestOrdinal,
+    kind: 'follow-up', text, sessionId, eventOrdinal: ordinal + 1,
+    beforeCommit: fixture.finalCommit, afterCommit: fixture.finalCommit,
+    observedResult: 'Continued the example.', redactionIds: [] });
+  const installation = { ...structuredClone(composition), sessionId, eventOrdinal: ordinal,
+    source: fixture.identitySource('turn-' + requestOrdinal) };
+  fixture.attempt.installations.push(installation);
+  fixture.identityLog += 'turn-' + requestOrdinal + ': ' + JSON.stringify(installation) + '\n';
+  const log = fixture.attempt.assets[1];
+  await writeFile(join(fixture.assetRoot, log.tag, log.name), fixture.identityLog);
+  log.sizeBytes = Buffer.byteLength(fixture.identityLog);
+  log.sha256 = sha256(fixture.identityLog);
+  await fixture.save();
+};
+
+test('verify follows run-declared actor settings and preserves deviations and unknown evidence', async () => {
+  const current = await setup();
+  assert.equal(current.verify().status, 0);
+
+  current.run.expectedActor.model = 'gpt-6-sol';
+  await current.save();
+  assert.match(current.verify().stderr, /inconsistent effective settings/i);
+  current.attempt.sessions[0].turns[0].deviation = true;
+  await current.save();
+  assert.equal(current.verify().status, 0);
+
+  const declared = await setup({ model: 'gpt-6-sol' });
+  assert.equal(declared.verify().status, 0);
+  declared.run.expectedActor = unknown('Settings were not recorded.');
+  await declared.save();
+  assert.match(declared.verify().stderr, /required durable evidence/i);
+  declared.run.evidenceStatus = 'incomplete';
+  declared.attempt.evidenceStatus = 'incomplete';
+  await declared.save();
+  assert.equal(declared.verify().status, 0);
+});
+
+test('verify preserves automatic host metadata without requiring it for completeness', async () => {
+  const fixture = await setup();
+  fixture.attempt.sessions[0].hostVersion = unknown('Not copied into the manifest.');
+  await fixture.save();
+  assert.equal(fixture.verify().status, 0);
+  fixture.attempt.sessions[0].hostVersion = 'invented';
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /session asset identity differs/i);
+});
+
+test('verify associates an input preceding its native context and ignores unknown-integrity wording', async () => {
+  const fixture = await setup();
+  const asset = fixture.attempt.assets[0];
+  const path = join(fixture.assetRoot, asset.tag, asset.name);
+  const events = gunzipSync(await readFile(path)).toString('utf8').trim().split('\n').map(JSON.parse);
+  [events[1], events[2]] = [events[2], events[1]];
+  events[1].ordinal = 1;
+  events[2].ordinal = 2;
+  const bytes = gzipSync(events.map((event) => JSON.stringify(event)).join('\n') + '\n');
+  await writeFile(path, bytes);
+  asset.sizeBytes = bytes.length;
+  asset.sha256 = sha256(bytes);
+  fixture.attempt.sessions[0].turns[0].eventOrdinal = 2;
+  fixture.attempt.installations[0].eventOrdinal = 2;
+  fixture.attempt.requests[0].eventOrdinal = 1;
+  const installed = structuredClone(fixture.attempt.installations[0]);
+  installed.adapters = [{ name: 'alpha', version: 'test', integrity: unknown('Not measured.') }];
+  fixture.attempt.installations[0].adapters = structuredClone(installed.adapters);
+  installed.cli.integrity.reason = 'Unavailable in this observation.';
+  installed.core.integrity.reason = 'Still unavailable.';
+  installed.adapters[0].integrity.reason = 'No artifact digest observed.';
+  await appendTurn(fixture, installed);
+  assert.equal(fixture.verify().status, 0);
+  fixture.attempt.installations[1].adapters[0].integrity = 'now-known';
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /differs from the project baseline/i);
+});
+
+test('verify preserves repeated native contexts without inventing developer requests', async () => {
+  const fixture = await setup();
+  await appendTurn(fixture, fixture.attempt.installations[0]);
+  fixture.attempt.requests.pop();
+  const asset = fixture.attempt.assets[0];
+  const path = join(fixture.assetRoot, asset.tag, asset.name);
+  const events = gunzipSync(await readFile(path)).toString('utf8').trim().split('\n').map(JSON.parse);
+  events.pop();
+  events.at(-1).payload.rootTurnId = 'turn-1';
+  const bytes = gzipSync(events.map((event) => JSON.stringify(event)).join('\n') + '\n');
+  await writeFile(path, bytes);
+  asset.sizeBytes = bytes.length;
+  asset.sha256 = sha256(bytes);
+  asset.lastEventOrdinal = events.at(-1).ordinal;
+  await fixture.save();
+  assert.equal(fixture.verify().status, 0);
+  fixture.attempt.installations.reverse();
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /observations are out of native session order/i);
+});
+
+test('verify records absent tooling, then binds installation to the exact target and project baseline', async () => {
+  const fixture = await setup();
+  const installed = structuredClone(fixture.attempt.installations[0]);
+  fixture.attempt.installations[0].cli = { state: 'absent', reason: 'No root-local CLI installed.' };
+  fixture.attempt.installations[0].core = { state: 'absent', reason: 'No resolved Core installed.' };
+  await fixture.save();
+  assert.equal(fixture.verify().status, 0);
+
+  await appendTurn(fixture, fixture.attempt.installations[0]);
+  assert.equal(fixture.verify().status, 0);
+  installed.core.version = 'resolved-core';
+  await appendTurn(fixture, installed);
+  assert.equal(fixture.verify().status, 0);
+  fixture.attempt.installations[2].cli.version = 'wrong-target';
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /differs from the CLI target/i);
+  fixture.attempt.installations[2].cli.version = installed.cli.version;
+  await appendTurn(fixture, installed);
+  assert.equal(fixture.verify().status, 0);
+
+  for (const component of ['cli', 'core']) {
+    fixture.attempt.installations[3][component].version = 'unexplained';
+    await fixture.save();
+    assert.match(fixture.verify().stderr, /differs from the project baseline/i);
+    fixture.attempt.installations[3][component] = structuredClone(installed[component]);
+    fixture.attempt.installations[3][component].integrity = 'changed-integrity';
+    await fixture.save();
+    assert.match(fixture.verify().stderr, /differs from the project baseline/i);
+    fixture.attempt.installations[3][component] = structuredClone(installed[component]);
+  }
+  fixture.attempt.installations[3].cli = { state: 'absent', reason: 'Installation disappeared.' };
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /established tooling became absent/i);
+  fixture.attempt.installations[3].cli = structuredClone(installed.cli);
+  fixture.attempt.installations[3].skill.contentHash = 'b'.repeat(64);
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /selected skill identity changed/i);
+});
+
+test('verify preserves installed-at-start composition and rejects invented absence and adapter drift', async () => {
+  const fixture = await setup();
+  fixture.attempt.installations[0].cli.version = 'healthy-cli';
+  fixture.attempt.installations[0].core.version = 'actual-core';
+  fixture.attempt.installations[0].adapters = [
+    { name: 'alpha', version: 'test', integrity: 'test' },
+    { name: 'beta', version: 'test', integrity: 'test' },
+  ];
+  const installed = structuredClone(fixture.attempt.installations[0]);
+  installed.adapters.reverse();
+  await appendTurn(fixture, installed);
+  assert.equal(fixture.verify().status, 0);
+  fixture.attempt.installations[1].adapters.push({ name: 'new-adapter', version: 'test', integrity: 'test' });
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /differs from the project baseline/i);
+  fixture.attempt.installations[1].adapters = structuredClone(installed.adapters);
+  fixture.attempt.installations[1].adapters.push({ ...installed.adapters[0] });
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /duplicate or case collision/i);
+  fixture.attempt.installations[1].adapters = structuredClone(installed.adapters);
+  fixture.attempt.installations[0].cli = { state: 'unknown', reason: 'Not inspected.' };
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /Attempt manifest/i);
+  fixture.attempt.installations[0].cli = { state: 'absent', reason: '' };
+  await fixture.save();
+  assert.match(fixture.verify().stderr, /Attempt manifest/i);
+});
+
+test('verify treats either absent component as initial missing tooling', async () => {
+  for (const component of ['cli', 'core']) {
+    const fixture = await setup();
+    const installed = structuredClone(fixture.attempt.installations[0]);
+    fixture.attempt.installations[0][component] = { state: 'absent', reason: 'Not installed.' };
+    await appendTurn(fixture, installed);
+    assert.equal(fixture.verify().status, 0);
+    fixture.attempt.installations[1].cli.version = 'another-cli';
+    await fixture.save();
+    assert.match(fixture.verify().stderr, /differs from the CLI target/i);
+  }
+});
+
+test('verify accepts independent Core baselines for two projects in one run', async () => {
+  const fixture = await setup();
+  const second = structuredClone(fixture.attempt);
+  const secondSession = randomUUID();
+  second.attemptId = 'two';
+  second.branch = 'fixture_two_01';
+  git(fixture.root, 'branch', second.branch, fixture.finalCommit);
+  second.sessions[0].id = secondSession;
+  second.requests[0].sessionId = secondSession;
+  second.installations[0].sessionId = secondSession;
+  second.installations[0].core.version = 'another-core';
+  const asset = second.assets[0];
+  const original = gunzipSync(await readFile(join(fixture.assetRoot, asset.tag, asset.name))).toString('utf8');
+  const bytes = gzipSync(original.replaceAll(sessionId, secondSession));
+  asset.name = 'session-two.jsonl.gz';
+  asset.sessionId = secondSession;
+  asset.sizeBytes = bytes.length;
+  asset.sha256 = sha256(bytes);
+  await writeFile(join(fixture.assetRoot, asset.tag, asset.name), bytes);
+  second.checks[0].coveredArtifacts = second.checks[0].coveredArtifacts.map((path) =>
+    path.replace('/attempts/one.json', '/attempts/two.json').replace('/session.jsonl.gz', '/session-two.jsonl.gz'));
+  const path = 'evidence/runs/synthetic/attempts/two.json';
+  fixture.run.attempts.push(path);
+  await writeJson(join(fixture.root, path), second);
+  await fixture.save();
+  assert.equal(fixture.verify().status, 0);
+});
+
 test('verify binds a complete request to source history and exact session asset bytes', async () => {
   const fixture = await setup();
   assert.equal(fixture.verify().status, 0);
@@ -205,10 +429,10 @@ test('verify binds a complete request to source history and exact session asset 
 
   fixture.run.expectedActor.effort = 'medium';
   await fixture.save();
-  assert.match(fixture.verify().stderr, /wrong required actor settings/i);
+  assert.match(fixture.verify().stderr, /inconsistent effective settings/i);
   fixture.attempt.sessions[0].turns[0].deviation = true;
   await fixture.save();
-  assert.match(fixture.verify().stderr, /wrong required actor settings/i);
+  assert.equal(fixture.verify().status, 0);
   fixture.run.expectedActor.effort = 'xhigh';
   fixture.attempt.sessions[0].turns[0].deviation = false;
 
@@ -224,7 +448,7 @@ test('verify binds a complete request to source history and exact session asset 
   fixture.run.expectedActor = unknown('Actor settings were not recorded.');
   await fixture.save();
   assert.match(fixture.verify().stderr, /required durable evidence/i);
-  fixture.run.expectedActor = { model: 'gpt-6-sol', effort: 'xhigh' };
+  fixture.run.expectedActor = { model: 'gpt-6.1-sol', effort: 'xhigh' };
 
   fixture.attempt.installations[0].source.name = 'absent.txt';
   await fixture.save();
@@ -238,7 +462,7 @@ test('verify binds a complete request to source history and exact session asset 
 
   fixture.attempt.installations[0].core.version = 'different-core';
   await fixture.save();
-  assert.match(fixture.verify().stderr, /installed composition differs/i);
+  assert.equal(fixture.verify().status, 0);
   fixture.attempt.installations[0].core.version = 'test-core';
 
   fixture.attempt.installations.push({ ...fixture.attempt.installations[0] });
@@ -335,7 +559,7 @@ test('verify binds a complete request to source history and exact session asset 
 
   fixture.run.prerequisites[0].version = 'different-core';
   await fixture.save();
-  assert.match(fixture.verify().stderr, /installed composition differs/i);
+  assert.equal(fixture.verify().status, 0);
   fixture.run.prerequisites[0].version = 'test-core';
 
   const reviewsDirectory = join(fixture.root, 'evidence', 'runs', 'synthetic', 'reviews');
@@ -493,8 +717,10 @@ test('verify keeps interrupted attempts incomplete and checks durable recovery c
   await writeFile(join(checkpointRoot, '.agents', 'skills', 'moldea', 'SKILL.md'),
     '# Updated skill\n');
   await rm(join(checkpointRoot, 'deleted.txt'));
-  git(checkpointRoot, 'add', '-A');
-  git(checkpointRoot, 'commit', '-m', 'test unfinished checkpoint');
+  const checkpointPaths = ['changed.txt', 'added.txt', 'README.md',
+    '.agents/skills/moldea/SKILL.md', 'deleted.txt'];
+  git(checkpointRoot, 'add', '--', ...checkpointPaths);
+  git(checkpointRoot, 'commit', '-m', 'test unfinished checkpoint', '--', ...checkpointPaths);
   const checkpointCommit = git(checkpointRoot, 'rev-parse', 'HEAD');
   git(fixture.root, 'worktree', 'remove', checkpointRoot);
   git(fixture.root, 'branch', '-f', 'fixture_one_01', checkpointCommit);

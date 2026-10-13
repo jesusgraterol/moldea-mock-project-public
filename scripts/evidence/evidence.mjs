@@ -23,7 +23,6 @@ const execFileAsync = promisify(execFile);
 let repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const excludedNames = new Set(['_archive', '_archives', '_backup', '_backups']);
 const portableComponent = /^[a-z0-9][a-z0-9._-]*$/;
-const requiredActor = { model: 'gpt-6-sol', effort: 'xhigh' };
 
 class EvidenceError extends Error {}
 
@@ -359,18 +358,13 @@ const validateAttempt = async (attempt, expectedRunId, expectedActor, prerequisi
         attempt.assets.length === 0 || !assetRoot) {
       fail('A complete attempt lacks required durable evidence.');
     }
-    if (expectedActor.model !== requiredActor.model ||
-        expectedActor.effort !== requiredActor.effort) {
-      fail('A complete attempt has the wrong required actor settings.');
-    }
     const prerequisiteByComponent = new Map(prerequisites.map((entry) =>
       [entry.component, entry]));
     requireUnique(prerequisites.map((entry) => entry.component), 'Release prerequisites');
     const cliPrerequisite = prerequisiteByComponent.get('cli');
-    const corePrerequisite = prerequisiteByComponent.get('core');
     const skillPrerequisite = prerequisiteByComponent.get('skill');
-    if (!cliPrerequisite || !corePrerequisite || !skillPrerequisite ||
-        unknown(cliPrerequisite.integrity) || unknown(corePrerequisite.integrity) ||
+    if (!cliPrerequisite || !skillPrerequisite ||
+        unknown(cliPrerequisite.integrity) ||
         unknown(skillPrerequisite.integrity) ||
         attempt.skillRelease !== skillPrerequisite.version) {
       fail('A complete attempt lacks matching release prerequisites.');
@@ -403,7 +397,7 @@ const validateAttempt = async (attempt, expectedRunId, expectedActor, prerequisi
       fail('Installed composition observations do not match the session turns.');
     }
     for (const session of attempt.sessions) {
-      if (unknown(session.turns) || session.turns.length === 0 || unknown(session.hostVersion) ||
+      if (unknown(session.turns) || session.turns.length === 0 ||
           attempt.assets.filter((asset) => asset.kind === 'session' && asset.sessionId === session.id).length !== 1) {
         fail('A complete attempt lacks a session export or effective settings.');
       }
@@ -414,11 +408,7 @@ const validateAttempt = async (attempt, expectedRunId, expectedActor, prerequisi
           fail('A complete turn lacks an installed composition observation.');
         }
         requireAssetSource(installation.source, attempt.assets);
-        if (installation.cli.version !== cliPrerequisite.version ||
-            installation.core.version !== corePrerequisite.version ||
-            installation.skill.ref !== skillPrerequisite.version) {
-          fail('An installed composition differs from the release prerequisites.');
-        }
+        requireUnique(installation.adapters.map((adapter) => adapter.name), 'Adapter identities');
         if (unknown(turn.effectiveModel) || unknown(turn.effectiveEffort) ||
             unknown(turn.requestedModel) || unknown(turn.requestedEffort) ||
             unknown(turn.deviation) ||
@@ -428,6 +418,43 @@ const validateAttempt = async (attempt, expectedRunId, expectedActor, prerequisi
               turn.effectiveEffort !== expectedActor.effort)) {
           fail('A turn has missing or inconsistent effective settings.');
         }
+      }
+    }
+    let baseline = null;
+    let skillHash = null;
+    let sawAbsent = false;
+    const previousObservationBySession = new Map();
+    const componentIdentity = ({ version, integrity }) => ({
+      version, integrity: unknown(integrity) ? null : integrity,
+    });
+    for (const installation of attempt.installations) {
+      const previousEvent = previousObservationBySession.get(installation.sessionId);
+      if (previousEvent !== undefined && installation.eventOrdinal <= previousEvent) {
+        fail('Installation observations are out of native session order.');
+      }
+      previousObservationBySession.set(installation.sessionId, installation.eventOrdinal);
+      skillHash ??= installation.skill.contentHash;
+      if (installation.skill.ref !== skillPrerequisite.version ||
+          installation.skill.contentHash !== skillHash) {
+        fail('The selected skill identity changed.');
+      }
+      if (installation.cli.state === 'absent' || installation.core.state === 'absent') {
+        if (baseline !== null) fail('Established tooling became absent.');
+        sawAbsent = true;
+        continue;
+      }
+      const composition = JSON.stringify({
+        cli: componentIdentity(installation.cli), core: componentIdentity(installation.core),
+        adapters: [...installation.adapters].sort((left, right) => left.name.localeCompare(right.name))
+          .map((adapter) => ({ name: adapter.name, ...componentIdentity(adapter) })),
+      });
+      if (baseline === null) {
+        if (sawAbsent && installation.cli.version !== cliPrerequisite.version) {
+          fail('Initial tooling installation differs from the CLI target.');
+        }
+        baseline = composition;
+      } else if (composition !== baseline) {
+        fail('An installed composition differs from the project baseline.');
       }
     }
   }
@@ -620,7 +647,7 @@ const verify = async (options) => {
   await validateReview(run.reviewStatus, run.review, run.runId);
   if (run.evidenceStatus === 'complete') {
     if (unknown(run.prerequisites) ||
-        ['core', 'cli', 'skill'].some((component) => !run.prerequisites.some((entry) =>
+        ['cli', 'skill'].some((component) => !run.prerequisites.some((entry) =>
           entry.component === component && !unknown(entry.integrity)))) {
       fail('A complete run lacks verified release prerequisites.');
     }
