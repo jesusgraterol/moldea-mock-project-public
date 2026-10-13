@@ -1,0 +1,6 @@
+version: 1
+context:
+  /moldea/context/watering-policy.md:
+    affectedBy:
+      - /src/water-plan.mjs
+      - /test/water-plan.test.mjs

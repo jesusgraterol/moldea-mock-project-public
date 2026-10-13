@@ -3,7 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
   "engines": {
     "node": ">=24"
+  },
+  "devDependencies": {
+    "@moldea.ai/cli": "11.0.2"
   }
 }
