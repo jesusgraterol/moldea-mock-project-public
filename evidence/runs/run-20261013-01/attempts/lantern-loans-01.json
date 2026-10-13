@@ -331,6 +331,21 @@
         "run-20261013-01/lantern-identities-01.txt"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Full combined browser replay from public evidence 0d260c64c8943a4788b641a26aa29d7ebd5c5ebe: 6 turns, 62 tools, 176 events, 117 rows through native event 559. All rendered tool inputs/results reconcile with the downloaded recording; key dialogs, summaries and public source/recording/review links inspected.",
+      "inputCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz",
+        "evidence/runs/run-20261013-01/attempts/lantern-loans-01.json",
+        "evidence/runs/run-20261013-01/reviews/skill-review.md"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "lantern-loans-01-session-01.jsonl.gz"
+      }
     }
   ],
   "installations": [

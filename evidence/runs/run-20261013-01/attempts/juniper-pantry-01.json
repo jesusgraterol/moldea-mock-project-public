@@ -310,6 +310,21 @@
         "git/c3ecda12e853b527a96c6ca81150083b0224643a/638ff3d1eed01eb503b27ab8f07d52057a38b35b"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Full combined browser replay from public evidence 0d260c64c8943a4788b641a26aa29d7ebd5c5ebe: 7 turns, 37 tools, 128 events, 91 rows through native event 375. All rendered tool inputs/results reconcile with the downloaded recording; key dialogs, summaries and public source/recording/review links inspected.",
+      "inputCommit": "638ff3d1eed01eb503b27ab8f07d52057a38b35b",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/juniper-pantry-01-session-01.jsonl.gz",
+        "evidence/runs/run-20261013-01/attempts/juniper-pantry-01.json",
+        "evidence/runs/run-20261013-01/reviews/skill-review.md"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "juniper-pantry-01-session-01.jsonl.gz"
+      }
     }
   ],
   "installations": [

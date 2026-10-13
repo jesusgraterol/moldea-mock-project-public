@@ -39,7 +39,6 @@
   "reviewStatus": "complete",
   "review": "evidence/runs/run-20261013-01/reviews/skill-review.md",
   "limitations": [
-    "Combined full browser replay is pending; the pilot full replay passed before expansion.",
     "No live provider calls, natural compaction, semantic reliability evaluation or adapter qualification is established."
   ]
 }

@@ -337,6 +337,21 @@
         "git/c3ecda12e853b527a96c6ca81150083b0224643a/3f85989937e5413ca2c8a2964dc9512776f41f53"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Full combined browser replay from public evidence 0d260c64c8943a4788b641a26aa29d7ebd5c5ebe: 6 turns, 40 tools, 129 events, 89 rows through native event 413. All rendered tool inputs/results reconcile with the downloaded recording; key dialogs, summaries and public source/recording/review links inspected.",
+      "inputCommit": "3f85989937e5413ca2c8a2964dc9512776f41f53",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/river-gauge-01-session-01.jsonl.gz",
+        "evidence/runs/run-20261013-01/attempts/river-gauge-01.json",
+        "evidence/runs/run-20261013-01/reviews/skill-review.md"
+      ],
+      "asset": {
+        "tag": "run-20261013-01",
+        "name": "river-gauge-01-session-01.jsonl.gz"
+      }
     }
   ],
   "installations": [
