@@ -308,6 +308,29 @@
         "git/c3ecda12e853b527a96c6ca81150083b0224643a/f78e0e93559969b3fa254cc5856c6e958e6442d4"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Published Release asset download integrity: exact sizes and SHA-256 hashes matched; complete-evidence verification passed on downloaded bytes.",
+      "inputCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz",
+        "run-20261013-01/lantern-identities-01.txt"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Full public browser replay using evidence snapshot 869f266f8344be86d817a4a51b79e337360589be and reader 10a5909cb3edd25b1f74720ced1bbcb802ef8479: six turns, 62 tools, 176 retained events, 117 rows through native ordinal 559; all rendered tool input/result text reconciled, key dialogs and public source/recording links inspected, no page overflow at the inspected default viewport.",
+      "inputCommit": "f78e0e93559969b3fa254cc5856c6e958e6442d4",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261013-01/reviews/skill-review.md",
+        "run-20261013-01/lantern-loans-01-session-01.jsonl.gz",
+        "run-20261013-01/lantern-identities-01.txt"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -502,6 +525,12 @@
       "kind": "driver",
       "requestId": "lantern-request-01",
       "description": "First-turn capture initially omitted native web-search completion items; capture was corrected and the full conversation recaptured. Replay then exposed adjacency-only tool-result pairing, fixed in approved reader commit bcd00a6e1bc02d52e855d6a602dc67941ad56d35.",
+      "asset": null
+    },
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "The first full replay counted each inline web completion as two events, showing 179 instead of 176. Reader follow-up 10a5909cb3edd25b1f74720ced1bbcb802ef8479 counts inline completions once; the mixed-result browser regression and all 166 browser tests pass.",
       "asset": null
     }
   ],
@@ -1632,7 +1661,6 @@
     "No natural compaction occurred; compaction behavior is not assessed.",
     "Configuration isolation permits outside-worktree reads. Host-provided system/plugin skill catalogs changed during the conversation; no plugin skill was invoked.",
     "The native web-search completion items contain result metadata, not full retrieved-page bodies. Encrypted reasoning and host-private world state are omitted; private machine-path redactions preserve project-relative details.",
-    "The failed intermediate build has inputCommit null because its uncommitted input bytes were not checkpointed; native request 2 events retain the actual error and correction.",
-    "Full browser replay and exact public snapshot references remain pending; batch expansion is held until that checkpoint."
+    "The failed intermediate build has inputCommit null because its uncommitted input bytes were not checkpointed; native request 2 events retain the actual error and correction."
   ]
 }

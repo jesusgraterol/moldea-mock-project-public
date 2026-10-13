@@ -13,7 +13,7 @@ The base for fresh project attempts is `c3ecda12e853b527a96c6ca81150083b0224643a
 
 Core 5.0.1, CLI 9.0.1 and Skill 6.0.1 were verified as published before the 2026-09-28 run. That run contains four new fixture attempts with complete captured evidence in the repository index and [the GitHub Release tagged `run-20260928-02`](https://github.com/jesusgraterol/moldea-mock-project-public/releases/tag/run-20260928-02). [Independent review](evidence/runs/run-20260928-02/reviews/skill-review.md) is complete. It found no new skill or package defect requiring a change; an actor gate-order miss and the limits of this evidence remain explicit.
 
-The 2026-10-13 [Lantern Loans pilot](evidence/runs/run-20261013-01/reviews/skill-review.md) uses Skill 8.1.0 and fresh CLI 11.0.2 adoption. Its independent source/behavior reviews support the observed LangGraph instruction loading, policy maintenance and unrelated-work silence. Evidence publication and full replay are pending; expansion remains held.
+The 2026-10-13 [Lantern Loans pilot](evidence/runs/run-20261013-01/reviews/skill-review.md) uses Skill 8.1.0 and fresh CLI 11.0.2 adoption. Its independent source/behavior reviews support the observed LangGraph instruction loading, policy maintenance and unrelated-work silence. The sanitized evidence is [published](https://github.com/jesusgraterol/moldea-mock-project-public/releases/tag/run-20261013-01), complete-evidence verification and full browser replay passed, and the pilot supports bounded expansion.
 
 | Scenario | Branch | Date | Skill release | Commit | Actor session | Observed state |
 | --- | --- | --- | --- | --- | --- | --- |
