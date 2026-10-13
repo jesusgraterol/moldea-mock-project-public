@@ -2,8 +2,7 @@
 
 These are fictional input/output fixtures, not collection records or taxonomic
 claims. Every label value is grounded in its accompanying supplied notes. Do not
-reuse their values for other specimens. Current-format accessions are supplied
-directly in these fixtures, not converted from legacy accessions.
+reuse their values for other specimens.
 
 ## Complete supplied notes
 
@@ -83,6 +82,4 @@ Checks: accession, taxon, collector, collection date, and substrate not supplied
 
 Do not turn field tag `27` into `MOSS-00027`. Likewise, a supplied accession `MOSS-27`
 would yield `Accession: [needs confirmation]` and an outside-label check quoting
-`MOSS-27`; it would not be silently padded. A legacy accession such as `MA-0042`
-also yields `[needs confirmation]` and a check quoting `MA-0042`, not a rewritten
-`MOSS-` accession.
+`MOSS-27`; it would not be silently padded.

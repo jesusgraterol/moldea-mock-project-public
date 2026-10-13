@@ -32,8 +32,6 @@ digits, such as `MOSS-00042` (`^MOSS-[0-9]{5}$`). Preserve supplied leading zero
 Never assign, increment, pad, truncate, or infer an accession. If a supplied
 accession does not match, use `[needs confirmation]`; if none is supplied, use
 `[not supplied]`. A format match does not establish registration or uniqueness.
-Legacy `MA-` accessions are invalid under the current format; flag them rather
-than rewriting them as `MOSS-` accessions.
 Flag repeated accessions within a supplied batch without silently renumbering.
 
 ## Render consistently
