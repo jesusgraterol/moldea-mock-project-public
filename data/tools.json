@@ -1,0 +1,6 @@
+[
+  { "id": "LL-001", "name": "Cordless Drill", "availability": "available" },
+  { "id": "LL-002", "name": "Corded Drill", "availability": "on_loan" },
+  { "id": "LL-003", "name": "Step Ladder", "availability": "unknown" },
+  { "id": "LL-004", "name": "Claw Hammer", "availability": "available" }
+]

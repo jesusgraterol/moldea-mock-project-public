@@ -6,7 +6,18 @@
   "engines": {
     "node": ">=24"
   },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test test/*.test.mjs"
+  },
   "devDependencies": {
-    "@moldea.ai/cli": "11.0.2"
+    "@moldea.ai/cli": "11.0.2",
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  },
+  "dependencies": {
+    "@langchain/core": "1.2.17",
+    "@langchain/langgraph": "1.5.0",
+    "zod": "4.6.7"
   }
 }

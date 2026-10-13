@@ -26,7 +26,19 @@ and explain recorded availability and the seven-day loan policy.
 
 Keep the product local, using fictional checked-in records and no provider
 credentials. The project uses npm and Node.js 24 or newer, with TypeScript and
-LangGraph as the intended implementation stack.
+LangGraph as the implementation stack.
+
+## Assistant ownership
+
+One model-coordinated LangGraph workflow owns staff-question interpretation,
+read-only tool lookup, and grounded structured responses. The application
+checks factual output against lookup evidence and renders explanations without
+unrestricted model prose. The model boundary is injected; this local slice
+includes credential-free connection tests, not a live-provider integration.
+
+- [Staff assistant responsibility](agents/staff-assistant/description.md).
+- [Maintained model instruction and loan authority](agents/staff-assistant/instruction.md).
+- [Runtime connection, data access, and verification boundaries](runtimes/langgraph.md).
 
 ## Project-owned evidence
 

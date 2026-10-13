@@ -1,1 +1,45 @@
 version: 1
+agents:
+  staff-assistant:
+    runtime:
+      id: langgraph
+      guidance: /moldea/runtimes/langgraph.md
+    bindings:
+      runtimeAgent:
+        path: /src/assistant.ts
+        symbol: createStaffAssistant
+      instructionLoader:
+        path: /src/instructions.ts
+        symbol: loadStaffInstruction
+      inputSchema:
+        path: /src/schemas.ts
+        symbol: QuestionSchema
+      outputSchema:
+        path: /src/schemas.ts
+        symbol: ModelResponseSchema
+    tools:
+      lookup:
+        name: lookup_tool
+        description: Read fictional tool records by ID or name; retain unknown availability and require clarification for ambiguous matches.
+        implementation:
+          path: /src/lookup.ts
+          symbol: lookupTool
+        registration:
+          path: /src/lookup.ts
+          symbol: createLookupTool
+        inputSchema:
+          path: /src/schemas.ts
+          symbol: LookupInputSchema
+        outputSchema:
+          path: /src/schemas.ts
+          symbol: LookupResultSchema
+        affectedBy:
+          - /data/tools.json
+    affectedBy:
+      - /src/model.ts
+      - /src/response.ts
+      - /src/errors.ts
+      - /test/assistant.test.mjs
+      - /package.json
+      - /package-lock.json
+      - /tsconfig.json
