@@ -17,7 +17,11 @@ function run(input) {
 }
 
 function succeeds(entries, expected) {
-  const result = run(JSON.stringify(entries));
+  succeedsRaw(JSON.stringify(entries), expected);
+}
+
+function succeedsRaw(input, expected) {
+  const result = run(input);
   assert.equal(result.status, 0, result.stderr);
   assert.equal(result.stderr, '');
   assert.equal(result.stdout, `${JSON.stringify(expected)}\n`);
@@ -107,6 +111,47 @@ test('requires nonnegative safe-integer counts without coercion', () => {
     rejects(JSON.stringify([{ label: 'rice', count }]), /count must be a nonnegative safe integer/);
   }
   rejects('[{"label":"rice","count":1e309}]', /count must be a nonnegative safe integer/);
+});
+
+test('rejects raw fractional counts that round to safe integers', () => {
+  for (const input of [
+    '[{"label":"valid","count":2},{"label":"rice","count":9007199254740991.1}]',
+    '[{"label":"rice","count":9007199254740990.9}]',
+    '[{"label":"rice","count":1.0000000000000001}]',
+    '[{"label":"rice","count":0.99999999999999999}]',
+  ]) {
+    rejects(input, /count must be a nonnegative safe integer/);
+  }
+});
+
+test('rejects raw nonzero counts that underflow to zero', () => {
+  for (const input of [
+    '[{"label":"valid","count":2},{"label":"rice","count":-1e-400}]',
+    '[{"label":"rice","count":1e-400}]',
+    '[{"label":"rice","count":-1e-999999999999999999999}]',
+    '[{"label":"rice","count":1e-999999999999999999999}]',
+  ]) {
+    rejects(input, /count must be a nonnegative safe integer/);
+  }
+});
+
+test('accepts raw integral decimal and exponent representations, including exact zero', () => {
+  succeedsRaw(`[
+    {"label":"rice","count":1.000000000000000000000},
+    {"label":"rice","count":100e-2},
+    {"label":"rice","count":1.5e1},
+    {"label":"Rice","count":2E+1},
+    {"label":"max","count":9.007199254740991e15},
+    {"label":"scaled","count":90071992547409910e-1},
+    {"label":"zero","count":-0.0e-400},
+    {"label":"zero","count":0e999999999999999999999}
+  ]`, [
+    { label: 'Rice', count: 20 },
+    { label: 'max', count: Number.MAX_SAFE_INTEGER },
+    { label: 'rice', count: 17 },
+    { label: 'scaled', count: Number.MAX_SAFE_INTEGER },
+    { label: 'zero', count: 0 },
+  ]);
 });
 
 test('rejects unsafe grouped totals without partial stdout', () => {

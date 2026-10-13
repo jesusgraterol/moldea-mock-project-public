@@ -1,12 +1,12 @@
 # Crate totals
 
-`crate-totals.mjs` is a standalone Node.js utility. Run the examples below from the repository root; no application imports or npm script are needed.
+`crate-totals.mjs` is a standalone Node.js 24+ utility. Run the examples below from the repository root; no application imports or npm script are needed.
 
 It reads a JSON array of `{ "label": "rice", "count": 2 }` objects from stdin and writes a JSON array of `{label, count}` totals to stdout, followed by a newline.
 
 - Labels must be nonempty strings. Grouping is exact and case-sensitive: whitespace is preserved, with no trimming or normalization.
 - Results are sorted by label using JavaScript's default string order (UTF-16 code units), not locale-aware sorting.
-- Counts must be nonnegative safe integers, from `0` through `9007199254740991` (`Number.MAX_SAFE_INTEGER`). Each grouped total must stay within the same limit. Strings and fractions are not accepted as counts.
+- Counts must be nonnegative safe integers, from `0` through `9007199254740991` (`Number.MAX_SAFE_INTEGER`). Each grouped total must stay within the same limit. Validation checks the original JSON number token: negative or fractional values cannot become valid through rounding or underflow. Integral decimal/exponent forms such as `1.0` and `100e-2` are accepted; strings are not.
 - An empty array produces `[]`. Missing stdin is not an empty array; it is invalid JSON.
 - Invalid JSON, invalid entries, or unsafe totals cause exit status `1`, a concise `crate-totals:` error on stderr, and no stdout—not even partial totals. Successful runs exit with status `0` and no stderr.
 
