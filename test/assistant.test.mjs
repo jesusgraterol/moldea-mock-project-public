@@ -38,7 +38,7 @@ function modelAnswer(messages, requestType = "tool_question", extraFlags = []) {
     requestType,
     lookupStatus: result?.status ?? "not_requested",
     records: result?.records ?? [],
-    loanPeriodDays: 7,
+    loanPeriodDays: 14,
     policySource: "moldea/agents/staff-assistant/instruction.md",
     missingFacts,
     staffApprovalRequired: true,
@@ -99,11 +99,14 @@ test("compiled graph sends exact maintained instruction, actual lookup schema, a
   for (const messages of [...model.selectingRequests, ...model.answeringRequests]) {
     assert.equal(messages[0].getType(), "system");
     assert.equal(messages[0].content, originalInstruction, "The full current file reaches both model invocations unchanged");
+    assert.match(messages[0].content, /The standard loan period is fourteen days\./);
+    assert.match(messages[0].content, /`loanPeriodDays: 14`/);
+    assert.doesNotMatch(messages[0].content, /\bseven[- ]day|loanPeriodDays: 7\b/);
     assert.equal(messages[1].getType(), "human");
     assert.equal(messages[1].content, "Tell me about LL-001 and the loan policy.");
   }
   assert.match(originalInstruction, /`staff-assistant`/);
-  assert.match(originalInstruction, /seven days/);
+  assert.match(originalInstruction, /fourteen days/);
   assert.match(originalInstruction, /Staff approve every loan/);
   assert.deepEqual(model.boundTools.map((tool) => tool.name), ["lookup_tool"]);
   assert.equal(model.boundTools[0].schema, LookupInputSchema, "Registration uses the executable input schema");
@@ -113,7 +116,7 @@ test("compiled graph sends exact maintained instruction, actual lookup schema, a
   assert.match(model.boundTools[0].description, /No reservations, loan changes, or safety assessment/);
   assert.equal(model.attachedResponseSchema, ModelResponseSchema);
   assert.equal(model.responseSchema.additionalProperties, false);
-  assert.equal(model.responseSchema.properties.loanPeriodDays.const, 7);
+  assert.equal(model.responseSchema.properties.loanPeriodDays.const, 14);
   assert.equal(model.responseSchema.properties.staffApprovalRequired.const, true);
   assert.equal(model.responseSchema.properties.action.const, "information_only");
   assert.equal(model.responseSchema.properties.safetyAssessment.const, "not_assessed");
@@ -125,7 +128,7 @@ test("compiled graph sends exact maintained instruction, actual lookup schema, a
   assert.deepEqual(response.records, evidence.records);
   assert.deepEqual(Object.keys(result), ["response"], "Raw model messages are not exposed as an application response");
   assert.match(formatStaffResponse(response), /recorded as available/);
-  assert.match(formatStaffResponse(response), /standard loan period is 7 days/);
+  assert.match(formatStaffResponse(response), /standard loan period is 14 days/);
 });
 
 test("unknown availability is preserved and flagged instead of guessed", async () => {
@@ -148,7 +151,7 @@ test("on-loan questions flag missing due dates and unsupplied policy details", a
   const text = formatStaffResponse(response);
   assert.match(text, /No due date is supplied/);
   assert.match(text, /Additional policy details are not supplied/);
-  assert.equal(response.loanPeriodDays, 7);
+  assert.equal(response.loanPeriodDays, 14);
 });
 
 test("ambiguous names retain both candidates and request staff clarification", async () => {
@@ -178,7 +181,7 @@ test("policy-only questions take the no-tool branch and retain staff-only author
   assert.equal(toolResult(model.answeringRequests[0]), null);
   assert.deepEqual(response.records, []);
   assert.equal(response.lookupStatus, "not_requested");
-  assert.equal(response.loanPeriodDays, 7);
+  assert.equal(response.loanPeriodDays, 14);
   assert.equal(response.staffApprovalRequired, true);
   assert.equal(response.action, "information_only");
 });
@@ -243,7 +246,8 @@ test("fabricated availability, omitted unknown flags, invented sources, and chan
 
 test("the structured schema rejects changed policy, safety guarantees, approval bypasses, and extra prose", async () => {
   for (const change of [
-    (value) => { value.loanPeriodDays = 14; },
+    (value) => { value.loanPeriodDays = 7; },
+    (value) => { value.loanPeriodDays = 21; },
     (value) => { value.staffApprovalRequired = false; },
     (value) => { value.action = "reserved"; },
     (value) => { value.safetyAssessment = "safe"; },

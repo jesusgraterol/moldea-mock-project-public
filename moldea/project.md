@@ -4,12 +4,12 @@
 
 Lantern Loans is a small staff-facing TypeScript/LangGraph assistant project for
 a community tool library. It helps library staff look up fictional tool records
-and explain recorded availability and the seven-day loan policy.
+and explain recorded availability and the fourteen-day loan policy.
 
 ## Goals
 
 - Ground tool information in fictional checked-in records.
-- Help staff explain availability and the seven-day loan period clearly.
+- Help staff explain availability and the fourteen-day loan period clearly.
 - Flag missing, ambiguous, or conflicting facts instead of guessing.
 
 ## Authority and boundaries
@@ -20,7 +20,7 @@ and explain recorded availability and the seven-day loan policy.
 - The assistant must not promise that a tool is safe. Recorded availability is
   not a safety assurance.
 - Do not invent missing availability information or loan-policy details beyond
-  the established seven-day period. Identify what staff need to confirm.
+  the established fourteen-day period. Identify what staff need to confirm.
 
 ## Operating scope
 
@@ -44,5 +44,6 @@ includes credential-free connection tests, not a live-provider integration.
 
 [The root README](../README.md) establishes the staff-facing purpose, intended
 stack, local fictional-record scope, credential constraint, and toolchain.
-The developer's initialization request establishes the seven-day policy,
-missing-fact behavior, and staff-only loan authority and prohibitions above.
+The developer's requests establish missing-fact behavior and the staff-only
+loan authority and prohibitions above. The developer's adopted policy update
+establishes the current fourteen-day standard loan period.

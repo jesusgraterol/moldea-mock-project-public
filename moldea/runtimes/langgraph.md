@@ -38,7 +38,7 @@ The second model invocation attaches the actual `ModelResponseSchema` through
 compares every record field, source, and lookup status with the real tool
 evidence. Unknown availability and ambiguous or absent matches require their
 missing-fact flags. Other supported flags identify unsupplied due dates or
-policy details. Fixed literals enforce seven days, staff approval, information
+policy details. Fixed literals enforce fourteen days, staff approval, information
 only, and no safety assessment. Extra fields and unrestricted prose fail
 validation. `formatStaffResponse` renders explanations from those verified
 fields, not raw model prose.

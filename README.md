@@ -21,7 +21,7 @@ provider credentials, or live-provider integration is included.
 The model selects a lookup and returns structured facts. The application
 validates those facts against the actual lookup result, preserves unknown and
 ambiguous information, and renders staff explanations from verified fields.
-The standard loan period remains seven days; staff approve every loan.
+The standard loan period is fourteen days; staff approve every loan.
 Availability is never presented as a safety assurance.
 
 ### Build and verify
@@ -59,7 +59,7 @@ console.log(formatStaffResponse(response));
 `model` is an explicitly supplied boundary, not a shipped global. The controlled
 implementation used for local verification lives only in the tests. The API
 returns `{ response }` with request type, recorded tool facts and sources,
-lookup status, missing-fact flags, the seven-day period, and fixed authority
+lookup status, missing-fact flags, the fourteen-day period, and fixed authority
 fields. Raw model messages are not returned. Invalid or ungrounded model
 output rejects the invocation; callers must not replace it with guessed facts.
 

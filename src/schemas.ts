@@ -29,7 +29,7 @@ export const ModelResponseSchema = z.strictObject({
   requestType: z.enum(["tool_question", "policy_question", "outside_scope"]),
   lookupStatus: z.enum(["found", "ambiguous", "not_found", "not_requested"]),
   records: z.array(CitedRecordSchema),
-  loanPeriodDays: z.literal(7),
+  loanPeriodDays: z.literal(14),
   policySource: z.literal("moldea/agents/staff-assistant/instruction.md"),
   missingFacts: z.array(z.enum(["tool_identity", "availability", "due_date", "policy_details"])),
   staffApprovalRequired: z.literal(true),
