@@ -2,14 +2,15 @@
 
 These are fictional input/output fixtures, not collection records or taxonomic
 claims. Every label value is grounded in its accompanying supplied notes. Do not
-reuse their values for other specimens.
+reuse their values for other specimens. Current-format accessions are supplied
+directly in these fixtures, not converted from legacy accessions.
 
 ## Complete supplied notes
 
 Input:
 
 ```text
-Accession: MA-0042
+Accession: MOSS-00042
 Taxon: Hypnum sp.
 Collector: Mira Chen
 Collection date: 2026-03-14
@@ -22,7 +23,7 @@ Output:
 
 ```text
 Moss Atlas
-Accession: MA-0042
+Accession: MOSS-00042
 Taxon: Hypnum sp.
 Collector: Mira Chen
 Collection date: 2026-03-14
@@ -36,7 +37,7 @@ Notes: capsules absent
 Input:
 
 ```text
-MA-0107; taxon: Bryum sp.?; collector: Jo Vale; collected: May 2026;
+MOSS-00107; taxon: Bryum sp.?; collector: Jo Vale; collected: May 2026;
 locality: possibly west edge of Brook Garden; substrate: soil;
 determiner: Ren Ortiz.
 ```
@@ -45,7 +46,7 @@ Output:
 
 ```text
 Moss Atlas
-Accession: MA-0107
+Accession: MOSS-00107
 Taxon: Bryum sp.?
 Collector: Jo Vale
 Collection date: May 2026
@@ -80,6 +81,8 @@ Notes: Field tag: 27; damp when packed
 
 Checks: accession, taxon, collector, collection date, and substrate not supplied.
 
-Do not turn field tag `27` into `MA-0027`. Likewise, a supplied accession `MA-27`
+Do not turn field tag `27` into `MOSS-00027`. Likewise, a supplied accession `MOSS-27`
 would yield `Accession: [needs confirmation]` and an outside-label check quoting
-`MA-27`; it would not be silently padded.
+`MOSS-27`; it would not be silently padded. A legacy accession such as `MA-0042`
+also yields `[needs confirmation]` and a check quoting `MA-0042`, not a rewritten
+`MOSS-` accession.

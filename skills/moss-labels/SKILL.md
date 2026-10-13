@@ -27,11 +27,13 @@ does not install itself, register a workflow, or change project configuration.
 
 ## Check the accession
 
-The current accession format is literal `MA-` followed by exactly four ASCII
-digits, such as `MA-0042` (`^MA-[0-9]{4}$`). Preserve supplied leading zeros.
+The current accession format is literal `MOSS-` followed by exactly five ASCII
+digits, such as `MOSS-00042` (`^MOSS-[0-9]{5}$`). Preserve supplied leading zeros.
 Never assign, increment, pad, truncate, or infer an accession. If a supplied
 accession does not match, use `[needs confirmation]`; if none is supplied, use
 `[not supplied]`. A format match does not establish registration or uniqueness.
+Legacy `MA-` accessions are invalid under the current format; flag them rather
+than rewriting them as `MOSS-` accessions.
 Flag repeated accessions within a supplied batch without silently renumbering.
 
 ## Render consistently
