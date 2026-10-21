@@ -25,7 +25,7 @@
     {
       "runId": "run-20261021-01",
       "manifestPath": "evidence/runs/run-20261021-01/run.json",
-      "summary": "Six-project Skill 10.0.0 batch in progress: Aster completed six requests with independent real-LangGraph source/behavior checks and complete published evidence; its full replay/expansion gate is pending. Cobalt, Folio, Beacon, Cinder and Quarry have not started.",
+      "summary": "Six-project Skill 10.0.0 batch in progress: Aster completed six requests with independent real-LangGraph source/behavior checks and complete published evidence; its functional public replay and expansion gate passed with an inherited viewer accessibility limitation retained. Cobalt, Folio, Beacon, Cinder and Quarry have not started.",
       "evidenceStatus": "incomplete",
       "reviewStatus": "pending"
     }
