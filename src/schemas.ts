@@ -9,7 +9,7 @@ export const AccessionRecordSchema = z.strictObject({
 export const AccessionNoteSchema = z.strictObject({
   accessionId: z.string().min(1), draftNote: z.string().min(1),
   missingFields: z.array(z.enum(['maker', 'date', 'provenance'])),
-  approvalAuthority: z.literal('curator'), humanApprovalRequired: z.literal(true),
+  approvalAuthority: z.literal('collections-lead'), humanApprovalRequired: z.literal(true),
 });
 
 export type AccessionNote = z.infer<typeof AccessionNoteSchema>;

@@ -6,7 +6,7 @@ import { zodTextFormat } from 'openai/helpers/zod';
 import { draftAccessionNote } from './assistant.ts';
 import { AccessionNoteSchema } from './schemas.ts';
 
-const fixtureNote = { accessionId: 'BC-102', draftNote: 'Carved oak tray. Maker and date are not recorded. Cedar Study Group donation,2015.', missingFields: ['maker', 'date'], approvalAuthority: 'curator', humanApprovalRequired: true };
+const fixtureNote = { accessionId: 'BC-102', draftNote: 'Carved oak tray. Maker and date are not recorded. Cedar Study Group donation,2015.', missingFields: ['maker', 'date'], approvalAuthority: 'collections-lead', humanApprovalRequired: true };
 
 function createControlledClient(outputText: string | null, status: 'completed' | 'incomplete' = 'completed') {
   const requests: Record<string, unknown>[] = [];
@@ -18,7 +18,7 @@ function createControlledClient(outputText: string | null, status: 'completed' |
   return { client, requests };
 }
 
-test('real client sends canonical instructions and schema and returns a read-only curator-review draft', async () => {
+test('real client sends canonical instructions and schema and returns a read-only draft for collections-lead approval', async () => {
   const dataUrl = new URL('../data/accessions.json', import.meta.url);
   const recordsBefore = await readFile(dataUrl, 'utf8');
   const { client, requests } = createControlledClient(JSON.stringify(fixtureNote));
@@ -28,8 +28,10 @@ test('real client sends canonical instructions and schema and returns a read-onl
   const outgoing = requests[0];
   const canonicalInstructions = await readFile(new URL('../moldea/agents/accession-note/instruction.md', import.meta.url), 'utf8');
   assert.equal(outgoing?.instructions, canonicalInstructions.trim());
-  assert.match(String(outgoing?.instructions), /curator approves accession readiness/);
+  assert.match(String(outgoing?.instructions), /collections lead approves accession readiness/);
+  assert.match(String(outgoing?.instructions), /approvalAuthority collections-lead/);
   assert.match(String(outgoing?.instructions), /never approve/);
+  assert.match(String(outgoing?.instructions), /Keep missing maker, date and provenance facts unknown/);
   assert.equal(outgoing?.model, 'fixture-model');
   assert.deepEqual(JSON.parse(String(outgoing?.input)), { id: 'BC-102', description: 'Carved oak tray', maker: null, date: null, provenance: 'Cedar Study Group donation,2015' });
   assert.equal(outgoing?.store, false);
@@ -47,7 +49,7 @@ for (const { name, accessionId, modelFields, expectedFields } of [
   { name: 'known date duplicated while maker and provenance omitted', accessionId: 'BC-103', modelFields: ['date', 'date'], expectedFields: ['maker', 'provenance'] },
 ]) {
   test(`derives missingFields from source nulls: ${name}`, async () => {
-    const modelNote = { ...fixtureNote, accessionId, draftNote: 'Fictional accession draft for curator review.', missingFields: modelFields };
+    const modelNote = { ...fixtureNote, accessionId, draftNote: 'Fictional accession draft for human review.', missingFields: modelFields };
     const { client, requests } = createControlledClient(JSON.stringify(modelNote));
     const result = await draftAccessionNote(accessionId, { client, model: 'fixture-model' });
     assert.deepEqual(result, { ...modelNote, missingFields: expectedFields });
@@ -74,7 +76,8 @@ for (const { name, changes } of [
   { name: 'unsupported missing-field name', changes: { missingFields: ['material'] } },
   { name: 'empty draftNote', changes: { draftNote: '' } },
   { name: 'empty accessionId', changes: { accessionId: '' } },
-  { name: 'non-curator approval authority', changes: { approvalAuthority: 'assistant' } },
+  { name: 'assistant approval authority', changes: { approvalAuthority: 'assistant' } },
+  { name: 'former curator approval authority', changes: { approvalAuthority: 'curator' } },
   { name: 'human approval disabled', changes: { humanApprovalRequired: false } },
   { name: 'missing human approval flag', changes: { humanApprovalRequired: undefined } },
   { name: 'unexpected approval property', changes: { approved: true } },

@@ -1,1 +1,1 @@
-Drafts structured accession notes from fictional local records and identifies missing maker, date, and provenance information for curator review. It neither approves accession readiness nor persists record changes.
+Drafts structured accession notes from fictional local records and identifies missing maker, date, and provenance information for human review. The collections lead approves accession readiness; the assistant neither approves readiness nor persists record changes.

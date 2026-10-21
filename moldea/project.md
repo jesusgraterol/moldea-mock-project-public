@@ -1,6 +1,6 @@
 # Beacon Collections
 
-Beacon Collections is a small fictional archive prototype for curator review. Its one accession-note assistant reads local records, drafts structured notes, and identifies missing maker, date, and provenance information. It supports human review; it does not approve accession readiness or persist accession changes.
+Beacon Collections is a small fictional archive prototype for human review. Its one accession-note assistant reads local records, drafts structured notes, and identifies missing maker, date, and provenance information. It supports human review; it does not approve accession readiness or persist accession changes.
 
 ## Authorities and boundaries
 
