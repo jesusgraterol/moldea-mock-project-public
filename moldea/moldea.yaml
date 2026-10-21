@@ -1,0 +1,33 @@
+version: 1
+agents:
+  accession-note:
+    runtime:
+      id: openai
+      guidance: /moldea/runtimes/accession-note.md
+    bindings:
+      runtimeAgent:
+        path: /src/assistant.ts
+        symbol: draftAccessionNote
+      instructionLoader:
+        path: /src/assistant.ts
+        symbol: loadAccessionInstructions
+      inputSchema:
+        path: /src/schemas.ts
+        symbol: AccessionRecordSchema
+      outputSchema:
+        path: /src/schemas.ts
+        symbol: AccessionNoteSchema
+    affectedBy:
+      - /docs/approval-policy.md
+      - /data/accessions.json
+      - /src/assistant.test.ts
+    unresolved:
+      missing-field-consistency:
+        category: output-validation
+        effect: warning
+        description: The model supplies missingFields. The output schema restricts field names but does not check completeness, agreement with source nulls, or uniqueness; curator review remains required.
+        resolution: Derive missingFields from the selected record or validate exact agreement with its null fields, with controlled-transport coverage for an incorrect model list.
+        related:
+          - path: /src/assistant.ts
+          - path: /src/schemas.ts
+          - path: /src/assistant.test.ts

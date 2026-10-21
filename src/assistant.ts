@@ -5,7 +5,11 @@ import { z } from 'zod';
 import { AccessionRecordSchema, AccessionNoteSchema } from './schemas.ts';
 import type { AccessionNote } from './schemas.ts';
 
-export const ACCESSION_INSTRUCTIONS = 'You draft Beacon Collections accession notes from the supplied fictional record only. Keep missing maker, date and provenance facts unknown and list their field names. The curator approves accession readiness. You only draft notes: never approve accession readiness, persist a record change or imply approval. Return the requested structured note with humanApprovalRequired true and approvalAuthority curator.';
+export async function loadAccessionInstructions(): Promise<string> {
+  return (await readFile(new URL('../moldea/agents/accession-note/instruction.md', import.meta.url), 'utf8')).trim();
+}
+
+export const ACCESSION_INSTRUCTIONS = await loadAccessionInstructions();
 
 export async function draftAccessionNote(accessionId: string, options: { client: OpenAI; model: string }): Promise<AccessionNote> {
   const id = z.string().min(1).parse(accessionId);
