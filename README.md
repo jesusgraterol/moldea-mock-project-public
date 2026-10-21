@@ -19,7 +19,7 @@ Install the locked dependencies with `npm ci --ignore-scripts`.
 | `npm run build` | Build the real Eve application without sandbox prewarming; no sandbox capabilities are exposed. |
 | `npm run test:runtime` | Check installed CLI options, discover and build the agent, start the built output on `127.0.0.1`, run installed `eve eval --strict --url …`, then stop its owned process tree and verify the process and listener are gone. |
 
-The root assistant deliberately uses Eve 0.82.0's documented `mockModel` fixture contract. No live provider, credentials, model judge, tool stubs or external service is used. This proves the actual Eve connection and deterministic policy, not the behavior of an untested live model. The fixture accepts a JSON message with `mode` set to `handover` or `lookup`, for example:
+The root assistant deliberately uses Eve 0.82.0's documented `mockModel` fixture contract. No live provider, model judge, tool stubs or external service is configured. This proves the actual Eve connection and deterministic policy, not the behavior of an untested live model. The fixture accepts a JSON message with `mode` set to `handover` or `lookup`, for example:
 
 ```json
 {
@@ -36,6 +36,14 @@ For the sample above, QH-101 requires review at exactly 12 hours; QH-102 is 11 h
 Evals and their configuration live under `evals/`, outside `agent/`. Assertions at the fixture-model boundary inspect the complete canonical system instruction, the actual selected procedure text returned by `eve__skill`, the available tool schema and real lookup results. Eval assertions also inspect the lookup's actual inputs/results and exercise greetings, unrelated requests and prohibited operations. Reports are written by Eve under ignored `.eve/evals/`.
 
 The only HTTP entry point is Eve's standard local protocol. Its fixture channel explicitly permits anonymous requests; supported checks bind it only to loopback, retain process ownership and clean up in `finally`, including after an eval failure. No deployment or externally accessible service is configured. Runtime checks were exercised on Linux; Windows and macOS execution has not been verified.
+
+### Local eval authentication environment
+
+Eve 0.82.0 treats every `eval --url` as a remote target, including a loopback URL. Its [installed target-authentication contract](node_modules/eve/docs/evals/targets.mdx#authentication) documents `EVE_EVAL_AUTH_TOKEN` as an explicit bearer override. The local runtime check sets it to the fixed, **non-secret fixture value** `quarry-handover-local-fixture-not-a-secret` in its child-process environment, overriding any inherited value without using or printing that value. The override applies only to this owned local runtime check; it does not change the parent environment or general build-command defaults.
+
+The pinned client takes the explicit-token branch before ambient Vercel project/deployment discovery, so the check needs no Vercel CLI, credentials, project link, configuration or new service. The token is a test-environment choice, not a credential or a change to the anonymous local channel's access policy. Credential-bearing client requests do not follow redirects. The check only constructs the target from its reserved `127.0.0.1` port and never accepts a remote target URL.
+
+This is a review-assisted correction to the original launcher. Earlier passing runtime runs predated this explicit override and could enter ambient Vercel discovery; actual external access in those runs is **not established**. Their runtime/eval history is retained, not reclassified as proven isolated runs. The correction does not alter the handover policy, source claims or capabilities.
 
 ## Implementation map
 

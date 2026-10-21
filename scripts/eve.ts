@@ -7,12 +7,16 @@ export const eveCli = resolve(dirname(fileURLToPath(import.meta.resolve('eve/pac
 export const eveEnvironment = { ...process.env, EVE_TELEMETRY_DISABLED: '1' };
 
 /** Execute the inspected, installed Eve CLI, never a transient package or shell. */
-export async function runEve(args: string[], signal: AbortSignal): Promise<string> {
+export async function runEve(
+  args: string[],
+  signal: AbortSignal,
+  environment: NodeJS.ProcessEnv = eveEnvironment,
+): Promise<string> {
   const result = await runProcess({
     command: process.execPath,
     args: [eveCli, ...args],
     cwd: projectRoot,
-    env: eveEnvironment,
+    env: environment,
     signal,
     timeoutSeconds: 120,
     maxOutputBytes: 2 * 1_024 * 1_024,
