@@ -1,0 +1,1765 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261021-01",
+  "scenarioId": "folio-workshop",
+  "attemptId": "folio-workshop-01",
+  "branch": "fixture_skill_only_xs_folio_workshop_01",
+  "baseCommit": "cdbb0e774eb6b5688ffa88e042ef113bc0862b39",
+  "finalCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+  "lastDurableCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/folio-workshop.md",
+    "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
+  },
+  "observedSummary": "Two independent host skill source artifacts completed eight requests: grounded/missing/conflicting notes,60-to40-word maintenance, reference reorganization, contributor formatter and actual grounding review.32 actor/independent tests passed. Source/host/privacy review, signed source publication and both Release asset authenticated/anonymous byte checks complete. CLI/Core/adapters remain absent; separate installation/discovery/portability untested.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "hostVersion": "0.163.0",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 145,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 181,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 211,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 241,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 319,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 402,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 465,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "folio-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Create two reusable Agent Skills for Folio Workshop: one that drafts exhibit labels from supplied notes and another that reviews the labels against those notes. Share the terminology and attribution rules in one reference. Labels may contain up to 60 words. Start with a small design and worked examples, then build the toolkit. For counting, use whitespace-separated words in the label text only: \"hand-made bowl\" counts as two words and \"hand made bowl\" as three. Keep missing facts and unresolved disagreements visible.\n",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 9,
+      "beforeCommit": "cdbb0e774eb6b5688ffa88e042ef113bc0862b39",
+      "afterCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "observedResult": "Created two source skills, one shared reference, counter/tests and grounded worked examples through the independent-artifact route. Six counter tests and both skill structural validators passed; no canonical or CLI/Core adoption.",
+      "redactionIds": []
+    },
+    {
+      "id": "folio-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Load and use $folio-draft-label from skills/folio-draft-label/SKILL.md on notes/fw-101.md, then use $folio-review-label from skills/folio-review-label/SKILL.md to review that result against the same notes. Use their shared reference. Show the actual label and review here; do not change toolkit files for this exercise.\n",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 146,
+      "beforeCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "afterCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "observedResult": "Actual host loaded both source skills/shared reference:34-word source-qualified FW101 label and factual review. No source change.",
+      "redactionIds": []
+    },
+    {
+      "id": "folio-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Use $folio-draft-label and $folio-review-label on notes/fw-102.md. Can we produce a useful label from those notes even though the maker and place are missing? Show the draft, factual review and any specific information we should ask for here, without changing the toolkit or source notes.\n",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 182,
+      "beforeCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "afterCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "observedResult": "Actual host draft/review:33-word approximate-date FW102 label with missing maker/place visible and targeted evidence requests. No source change.",
+      "redactionIds": []
+    },
+    {
+      "id": "folio-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "Use $folio-draft-label and $folio-review-label on notes/fw-103.md. The two notes concern the same panel and disagree about its maker and date, with no governing authority supplied. What label can we justify, and what specific information would resolve the disagreement? Show the actual draft and review here without changing the notes or toolkit.\n",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 212,
+      "beforeCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "afterCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "observedResult": "Actual host draft/review:45-word FW103 label preserved both source/maker/date pairs, unresolved status and missing fields under then60-word rule. No source change.",
+      "redactionIds": []
+    },
+    {
+      "id": "folio-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Our labels now have a 40-word maximum instead of 60. Update the toolkit and worked examples to use it, keeping the grounding, attribution and uncertainty requirements intact.\n",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 242,
+      "beforeCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "afterCommit": "5b11df2d5ba6daee73ea0798f63671a40cfd7f1e",
+      "observedResult": "Approved40-word correction maintained common rules, helper/tests, README/examples; earlier45-word draft retained as length-failing example. Grounding preserved.",
+      "redactionIds": []
+    },
+    {
+      "id": "folio-request-06",
+      "ordinal": 6,
+      "kind": "follow-up",
+      "text": "Reorganize the shared label reference so editors can find the grounding, attribution, uncertainty and length rules more easily. Keep one shared reference, preserve every unique rule, and keep both skills and the worked examples using it correctly. Keep the toolkit at its current size.\n",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 320,
+      "beforeCommit": "5b11df2d5ba6daee73ea0798f63671a40cfd7f1e",
+      "afterCommit": "ea736dc86c730d86936bd6bc91769283e4bc25d4",
+      "observedResult": "Reorganized only the one shared reference at its stable path into linked Grounding/Attribution/Uncertainty/Length sections; every unique rule preserved, no files added.",
+      "redactionIds": []
+    },
+    {
+      "id": "folio-request-07",
+      "ordinal": 7,
+      "kind": "follow-up",
+      "text": "Add a small standalone contributor-list formatter under tools, separate from the editorial skills. Read a JSON array of people with name and contribution from stdin and print one plain-text \"Name \u2014 contribution\" line per person. Normalize whitespace within each field, sort names case-insensitively, and preserve input order for equal names. Validate the whole input before writing any output, with useful stderr errors and a nonzero exit for invalid input. Include copyable examples and focused tests runnable with npm test. Keep the notes and editorial toolkit unchanged.\n",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 403,
+      "beforeCommit": "ea736dc86c730d86936bd6bc91769283e4bc25d4",
+      "afterCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "observedResult": "Standalone contributor formatter/tests/docs added; npm test32 passed. Only package.json and three tools files changed; editorial toolkit/notes unchanged.",
+      "redactionIds": []
+    },
+    {
+      "id": "folio-request-08",
+      "ordinal": 8,
+      "kind": "follow-up",
+      "text": "Load and use $folio-draft-label from skills/folio-draft-label/SKILL.md and $folio-review-label from skills/folio-review-label/SKILL.md, including their current shared reference. First draft and review a fresh label for FW-103 under the current rules. Separately, use the review skill on this FW-101 candidate and show its original findings before any revision:\n\nBlue-glazed stoneware cup. S-101 attributes it to Irena Vale and dates it to 1974 at North Quay. A-101 records donation by the Harbor Study Group in 2011. Only three such cups survive.\n\nShow the results here. Do not change project files.\n",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 466,
+      "beforeCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "afterCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "observedResult": "Actual final host loaded both current skills/shared reference: fresh FW10340/40 preserved competing claims/unknowns; original FW101candidate32/40 passed length but failed grounding for unsupported rarity. No revision/source change.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 2,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 3,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 4,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 5,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 84,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 90,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 115,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 127,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 143,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 276,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 302,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 364,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 384,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 400,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "manual",
+      "description": "First-turn existing capture reconciled47 shareable events, context7/request9, exact wording and absent composition before request02.",
+      "inputCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor node --test skills/shared/count-label-words.test.mjs passed6 tests during creation and maintenance. Both quick_validate.py structural checks and local-link checks passed before respective driver checkpoints; native calls73/281/369 preserve actual outputs.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor npm test during request07 passed32 tests with zero failures; native tool445 preserves actual execution on uncommitted source before checkpoint1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Actual host loads/results requests02/03/04 used both skills/shared reference, counts34/33/45, complete/missing/conflicting notes; exact source SHAs unchanged.",
+      "inputCommit": "b3fd80a059f682553c8a36ec2c815944f5ed2d1b",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Approved40-word maintenance retained grounding/uncertainty. Reorganization changed only one shared file with no unique-rule loss.",
+      "inputCommit": "ea736dc86c730d86936bd6bc91769283e4bc25d4",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Final request08 loaded both current skills/reference; FW10340/40 preserved claims/unknowns; FW10132/40 failed grounding for unsupported rarity despite length pass. Original findings retained, no rewrite/source change.",
+      "inputCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Fresh independent exact-source npm test32/32, six counter tests, both skill quick_validate.py checks,24 local links/fragments and all seven worked-example counts passed.",
+      "inputCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent CLI40/41/empty/errors/metadata boundaries plus outside-cwd literal-data checks passed; contributor formatter exact copyable examples, stable ties, whitespace normalization and no partial output verified.",
+      "inputCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent full502-record native projection plus80 declared UTF16 masks exactly reconciled all157 selected capture events. All eight request/settings/composition and source ledgers agree; every observed CLI/Core/adapter state absent.",
+      "inputCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Root source history privacy scan covers generic fixture through all five seed/source commits and 61 unique path versions;36 distribution files match published hashes; decompressed504744-byte selected capture has no leftover private prefixes or opaque prompts.",
+      "inputCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Root bash -n passed all five documented shell blocks; independent dash syntax/output checks passed. shellcheck/shfmt absent and not installed.",
+      "inputCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Existing verifier against exact private proposed bytes passed for three attempts with batch incomplete; metadata uncommitted, inputCommit null. This alone did not establish publication.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Published distinct Folio assets without replacement. Authenticated gh downloads and anonymous curl -q with no auth flags/headers matched reviewed sizes/hashes. Fixed tag43ebb11aed5beb591532cc7493ad49b2c818f80f and all four earlier asset IDs/sizes/digests/timestamps unchanged.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Fresh independent full source/host/capture and exact proposed public-copy privacy review passed. All eight requests/settings/source checkpoints,42 frozen check results and80 redactions reconcile. Root reviewed later factual status/prose deltas before final commit.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/folio-workshop-01.json",
+        "evidence/scenarios/folio-workshop.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/cdbb0e774eb6b5688ffa88e042ef113bc0862b39/1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz",
+        "run-20261021-01/folio-workshop-identities-01.txt"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt",
+        "locator": "folio-request-01-context-7; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 145,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt",
+        "locator": "folio-request-02-context-145; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 181,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt",
+        "locator": "folio-request-03-context-181; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 211,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt",
+        "locator": "folio-request-04-context-211; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 241,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt",
+        "locator": "folio-request-05-context-241; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 319,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt",
+        "locator": "folio-request-06-context-319; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 402,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt",
+        "locator": "folio-request-07-context-402; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "eventOrdinal": 465,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt",
+        "locator": "folio-request-08-context-465; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Initial root manifest and actual inert per-context metadata show no declaration/installation; no lockfile or node_modules."
+      },
+      "adapters": []
+    }
+  ],
+  "skillRelease": "v10.0.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261021-01",
+      "name": "folio-workshop-01-session-01.jsonl.gz",
+      "sizeBytes": 140193,
+      "sha256": "2b4be7518d993e8fa86d8abde3d057a33774c744c34ae7d7519d13593d0afe29",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 501
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261021-01",
+      "name": "folio-workshop-identities-01.txt",
+      "sizeBytes": 129182,
+      "sha256": "2cd9e589651ba4342c1d9410b3820f13a3bc526d384625d3646a99bdfac05c57",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "Read-only driver inspection probes initially used unsupported capture --help, guessed nonexistent schema paths, and expected resumed requestLocators in the distinct first-turn record shape. Corrected against actual utility/types/native metadata before record verification; no actor/source/capture/utility changes. One private record-generator JavaScript quoting error was corrected before any record write. These are driver bookkeeping failures, not application failures.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "folio-workshop-identities-01.txt"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "fw-path-0001",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0002",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0003",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0004",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0005",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0006",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0007",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0008",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0009",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0010",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0011",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0012",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0013",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0014",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0015",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0016",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 13,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0017",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 18,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0018",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 24,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0019",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 24,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0020",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 24,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0021",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 24,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0022",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 24,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0023",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 24,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0024",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 24,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0025",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 33,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0026",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 33,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0027",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 33,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0028",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 33,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0029",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 38,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0030",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 38,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0031",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 38,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0032",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 53,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0033",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 64,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0034",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 64,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0035",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 64,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0036",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 64,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0037",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 64,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0038",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 73,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0039",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 73,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-encrypted-0040",
+      "reason": "Encrypted delegation prompt unavailable as plaintext; parent recording preserves lifecycle and returned messages, not child instructions or histories.",
+      "eventOrdinal": 83,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-encrypted-0041",
+      "reason": "Encrypted delegation prompt unavailable as plaintext; parent recording preserves lifecycle and returned messages, not child instructions or histories.",
+      "eventOrdinal": 89,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0042",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 97,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0043",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 120,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0044",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 120,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0045",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0046",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0047",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 143,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0048",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 246,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0049",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 268,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0050",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 268,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0051",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 268,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0052",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 268,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0053",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 268,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-encrypted-0054",
+      "reason": "Encrypted delegation prompt unavailable as plaintext; parent recording preserves lifecycle and returned messages, not child instructions or histories.",
+      "eventOrdinal": 275,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0055",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 281,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0056",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 281,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0057",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0058",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 349,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-encrypted-0059",
+      "reason": "Encrypted delegation prompt unavailable as plaintext; parent recording preserves lifecycle and returned messages, not child instructions or histories.",
+      "eventOrdinal": 363,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0060",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 369,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0061",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 369,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0062",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0063",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 400,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0064",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 400,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0065",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 400,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0066",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 400,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0067",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 400,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0068",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 400,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0069",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 400,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0070",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 407,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0071",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 407,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0072",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 412,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0073",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 418,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0074",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 418,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0075",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 438,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0076",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 438,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0077",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 438,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0078",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 438,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0079",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 458,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "fw-path-0080",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 458,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16051-43bb-7572-b626-2675b97a15b0",
+      "affectedLocations": [
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Explicit activation by actual source-skill name/path and shared-reference loading in Codex were exercised. Separate host installation, automatic catalog discovery, packaging and portability were not exercised.",
+    "Actor-managed forward-check helpers in requests01/05/06 are informal attributed reports. Parent lifecycle/model metadata and returned messages are retained; full child histories/composition and plaintext encrypted delegation prompts are unavailable. Opaque prompt values explicitly redacted; no independent child sessions or inspected helper behavior claimed.",
+    "Dedicated actor home isolates configuration, not filesystem reads; host catalogs/shared Git objects remain available.",
+    "Actor checks with null inputCommit ran on uncommitted intermediate source before signed driver checkpoints; independent exact-source checks are separate.",
+    "Linux/Node24 only; Windows/macOS unexecuted. shellcheck/shfmt unavailable; documented POSIX snippets have actual syntax/output checks.",
+    "Encrypted reasoning and host-private world state omitted; no natural compaction observed. Length success alone establishes no factual support; examples do not qualify general editorial reliability or causal benefit from moldea.",
+    "Full combined public browser replay remains Milestone8; no individual Folio browser replay claimed.",
+    "Private-candidate/publication/status metadata checks have null inputCommit because records were uncommitted; assets/source frozen. Merged public record snapshot separately consumed before milestone closes and in combined handoff."
+  ]
+}
