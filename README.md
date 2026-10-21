@@ -9,3 +9,9 @@ Keep input loading, booking rules and report formatting distinguishable where us
 ## Local development
 
 Use Node 24 and npm, exact dependency versions and an ordinary package-lock.json. Use built-in Node testing for JavaScript if sufficient. If TypeScript or schemas are needed, use TypeScript6.0.3, @types/node24.12.0 and Zod4.6.5. Fresh moldea adoption targets @moldea.ai/cli13.0.0. Inspect installed types/docs before relying on APIs. Keep the result small and directly runnable with copyable usage examples.
+
+<!-- moldea:start -->
+
+This project uses [moldea](https://skill.moldea.ai) to keep project knowledge in Git and bring relevant context into coding-agent work.
+Start at [the project overview](moldea/project.md); [the manifest](moldea/moldea.yaml) maps context and implementation relationships.
+<!-- moldea:end -->
