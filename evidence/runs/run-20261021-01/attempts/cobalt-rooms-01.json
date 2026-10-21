@@ -1,0 +1,2244 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261021-01",
+  "scenarioId": "cobalt-rooms",
+  "attemptId": "cobalt-rooms-01",
+  "branch": "fixture_context_only_xs_cobalt_rooms_01",
+  "baseCommit": "ebc99572cf9638a0403e022ca87ac730daba8f77",
+  "finalCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+  "lastDurableCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/cobalt-rooms.md",
+    "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
+  },
+  "observedSummary": "Deterministic local room planner completed seven requests with coordinator approval and read-only inputs. The hypothetical and informational handoff persisted nothing; the correction preserved approved30/implemented15 until separate implementation authority aligned30. Independent exact-source checks passed82 tests,13 focused roster tests and additional boundary/CLI/docs checks. Source/skill-behavior and selected-capture privacy review are complete; publication/download verification remain pending. No runtime model or agent exists.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "hostVersion": "0.163.0",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 158,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 259,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 291,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 326,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 410,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 491,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "cobalt-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Cobalt Rooms, a local CLI that helps workshop coordinators find suitable rooms. Use fictional room and booking files, capacity and equipment checks, and a 15-minute turnaround between bookings. Coordinators approve bookings. Start with the project context and a small implementation proposal; hold application implementation for now.\n",
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 9,
+      "beforeCommit": "ebc99572cf9638a0403e022ca87ac730daba8f77",
+      "afterCommit": "ae2af10dfacbe3293451beac36149c0bfd250fa0",
+      "observedResult": "Explicit initialization and proposal completed while app implementation stayed on hold; final validation zero diagnostics.",
+      "redactionIds": []
+    },
+    {
+      "id": "cobalt-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "That proposal works. Implement the read-only planner and availability report with the four small responsibilities you proposed, using plain JavaScript and the built-in Node test runner. Keep the exact 15-minute boundary in both directions, evaluate each request independently, reject malformed inputs clearly, and show the supplied example requests in the documentation. Coordinators still approve every booking and no input file should be written.\n",
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 159,
+      "beforeCommit": "ae2af10dfacbe3293451beac36149c0bfd250fa0",
+      "afterCommit": "2d4aae2dcf263e178dda21bb1ccc2696154bb436",
+      "observedResult": "Implemented deterministic read-only four-module planner at15 minutes;65 actor tests passed and supplied CLI outcomes verified.",
+      "redactionIds": []
+    },
+    {
+      "id": "cobalt-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "What would a 30-minute turnaround change? Assess the impact, but do not change any files.\n",
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 260,
+      "beforeCommit": "2d4aae2dcf263e178dda21bb1ccc2696154bb436",
+      "afterCommit": "2d4aae2dcf263e178dda21bb1ccc2696154bb436",
+      "observedResult": "Read-only30-minute hypothetical compared actual in-memory outcomes with writes denied; no source change and approved policy remained15.",
+      "redactionIds": []
+    },
+    {
+      "id": "cobalt-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "Coordinator handoff: coordinators also check a printed equipment checklist before approving a room.\n",
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 292,
+      "beforeCommit": "2d4aae2dcf263e178dda21bb1ccc2696154bb436",
+      "afterCommit": "2d4aae2dcf263e178dda21bb1ccc2696154bb436",
+      "observedResult": "Informational handoff identified the printed-checklist fact missing from current context/README, without persisting it or changing code.",
+      "redactionIds": []
+    },
+    {
+      "id": "cobalt-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Correction: the approved room turnaround is 30 minutes, not 15. Leave the booking code unchanged for now.\n",
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 327,
+      "beforeCommit": "2d4aae2dcf263e178dda21bb1ccc2696154bb436",
+      "afterCommit": "4b2fad24be52d3628ae1ce3787e2baccca89064b",
+      "observedResult": "Unambiguous correction recorded approved30 versus implemented15 in existing project context and supporting docs/manifest; src/test/data unchanged. No assistance before this checkpoint.",
+      "redactionIds": []
+    },
+    {
+      "id": "cobalt-request-06",
+      "ordinal": 6,
+      "kind": "follow-up",
+      "text": "Apply the approved 30-minute turnaround to the planner now, including reports, relevant documentation and checks. Exactly 30 minutes should pass before or after a booking; shorter gaps should fail. Keep coordinators as approvers and input files read-only. Use the existing sample files to show the new outcomes.\n",
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 411,
+      "beforeCommit": "4b2fad24be52d3628ae1ce3787e2baccca89064b",
+      "afterCommit": "71666ad426e8cba4ed1611f884c689a6271afe4f",
+      "observedResult": "Separately authorized implementation aligned planner/report/docs/context to30 minutes inclusive on either side;69 actor tests and final validation passed.",
+      "redactionIds": []
+    },
+    {
+      "id": "cobalt-request-07",
+      "ordinal": 7,
+      "kind": "follow-up",
+      "text": "Add a small standalone staff-roster formatter under tools, separate from the room planner. It should read a JSON array of fictional people with name and role from stdin and print a two-column Markdown table, preserving input order. Escape pipe characters and show embedded newlines without creating extra table rows. Validate the whole input before printing any output, with useful errors on stderr and a nonzero exit for invalid input. Include focused tests and a short tools/README.md with copyable examples. This is just roster formatting; no booking feature is involved.\n",
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 492,
+      "beforeCommit": "71666ad426e8cba4ed1611f884c689a6271afe4f",
+      "afterCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "observedResult": "Added standalone roster formatter,13 focused tests and copyable tools documentation.82 total actor tests passed; only three tools files changed and relevance printed0 with no subsequent moldea action.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 2,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 3,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 4,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 5,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 155,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 156,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 257,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 289,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 408,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 489,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "manual",
+      "description": "First-turn existing-utility capture reconciled46 shareable events, native context7/request9 and exact delivered wording/settings before request02. Initial tooling absence independently observed inertly.",
+      "inputCommit": "ae2af10dfacbe3293451beac36149c0bfd250fa0",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test \u2014 actual actor execution during request02: 65 tests passed. Input was an uncommitted intermediate tree; reached checkpoint 2d4aae2dcf263e178dda21bb1ccc2696154bb436 and native recording preserve its sequence. Independent review reruns exact final committed source separately.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test \u2014 actual actor execution during request06: 69 tests passed. Input was an uncommitted intermediate tree; reached checkpoint 71666ad426e8cba4ed1611f884c689a6271afe4f and native recording preserve its sequence. Independent review reruns exact final committed source separately.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test \u2014 actual actor execution during request07: 82 tests passed. Input was an uncommitted intermediate tree; reached checkpoint bcd832eda471f658bdc444bd006a078e850b34d6 and native recording preserve its sequence. Independent review reruns exact final committed source separately.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Compared exact hypothetical and informational-handoff before/after trees: both remained2d4aae2dcf263e178dda21bb1ccc2696154bb436. Existing owner inspection before the handoff established the checklist fact missing without manufacturing a gap.",
+      "inputCommit": "2d4aae2dcf263e178dda21bb1ccc2696154bb436",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Compared correction-only interval2d4aae2dcf263e178dda21bb1ccc2696154bb436 to4b2fad24be52d3628ae1ce3787e2baccca89064b: only README/proposal/project/manifest changed; src/test/data remained15. Existing context represented approved30 and explicitly deferred implementation. No driver assistance.",
+      "inputCommit": "4b2fad24be52d3628ae1ce3787e2baccca89064b",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Actual CLI examples after implementation produced Orchid Hall only for request-a and none for request-b/c, with coordinator approval preserved. Actor final validation at native tool474 reported zero diagnostics; canonical state unchanged by request07.",
+      "inputCommit": "71666ad426e8cba4ed1611f884c689a6271afe4f",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Exact request07 diff contains only tools/README.md, tools/staff-roster.js and tools/staff-roster.test.js. Native helper returned relevance value0; no later moldea operation or announcement. Core planner, docs, fixtures, package metadata and canonical state unchanged.",
+      "inputCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact-source npm test at baseline2d4aae2dcf263e178dda21bb1ccc2696154bb436:65 tests passed.",
+      "inputCommit": "2d4aae2dcf263e178dda21bb1ccc2696154bb436",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact-source npm test after30-minute implementation:69 tests passed.",
+      "inputCommit": "71666ad426e8cba4ed1611f884c689a6271afe4f",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent npm ci --ignore-scripts, npm test (82 passed), node --test tools/staff-roster.test.js (13 passed), no failures/skips.",
+      "inputCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent write-denied final CLI,96-case interval oracle and131 total additional in-memory/docs/syntax assertions passed; exact30 boundaries, report agreement, input hashes, error outputs, all3 roster README commands and whole-input/escaping checks. Separate denied write confirmed permission enforcement.",
+      "inputCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent closed launcher validation:CLI13/schema7 valid, zero diagnostics/errors/warnings/bindings. Final source has no application agent, so no model/runtime connection claim.",
+      "inputCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent source/skill-behavior review complete: distinct hypothetical/handoff/correction/implementation authority supported by actual native traces and exact source trees. Existing mirrors and narrow relationships grounded; no unresolved product defect or required actor repair.",
+      "inputCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent selected final capture and frozen identity log privacy/fidelity review complete.109 explicit prefix redactions preserve159 shareable events and all7 requests/settings; entire introduced source history including seed and36 immutable distribution files reviewed.",
+      "inputCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent review harness setup initially referenced a nonexistent owned checkout cwd and unavailable python alias. Corrected before application checks; this is a retained setup failure, not an actor/product failure.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Pinned reader950b89eb4c41564953fa1582fdd588992e152d37 parsed selected final recording into110 entries/49 tools/9 native user rows (7 product requests plus2 host envelopes). Parser-only readiness; combined public browser replay remains Milestone8.",
+      "inputCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/cobalt-rooms.md"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "bcd832eda471f658bdc444bd006a078e850b34d6",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/scenarios/cobalt-rooms.md",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/ebc99572cf9638a0403e022ca87ac730daba8f77/bcd832eda471f658bdc444bd006a078e850b34d6",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/bcd832eda471f658bdc444bd006a078e850b34d6",
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz",
+        "run-20261021-01/cobalt-rooms-identities-01.txt"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "Existing evidence verifier with exact proposed private Cobalt candidates plus previously downloaded Aster assets passed for2 actual attempts; run and Cobalt evidence remain incomplete before public publication. This is not a downloadability claim.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt",
+        "locator": "cobalt-request-01-context-7; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Inert initial root manifest has no declaration; lockfile and node_modules absent."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Inert initial root manifest has no declaration; lockfile and node_modules absent."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 158,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt",
+        "locator": "cobalt-request-02-context-158; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 259,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt",
+        "locator": "cobalt-request-03-context-259; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 291,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt",
+        "locator": "cobalt-request-04-context-291; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 326,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt",
+        "locator": "cobalt-request-05-context-326; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 410,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt",
+        "locator": "cobalt-request-06-context-410; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "eventOrdinal": 491,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt",
+        "locator": "cobalt-request-07-context-491; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v10.0.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261021-01",
+      "name": "cobalt-rooms-01-session-01.jsonl.gz",
+      "sizeBytes": 182700,
+      "sha256": "dd3c0d5809c3ce6c73f59487926794525b6246a03aa1dbdda3d366e9ad340629",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 546
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261021-01",
+      "name": "cobalt-rooms-identities-01.txt",
+      "sizeBytes": 43300,
+      "sha256": "a94d38845ae041adc5ca4b5a7fa0fd91ce0eab4a27b768656ef430a102e150f8",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "Reviewer-only initial harness setup used a nonexistent checkout cwd and unavailable python alias. Corrected before independent application checks; no actor/source/session change. Final exact-source checks passed.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cobalt-rooms-identities-01.txt"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "cr-path-0001",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0002",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0003",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0004",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0005",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0006",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0007",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0008",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0009",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0010",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0011",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0012",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0013",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0014",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0015",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0016",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 17,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0017",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0018",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0019",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0020",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0021",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0022",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0023",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0024",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 75,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0025",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 82,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0026",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 82,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0027",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 82,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0028",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 92,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0029",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 100,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0030",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 100,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0031",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 100,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0032",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 107,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0033",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 112,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0034",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 119,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0035",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 119,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0036",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0037",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0038",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0039",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0040",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 156,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0041",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 156,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0042",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 156,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0043",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 163,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0044",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 163,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0045",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 163,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0046",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0047",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0048",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0049",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0050",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0051",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 205,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0052",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 205,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0053",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 205,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0054",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 224,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0055",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 224,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0056",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 250,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0057",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 257,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0058",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 257,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0059",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 257,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0060",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 257,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0061",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 257,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0062",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 257,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0063",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 257,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0064",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 264,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0065",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 282,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0066",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 289,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0067",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 289,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0068",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 289,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0069",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 296,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0070",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 310,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0071",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 319,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0072",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 331,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0073",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 349,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0074",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 349,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0075",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 349,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0076",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 378,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0077",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 378,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0078",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 378,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0079",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 378,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0080",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 393,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0081",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 401,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0082",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0083",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0084",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0085",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0086",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0087",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0088",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0089",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 415,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0090",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 423,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0091",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 430,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0092",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 440,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0093",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 440,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0094",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 440,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0095",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 440,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0096",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 459,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0097",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 459,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0098",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 459,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0099",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 474,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0100",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 482,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0101",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0102",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0103",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0104",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 496,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0105",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 520,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0106",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 520,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0107",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 520,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0108",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 543,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0109",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 543,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1602c-528f-7520-9d05-43185d0d13f8",
+      "affectedLocations": [
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Source/skill-behavior, full introduced-history and final proposed public-copy privacy review passed. Source/records/assets publication and public download verification remain pending.",
+    "Actor checks with null inputCommit ran before a driver checkpoint in an uncommitted intermediate tree. Actual commands/output/native anchors and reached request SHAs are retained; independent exact-commit checks are separate.",
+    "Dedicated actor home isolates configuration, not filesystem reads; host catalogs/shared Git objects remain available.",
+    "No runtime agent/provider exists by design. Passing tests and structural validity do not establish broader operational suitability or causal benefit from the skill.",
+    "Linux/Node24 only; other platform execution not qualified. Encrypted reasoning and host-private world state omitted; no natural compaction observed.",
+    "Actor initialization explicitly used a separate owned temporary npm cache via --cache; the allocated npm_config_cache environment and actual installer override are distinct observations. The additional scratch-prefix redaction changed only proposed private capture bytes before publication; original private candidate retained.",
+    "Temporary canonical navigation retained proposed/not-implemented wording through the correction-only checkpoint; request06 corrected it during authorized owner maintenance. Ordinary relevance misses did not authorize earlier canonical writes.",
+    "Expected no-match/absence probes had nonzero exits, distinct from tests. The r2 rg audit skipped its chained diff; later standalone native diff242/result245 established unchanged data/lock. Some host reference outputs were truncated and needed sections reread.",
+    "The frozen identity log was corrected from a copied95-case count to96 before publication; earlier private bytes retained and the sole text correction independently verified.",
+    "Private-candidate structural verification has null inputCommit because the proposed record metadata was uncommitted; public publication checks will identify immutable record inputs separately."
+  ]
+}

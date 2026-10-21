@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "runId": "run-20261021-01",
   "date": "2026-10-21",
-  "summary": "Six-project Skill 10.0.0 batch in progress: Aster completed six requests with independent real-LangGraph source/behavior checks and complete published evidence; its functional public replay and expansion gate passed with an inherited viewer accessibility limitation retained. Cobalt, Folio, Beacon, Cinder and Quarry have not started.",
+  "summary": "Six-project Skill 10.0.0 batch in progress: Aster passed its pilot expansion gate with the inherited viewer accessibility finding retained. Cobalt completed seven requests and passed independent source/skill-behavior checks (82 tests); source/assets publication and public download verification pending. Folio, Beacon, Cinder and Quarry have not started.",
   "expectedActor": {
     "model": "gpt-6.1-sol",
     "effort": "xhigh"
@@ -30,13 +30,14 @@
     }
   ],
   "attempts": [
-    "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json"
+    "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json",
+    "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json"
   ],
   "evidenceStatus": "incomplete",
   "reviewStatus": "pending",
   "review": null,
   "limitations": [
-    "Aster functional public replay and expansion gate passed. The inherited moderate viewer landmark-unique finding remains open; no accessibility-conformance claim. The other five projects have no attempts yet.",
-    "The six-project batch remains incomplete; Aster source/behavior review and published integrity verification are complete."
+    "Aster pilot expansion gate passed with the inherited moderate landmark-unique viewer finding retained; no accessibility-conformance claim.",
+    "Cobalt source/skill-behavior and selected recording/log privacy review passed; publication and public download verification pending. Four other projects have no attempts yet."
   ]
 }
