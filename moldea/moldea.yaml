@@ -34,6 +34,7 @@ agents:
           path: /src/contracts.ts
           symbol: InventoryLookupOutputSchema
     affectedBy:
+      - /README.md
       - /src/assessment.ts
       - /test/assistant.test.ts
       - /package.json

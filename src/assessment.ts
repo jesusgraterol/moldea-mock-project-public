@@ -1,6 +1,6 @@
 import type { EquipmentRequest, Handoff, HandoffFacts, InventoryRecord } from "./contracts.ts";
 
-const TwentyFourHoursMs = 24 * 60 * 60 * 1000;
+const UrgencyThresholdMs = 48 * 60 * 60 * 1000;
 
 // ISO UTC inputs are already validated. Compare their whole seconds and decimal
 // fractions separately so Date.parse cannot round a sub-millisecond boundary.
@@ -49,7 +49,7 @@ export function assessRequest(request: EquipmentRequest, record: InventoryRecord
     supportingInventoryRecordIds: record === null ? [] : [record.id],
     missingFacts,
     // Overdue requests also remain urgent; no host clock or rounding is involved.
-    urgency: compareUtc(request.neededAt, request.referenceAt, TwentyFourHoursMs) <= 0 ? "urgent" : "routine",
+    urgency: compareUtc(request.neededAt, request.referenceAt, UrgencyThresholdMs) <= 0 ? "urgent" : "routine",
     requiresStaffApproval: true,
   };
 }

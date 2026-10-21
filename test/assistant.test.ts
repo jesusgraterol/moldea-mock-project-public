@@ -66,11 +66,11 @@ function reply(action: string, ids: string[], missingFacts: string[], urgency: s
 
 const inventory = await loadInventory();
 const exampleRequests = parseBoundary(RequestSchema.array(), JSON.parse(await readFile(resolve(import.meta.dirname, "..", "data", "requests.json"), "utf8")) as unknown, "test requests");
-const baseRequest = { id: "test-request", itemId: "ad-light-01", quantity: 1, referenceAt: "2026-11-03T12:00:00Z", neededAt: "2026-11-04T12:00:00Z" };
+const baseRequest = { id: "test-request", itemId: "ad-light-01", quantity: 1, referenceAt: "2026-11-03T12:00:00Z", neededAt: "2026-11-05T12:00:00Z" };
 
 for (const scenario of [
   { id: "request-a", action: "review-for-dispatch", record: "ad-light-01", missing: [], urgency: "urgent" },
-  { id: "request-b", action: "verify-inventory", record: "ad-projector-03", missing: ["Inventory availability is unknown.", "Available quantity has not been observed.", "Inventory observation timestamp is missing."], urgency: "routine" },
+  { id: "request-b", action: "verify-inventory", record: "ad-projector-03", missing: ["Inventory availability is unknown.", "Available quantity has not been observed.", "Inventory observation timestamp is missing."], urgency: "urgent" },
   { id: "request-c", action: "do-not-dispatch", record: "ad-mic-02", missing: [], urgency: "urgent" },
 ]) {
   test(`real graph: ${scenario.id} produces a grounded handoff`, async () => {
@@ -91,24 +91,46 @@ for (const scenario of [
 }
 
 for (const [neededAt, urgency] of [
-  ["2026-11-04T11:59:59.999Z", "urgent"],
-  ["2026-11-04T12:00:00Z", "urgent"],
-  ["2026-11-04T12:00:00.001Z", "routine"],
-  ["2026-11-04T12:00:00.0001Z", "routine"],
+  ["2026-11-04T12:00:00.001Z", "urgent"],
+  ["2026-11-05T11:59:59.999Z", "urgent"],
+  ["2026-11-05T12:00:00Z", "urgent"],
+  ["2026-11-05T12:00:00.001Z", "routine"],
+  ["2026-11-05T12:00:00.0001Z", "routine"],
   ["2026-11-03T11:00:00Z", "urgent"],
 ] as const) {
   test(`supplied timestamps: ${neededAt} is ${urgency}`, async () => {
     const model = new BoundaryModel(() => reply("review-for-dispatch", ["ad-light-01"], [], urgency));
     const assistant = await createDispatchAssistant({ model, inventory });
-    assert.equal((await assistant.invoke({ ...baseRequest, neededAt })).urgency, urgency);
+    const handoff = await assistant.invoke({ ...baseRequest, neededAt });
+    assert.equal(handoff.urgency, urgency);
+    assert.equal(handoff.requiresStaffApproval, true);
+    assert.equal(modelInput(model.calls[0]!.messages).facts.urgency, urgency);
   });
 }
 
 test("fractional reference timestamps are compared without truncation", async () => {
   const model = new BoundaryModel(() => reply("review-for-dispatch", ["ad-light-01"], [], "urgent"));
   const assistant = await createDispatchAssistant({ model, inventory });
-  const handoff = await assistant.invoke({ ...baseRequest, referenceAt: "2026-11-03T12:00:00.0002Z", neededAt: "2026-11-04T12:00:00.0001Z" });
+  const handoff = await assistant.invoke({ ...baseRequest, referenceAt: "2026-11-03T12:00:00.0002Z", neededAt: "2026-11-05T12:00:00.0001Z" });
   assert.equal(handoff.urgency, "urgent");
+});
+
+test("unknown stock stays unknown just beyond 48 hours, with staff approval still required", async () => {
+  const missing = ["Inventory availability is unknown.", "Available quantity has not been observed.", "Inventory observation timestamp is missing."];
+  const model = new BoundaryModel(() => reply("verify-inventory", ["ad-projector-03"], missing, "routine"));
+  const assistant = await createDispatchAssistant({ model, inventory });
+  const handoff = await assistant.invoke({ ...baseRequest, itemId: "ad-projector-03", neededAt: "2026-11-05T12:00:00.001Z" });
+  assert.equal(handoff.recommendation.action, "verify-inventory");
+  assert.deepEqual(handoff.supportingInventoryRecordIds, ["ad-projector-03"]);
+  assert.deepEqual(handoff.missingFacts, missing);
+  assert.equal(handoff.urgency, "routine");
+  assert.equal(handoff.requiresStaffApproval, true);
+});
+
+test("model cannot mark a request just beyond 48 hours as urgent", async () => {
+  const model = new BoundaryModel(() => reply("review-for-dispatch", ["ad-light-01"], [], "urgent"));
+  const assistant = await createDispatchAssistant({ model, inventory });
+  await assert.rejects(assistant.invoke({ ...baseRequest, neededAt: "2026-11-05T12:00:00.001Z" }), /contradicts/);
 });
 
 test("absent item stays unknown, not unavailable, and has no invented evidence ID", async () => {
@@ -154,13 +176,18 @@ test("recorded available stock below the requested quantity does not permit disp
   assert.equal((await assistant.invoke({ ...baseRequest, quantity: 3 })).recommendation.action, "do-not-dispatch");
 });
 
-test("canonical instruction and executable output schema reach the SDK boundary", async () => {
+test("maintained 48-hour instruction and executable output schema reach the SDK boundary", async () => {
   const model = new BoundaryModel(() => reply("review-for-dispatch", ["ad-light-01"], [], "urgent"));
   const assistant = await createDispatchAssistant({ model, inventory });
   await assistant.invoke(baseRequest);
   const call = model.calls[0]!;
   const canonical = await readFile(resolve(import.meta.dirname, "..", "moldea", "agents", "equipment-handoff", "instruction.md"), "utf8");
-  assert.equal(call.messages[0]?.content, canonical);
+  const systemInstruction = call.messages[0]?.content;
+  assert.equal(systemInstruction, canonical);
+  assert.equal(typeof systemInstruction, "string");
+  assert.match(systemInstruction as string, /exactly 48 hours is urgent/);
+  assert.match(systemInstruction as string, /more than 48 hours is routine/);
+  assert.doesNotMatch(systemInstruction as string, /\b24[ -]hours?\b/);
   assert.equal(call.messages[0]?.getType(), "system");
   const format = call.options.tools?.[0] as { function?: { name: string; parameters: Record<string, unknown> } };
   assert.equal(call.options.tools?.length, 1);

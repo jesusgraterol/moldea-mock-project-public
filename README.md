@@ -4,7 +4,7 @@ Aster Dispatch helps a fictional events team review equipment requests. One assi
 
 ## Product facts
 
-Requests needed within 24 hours of the supplied reference timestamp are urgent, including the exact 24-hour boundary. Use supplied UTC timestamps rather than the computer clock. Inventory availability may be available, unavailable, or unknown. Unknown stock or missing observations must stay unknown. A staff handoff separates its recommendation, supporting record identifiers, missing facts, and required staff approval.
+Requests needed within 48 hours of the supplied reference timestamp are urgent, including the exact 48-hour boundary. A request just beyond 48 hours is routine. Use supplied UTC timestamps rather than the computer clock. Inventory availability may be available, unavailable, or unknown. Unknown stock or missing observations must stay unknown. A staff handoff separates its recommendation, supporting record identifiers, missing facts, and required staff approval.
 
 The files under data/ are fictional inputs. Treat their record identifiers and observations as evidence; do not invent a newer stock check or a missing item. The assistant has one read-only inventory lookup.
 
@@ -23,7 +23,7 @@ npm run typecheck
 npm run --silent example -- --request request-a
 ```
 
-Use `request-b` for unknown projector stock or `request-c` for unavailable microphones at exactly 24 hours. The command emits JSON with `schemaVersion: 1`, `modelMode: "offline-example"`, and the handoff. It uses an explicitly labelled offline model stand-in, not a live AI model; the LangGraph graph, SDK structured-output parser, inventory tool, and Zod schemas are real. `--help` describes the command. No credentials are needed, and neither requests nor inventory are written.
+Use `request-b` for unknown projector stock needed in 36 hours (urgent under the 48-hour rule), or `request-c` for unavailable microphones (also urgent). Urgency does not establish stock or bypass staff approval. The command emits JSON with `schemaVersion: 1`, `modelMode: "offline-example"`, and the handoff. It uses an explicitly labelled offline model stand-in, not a live AI model; the LangGraph graph, SDK structured-output parser, inventory tool, and Zod schemas are real. `--help` describes the command. No credentials are needed, and neither requests nor inventory are written.
 
 ## Assistant contract
 
@@ -40,7 +40,7 @@ The structured handoff has these fields:
 | `recommendation.summary` | Model-drafted explanation for staff; never an authorization. |
 | `supportingInventoryRecordIds` | The matched record ID, or an empty list when absent. |
 | `missingFacts` | Explicit unknown or missing inventory evidence. |
-| `urgency` | `urgent` when needed in 24 hours or less, including overdue requests; otherwise `routine`. |
+| `urgency` | `urgent` when needed in 48 hours or less, including overdue requests; otherwise `routine`, even just beyond 48 hours. |
 | `requiresStaffApproval` | Always `true`; urgency never bypasses approval. |
 
 Unknown availability, absent quantity, missing observation time, or an observation after the supplied reference time requires inventory verification. A missing record is not zero stock. An observed available record with insufficient quantity does not support dispatch. Recommendations describe only the supplied evidence; no freshness threshold or safety guarantee is inferred. Timestamps must be valid ISO UTC values ending in `Z`, and quantities must be positive safe integers. Duplicate inventory IDs and malformed input fail validation.

@@ -15,6 +15,6 @@ Aster Dispatch serves a small events team reviewing equipment requests. Its sing
 
 - [Equipment-handoff assistant](agents/equipment-handoff/description.md) and [its instructions](agents/equipment-handoff/instruction.md): the single drafting responsibility, with canonical model-facing instructions consumed directly by the application.
 - [LangGraph connection](runtimes/langgraph.md): fixed control flow, canonical instruction loading, structured output, and the model boundary.
-- [Product rules and local development conventions](../README.md): owns the inclusive 24-hour urgency rule, supplied UTC timestamp handling, unknown-stock treatment, selected runtime and exact dependency versions, and verification expectations.
+- [Product rules and local development conventions](../README.md): owns the inclusive 48-hour urgency rule, supplied UTC timestamp handling, unknown-stock treatment, selected runtime and exact dependency versions, and verification expectations.
 - [Fictional inventory records](../data/inventory.json): supplied item identifiers, availability, quantities, and observations; not a live equipment system.
 - [Example equipment requests](../data/requests.json): supplied item references, quantities, reference timestamps, and needed-by timestamps.
