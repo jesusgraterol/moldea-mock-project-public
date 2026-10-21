@@ -14,7 +14,7 @@ Install the locked dependencies with `npm ci --ignore-scripts`.
 
 | Command | Purpose |
 | --- | --- |
-| `npm test` | Deterministic application checks for elapsed-time boundaries, unknown times, conflicting claims, resolved reports and read-only lookup behavior. |
+| `npm test` | Deterministic application checks for elapsed-time boundaries, unknown times, conflicting claims, resolved reports, read-only lookup behavior and the standalone roster formatter. |
 | `npm run typecheck` | Type-check application, agent definitions, evals and scripts. |
 | `npm run build` | Build the real Eve application without sandbox prewarming; no sandbox capabilities are exposed. |
 | `npm run test:runtime` | Check installed CLI options, discover and build the agent, start the built output on `127.0.0.1`, run installed `eve eval --strict --url …`, then stop its owned process tree and verify the process and listener are gone. |
@@ -54,6 +54,29 @@ The original fixture selected the first lookup and procedure results by name fro
 The correction uses the pinned `eve/evals` model contract: `userMessageCount` identifies the current authored request, explicit `toolCalls[].id` values identify calls emitted for it, and `toolResults[].id` correlates their results. A new request must execute a fresh lookup even when its input exactly repeats an earlier request. Prior procedure text may remain in conversation history, but a handover request's current procedure-load result is checked independently; a later simple lookup does not load the procedure again. No SDK code, tool implementation, source claims or policy were changed.
 
 `evals/continuation.eval.ts` exercises actual `session.send(...)` follow-ups with different selections, changed and null timestamps, exact repeats, lookup-to-handover, repeated handovers, handover-to-lookup, and no-tool replies after tool-using turns. It checks current lookup inputs/results and selected procedure consumption, plus explicit absence of `step.failed`, `turn.failed`, `session.failed` and cancellation events, successful `turn.completed`, and the returned open-session status. A `waiting` status alone is not evidence that a turn succeeded. The first review's non-secret auth override and owned loopback-process cleanup remain in force for these checks.
+
+## Standalone shift-roster formatter
+
+This separate, read-only utility formats supplied fictional roster entries. It does not assign staff, alter reports, call Eve or expose any capability to the handover assistant.
+
+From the repository root, print the [fictional sample](data/shift-roster.sample.json) as CSV:
+
+```text
+node scripts/format-roster.ts --input data/shift-roster.sample.json
+```
+
+```csv
+id,name,shift
+R-001,Nia Rowan,Day
+R-002,"Oren ""Oz"", Pike",Evening
+R-003,Mira Vale,Night
+```
+
+`--input` accepts an absolute file path or a path relative to the current working directory; quote paths containing spaces. The JSON must be an array of objects containing exactly `id`, `name` and `shift`, each a nonblank string. Values are preserved, not trimmed or interpreted. IDs sort in locale-independent lexical order (so `R-10` precedes `R-2`); equal IDs retain input order. An empty array prints just the header.
+
+The formatter quotes fields containing commas, double quotes or line breaks, doubles embedded quotes and uses CRLF row endings. It reads and validates the complete file before printing CSV. Unreadable files, invalid JSON, invalid entries and invalid arguments produce a clear error on stderr, exit code 1 and no stdout—not even a partial header or earlier valid row. `--help` prints command usage.
+
+Focused native checks: `node --test tests/roster.test.ts` (also included in `npm test`). They exercise the real CLI, sorting, quoting, input errors, relative paths and read-only behavior. No new dependencies are required. Execution has been verified on Linux; Windows and macOS have not been exercised.
 
 ## Implementation map
 

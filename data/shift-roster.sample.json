@@ -1,0 +1,5 @@
+[
+  { "id": "R-003", "name": "Mira Vale", "shift": "Night" },
+  { "id": "R-001", "name": "Nia Rowan", "shift": "Day" },
+  { "id": "R-002", "name": "Oren \"Oz\", Pike", "shift": "Evening" }
+]
