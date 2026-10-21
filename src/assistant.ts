@@ -22,5 +22,8 @@ export async function draftAccessionNote(accessionId: string, options: { client:
     text: { format: zodTextFormat(AccessionNoteSchema, 'accession_note') },
   });
   if (response.status !== 'completed' || !response.output_text) throw new Error('No completed structured accession note.');
-  return AccessionNoteSchema.parse(JSON.parse(response.output_text));
+  const note = AccessionNoteSchema.parse(JSON.parse(response.output_text));
+  if (note.accessionId !== record.id) throw new Error('Accession note identifier does not match the requested accession.');
+  const missingFields = (['maker', 'date', 'provenance'] as const).filter((field) => record[field] === null);
+  return { ...note, missingFields };
 }
