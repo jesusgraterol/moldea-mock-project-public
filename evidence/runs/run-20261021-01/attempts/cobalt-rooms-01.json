@@ -11,10 +11,10 @@
     "path": "evidence/scenarios/cobalt-rooms.md",
     "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
   },
-  "observedSummary": "Deterministic local room planner completed seven requests with coordinator approval and read-only inputs. The hypothetical and informational handoff persisted nothing; the correction preserved approved30/implemented15 until separate implementation authority aligned30. Independent exact-source checks passed82 tests,13 focused roster tests and additional boundary/CLI/docs checks. Source/skill-behavior and selected-capture privacy review are complete; publication/download verification remain pending. No runtime model or agent exists.",
+  "observedSummary": "Deterministic local room planner completed seven requests with coordinator approval and read-only inputs. The hypothetical and informational handoff persisted nothing; the correction preserved approved30/implemented15 until separate implementation authority aligned30. Independent exact-source checks passed 82 tests, 13 focused roster tests and additional boundary/CLI/docs checks. Source/skill-behavior and selected-capture privacy review are complete; reviewed source/records/Release assets are published and authenticated/anonymous downloaded bytes verify. No runtime model or agent exists.",
   "actorOutcome": "concluded",
   "outcomeReason": null,
-  "evidenceStatus": "incomplete",
+  "evidenceStatus": "complete",
   "reviewStatus": "complete",
   "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
   "sessions": [
@@ -447,6 +447,18 @@
       "result": "passed",
       "coveredArtifacts": [
         "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "Existing verifier against actual authenticated and anonymous Release downloads passed for2 actual attempts, using public record commit ad10222368001b7f9495902eb21ab9e5792720f5 (PR10 merge a39193cad34c3bbd8f71c38c0c543307722aae69). Both Cobalt asset sizes/SHA256 match; anonymous no-auth/no-cookie GETs returned HTTP200. Fixed Release tag43ebb11aed5beb591532cc7493ad49b2c818f80f and existing Aster asset IDs/bytes/timestamps remain unchanged.",
+      "inputCommit": "ad10222368001b7f9495902eb21ab9e5792720f5",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json",
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz",
+        "run-20261021-01/cobalt-rooms-identities-01.txt"
       ],
       "asset": null
     }
@@ -2230,7 +2242,7 @@
   "recovery": null,
   "predecessorAttemptId": null,
   "limitations": [
-    "Source/skill-behavior, full introduced-history and final proposed public-copy privacy review passed. Source/records/assets publication and public download verification remain pending.",
+    "Independent source/skill-behavior review, full proposed-copy privacy review and actual public asset download/integrity verification are complete. Full combined public browser replay remains Milestone8, without an individual Cobalt browser-replay claim.",
     "Actor checks with null inputCommit ran before a driver checkpoint in an uncommitted intermediate tree. Actual commands/output/native anchors and reached request SHAs are retained; independent exact-commit checks are separate.",
     "Dedicated actor home isolates configuration, not filesystem reads; host catalogs/shared Git objects remain available.",
     "No runtime agent/provider exists by design. Passing tests and structural validity do not establish broader operational suitability or causal benefit from the skill.",
