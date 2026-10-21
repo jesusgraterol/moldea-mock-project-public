@@ -11,10 +11,10 @@
     "path": "evidence/scenarios/aster-dispatch.md",
     "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
   },
-  "observedSummary": "One real compiled LangGraph assistant produces structured equipment handoffs through a read-only inventory lookup. moldea adopted absent tooling, connected the maintained instruction and source, and maintained the inclusive urgency rule from 24 to 48 hours. Three independent exporter requests received relevance misses and left assistant/canonical state unchanged. All 41 assistant and 54 exporter tests, typechecking and real instruction/schema checks passed independent reruns. Source/skill-behavior review is complete; public integrity and full replay remain pending. An intermediate actor API error and resolved driver bookkeeping errors are retained.",
+  "observedSummary": "One real compiled LangGraph assistant produces structured equipment handoffs through a read-only inventory lookup. moldea adopted absent tooling, connected the maintained instruction and source, and maintained the inclusive urgency rule from 24 to 48 hours. Three independent exporter requests received relevance misses and left assistant/canonical state unchanged. All 41 assistant and 54 exporter tests, typechecking and real instruction/schema checks passed independent reruns. Source/skill-behavior review and public asset integrity verification are complete; full pilot replay remains pending. An intermediate actor API error and resolved driver bookkeeping errors are retained.",
   "actorOutcome": "concluded",
   "outcomeReason": null,
-  "evidenceStatus": "incomplete",
+  "evidenceStatus": "complete",
   "reviewStatus": "complete",
   "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
   "sessions": [
@@ -559,6 +559,30 @@
         "evidence/runs/run-20261021-01/reviews/skill-review.md",
         "git/066ef7578ec935fe9f3532bcd59759eb6a91f7cf/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
         "git/c3ecda12e853b527a96c6ca81150083b0224643a/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz",
+        "run-20261021-01/aster-dispatch-identities-01.txt"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "node scripts/evidence/evidence.mjs verify --run evidence/runs/run-20261021-01/run.json --asset-root [redacted] \u2014 actual authenticated draft Release downloads verified against record commit 951bf224645dc24f0badc3c4299900ba7f95d194 (public merge 43ebb11aed5beb591532cc7493ad49b2c818f80f); both asset sizes/SHA256 matched reviewed candidates.",
+      "inputCommit": "951bf224645dc24f0badc3c4299900ba7f95d194",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json",
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz",
+        "run-20261021-01/aster-dispatch-identities-01.txt"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "After Release publication, anonymous urllib HTTP GET requests with no authentication/cookies returned HTTP200 for both public asset URLs. Downloaded sizes/SHA256 matched the reviewed records and candidate bytes. Release tag still targets 43ebb11aed5beb591532cc7493ad49b2c818f80f.",
+      "inputCommit": "951bf224645dc24f0badc3c4299900ba7f95d194",
+      "result": "passed",
+      "coveredArtifacts": [
         "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz",
         "run-20261021-01/aster-dispatch-identities-01.txt"
       ],
@@ -4021,7 +4045,7 @@
   "recovery": null,
   "predecessorAttemptId": null,
   "limitations": [
-    "Public integrity/download verification and full public browser replay remain pending; the source/skill-behavior review is complete.",
+    "Full public pilot browser replay and the expansion decision remain pending; source/skill-behavior review, privacy review and published asset integrity verification are complete.",
     "The dedicated actor home isolates configuration, not filesystem reads; host skill catalogs and shared Git objects remain available.",
     "Controlled model-boundary execution does not establish live provider behavior or the semantic quality of arbitrary generated prose.",
     "Encrypted reasoning and host-private world state are omitted; no natural compaction occurred.",
