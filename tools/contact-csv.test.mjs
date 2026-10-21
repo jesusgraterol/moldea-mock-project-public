@@ -54,6 +54,68 @@ test("preserves row order and fixes column order, ignoring unrelated properties"
   });
 });
 
+test("--sort=name orders contacts alphabetically without case affecting order", async () => {
+  const result = await runExporter(JSON.stringify([
+    { ...contact, name: "Zoe" },
+    { ...contact, name: "bob" },
+    { ...contact, name: "Ada" },
+    { ...contact, name: "CHARLIE" },
+    { ...contact, name: "aaron" },
+  ]), ["--sort=name"]);
+  assert.deepEqual(result, {
+    code: 0,
+    stdout: "team,name,email\nFront desk,aaron,ada@example.test\nFront desk,Ada,ada@example.test\nFront desk,bob,ada@example.test\nFront desk,CHARLIE,ada@example.test\nFront desk,Zoe,ada@example.test\n",
+    stderr: "",
+  });
+});
+
+const equalNameContacts = [
+  { team: "Z", name: "bob", email: "z@example.test" },
+  { team: "Y", name: "ADA", email: "y@example.test" },
+  { team: "A", name: "BOB", email: "a@example.test" },
+  { team: "B", name: "Ada", email: "b@example.test" },
+  { team: "M", name: "Bob", email: "m@example.test" },
+];
+
+test("equal names retain their original relative order across case variants", async () => {
+  const result = await runExporter(JSON.stringify(equalNameContacts), ["--sort=name"]);
+  assert.deepEqual(result, {
+    code: 0,
+    stdout: "team,name,email\nY,ADA,y@example.test\nB,Ada,b@example.test\nZ,bob,z@example.test\nA,BOB,a@example.test\nM,Bob,m@example.test\n",
+    stderr: "",
+  });
+});
+
+test("without the flag, the same mixed-case contacts remain in input order", async () => {
+  const result = await runExporter(JSON.stringify(equalNameContacts));
+  assert.deepEqual(result, {
+    code: 0,
+    stdout: "team,name,email\nZ,bob,z@example.test\nY,ADA,y@example.test\nA,BOB,a@example.test\nB,Ada,b@example.test\nM,Bob,m@example.test\n",
+    stderr: "",
+  });
+});
+
+test("sorting preserves all accepted field text and CSV escaping", async () => {
+  const result = await runExporter(JSON.stringify([
+    { team: "  Stage  ", name: '  zoe "Z"\n', email: " zoe@example.test " },
+    { team: "Front,desk", name: "  Ada, A ", email: " ada@example.test " },
+  ]), ["--sort=name"]);
+  assert.deepEqual(result, {
+    code: 0,
+    stdout: 'team,name,email\n"Front,desk","  Ada, A ", ada@example.test \n  Stage  ,"  zoe ""Z""\n", zoe@example.test \n',
+    stderr: "",
+  });
+});
+
+test("--sort=name still emits only the header for an empty array", async () => {
+  assert.deepEqual(await runExporter("[]", ["--sort=name"]), { code: 0, stdout: "team,name,email\n", stderr: "" });
+});
+
+test("sorting validates rows before sorting or writing CSV", async () => {
+  const result = await runExporter(JSON.stringify([contact, { ...contact, name: null }]), ["--sort=name"]);
+  assertFailure(result, /Row 2: name must be a nonempty string/);
+});
+
 test("escapes commas, doubles quotes, and preserves LF, CR, and CRLF inside cells", async () => {
   const result = await runExporter(JSON.stringify([
     { team: "Front,desk", name: 'Ada "Ace"\nLovelace', email: 'ada,"ace"@example.test' },
@@ -98,7 +160,11 @@ for (const field of ["team", "name", "email"]) {
   }
 }
 
-for (const args of [["--help"], ["--format", "csv"], ["contacts.json"], ["--"], ["--", "contacts.json"]]) {
+for (const args of [
+  ["--help"], ["--format", "csv"], ["contacts.json"], ["--"], ["--", "contacts.json"],
+  ["--sort"], ["--sort=email"], ["--sort=NAME"], ["--sort="],
+  ["--sort=name", "--sort=name"], ["--sort=name", "--help"], ["--sort=name", "contacts.json"], ["--sort=name", "--"],
+]) {
   test(`unsupported arguments fail before reading malformed input: ${JSON.stringify(args)}`, async () => {
     assertFailure(await runExporter("not JSON", args), /Unsupported command-line arguments/);
   });

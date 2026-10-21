@@ -7,9 +7,14 @@ function escapeCell(value) {
 }
 
 async function main() {
+  let sortByName = false;
   try {
-    const { tokens } = parseArgs({ options: {}, tokens: true });
-    if (tokens.length !== 0) throw new Error("No arguments are supported.");
+    const { values, tokens } = parseArgs({ options: { sort: { type: "string" } }, tokens: true });
+    if (tokens.length > 1 || tokens.some((token) => token.kind !== "option" || token.name !== "sort")
+      || (values.sort !== undefined && values.sort !== "name")) {
+      throw new Error("Only --sort=name is supported.");
+    }
+    sortByName = values.sort === "name";
   } catch {
     throw new Error("Unsupported command-line arguments.");
   }
@@ -30,7 +35,6 @@ async function main() {
   }
   if (!Array.isArray(rows)) throw new Error("Expected a JSON array.");
 
-  const lines = [columns.join(",")];
   for (const [index, row] of rows.entries()) {
     if (row === null || typeof row !== "object" || Array.isArray(row)) {
       throw new Error(`Row ${index + 1} must be an object.`);
@@ -40,8 +44,13 @@ async function main() {
         throw new Error(`Row ${index + 1}: ${column} must be a nonempty string.`);
       }
     }
-    lines.push(columns.map((column) => escapeCell(row[column])).join(","));
   }
+
+  // Ignore case, not accents. Pin the locale so host settings do not change
+  // alphabetical order; the stable sort retains input order for equal names.
+  const collator = new Intl.Collator("en", { sensitivity: "accent" });
+  const orderedRows = sortByName ? rows.toSorted((left, right) => collator.compare(left.name, right.name)) : rows;
+  const lines = [columns.join(","), ...orderedRows.map((row) => columns.map((column) => escapeCell(row[column])).join(","))];
 
   // Emit only after every row is valid; failures never leave partial CSV.
   await new Promise((resolve, reject) => {
