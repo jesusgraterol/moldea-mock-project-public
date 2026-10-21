@@ -25,7 +25,7 @@
     {
       "runId": "run-20261021-01",
       "manifestPath": "evidence/runs/run-20261021-01/run.json",
-      "summary": "Six-project Skill 10.0.0 batch in progress: Aster passed its pilot expansion gate with the inherited viewer accessibility finding retained. Cobalt completed seven requests and passed independent source/skill-behavior checks (82 tests); source/assets publication and public download verification pending. Folio, Beacon, Cinder and Quarry have not started.",
+      "summary": "Six-project Skill 10.0.0 batch in progress: Aster passed its pilot expansion gate with the inherited viewer accessibility finding retained. Cobalt completed seven requests and independent source/skill-behavior checks (82 tests), with complete published/download-verified evidence. Folio, Beacon, Cinder and Quarry have not started.",
       "evidenceStatus": "incomplete",
       "reviewStatus": "pending"
     }
