@@ -1,0 +1,10 @@
+{
+  "name": "aster-dispatch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Fictional equipment-request assistant with staff-approved handoffs.",
+  "engines": {
+    "node": ">=24"
+  }
+}

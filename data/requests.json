@@ -1,0 +1,23 @@
+[
+  {
+    "id": "request-a",
+    "itemId": "ad-light-01",
+    "quantity": 1,
+    "referenceAt": "2026-11-03T12:00:00Z",
+    "neededAt": "2026-11-04T00:00:00Z"
+  },
+  {
+    "id": "request-b",
+    "itemId": "ad-projector-03",
+    "quantity": 1,
+    "referenceAt": "2026-11-03T12:00:00Z",
+    "neededAt": "2026-11-05T00:00:00Z"
+  },
+  {
+    "id": "request-c",
+    "itemId": "ad-mic-02",
+    "quantity": 1,
+    "referenceAt": "2026-11-03T12:00:00Z",
+    "neededAt": "2026-11-04T12:00:00Z"
+  }
+]

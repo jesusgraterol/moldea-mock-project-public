@@ -1,0 +1,23 @@
+[
+  {
+    "id": "ad-light-01",
+    "name": "Portable light kit",
+    "availability": "available",
+    "quantityAvailable": 2,
+    "observedAt": "2026-11-03T08:00:00Z"
+  },
+  {
+    "id": "ad-mic-02",
+    "name": "Wireless microphone kit",
+    "availability": "unavailable",
+    "quantityAvailable": 0,
+    "observedAt": "2026-11-03T08:30:00Z"
+  },
+  {
+    "id": "ad-projector-03",
+    "name": "Portable projector",
+    "availability": "unknown",
+    "quantityAvailable": null,
+    "observedAt": null
+  }
+]
