@@ -6,6 +6,17 @@ Labels may contain up to 60 words. Dates, provenance and attribution must come f
 
 Use only the fictional notes under notes. Keep the deliverable to two skills, one shared reference and worked examples; no third skill, model service or publishing pipeline. Keep project-owned skill sources under skills.
 
+## Toolkit
+
+- [Design, worked examples, and usage](skills/design-and-examples.md)
+- [Draft exhibit labels](skills/folio-draft-label/SKILL.md)
+- [Review labels against notes](skills/folio-review-label/SKILL.md)
+- [Shared terminology, attribution, uncertainty, and counting rules](skills/shared/label-rules.md)
+
+Keep the `skills/` tree together when distributing these source artifacts; both skills use its shared resources. Host installation or registration is not changed.
+
+Check the label-only word counter with `node --test skills/shared/count-label-words.test.mjs`.
+
 ## Local development
 
 Use Node 24 and npm with exact versions and an ordinary lockfile if dependencies are needed. Small unrelated developer utilities can use JavaScript ES modules and Node's built-in test runner. Keep usage copyable and artifacts easy to inspect.
