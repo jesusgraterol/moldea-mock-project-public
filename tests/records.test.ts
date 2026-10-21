@@ -5,14 +5,14 @@ import { LookupResultSchema, LookupInputSchema, type Report } from '../src/contr
 
 const report: Report = { id: 'test', scope: 'fixture', reportedAt: '2026-10-20T00:00:00.000Z', status: 'unresolved', observation: 'Fictional observation.' };
 
-test('the inclusive 12-hour rule uses elapsed instants, including timezone offsets', () => {
+test('the inclusive 8-hour rule uses elapsed instants, including timezone offsets', () => {
   for (const [referenceAt, expected] of [
-    ['2026-10-20T11:59:59.999Z', false],
-    ['2026-10-20T12:00:00.000Z', true],
-    ['2026-10-20T12:00:00.001Z', true],
-    ['2026-10-20T08:00:00.000-04:00', true],
+    ['2026-10-20T07:59:59.999Z', false],
+    ['2026-10-20T08:00:00.000Z', true],
+    ['2026-10-20T08:00:00.001Z', true],
+    ['2026-10-20T04:00:00.000-04:00', true],
   ] as const) assert.equal(annotateReport(report, referenceAt).supervisorReview, expected);
-  assert.equal(SUPERVISOR_REVIEW_AGE_MS, 43_200_000);
+  assert.equal(SUPERVISOR_REVIEW_AGE_MS, 28_800_000);
 });
 
 test('missing times and future reports retain unknown age and eligibility', () => {
@@ -42,7 +42,7 @@ test('lookup preserves both unresolved claims, null timestamps, statuses and mis
   const result = lookupRecords(input);
   assert.ok(LookupResultSchema.safeParse(result).success);
   assert.deepEqual(result.records.map((record) => record.id), ['QH-102', 'QH-101', 'QH-103', 'QH-104']);
-  assert.deepEqual(result.records.map((record) => record.supervisorReview), [false, true, null, false]);
+  assert.deepEqual(result.records.map((record) => record.supervisorReview), [true, true, null, false]);
   assert.deepEqual(result.missingRecordIds, ['unknown']);
   assert.deepEqual(result.potentialConflicts, [{ scope: 'loading-bay-latch', claims: [
     { recordId: 'QH-102', observation: 'Door latch operated normally during the check.' },

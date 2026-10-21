@@ -21,7 +21,7 @@ export default [false, true].map((includeMissingRecord) => defineEval({
         missingRecordIds: includeMissingRecord ? ['QH-MISSING'] : [],
         records: [
           { id: 'QH-101', elapsedMs: 43_200_000, supervisorReview: true },
-          { id: 'QH-102', elapsedMs: 39_600_000, supervisorReview: false },
+          { id: 'QH-102', elapsedMs: 39_600_000, supervisorReview: true },
           { id: 'QH-103', reportedAt: null, elapsedMs: null, supervisorReview: null, timeIssue: 'missing-report-time' },
           { id: 'QH-104', status: 'resolved', supervisorReview: false },
           { id: 'QH-105', scope: 'west-service-gate', reportedAt: '2026-10-20T10:00:00.000Z', status: 'unresolved', elapsedMs: 7_200_000, supervisorReview: false,
@@ -42,7 +42,7 @@ export default [false, true].map((includeMissingRecord) => defineEval({
     for (const section of ['Observations', 'Unresolved reports', 'Missing facts', 'Conflicting reports', 'Supervisor review']) {
       t.check(turn.message, includes(`## ${section}`));
     }
-    for (const text of ['[QH-101] Unresolved for 12 elapsed hours', 'eligibility unknown',
+    for (const text of ['[QH-101] Unresolved for 12 elapsed hours', '[QH-102] Unresolved for 11 elapsed hours; requires supervisor review.', 'eligibility unknown',
       'Door latch catches intermittently during closing.', 'Door latch operated normally during the check.',
       '[QH-105] The gate latch remained engaged for the entire inspection.',
       '[QH-106] The gate latch never engaged at any point during that same inspection.',

@@ -31,6 +31,12 @@ export default [defineEval({
         record: { id: 'QH-101', elapsedMs: 43_200_000, supervisorReview: true, timeIssue: null } },
       { input: { recordIds: ['QH-101'], referenceAt: '2026-10-20T13:00:00.000Z' },
         record: { id: 'QH-101', elapsedMs: 46_800_000, supervisorReview: true, timeIssue: null } },
+      { input: { recordIds: ['QH-101'], referenceAt: '2026-10-20T07:59:59.999Z' },
+        record: { id: 'QH-101', elapsedMs: 28_799_999, supervisorReview: false, timeIssue: null } },
+      { input: { recordIds: ['QH-101'], referenceAt: '2026-10-20T08:00:00.000Z' },
+        record: { id: 'QH-101', elapsedMs: 28_800_000, supervisorReview: true, timeIssue: null } },
+      { input: { recordIds: ['QH-101'], referenceAt: '2026-10-20T08:00:00.001Z' },
+        record: { id: 'QH-101', elapsedMs: 28_800_001, supervisorReview: true, timeIssue: null } },
     ];
     for (const { input, record } of cases) {
       const turn = await session.send(JSON.stringify({ mode: 'lookup', ...input }));

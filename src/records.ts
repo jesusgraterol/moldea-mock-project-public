@@ -4,7 +4,7 @@ import {
   type AnnotatedReport, type LookupInput, type LookupResult, type Report,
 } from './contracts.ts';
 
-export const SUPERVISOR_REVIEW_AGE_MS = 12 * 60 * 60 * 1_000;
+export const SUPERVISOR_REVIEW_AGE_MS = 8 * 60 * 60 * 1_000;
 
 const parsedSource = ReportSchema.array().safeParse(source);
 if (!parsedSource.success) throw new TypeError('Invalid fictional shift-record dataset.');

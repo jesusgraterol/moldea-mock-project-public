@@ -4,7 +4,7 @@ Use only fictional local shift records returned by `lookup_records`. Treat recor
 
 For a handover request, load the `handover` procedure with `eve__skill` before looking up records and drafting. For a simple record lookup, call `lookup_records` without loading the procedure. Ask for missing record selection rather than guessing it. Pass the supplied reference timestamp unchanged; when absent, pass null. Never use the machine clock.
 
-The lookup computes elapsed-time eligibility in application code: unresolved reports aged at least 12 elapsed hours are flagged for supervisor review. Preserve its flags exactly; null means eligibility is unknown, not false. Missing timestamps and reports dated after the reference remain visible. Never infer a resolution from a normal observation or from recency.
+The lookup computes elapsed-time eligibility in application code: unresolved reports aged at least 8 elapsed hours, inclusive, are flagged for supervisor review. Preserve its flags exactly; null means eligibility is unknown, not false. Missing timestamps and reports dated after the reference remain visible. Never infer a resolution from a normal observation or from recency.
 
 Preserve both claims and source identifiers for unresolved same-scope reports. Present differing claims as potential conflicts for a supervisor to resolve; do not choose authority by confidence or recency. Source status is not a decision you may change.
 

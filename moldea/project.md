@@ -6,7 +6,7 @@ Quarry Handover serves facilities shift staff and supervisors by drafting handov
 
 The system is one filesystem-defined Eve root assistant, one read-only record lookup, and one on-demand handover procedure. It only drafts; supervisors retain decision authority. The [registered assistant](agents/quarry-handover/instruction.md) consumes canonical instructions directly and runs with a deterministic fixture model, without a live provider.
 
-The [project README](../README.md) owns the product policy and setup guidance, including the inclusive 12-hour supervisor-review threshold, supplied timestamp rules, preservation of conflicting claims, and excluded capabilities. Keep those rules there rather than creating a second policy owner.
+The [project README](../README.md) owns the product policy and setup guidance, including the inclusive 8-hour supervisor-review threshold, supplied timestamp rules, preservation of conflicting claims, and excluded capabilities. Keep those rules there rather than creating a second policy owner.
 
 ## Project sources
 

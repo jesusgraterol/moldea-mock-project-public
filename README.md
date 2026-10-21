@@ -2,7 +2,7 @@
 
 Quarry Handover drafts facilities shift handovers from fictional local records. One filesystem-defined Eve assistant will use one read-only record lookup and one on-demand handover procedure. It only drafts: supervisors review decisions, and it cannot close incidents, assign staff or execute operational actions.
 
-Unresolved reports aged at least 12 elapsed hours require supervisor review. Use supplied report and reference timestamps rather than the machine clock; missing timestamps remain unknown. Retain conflicting same-scope reports with both claims and identifiers until a supervisor resolves them. Do not choose an authority by recency or confidence.
+Unresolved reports aged at least 8 elapsed hours, inclusive, require supervisor review. Use supplied report and reference timestamps rather than the machine clock; missing timestamps remain unknown. Retain conflicting same-scope reports with both claims and identifiers until a supervisor resolves them. Do not choose an authority by recency or confidence.
 
 A handover separates observations, unresolved reports, missing facts and supervisor-review items. Keep one root assistant, no subagents, schedules, memory service, external channels, model judge, UI or cloud deployment. Deterministic local checks may use a loopback runtime and a controlled model boundary.
 
@@ -31,7 +31,9 @@ The root assistant deliberately uses Eve 0.82.0's documented `mockModel` fixture
 
 Use null or omit `referenceAt` when it is unknown. Supplied timestamps must include a timezone. `lookup` reads records without loading the handover procedure; `handover` loads it on demand before the lookup. Missing identifiers are listed, never invented. Differing unresolved same-scope observations are retained as potential conflicts, not automatically reconciled. Future-dated reports retain unknown age and a visible chronology issue.
 
-For the sample above, QH-101 requires review at exactly 12 hours; QH-102 is 11 hours old and remains visible alongside its conflicting claim. QH-103 has unknown age and review eligibility. QH-104 retains its resolved source status and is not an unresolved age-based escalation.
+For the sample above, QH-101 is 12 hours old and QH-102 is 11 hours old: both exceed the approved 8-hour threshold and require supervisor review, with both conflicting claims retained. QH-103 has unknown age and review eligibility. QH-104 retains its resolved source status and is not an unresolved age-based escalation.
+
+For QH-101, reported at `2026-10-20T00:00:00.000Z`, reference times `07:59:59.999Z`, `08:00:00.000Z` and `08:00:00.001Z` on that date produce review flags false, true and true respectively. `npm run test:runtime` exercises all three through real Eve lookup and handover requests, with actual procedure loading and instruction consumption. For unresolved reports, missing times and reports after the supplied reference retain unknown age and eligibility; supervisors alone make decisions. The policy update does not rewrite historical runtime artifacts or the two repair histories below.
 
 Evals and their configuration live under `evals/`, outside `agent/`. Assertions at the fixture-model boundary inspect the complete canonical system instruction, the actual selected procedure text returned by `eve__skill`, the available tool schema and real lookup results. Eval assertions also inspect the lookup's actual inputs/results and exercise greetings, unrelated requests and prohibited operations. Reports are written by Eve under ignored `.eve/evals/`.
 
