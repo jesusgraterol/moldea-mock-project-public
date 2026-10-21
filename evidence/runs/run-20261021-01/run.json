@@ -1,0 +1,42 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261021-01",
+  "date": "2026-10-21",
+  "summary": "Six-project Skill 10.0.0 batch in progress: Aster completed six requests and passed independent real-LangGraph source/behavior checks; its public integrity/replay gate is pending. Cobalt, Folio, Beacon, Cinder and Quarry have not started.",
+  "expectedActor": {
+    "model": "gpt-6.1-sol",
+    "effort": "xhigh"
+  },
+  "prerequisites": [
+    {
+      "component": "skill",
+      "version": "v10.0.0",
+      "integrity": "git-tag:34eac2b3fb6bc1039b3960cecae22e65b2a7b3d6;commit:950b89eb4c41564953fa1582fdd588992e152d37",
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt",
+        "locator": "release-skill; release-tag; expected-distribution"
+      }
+    },
+    {
+      "component": "cli",
+      "version": "13.0.0",
+      "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA==",
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt",
+        "locator": "registry-method; @moldea.ai/cli 13.0.0 registry row"
+      }
+    }
+  ],
+  "attempts": [
+    "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json"
+  ],
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "pending",
+  "review": null,
+  "limitations": [
+    "The Aster pilot gate is pending. The other five projects have no attempts yet.",
+    "Publication, independent review and full replay are pending."
+  ]
+}
