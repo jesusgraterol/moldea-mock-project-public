@@ -1,0 +1,2340 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261021-01",
+  "scenarioId": "beacon-collections",
+  "attemptId": "beacon-collections-01",
+  "branch": "fixture_openai_xs_beacon_collections_01",
+  "baseCommit": "00d40168e72742bb9e1980c18e666b283ebc4f51",
+  "finalCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+  "lastDurableCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/beacon-collections.md",
+    "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
+  },
+  "observedSummary": "Seven requests completed direct OpenAI takeover, explicit adoption, deterministic missing-field improvement and human approval maintenance. One planned driver-only consumed-instruction fault was preserved separately; blind repair restored the exact healthy tree and the healthy repeat changed no source.24 final actor tests passed. Independent source/host/privacy review, signed source publication and authenticated/anonymous Release byte checks complete.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "hostVersion": "0.163.0",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 82,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 264,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 355,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 427,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 462,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 548,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "beacon-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Review Beacon Collections, our small archive prototype, and explain its accession-note workflow, approval rules, and missing-field handling. Keep this first pass read-only and suggest the smallest useful improvement.\n",
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 9,
+      "beforeCommit": "00d40168e72742bb9e1980c18e666b283ebc4f51",
+      "afterCommit": "00d40168e72742bb9e1980c18e666b283ebc4f51",
+      "observedResult": "Read-only takeover: source unchanged, curator authority and missing-field consistency gap identified. Actual prototype1test/typecheck passed; no adoption or live provider call.",
+      "redactionIds": []
+    },
+    {
+      "id": "beacon-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Initialize moldea for Beacon Collections, including the existing inline accession-note assistant. Preserve application behavior and the existing approval-policy authority. You may add the required managed moldea guidance to docs/host-instructions.md through the existing repository-relative AGENTS.md link; preserve the symbolic link itself and all unrelated host instructions. Use @moldea.ai/cli@13.0.0 for this setup. Do not implement the missing-field improvement yet.\n",
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 83,
+      "beforeCommit": "00d40168e72742bb9e1980c18e666b283ebc4f51",
+      "afterCommit": "402901394bbd4ae3e2ea4874fc13f485130b0c79",
+      "observedResult": "Explicit initialization adopted one existing assistant with CLI13.0.0; connected real instruction loader/SDK/schema, preserved application behavior, policy authority, relative AGENTS symlink and unrelated host text. Missing-field work stayed deferred.",
+      "redactionIds": []
+    },
+    {
+      "id": "beacon-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Implement the missing-field improvement you suggested. Compute missingFields deterministically from the selected record's null maker, date and provenance values, so an incorrect or duplicate model list cannot hide or invent gaps. Keep the returned note tied to the requested accession, the existing structured-note workflow and curator-only human approval. Add focused checks through the real OpenAI client with controlled transport, including incorrect model lists and malformed responses, and update the directly affected usage documentation. Run npm test and npm run typecheck. Keep it one assistant with read-only accession data.\n",
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 265,
+      "beforeCommit": "402901394bbd4ae3e2ea4874fc13f485130b0c79",
+      "afterCommit": "1cb7c985190cebc625e3f8531b9f013a28f80f04",
+      "observedResult": "Implemented source-derived unique missingFields, foreign-accession rejection and malformed-response handling.23 actor tests/typecheck/validation passed; one assistant and readonly records retained.",
+      "redactionIds": []
+    },
+    {
+      "id": "beacon-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "The collections lead now approves accession readiness instead of the curator. Update the assistant and its checks to reflect that; the assistant still only drafts notes. Keep the existing approval-policy document authoritative, preserve unknown source facts and read-only records, and run the native checks.\n",
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 356,
+      "beforeCommit": "1cb7c985190cebc625e3f8531b9f013a28f80f04",
+      "afterCommit": "6f7ff5e9a81b93e872f009e6566b30f1afa4aa9d",
+      "observedResult": "Approved authority correction propagated to policy, consumed instruction, structured approvalAuthority collections-lead, schema/tests/docs/context.24 actor tests/typecheck/validation passed; human-only draft boundary preserved.",
+      "redactionIds": []
+    },
+    {
+      "id": "beacon-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Make the README's local verification commands easier to copy: put npm test and npm run typecheck in a short local-development section with a fenced shell block, outside the managed moldea region. Keep the existing meaning and product behavior; this is a small documentation cleanup only.\n",
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 428,
+      "beforeCommit": "6f7ff5e9a81b93e872f009e6566b30f1afa4aa9d",
+      "afterCommit": "92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211",
+      "observedResult": "Actor completed README command formatting only at healthy checkpoint 341a0fbd81dd3203434a853a18eb89ac6d83fbe6. After that turn, the DRIVER applied the approved isolated instruction drift 341a0fbd81dd3203434a853a18eb89ac6d83fbe6 -> 92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211. 92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211 is this row's POST-TURN DRIVER CAPTURE BOUNDARY, NOT the actor result. Healthy H was committed and its real SDK/current-policy check passed before injection. The driver changed only the consumed instruction to old curator references; authoritative policy/schema remained collections-lead.",
+      "redactionIds": []
+    },
+    {
+      "id": "beacon-request-06",
+      "ordinal": 6,
+      "kind": "follow-up",
+      "text": "Fix moldea.\n",
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 463,
+      "beforeCommit": "92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211",
+      "afterCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "observedResult": "Natural blind Fix moldea diagnosed the injected instruction/policy mismatch. Initial23/24 test diagnostic failure retained; actor repaired only the consumed instruction against current collections-lead authority, then24 tests/typecheck/validation passed. Repaired tree f614e97611569152ac47ef505cb8f3976f1902a5 exactly equals healthy H; no driver repair/assistance.",
+      "redactionIds": []
+    },
+    {
+      "id": "beacon-request-07",
+      "ordinal": 7,
+      "kind": "follow-up",
+      "text": "Fix moldea.\n",
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 549,
+      "beforeCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "afterCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "observedResult": "Identical healthy Fix moldea repeat after verified repair: no files changed;24 tests/typecheck/smoke/final4bindings passed, no live provider call.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 2,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 3,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 4,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 5,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 80,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 262,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 353,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 425,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 460,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 546,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "manual",
+      "description": "First-turn capture22events/context7/request9 reconciled exact text/settings/absent CLI/Core before request02. Read-only actual actor1test/typecheck passed at unchanged seed.",
+      "inputCommit": "00d40168e72742bb9e1980c18e666b283ebc4f51",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Actor adoption checks: real SDK outgoing instructions equal actual module-relative canonical loader; strict schema/storefalse inspected; app behavior, policy owner and AGENTS symlink/unrelated target preserved.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actual actor request03 npm test: 23passed; typecheck/closed validation passed. Intermediate uncommitted source inputs except unchanged healthy repeat; exact native commands/results retained.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actual actor request04 npm test: 24passed; typecheck/closed validation passed. Intermediate uncommitted source inputs except unchanged healthy repeat; exact native commands/results retained.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actual actor request06 npm test: 24passed; typecheck/closed validation passed. Intermediate uncommitted source inputs except unchanged healthy repeat; exact native commands/results retained.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actual actor request07 npm test: 24passed; typecheck/closed validation passed. Intermediate uncommitted source inputs except unchanged healthy repeat; exact native commands/results retained.",
+      "inputCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Healthy actor checkpoint H committed after request05, then real OpenAI client/current-policy boundary check actually ran AT H and passed; scriptSHAae28669f202f127202c35edf46626bd2c89bad3a6ce7409da2d3e0941efbcfc1. Consumedcanonicalinstruction/schema lead; source-derived gaps and readonly data verified.",
+      "inputCommit": "341a0fbd81dd3203434a853a18eb89ac6d83fbe6",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Planned DRIVER H->D exact one-file/two-reference patch verified, separately signed after native taskcomplete456/healthyHcheck and before actual request06. Policy/schema/allotherpaths/nativeparent unchanged. Passed means isolated injection verified, NOT healthy D.",
+      "inputCommit": "92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Same real SDK boundary check AT D observed consumedcuratorinstruction while policy/schema stayedlead; expected semantic assertion failed(exit1). Controlledreply stilllead; actualbody/output retained. This is the planned driver fault, not spontaneous actor/model/library failure.",
+      "inputCommit": "92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211",
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Actual closed CLI structural validation AT injectedD passed despite semantic instruction/policy mismatch; structure alone does not establish health.",
+      "inputCommit": "92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Repair initial native npm test at injectedD failed23/24 on currentauthority instruction assertion; this expected diagnostic precedes the actor patch and later24/24 pass.",
+      "inputCommit": "92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211",
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Root exact same real SDK boundary check AFTER signedR passed; D->R changesonlyinstruction and R Git tree EXACTLY equals H. No driver application repair or actor assistance.",
+      "inputCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Healthy repeat source before=afterR;24tests/typecheck/smoke/validation pass. Root bash-n actualREADME1shellblock passed at finalR.",
+      "inputCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Fresh independent seed1/core23/policy24/repaired24 tests and typechecks passed. Exact source SDK transport probes cover outside-cwd loader, strictliteral schema, failed/refusal response and transport rejection, unchangeddata; finalclosedvalidation0errors/warnings/4exports.",
+      "inputCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact H/D/R boundary reruns confirm Hpass, Dexpected semanticfailure with preservedleadpolicy/schema, Rpass and treeequalH; isolateddriverpatchbytes/hash/timing agree. Actualr6nativeinitial23/24diagnostic failure and later24/24pass preserved.",
+      "inputCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent first proposed609native records ->179shareableevents/106masks reconcile exactly;7actualrequestlocators9/83/265/356/428/463/549 andcontexts7/82/264/355/427/462/548 agree. Same-text repair requests resolved by native locator, not text alone. Before publication, a new candidate adds8 unrelated owner/group masks only; original private candidate retained. Narrow new-candidate reconciliation is separate.",
+      "inputCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Full introduced7commits/76distinctsourceversions and all36publishedSkillbytes independently reviewed; originalrelativeAGENTS symlinkblob/mode preserved throughout. Rootsource/capture scan corroborates without universalprivacyclaim.",
+      "inputCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Existing verifier against exact private proposed bytes passed for four attempts with batch incomplete; metadata uncommitted, inputCommit null. This alone did not establish publication.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Independent selected-candidate overlay audit and full public-copy privacy review passed:179 events/609 native records/114 masks, exact seven request/context/source locators and frozen205271-byte identity log. Original106-mask candidate stays private;8 extra owner/group masks change no behavioral content.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Published two distinct Beacon assets without replacement. Authenticated gh downloads and anonymous curl -q with no auth flags/headers and GitHub token environment names removed matched reviewed sizes/hashes. Fixed tag43ebb11aed5beb591532cc7493ad49b2c818f80f and all six earlier asset IDs/sizes/digests/timestamps unchanged.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Fresh independent full introduced source/host/capture/public-copy review passed. Root reviewed later factual publication/check/status prose deltas before the final record commit. The planned driver fault and both expected diagnostic failures remain explicit.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "f614e97611569152ac47ef505cb8f3976f1902a5",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/beacon-collections-01.json",
+        "evidence/scenarios/beacon-collections.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/00d40168e72742bb9e1980c18e666b283ebc4f51/f614e97611569152ac47ef505cb8f3976f1902a5",
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz",
+        "run-20261021-01/beacon-collections-identities-01.txt"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "Existing evidence verifier against actual authenticated and anonymous Release download roots passed: four attempts, batch evidence incomplete. All Beacon request/context/composition/source/asset/privacy records reconcile. This checks evidence structure and bytes, not application correctness; record inputs uncommitted.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt",
+        "locator": "beacon-request-01-context-7; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Actual inert initial/per-context manifest, lock and installed metadata: this component not declared or installed. Prototype SDK dependencies are separately present."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Actual inert initial/per-context manifest, lock and installed metadata: this component not declared or installed. Prototype SDK dependencies are separately present."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 82,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt",
+        "locator": "beacon-request-02-context-82; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Actual inert initial/per-context manifest, lock and installed metadata: this component not declared or installed. Prototype SDK dependencies are separately present."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Actual inert initial/per-context manifest, lock and installed metadata: this component not declared or installed. Prototype SDK dependencies are separately present."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 264,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt",
+        "locator": "beacon-request-03-context-264; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 355,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt",
+        "locator": "beacon-request-04-context-355; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 427,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt",
+        "locator": "beacon-request-05-context-427; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 462,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt",
+        "locator": "beacon-request-06-context-462; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "eventOrdinal": 548,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt",
+        "locator": "beacon-request-07-context-548; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v10.0.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261021-01",
+      "name": "beacon-collections-01-session-01.jsonl.gz",
+      "sizeBytes": 188112,
+      "sha256": "39b1fb2d94ac8556999496e12235b7af44021ece85f1d358873da4680e9dd561",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 608
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261021-01",
+      "name": "beacon-collections-identities-01.txt",
+      "sizeBytes": 205271,
+      "sha256": "b6dde295ddfaae9e27ae11a148e8df158d561488966bb0e9c5632a3a02416b15",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "PLANNED controlled instruction fault: after healthy actor H=341a0fbd81dd3203434a853a18eb89ac6d83fbe6 and actual passing SDK check, driver separately changed only consumed canonical instruction H->D=92cac2ae654a6eb0e7f6ad82dcdb6fe608c49211 to earlier curator references. Authoritative policy/schema stayedcollections-lead. Root SDKcheck failed atD and actor r6 diagnostic npm test failed23/24; blind repair atR=f614e97611569152ac47ef505cb8f3976f1902a5 restored exactHtree. This is neither spontaneous actor/distribution failure nor an intervention; exact patch/timing/consumption and source boundaries retained.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "Reviewer-only harness setup initially validated a nongit extraction, omitted cwd for one policy wrapper (root evidence tests ran; root typecheck absent), and attempted a dependency symlink refused by closed-launcher containment. Corrected using owned exact-source Git metadata, correct cwd and physical lockfile install; all required exact-source reruns passed. These are review setup issues, not actor or component findings.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "beacon-collections-identities-01.txt"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "bc-path-0001",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0002",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0003",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0004",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0005",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0006",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0007",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0008",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0009",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0010",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0011",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0012",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0013",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0014",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0015",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0016",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0017",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0018",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 42,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0019",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 42,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0020",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 42,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0021",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 73,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0022",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 73,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0023",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 73,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0024",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 73,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0025",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 80,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0026",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 80,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0027",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 80,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0028",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 135,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0029",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 174,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0030",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 174,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0031",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 181,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0032",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 186,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0033",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 191,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0034",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 191,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0035",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 201,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0036",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 208,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0037",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 208,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0038",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 208,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0039",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 208,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0040",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 208,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0041",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 208,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0042",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 208,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0043",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 228,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0044",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0045",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 247,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0046",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0047",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 262,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0048",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 269,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0049",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 299,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0050",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 299,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0051",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 299,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0052",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 299,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0053",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 306,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0054",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0055",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 338,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0056",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 346,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0057",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 353,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0058",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 353,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0059",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 353,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0060",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 353,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0061",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 353,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0062",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 353,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0063",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 353,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0064",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 360,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0065",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0066",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0067",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0068",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0069",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0070",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0071",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0072",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0073",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 410,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0074",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 418,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0075",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 425,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0076",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 425,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0077",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 425,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0078",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 432,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0079",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 441,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0080",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 453,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0081",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 460,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0082",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 460,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0083",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 460,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0084",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 460,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0085",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 460,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0086",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 460,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0087",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 460,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0088",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 467,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0089",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 476,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0090",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 483,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0091",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 490,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0092",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 508,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0093",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 513,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0094",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 517,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0095",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 522,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0096",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 531,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0097",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 539,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0098",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 546,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0099",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 546,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0100",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 546,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0101",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 555,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0102",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 555,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0103",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 561,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0104",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 566,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0105",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 584,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-path-0106",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 591,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-owner-0001",
+      "reason": "Unrelated local file owner/group metadata; preserve mode, filename, symlink target and public contributor/source URLs.",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "output",
+        4,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-owner-0002",
+      "reason": "Unrelated local file owner/group metadata; preserve mode, filename, symlink target and public contributor/source URLs.",
+      "eventOrdinal": 51,
+      "path": [
+        "payload",
+        "output",
+        6,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-owner-0003",
+      "reason": "Unrelated local file owner/group metadata; preserve mode, filename, symlink target and public contributor/source URLs.",
+      "eventOrdinal": 51,
+      "path": [
+        "payload",
+        "output",
+        6,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-owner-0004",
+      "reason": "Unrelated local file owner/group metadata; preserve mode, filename, symlink target and public contributor/source URLs.",
+      "eventOrdinal": 68,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-owner-0005",
+      "reason": "Unrelated local file owner/group metadata; preserve mode, filename, symlink target and public contributor/source URLs.",
+      "eventOrdinal": 95,
+      "path": [
+        "payload",
+        "output",
+        4,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-owner-0006",
+      "reason": "Unrelated local file owner/group metadata; preserve mode, filename, symlink target and public contributor/source URLs.",
+      "eventOrdinal": 224,
+      "path": [
+        "payload",
+        "output",
+        5,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-owner-0007",
+      "reason": "Unrelated local file owner/group metadata; preserve mode, filename, symlink target and public contributor/source URLs.",
+      "eventOrdinal": 334,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "bc-owner-0008",
+      "reason": "Unrelated local file owner/group metadata; preserve mode, filename, symlink target and public contributor/source URLs.",
+      "eventOrdinal": 408,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "sessionId": "01a16075-fcac-74f0-b943-de751f873c3a",
+      "affectedLocations": [
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Version1 has one afterCommit per actual request. Request05 prominently identifies healthy actor H separately from post-turn DRIVER boundary D, with exact H->D patch/timing/SDK checks in identity log. No synthetic actor request/event/intervention was created. The private original request checkpoint remains H and separate driver transition names D.",
+    "Controlled-fetch checks exercise the real OpenAI7.41 client and owned loader/invocation/schemas, not live provider behavior. At D the scripted reply still returned collections-lead metadata; the demonstrated defect is the ACTUAL outgoing consumed curator instruction versus current policy/schema.",
+    "Deterministic missingFields and schema/ID validation do not verify every factual or approval claim within generated draft prose; human review remains necessary. No operational archive integration or record writes exist.",
+    "Dedicated actor home isolates configuration, not filesystem reads; host catalogs/shared Git objects remain available.",
+    "Actor checks with null inputCommit ran on uncommitted intermediate source; exact committed H/D/R checks and independent reruns are separate.",
+    "Linux/Node24 and intentional safe repository-relative instruction symlink only; other platforms, unsafe links, large inventories and forced continuation unexercised. Encrypted reasoning/private host state omitted; no natural compaction observed.",
+    "Full combined public browser replay remains Milestone8; no separate Beacon browser replay claimed.",
+    "The selected prepublication capture adds8 local ls owner/group masks to the original106prefix rules; public contributor/source URLs remain. Original private proposed bytes retained; no actor/source/request change or replacement of published assets.",
+    "Private-candidate/publication/status metadata checks have null inputCommit because record inputs were uncommitted; frozen source/assets are checked separately. Merged public records are consumed before milestone close and during the combined handoff."
+  ]
+}

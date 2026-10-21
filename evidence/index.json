@@ -25,7 +25,7 @@
     {
       "runId": "run-20261021-01",
       "manifestPath": "evidence/runs/run-20261021-01/run.json",
-      "summary": "Six-project Skill 10.0.0 batch in progress: Aster passed its pilot gate; Cobalt and Folio completed with independent review and published/download-verified evidence. Folio used eight source-skill/utility requests and 32 tests. Beacon, Cinder and Quarry have not started.",
+      "summary": "Six-project Skill 10.0.0 batch in progress: Aster passed its pilot gate; Cobalt, Folio and Beacon completed with independent review and published/download-verified evidence. Beacon used seven requests and24 tests, with a separately attributed planned driver instruction fault, blind repair and unchanged healthy repeat. Cinder and Quarry have not started.",
       "evidenceStatus": "incomplete",
       "reviewStatus": "pending"
     }
