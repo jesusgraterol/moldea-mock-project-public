@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "runId": "run-20261021-01",
   "date": "2026-10-21",
-  "summary": "Six-project Skill 10.0.0 batch in progress: Aster passed its pilot expansion gate with the inherited viewer accessibility finding retained. Cobalt completed seven requests and independent source/skill-behavior checks (82 tests), with complete published/download-verified evidence. Folio, Beacon, Cinder and Quarry have not started.",
+  "summary": "Six-project Skill 10.0.0 batch in progress: Aster passed its pilot gate; Cobalt and Folio completed with independent review and published/download-verified evidence. Folio used eight source-skill/utility requests and 32 tests. Beacon, Cinder and Quarry have not started.",
   "expectedActor": {
     "model": "gpt-6.1-sol",
     "effort": "xhigh"
@@ -31,13 +31,14 @@
   ],
   "attempts": [
     "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json",
-    "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json"
+    "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json",
+    "evidence/runs/run-20261021-01/attempts/folio-workshop-01.json"
   ],
   "evidenceStatus": "incomplete",
   "reviewStatus": "pending",
   "review": null,
   "limitations": [
     "Aster pilot expansion gate passed with the inherited moderate landmark-unique viewer finding retained; no accessibility-conformance claim.",
-    "Cobalt independent review, privacy, source/records/assets publication and actual authenticated/anonymous download verification are complete. Combined public browser replay remains Milestone8; four projects have no attempts yet."
+    "Cobalt and Folio independent review, privacy, source/records/assets publication and authenticated/anonymous downloaded bytes verified. Three projects have no attempts yet; combined browser replay remains Milestone8."
   ]
 }
