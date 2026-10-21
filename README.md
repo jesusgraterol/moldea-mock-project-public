@@ -7,3 +7,9 @@ Unresolved reports aged at least 12 elapsed hours require supervisor review. Use
 A handover separates observations, unresolved reports, missing facts and supervisor-review items. Keep one root assistant, no subagents, schedules, memory service, external channels, model judge, UI or cloud deployment. Deterministic local checks may use a loopback runtime and a controlled model boundary.
 
 Use Node 24, npm and exact package versions already declared in package.json. Source records and sample requests are fictional and read-only. No assistant, procedure or application tests have been implemented.
+
+<!-- moldea:start -->
+
+This project uses [moldea](https://skill.moldea.ai) to keep project knowledge in Git and bring relevant context into coding-agent work.
+Start at [the project overview](moldea/project.md); [the manifest](moldea/moldea.yaml) maps context and implementation relationships.
+<!-- moldea:end -->
