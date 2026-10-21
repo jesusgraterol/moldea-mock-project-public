@@ -2,7 +2,7 @@
 
 ## Driver brief
 
-Draft for a future run: a standalone editorial toolkit with two connected Agent Skills. One drafts exhibit labels from supplied source notes; the other reviews labels against those notes. They share one reference for terminology, attribution, uncertainty, and length rules, with worked examples for complete, incomplete, and conflicting inputs.
+Prepared driver brief: a standalone editorial toolkit with two connected Agent Skills. One drafts exhibit labels from supplied source notes; the other reviews labels against those notes. They share one reference for terminology, attribution, uncertainty, and length rules, with worked examples for complete, incomplete, and conflicting inputs.
 
 Initial product facts: labels may contain up to 60 words. Dates, provenance, and attribution must come from the supplied notes; unsupported facts must not be invented. Distinguish a grounded label, a request for missing information, and a review finding. A label can satisfy its word limit and still fail factual review.
 
@@ -10,15 +10,15 @@ The proposed seed contains a small product README, ordinary local-development co
 
 This project is intended to remain unadopted. Independent skill artifacts are the deliverable; do not plan canonical project initialization or CLI/Core installation merely because moldea is available. The small unrelated contributor-list formatting request is ordinary repository work, not a third skill.
 
-Execution has not started. No seed, installation, run, or source checkpoint exists for this draft. Run/attempt IDs, branch, actual fixture base, driver-seed SHA, immutable skill identity, and distribution-verification method remain unassigned. The [operating guide](../../docs/simulation-workflow.md) provides the established base and naming convention; its earlier release pins and actor settings are not this project's selections. Keep this brief, future corrections, and reviewer criteria outside the actor worktree; do not seed the later 40-word rule or expected review outcomes.
+Run selection: `run-20261021-01`, scenario `folio-workshop`, initial attempt `folio-workshop-01`, branch `fixture_skill_only_xs_folio_workshop_01`, and fixture base `c3ecda12e853b527a96c6ca81150083b0224643a`. Use two independent host Agent Skills, without canonical adoption or a runtime agent. Select Skill `v10.0.0`, tag object `34eac2b3fb6bc1039b3960cecae22e65b2a7b3d6`, resolved commit `950b89eb4c41564953fa1582fdd588992e152d37`, installed through `skills@1.7.4`. Verify installed bytes against that release; content identity is SHA-256 of the compact UTF-8 JSON array of sorted relative `{path,sha256}` file records. Actual seed SHA and installed content hash are pending. No project run has started. Earlier operating-guide release pins are not this run's selection.
 
 ## Actor setup
 
-Setup has not been performed for this project. A later run must record actual base/seed SHAs, the selected skill ref/commit and installed distribution hash with its verification method, and inert initial CLI/Core/adapter observations. Evidenced absence is valid for this independent-artifact project, but unobserved state is unknown. Do not infer absence from the intended project category or a resulting lockfile.
+Shared run configuration was checked before execution: reuse the authenticated dedicated private Codex home; request `gpt-6.1-sol` at `xhigh`, workspace-write with network, approvals never, and personality none. No MCP servers or hooks are configured; the personal discovery helper is disabled. Authentication reports ChatGPT login. No credentials or personal configuration are copied. Actual host catalogs/instruction sources and effective settings must be recorded from the native session; configuration isolation is not filesystem isolation.
 
-Record the dedicated actor configuration/home identity without private paths or credentials, requested and effective model/effort, permissions/network/approvals, personality, tools/MCP/hooks/skills, instruction sources, authentication result, and isolation limits. No personal authentication, future requests, or audit criteria belongs in the actor project. A separate home alone does not isolate filesystem reads.
+Use Node 24 and npm, with a task-owned writable npm cache in an allowed temporary write root. Record actual base/seed SHAs, installed Skill ref/commit/content hash and method, SDK identities where applicable, and inert initial CLI/Core/adapter observations before the first request. The target CLI is `13.0.0`; actual installed tooling and per-project Core/adapter baselines remain observations, not copied targets. Evidenced absence is valid; unavailable evidence is unknown. Do not infer initial state from a resulting lockfile.
 
-The [evidence contract](../README.md) governs actual observations, source checkpoints, delivered requests, and later capture. Selection of the actor and finished distribution, installation, authentication, and execution belong to later planning; no skill examples have been executed for this draft.
+No project seed, installed distribution, actor inference, session, or application check exists yet. Keep this brief, future requests/corrections, and reviewer criteria outside the actor worktree. The [evidence contract](../README.md) governs actual capture, settings, checkpoints, checks, privacy, recovery, and publication. The [operating guide](../../docs/simulation-workflow.md) supplies the established procedure; its earlier batch's pins are historical.
 
 ## Prospective conversation
 
