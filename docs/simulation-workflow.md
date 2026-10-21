@@ -8,7 +8,9 @@ Read the [evidence contract](../evidence/README.md) and copy the [scenario templ
 
 Use `fixture_<foundation>_xs_<project_slug>_01` for a fresh family, lowercase ASCII within 64 characters. The foundation identifies the actual SDK or purpose, such as `langgraph`, `skill_only`, `foundation_only` or `context_only`. A fresh retry increments the final number and records its predecessor and reason. Product follow-ups and genuine conversation continuation remain in the existing attempt.
 
-Create an isolated worktree from `c3ecda12e853b527a96c6ca81150083b0224643a`. Seed only ordinary product facts/conventions and the selected project-local distribution. For this batch, Skill `v8.1.0` resolves to `c2bb924653d5d27943feb5d2103e154ad8131079`, and fresh adoption targets CLI `11.0.2`. Install through the documented project-local path:
+Create an isolated worktree from `c3ecda12e853b527a96c6ca81150083b0224643a`. Seed only ordinary product facts/conventions and the selected project-local distribution. Select immutable Skill, installer, exact CLI target, and requested actor settings from the approved run setup/scenario definitions; actual run prerequisites and observations belong in its manifest after a real session exists. Do not infer a new run's selection from this guide's historical examples.
+
+Historical example: `run-20261013-01` selected Skill `v8.1.0`, resolving to `c2bb924653d5d27943feb5d2103e154ad8131079`, and CLI `11.0.2`. Its project-local installation command was:
 
 ```sh
 env CODEX_HOME=<private-actor-home> npm exec --yes --package=skills -- skills add moldea-ai/skill#v8.1.0 --skill moldea --agent codex --yes
@@ -18,7 +20,7 @@ Verify the immutable release and installed distribution bytes, then make an exac
 
 Use a dedicated private Codex home, explicit model/effort and deliberate permissions, approvals, network, personality, skills, MCP/hooks and instruction sources. A profile overlays personal configuration. Verify authentication in that same home before starting; the developer completes browser sign-in when needed. Keep authentication private. Inspect actual host-provided instruction/catalog inputs too: a separate home did not prevent bundled plugin catalogs from appearing or changing during the pilot. Configuration isolation is not filesystem isolation.
 
-The pilot used `gpt-6.1-sol`/`xhigh`, workspace-write with network, approvals never, personality none, no configured MCP/hooks and a disabled personal discovery helper. Its default npm cache was read-only; the actor recovered with a disposable writable cache. Later seeds can deliberately supply a private writable npm cache, recording that choice. Automatically captured host-version metadata is provenance; it has no target or readiness rule.
+The `run-20261013-01` pilot used `gpt-6.1-sol`/`xhigh`, workspace-write with network, approvals never, personality none, no configured MCP/hooks and a disabled personal discovery helper. Its default npm cache was read-only; the actor recovered with a disposable writable cache. Later seeds can deliberately supply a private writable npm cache, recording that choice. Automatically captured host-version metadata is provenance; it has no target or readiness rule.
 
 ## Conduct and capture
 
