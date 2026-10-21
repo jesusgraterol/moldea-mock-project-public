@@ -61,3 +61,26 @@ test('unknown reference stays unknown and input cannot request extra actions or 
   }
   assert.equal(LookupInputSchema.safeParse({ recordIds: ['QH-101'], close: true }).success, false);
 });
+
+test('equal-time contradictory gate claims remain separate unresolved reports, independent of order', () => {
+  const claims = [
+    { recordId: 'QH-105', observation: 'The gate latch remained engaged for the entire inspection.' },
+    { recordId: 'QH-106', observation: 'The gate latch never engaged at any point during that same inspection.' },
+  ];
+  for (const recordIds of [['QH-105', 'QH-106'], ['QH-106', 'QH-105']]) {
+    const result = lookupRecords({ recordIds, referenceAt: '2026-10-20T12:00:00.000Z' });
+    assert.equal(result.records.length, 2);
+    for (const record of result.records) {
+      assert.equal(record.scope, 'west-service-gate');
+      assert.equal(record.reportedAt, '2026-10-20T10:00:00.000Z');
+      assert.equal(record.status, 'unresolved');
+      assert.equal(record.elapsedMs, 7_200_000);
+      assert.equal(record.supervisorReview, false);
+      assert.equal(record.observation, claims.find((claim) => claim.recordId === record.id)!.observation);
+    }
+    assert.deepEqual(result.potentialConflicts, [{
+      scope: 'west-service-gate',
+      claims: recordIds.map((id) => claims.find((claim) => claim.recordId === id)!),
+    }]);
+  }
+});

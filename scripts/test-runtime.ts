@@ -16,7 +16,7 @@ let server: Awaited<ReturnType<typeof startProcessAndWait>> | undefined;
 
 try {
   const help = await runEve(['eval', '--help'], shutdown.signal);
-  for (const option of ['--strict', '--url', '--timeout', '--max-concurrency', '--skip-report']) {
+  for (const option of ['--strict', '--url', '--timeout', '--max-concurrency', '--skip-report', '--verbose']) {
     assert.ok(help.includes(option), `Installed eve eval must support ${option}.`);
   }
   const startHelp = await runEve(['start', '--help'], shutdown.signal);
@@ -46,7 +46,7 @@ try {
   });
   process.stdout.write(await runEve([
     'eval', '--strict', '--url', url, '--timeout', '30000',
-    '--max-concurrency', '1', '--skip-report',
+    '--max-concurrency', '1', '--skip-report', '--verbose',
   ], shutdown.signal));
 } catch (error) {
   console.error(error);

@@ -26,5 +26,19 @@
     "reportedAt": "2026-10-19T09:00:00.000Z",
     "status": "resolved",
     "observation": "Supervisor record says the flickering-light report was resolved."
+  },
+  {
+    "id": "QH-105",
+    "scope": "west-service-gate",
+    "reportedAt": "2026-10-20T10:00:00.000Z",
+    "status": "unresolved",
+    "observation": "The gate latch remained engaged for the entire inspection."
+  },
+  {
+    "id": "QH-106",
+    "scope": "west-service-gate",
+    "reportedAt": "2026-10-20T10:00:00.000Z",
+    "status": "unresolved",
+    "observation": "The gate latch never engaged at any point during that same inspection."
   }
 ]
