@@ -13,3 +13,9 @@ The files under data/ are fictional inputs. Treat their record identifiers and o
 Use npm, Node.js 24, and TypeScript. The selected runtime is @langchain/langgraph 1.5.1 with @langchain/core 1.2.20. Use Zod 4.6.5, TypeScript 6.0.3, and @types/node 24.12.0 when adding the corresponding dependencies. Keep exact declarations and the ordinary npm lockfile; disable dependency lifecycle scripts.
 
 Use focused native tests and typechecking. Exercise real SDK and project code with only the external model boundary controlled. The examples require no provider credentials or live model calls, and no operational equipment system is connected.
+
+<!-- moldea:start -->
+
+This project uses [moldea](https://skill.moldea.ai) to keep project knowledge in Git and bring relevant context into coding-agent work.
+Start at [the project overview](moldea/project.md); [the manifest](moldea/moldea.yaml) maps context and implementation relationships.
+<!-- moldea:end -->

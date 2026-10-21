@@ -6,5 +6,8 @@
   "description": "Fictional equipment-request assistant with staff-approved handoffs.",
   "engines": {
     "node": ">=24"
+  },
+  "devDependencies": {
+    "@moldea.ai/cli": "13.0.0"
   }
 }
