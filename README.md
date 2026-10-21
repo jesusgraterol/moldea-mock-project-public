@@ -2,7 +2,9 @@
 
 A local workshop-room booking planner for fictional room and booking files. It checks requested time, capacity and equipment, then explains suitable rooms and rejection reasons. Coordinators approve bookings; proposed options never create reservations. No runtime agent, server, database or booking persistence.
 
-Rooms need at least 15 minutes of turnaround between bookings in the same room. Exactly 15 minutes is sufficient. Bookings and requests use explicit UTC timestamps; adjacent intervals with no turnaround are insufficient, while true time overlap is rejected. Evaluate supplied times rather than the machine clock. Missing or malformed facts must produce useful errors.
+The approved room policy requires at least **30 minutes** of turnaround between bookings in the same room. Exactly 30 minutes is sufficient before or after a booking. Bookings and requests use explicit UTC timestamps; adjacent intervals with no turnaround are insufficient, while true time overlap is rejected. Evaluate supplied times rather than the machine clock. Missing or malformed facts must produce useful errors.
+
+**Implementation gap:** the [current booking code](src/booking-rules.js) still enforces **15 minutes**, and its tests and report examples retain that behavior. The code change is explicitly deferred; current CLI suggestions do not establish compliance with the approved 30-minute turnaround. Later alignment must reject gaps below 30 minutes and accept exactly 30 minutes in both directions.
 
 Keep input loading, booking rules and report formatting distinguishable where useful. Read local JSON only; never modify the input bookings.
 
@@ -46,11 +48,13 @@ Each file must contain a JSON array of objects:
 - Times are real UTC calendar timestamps with seconds, ending in `Z` or `+00:00`, optionally with one to three fractional-second digits. For example, `2026-11-02T10:15:00Z` or `2026-11-02T10:15:00.125+00:00`. Local times, nonzero offsets, impossible dates and intervals with `end <= start` are rejected, not guessed or silently corrected.
 - Empty arrays are valid. Missing fields, malformed records, duplicate IDs and unknown room references produce errors naming the file and field.
 
-For every same-room booking, a request must neither overlap nor leave less than 15 minutes between intervals. A request starting exactly 15 minutes after a booking, or ending exactly 15 minutes before one, passes. Touching intervals and a gap of 14 minutes 59.999 seconds fail. Bookings for other rooms do not interfere. The machine clock does not participate in evaluation.
+**Current CLI behavior (15-minute implementation, not the approved 30-minute policy):** for every same-room booking, a request must neither overlap nor leave less than 15 minutes between intervals. A request starting exactly 15 minutes after a booking, or ending exactly 15 minutes before one, passes the current CLI. Touching intervals and a gap of 14 minutes 59.999 seconds fail. Bookings for other rooms do not interfere. The machine clock does not participate in evaluation.
 
 ## Supplied examples
 
 Run the command above with [rooms](data/rooms.json), [bookings](data/bookings.json) and [requests](data/requests.json). All three requests are on **2026-11-02**, with the intervals below in UTC:
+
+These are actual results under the unchanged **15-minute CLI implementation**, not the approved 30-minute policy. Under the approved policy, `request-a` would retain only Orchid Hall, while `request-b` and `request-c` would have no suitable room.
 
 | Request | UTC interval | Attendees | Equipment | Suitable rooms |
 | --- | --- | --- | --- | --- |

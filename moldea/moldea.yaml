@@ -1,1 +1,6 @@
 version: 1
+context:
+  /moldea/project.md:
+    affectedBy:
+      - /README.md
+      - /src/booking-rules.js
