@@ -6,7 +6,44 @@ Unresolved reports aged at least 12 elapsed hours require supervisor review. Use
 
 A handover separates observations, unresolved reports, missing facts and supervisor-review items. Keep one root assistant, no subagents, schedules, memory service, external channels, model judge, UI or cloud deployment. Deterministic local checks may use a loopback runtime and a controlled model boundary.
 
-Use Node 24, npm and exact package versions already declared in package.json. Source records and sample requests are fictional and read-only. No assistant, procedure or application tests have been implemented.
+Use Node 24, npm and the exact package versions declared in package.json. Source records and sample requests are fictional and read-only.
+
+## Local use and checks
+
+Install the locked dependencies with `npm ci --ignore-scripts`.
+
+| Command | Purpose |
+| --- | --- |
+| `npm test` | Deterministic application checks for elapsed-time boundaries, unknown times, conflicting claims, resolved reports and read-only lookup behavior. |
+| `npm run typecheck` | Type-check application, agent definitions, evals and scripts. |
+| `npm run build` | Build the real Eve application without sandbox prewarming; no sandbox capabilities are exposed. |
+| `npm run test:runtime` | Check installed CLI options, discover and build the agent, start the built output on `127.0.0.1`, run installed `eve eval --strict --url …`, then stop its owned process tree and verify the process and listener are gone. |
+
+The root assistant deliberately uses Eve 0.82.0's documented `mockModel` fixture contract. No live provider, credentials, model judge, tool stubs or external service is used. This proves the actual Eve connection and deterministic policy, not the behavior of an untested live model. The fixture accepts a JSON message with `mode` set to `handover` or `lookup`, for example:
+
+```json
+{
+  "mode": "handover",
+  "recordIds": ["QH-101", "QH-102", "QH-103", "QH-104"],
+  "referenceAt": "2026-10-20T12:00:00.000Z"
+}
+```
+
+Use null or omit `referenceAt` when it is unknown. Supplied timestamps must include a timezone. `lookup` reads records without loading the handover procedure; `handover` loads it on demand before the lookup. Missing identifiers are listed, never invented. Differing unresolved same-scope observations are retained as potential conflicts, not automatically reconciled. Future-dated reports retain unknown age and a visible chronology issue.
+
+For the sample above, QH-101 requires review at exactly 12 hours; QH-102 is 11 hours old and remains visible alongside its conflicting claim. QH-103 has unknown age and review eligibility. QH-104 retains its resolved source status and is not an unresolved age-based escalation.
+
+Evals and their configuration live under `evals/`, outside `agent/`. Assertions at the fixture-model boundary inspect the complete canonical system instruction, the actual selected procedure text returned by `eve__skill`, the available tool schema and real lookup results. Eval assertions also inspect the lookup's actual inputs/results and exercise greetings, unrelated requests and prohibited operations. Reports are written by Eve under ignored `.eve/evals/`.
+
+The only HTTP entry point is Eve's standard local protocol. Its fixture channel explicitly permits anonymous requests; supported checks bind it only to loopback, retain process ownership and clean up in `finally`, including after an eval failure. No deployment or externally accessible service is configured. Runtime checks were exercised on Linux; Windows and macOS execution has not been verified.
+
+## Implementation map
+
+- `agent/agent.ts`: one filesystem-defined root; optional default tools and root-copy delegation are disabled.
+- `agent/instructions.ts`: imports the [canonical instruction](moldea/agents/quarry-handover/instruction.md) directly at compilation; no instruction mirror.
+- `agent/tools/lookup_records.ts`: the only executable tool, registered by filename; `src/records.ts` owns deterministic timestamp calculations and reads the bundled fictional dataset.
+- `agent/skills/handover.md`: the single on-demand procedure; its description is a routing hint, not an always-loaded procedure body.
+- `evals/fixture-model.ts`: only the external model boundary is controlled; discovery, build, runtime sessions, procedure loading and lookup execution are real.
 
 <!-- moldea:start -->
 

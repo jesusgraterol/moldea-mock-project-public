@@ -6,6 +6,12 @@
   "engines": {
     "node": ">=24"
   },
+  "scripts": {
+    "test": "node --test tests/records.test.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "node scripts/build.ts",
+    "test:runtime": "node scripts/test-runtime.ts"
+  },
   "dependencies": {
     "ai": "7.0.148",
     "eve": "0.82.0",
@@ -14,6 +20,7 @@
   "devDependencies": {
     "@moldea.ai/cli": "13.0.0",
     "@types/node": "24.12.0",
+    "jg-process": "1.6.0",
     "typescript": "6.0.3"
   }
 }

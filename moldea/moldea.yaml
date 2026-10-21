@@ -1,1 +1,50 @@
 version: 1
+agents:
+  quarry-handover:
+    runtime:
+      id: eve
+      guidance: /moldea/runtimes/eve.md
+    bindings:
+      runtimeAgent:
+        path: /agent/agent.ts
+        symbol: rootAssistant
+      instructionLoader:
+        path: /agent/instructions.ts
+        symbol: loadHandoverInstructions
+    tools:
+      lookup-records:
+        name: lookup_records
+        description: Read fictional shift records and compute supplied-time supervisor-review flags without operational side effects.
+        implementation:
+          path: /src/records.ts
+          symbol: lookupRecords
+        registration:
+          path: /agent/tools/lookup_records.ts
+          symbol: lookupRecordsTool
+        inputSchema:
+          path: /src/contracts.ts
+          symbol: LookupInputSchema
+        outputSchema:
+          path: /src/contracts.ts
+          symbol: LookupResultSchema
+    skills:
+      handover:
+        name: handover
+        description: Draft a shift handover on demand while retaining source claims, unknown facts and supervisor-only decisions.
+        implementation:
+          path: /agent/skills/handover.md
+    affectedBy:
+      - /README.md
+      - /data/records.json
+      - /package.json
+      - /package-lock.json
+      - /agent/channels/eve.ts
+      - /evals/fixture-model.ts
+      - /evals/evals.config.ts
+      - /evals/handover.eval.ts
+      - /evals/boundaries.eval.ts
+      - /evals/no-actions.eval.ts
+      - /scripts/eve.ts
+      - /scripts/build.ts
+      - /scripts/test-runtime.ts
+      - /tests/records.test.ts

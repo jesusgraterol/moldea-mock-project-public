@@ -4,7 +4,7 @@ Quarry Handover serves facilities shift staff and supervisors by drafting handov
 
 ## Scope and authority
 
-The intended system is one filesystem-defined Eve assistant, one read-only record lookup, and one on-demand handover procedure. It only drafts; supervisors retain decision authority. No assistant, tool, procedure, or runtime binding is registered by this foundation.
+The system is one filesystem-defined Eve root assistant, one read-only record lookup, and one on-demand handover procedure. It only drafts; supervisors retain decision authority. The [registered assistant](agents/quarry-handover/instruction.md) consumes canonical instructions directly and runs with a deterministic fixture model, without a live provider.
 
 The [project README](../README.md) owns the product policy and setup guidance, including the inclusive 12-hour supervisor-review threshold, supplied timestamp rules, preservation of conflicting claims, and excluded capabilities. Keep those rules there rather than creating a second policy owner.
 
@@ -14,4 +14,6 @@ The [project README](../README.md) owns the product policy and setup guidance, i
 - [Sample requests](../data/requests.json): selected record identifiers and supplied reference timestamps.
 - [Package manifest](../package.json): exact dependencies and the Node.js requirement; the README selects npm.
 
-Implementation remains outside this initialization's scope. The proposed assistant and handover flow require a later implementation request.
+## Implementation and verification
+
+The [README usage guide](../README.md#local-use-and-checks) documents the JSON fixture request, npm commands and policy examples. [Eve runtime guidance](runtimes/eve.md) traces instruction consumption, tool and procedure discovery, model-boundary checks, and owned loopback-process cleanup. Evals and configuration remain outside `agent/`.

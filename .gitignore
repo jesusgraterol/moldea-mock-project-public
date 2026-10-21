@@ -1,4 +1,5 @@
 # Logs
+.eve/
 logs
 *.log
 npm-debug.log*
