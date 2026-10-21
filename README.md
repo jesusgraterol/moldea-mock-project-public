@@ -45,6 +45,14 @@ The pinned client takes the explicit-token branch before ambient Vercel project/
 
 This is a review-assisted correction to the original launcher. Earlier passing runtime runs predated this explicit override and could enter ambient Vercel discovery; actual external access in those runs is **not established**. Their runtime/eval history is retained, not reclassified as proven isolated runs. The correction does not alter the handover policy, source claims or capabilities.
 
+### Same-session continuation: second review-assisted correction
+
+The original fixture selected the first lookup and procedure results by name from the whole retained model history. In one real session, `lookup` of QH-101 at `2026-10-20T12:00:00.000Z` followed by `lookup` of QH-103 with `referenceAt: null` reused the old result and failed before the second lookup. The pre-fix regression reproduced `step.failed` and `turn.failed` with `MODEL_CALL_FAILED`, even though the returned status was `waiting`. Its evidence remains in this workspace under `.eve/evals/2026-10-21T23-35-49/`, with session `wrun_01M5GD4BBE7524SANJWSF0W5WJ`. That failed run is retained alongside the earlier auth-repair history, not replaced by later passing runs.
+
+The correction uses the pinned `eve/evals` model contract: `userMessageCount` identifies the current authored request, explicit `toolCalls[].id` values identify calls emitted for it, and `toolResults[].id` correlates their results. A new request must execute a fresh lookup even when its input exactly repeats an earlier request. Prior procedure text may remain in conversation history, but a handover request's current procedure-load result is checked independently; a later simple lookup does not load the procedure again. No SDK code, tool implementation, source claims or policy were changed.
+
+`evals/continuation.eval.ts` exercises actual `session.send(...)` follow-ups with different selections, changed and null timestamps, exact repeats, lookup-to-handover, repeated handovers, handover-to-lookup, and no-tool replies after tool-using turns. It checks current lookup inputs/results and selected procedure consumption, plus explicit absence of `step.failed`, `turn.failed`, `session.failed` and cancellation events, successful `turn.completed`, and the returned open-session status. A `waiting` status alone is not evidence that a turn succeeded. The first review's non-secret auth override and owned loopback-process cleanup remain in force for these checks.
+
 ## Implementation map
 
 - `agent/agent.ts`: one filesystem-defined root; optional default tools and root-copy delegation are disabled.
@@ -52,6 +60,7 @@ This is a review-assisted correction to the original launcher. Earlier passing r
 - `agent/tools/lookup_records.ts`: the only executable tool, registered by filename; `src/records.ts` owns deterministic timestamp calculations and reads the bundled fictional dataset.
 - `agent/skills/handover.md`: the single on-demand procedure; its description is a routing hint, not an always-loaded procedure body.
 - `evals/fixture-model.ts`: only the external model boundary is controlled; discovery, build, runtime sessions, procedure loading and lookup execution are real.
+- `evals/continuation.eval.ts`: real same-session regression for current-request result correlation and explicit turn/step failure detection.
 
 <!-- moldea:start -->
 

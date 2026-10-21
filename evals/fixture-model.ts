@@ -52,10 +52,19 @@ export const fixtureModel = mockModel({
   provider: 'local-fixture',
   respond(request) {
     inspectBoundary(request);
+    // Pinned MockModelRequest.toolResults is the whole retained history, not
+    // just this turn. Correlate only calls emitted for the current authored
+    // request using the documented count + explicit tool-call/result IDs.
+    // Repeated identical inputs still need a fresh lookup in a later turn.
+    const lookupCallId = `quarry-lookup-${request.userMessageCount}`;
+    const procedureCallId = `quarry-handover-${request.userMessageCount}`;
+    const lookup = request.toolResults.find((result) => result.id === lookupCallId);
+    const loaded = request.toolResults.find((result) => result.id === procedureCallId);
     let input: unknown;
     try { input = JSON.parse(request.lastUserMessage ?? 'null'); }
     catch {
-      assert.equal(request.toolResults.length, 0, 'Unrelated and operational requests must not use tools.');
+      assert.equal(lookup, undefined, 'Unrelated and operational requests must not look up records in this turn.');
+      assert.equal(loaded, undefined, 'Unrelated and operational requests must not load a procedure in this turn.');
       return /^hello\b/i.test(request.lastUserMessage ?? '')
         ? 'Hello. I can draft a fictional shift handover when you supply record IDs and a reference timestamp.'
         : 'Draft only. A supervisor must decide; I cannot close incidents, assign staff or execute operational actions.';
@@ -64,21 +73,27 @@ export const fixtureModel = mockModel({
     if (!parsed.success) return 'Supply record IDs and a zoned reference timestamp, or null when the timestamp is unknown.';
     const { mode, ...selection } = parsed.data;
     const lookupInput = { ...selection, referenceAt: selection.referenceAt ?? null };
-    const loaded = request.toolResults.find((result) => result.name === 'eve__skill');
     if (mode === 'handover') {
       if (!loaded) {
-        assert.ok(!request.messages.some((message) => message.text.includes(procedureBody)),
-          'The full procedure must not be eagerly injected.');
-        return { toolCalls: [{ name: 'eve__skill', input: { name: 'handover' } }] };
+        // Earlier procedure text may legitimately remain in session history.
+        // Before the first actual load, it must not have been eagerly injected.
+        if (!request.toolResults.some((result) => result.name === 'eve__skill')) {
+          assert.ok(!request.messages.some((message) => message.text.includes(procedureBody)),
+            'The full procedure must not be eagerly injected.');
+        }
+        return { toolCalls: [{ id: procedureCallId, name: 'eve__skill', input: { name: 'handover' } }] };
       }
+      assert.equal(loaded.name, 'eve__skill');
       assert.equal(loaded.isError, false);
+      assert.ok(typeof loaded.output === 'string' && loaded.output.includes(procedureBody),
+        'The current procedure load must return the selected procedure text.');
       assert.ok(request.messages.some((message) => message.role === 'tool' && message.text.includes(procedureBody)),
         'The actual selected procedure text must reach the model through its tool result.');
     } else {
-      assert.equal(loaded, undefined, 'A simple lookup must not load the handover procedure.');
+      assert.equal(loaded, undefined, 'A simple lookup must not load the handover procedure in this turn.');
     }
-    const lookup = request.toolResults.find((result) => result.name === 'lookup_records');
-    if (!lookup) return { toolCalls: [{ name: 'lookup_records', input: lookupInput }] };
+    if (!lookup) return { toolCalls: [{ id: lookupCallId, name: 'lookup_records', input: lookupInput }] };
+    assert.equal(lookup.name, 'lookup_records');
     assert.equal(lookup.isError, false, 'The real lookup must succeed.');
     const output = LookupResultSchema.safeParse(lookup.output);
     assert.ok(output.success, 'The real lookup result must reach the model intact.');

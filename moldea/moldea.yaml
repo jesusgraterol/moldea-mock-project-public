@@ -43,6 +43,7 @@ agents:
       - /evals/evals.config.ts
       - /evals/handover.eval.ts
       - /evals/boundaries.eval.ts
+      - /evals/continuation.eval.ts
       - /evals/no-actions.eval.ts
       - /scripts/eve.ts
       - /scripts/build.ts
