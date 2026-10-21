@@ -4,8 +4,6 @@ A local workshop-room booking planner for fictional room and booking files. It c
 
 The approved room policy requires at least **30 minutes** of turnaround between bookings in the same room. Exactly 30 minutes is sufficient before or after a booking. Bookings and requests use explicit UTC timestamps; adjacent intervals with no turnaround are insufficient, while true time overlap is rejected. Evaluate supplied times rather than the machine clock. Missing or malformed facts must produce useful errors.
 
-**Implementation gap:** the [current booking code](src/booking-rules.js) still enforces **15 minutes**, and its tests and report examples retain that behavior. The code change is explicitly deferred; current CLI suggestions do not establish compliance with the approved 30-minute turnaround. Later alignment must reject gaps below 30 minutes and accept exactly 30 minutes in both directions.
-
 Keep input loading, booking rules and report formatting distinguishable where useful. Read local JSON only; never modify the input bookings.
 
 ## Local development
@@ -28,7 +26,7 @@ npm run plan -- --rooms data/rooms.json --bookings data/bookings.json --requests
 
 All three file flags are required. Paths can be absolute or relative to the caller's current working directory, including paths with spaces when quoted. Run `node src/cli.js --help` for help.
 
-The availability report lists suitable rooms and specific rejection reasons for every request. Each request is evaluated independently against the supplied bookings: even overlapping requests may receive the same room options. An option is not a hold or reservation. Coordinators still approve every booking outside this CLI. The planner only reads its inputs; it never creates or modifies files.
+The availability report states the 30-minute minimum turnaround and lists suitable rooms and specific rejection reasons for every request. Each request is evaluated independently against the supplied bookings: even overlapping requests may receive the same room options. An option is not a hold or reservation. Coordinators still approve every booking outside this CLI. The planner only reads its inputs; it never creates or modifies files.
 
 Reports and help go to stdout with exit code **0**, including reports with no suitable room. Invalid arguments, unreadable files and malformed inputs go to stderr with exit code **2**, without a partial availability report.
 
@@ -48,32 +46,30 @@ Each file must contain a JSON array of objects:
 - Times are real UTC calendar timestamps with seconds, ending in `Z` or `+00:00`, optionally with one to three fractional-second digits. For example, `2026-11-02T10:15:00Z` or `2026-11-02T10:15:00.125+00:00`. Local times, nonzero offsets, impossible dates and intervals with `end <= start` are rejected, not guessed or silently corrected.
 - Empty arrays are valid. Missing fields, malformed records, duplicate IDs and unknown room references produce errors naming the file and field.
 
-**Current CLI behavior (15-minute implementation, not the approved 30-minute policy):** for every same-room booking, a request must neither overlap nor leave less than 15 minutes between intervals. A request starting exactly 15 minutes after a booking, or ending exactly 15 minutes before one, passes the current CLI. Touching intervals and a gap of 14 minutes 59.999 seconds fail. Bookings for other rooms do not interfere. The machine clock does not participate in evaluation.
+For every same-room booking, a request must neither overlap nor leave less than 30 minutes between intervals. A request starting exactly 30 minutes after a booking, or ending exactly 30 minutes before one, passes. Touching intervals, 15-minute gaps and a gap of 29 minutes 59.999 seconds fail. Bookings for other rooms do not interfere. The machine clock does not participate in evaluation.
 
 ## Supplied examples
 
 Run the command above with [rooms](data/rooms.json), [bookings](data/bookings.json) and [requests](data/requests.json). All three requests are on **2026-11-02**, with the intervals below in UTC:
 
-These are actual results under the unchanged **15-minute CLI implementation**, not the approved 30-minute policy. Under the approved policy, `request-a` would retain only Orchid Hall, while `request-b` and `request-c` would have no suitable room.
-
 | Request | UTC interval | Attendees | Equipment | Suitable rooms |
 | --- | --- | --- | --- | --- |
-| `request-a` | 10:15 to 11:00 | 10 | projector | Cedar Studio, Orchid Hall |
-| `request-b` | 12:00 to 12:45 | 20 | microphone | Orchid Hall |
+| `request-a` | 10:15 to 11:00 | 10 | projector | Orchid Hall |
+| `request-b` | 12:00 to 12:45 | 20 | microphone | None |
 | `request-c` | 09:30 to 10:00 | 8 | whiteboard | None |
 
-`request-a` starts exactly 15 minutes after Cedar's existing booking. Indigo is rejected for insufficient capacity and a missing projector. `request-b` ends exactly 15 minutes before Orchid's existing booking; Cedar and Indigo lack both capacity and a microphone. For `request-c`, Cedar overlaps an existing booking, Indigo is too small and Orchid lacks a whiteboard.
+For `request-a`, Cedar is rejected because the request starts only 15 minutes after its existing booking; Indigo has insufficient capacity and lacks a projector. Only Orchid Hall fits. For `request-b`, Orchid is rejected because the request ends only 15 minutes before its existing booking; Cedar and Indigo lack both capacity and a microphone, so no room fits. For `request-c`, Cedar overlaps an existing booking, Indigo is too small and Orchid lacks a whiteboard.
 
-For example, the report's final request is:
+For example, the report's second request is:
 
 ```text
-Request request-c: 2026-11-02T09:30:00Z to 2026-11-02T10:00:00Z
-Attendees: 8; equipment: whiteboard.
+Request request-b: 2026-11-02T12:00:00Z to 2026-11-02T12:45:00Z
+Attendees: 20; equipment: microphone.
 Suitable rooms: none (no room meets all requirements).
 Rejected rooms:
-- Cedar Studio (cedar): overlaps booking booking-cedar-am (2026-11-02T09:00:00Z to 2026-11-02T10:00:00Z).
-- Indigo Room (indigo): insufficient capacity: 6 seats, 8 required.
-- Orchid Hall (orchid): missing equipment: whiteboard.
+- Cedar Studio (cedar): insufficient capacity: 12 seats, 20 required; missing equipment: microphone.
+- Indigo Room (indigo): insufficient capacity: 6 seats, 20 required; missing equipment: microphone.
+- Orchid Hall (orchid): only 900s turnaround with booking booking-orchid-pm; at least 30 minutes required.
 ```
 
 ## Structure and tests

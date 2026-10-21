@@ -1,4 +1,4 @@
-export const TURNAROUND_MINUTES = 15;
+export const TURNAROUND_MINUTES = 30;
 const turnaroundMs = TURNAROUND_MINUTES * 60_000;
 
 function checkRoom(room, request, bookings) {

@@ -22,6 +22,7 @@ function explain(reason) {
 export function formatReport(plans) {
   const lines = [
     'Cobalt Rooms availability report',
+    `Minimum same-room turnaround: ${TURNAROUND_MINUTES} minutes (before or after a booking).`,
     'Suggestions only. Coordinators must approve every booking; no reservations are created.',
     'Each request is evaluated independently against the supplied bookings.',
   ];

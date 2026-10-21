@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { planAvailability } from '../src/booking-rules.js';
 
-function inputsFor(start = '2026-11-02T10:15:00Z', end = '2026-11-02T11:00:00Z') {
+function inputsFor(start = '2026-11-02T10:30:00Z', end = '2026-11-02T11:00:00Z') {
   return {
     rooms: [{ id: 'cedar', name: 'Cedar', capacity: 12, equipment: ['projector', 'whiteboard'] }],
     bookings: [{ id: 'b1', roomId: 'cedar', start: '2026-11-02T09:00:00Z', end: '2026-11-02T10:00:00Z' }],
@@ -16,13 +16,15 @@ function reasons(inputs) {
 
 const boundaryCases = [
   ['after: touching fails', '2026-11-02T10:00:00Z', '2026-11-02T11:00:00Z', false],
-  ['after: 899.999 seconds fails', '2026-11-02T10:14:59.999Z', '2026-11-02T11:00:00Z', false],
-  ['after: exactly 900 seconds passes', '2026-11-02T10:15:00Z', '2026-11-02T11:00:00Z', true],
-  ['after: 900.001 seconds passes', '2026-11-02T10:15:00.001Z', '2026-11-02T11:00:00Z', true],
+  ['after: former 15-minute boundary fails', '2026-11-02T10:15:00Z', '2026-11-02T11:00:00Z', false],
+  ['after: 1799.999 seconds fails', '2026-11-02T10:29:59.999Z', '2026-11-02T11:00:00Z', false],
+  ['after: exactly 1800 seconds passes', '2026-11-02T10:30:00Z', '2026-11-02T11:00:00Z', true],
+  ['after: 1800.001 seconds passes', '2026-11-02T10:30:00.001Z', '2026-11-02T11:00:00Z', true],
   ['before: touching fails', '2026-11-02T08:00:00Z', '2026-11-02T09:00:00Z', false],
-  ['before: 899.999 seconds fails', '2026-11-02T08:00:00Z', '2026-11-02T08:45:00.001Z', false],
-  ['before: exactly 900 seconds passes', '2026-11-02T08:00:00Z', '2026-11-02T08:45:00Z', true],
-  ['before: 900.001 seconds passes', '2026-11-02T08:00:00Z', '2026-11-02T08:44:59.999Z', true],
+  ['before: former 15-minute boundary fails', '2026-11-02T08:00:00Z', '2026-11-02T08:45:00Z', false],
+  ['before: 1799.999 seconds fails', '2026-11-02T08:00:00Z', '2026-11-02T08:30:00.001Z', false],
+  ['before: exactly 1800 seconds passes', '2026-11-02T08:00:00Z', '2026-11-02T08:30:00Z', true],
+  ['before: 1800.001 seconds passes', '2026-11-02T08:00:00Z', '2026-11-02T08:29:59.999Z', true],
 ];
 
 for (const [name, start, end, passes] of boundaryCases) {
@@ -61,13 +63,19 @@ test('exact capacity and complete equipment pass; all deficits are explained', (
 test('checks every same-room booking, not just the first, without requiring sorted input', () => {
   const inputs = inputsFor();
   inputs.bookings.unshift({ ...inputs.bookings[0], id: 'unrelated', roomId: 'other' });
-  inputs.bookings.push({ id: 'later', roomId: 'cedar', start: '2026-11-02T11:14:59Z', end: '2026-11-02T12:00:00Z' });
+  inputs.bookings.push({ id: 'later', roomId: 'cedar', start: '2026-11-02T11:29:59Z', end: '2026-11-02T12:00:00Z' });
   inputs.bookings.reverse();
   const result = reasons(inputs);
   assert.equal(result.length, 1);
   assert.equal(result[0].code, 'turnaround');
   assert.equal(result[0].booking.id, 'later');
-  assert.equal(result[0].gapMs, 899_000);
+  assert.equal(result[0].gapMs, 1_799_000);
+});
+
+test('a request between bookings passes when both turnaround gaps are exactly 30 minutes', () => {
+  const inputs = inputsFor();
+  inputs.bookings.push({ id: 'later', roomId: 'cedar', start: '2026-11-02T11:30:00Z', end: '2026-11-02T12:00:00Z' });
+  assert.deepEqual(reasons(inputs), []);
 });
 
 test('booking conflicts in another room do not affect availability', () => {
@@ -79,7 +87,7 @@ test('booking conflicts in another room do not affect availability', () => {
 });
 
 test('uses absolute UTC instants across midnight', () => {
-  const inputs = inputsFor('2026-11-03T00:15:00+00:00', '2026-11-03T01:00:00Z');
+  const inputs = inputsFor('2026-11-03T00:30:00+00:00', '2026-11-03T01:00:00Z');
   inputs.bookings[0].start = '2026-11-02T23:00:00Z';
   inputs.bookings[0].end = '2026-11-03T00:00:00Z';
   assert.deepEqual(reasons(inputs), []);

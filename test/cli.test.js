@@ -35,14 +35,17 @@ test('supplied examples produce the expected options, rejections and approval re
   const result = run(kinds.flatMap((kind) => [`--${kind}`, path.join('data', `${kind}.json`)]));
   assert.equal(result.status, 0, result.stderr);
   assert.equal(result.stderr, '');
+  assert.match(result.stdout, /Minimum same-room turnaround: 30 minutes \(before or after a booking\)/);
   assert.match(result.stdout, /Coordinators must approve every booking; no reservations are created/);
   assert.match(result.stdout, /Each request is evaluated independently/);
   const requestA = result.stdout.split('Request request-a:')[1].split('Request request-b:')[0];
   const requestB = result.stdout.split('Request request-b:')[1].split('Request request-c:')[0];
   const requestC = result.stdout.split('Request request-c:')[1];
-  assert.match(requestA, /Suitable rooms: Cedar Studio \(cedar\), Orchid Hall \(orchid\)/);
+  assert.match(requestA, /Suitable rooms: Orchid Hall \(orchid\)/);
+  assert.match(requestA, /Cedar Studio.*only 900s turnaround with booking booking-cedar-am; at least 30 minutes required/);
   assert.match(requestA, /Indigo Room.*insufficient capacity: 6 seats, 10 required; missing equipment: projector/);
-  assert.match(requestB, /Suitable rooms: Orchid Hall \(orchid\)/);
+  assert.match(requestB, /Suitable rooms: none/);
+  assert.match(requestB, /Orchid Hall.*only 900s turnaround with booking booking-orchid-pm; at least 30 minutes required/);
   assert.match(requestB, /missing equipment: microphone/);
   assert.match(requestC, /Suitable rooms: none/);
   assert.match(requestC, /overlaps booking booking-cedar-am/);
@@ -52,13 +55,26 @@ test('supplied examples produce the expected options, rejections and approval re
 test('reports short turnaround in either direction, including the actual gap and booking', async (t) => {
   const inputs = structuredClone(fixtureInputs);
   inputs.requests = [
-    { ...inputs.requests[0], id: 'after', start: '2026-11-02T10:14:59Z' },
-    { ...inputs.requests[0], id: 'before', start: '2026-11-02T08:00:00Z', end: '2026-11-02T08:45:01Z' },
+    { ...inputs.requests[0], id: 'after', start: '2026-11-02T10:29:59Z' },
+    { ...inputs.requests[0], id: 'before', start: '2026-11-02T08:00:00Z', end: '2026-11-02T08:30:01Z' },
   ];
   const { args } = await temporaryInputs(t, inputs);
   const result = run(args);
   assert.equal(result.status, 0, result.stderr);
-  assert.equal(result.stdout.match(/only 899s turnaround with booking booking-cedar-am; at least 15 minutes required/g)?.length, 2);
+  assert.equal(result.stdout.match(/only 1799s turnaround with booking booking-cedar-am; at least 30 minutes required/g)?.length, 2);
+});
+
+test('the CLI accepts exactly 30 minutes before and after a booking', async (t) => {
+  const inputs = structuredClone(fixtureInputs);
+  inputs.requests = [
+    { ...inputs.requests[0], id: 'after', start: '2026-11-02T10:30:00Z' },
+    { ...inputs.requests[0], id: 'before', start: '2026-11-02T08:00:00Z', end: '2026-11-02T08:30:00Z' },
+  ];
+  const { args } = await temporaryInputs(t, inputs);
+  const result = run(args);
+  assert.equal(result.status, 0, result.stderr);
+  assert.equal(result.stdout.match(/Suitable rooms: Cedar Studio \(cedar\), Orchid Hall \(orchid\)/g)?.length, 2);
+  assert.doesNotMatch(result.stdout, /turnaround with booking/);
 });
 
 test('runs from another working directory with space-containing relative input paths', async (t) => {
@@ -66,7 +82,7 @@ test('runs from another working directory with space-containing relative input p
   const args = kinds.flatMap((kind) => [`--${kind}`, path.basename(files[kind])]);
   const result = run(args, { cwd: directory });
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stdout, /Suitable rooms: Cedar Studio \(cedar\), Orchid Hall \(orchid\)/);
+  assert.match(result.stdout, /Suitable rooms: Orchid Hall \(orchid\)/);
 });
 
 test('planner runs without filesystem write permission and leaves every input byte unchanged', async (t) => {
@@ -86,7 +102,7 @@ test('overlapping requests remain independent in the CLI', async (t) => {
   const { args } = await temporaryInputs(t, inputs);
   const result = run(args);
   assert.equal(result.status, 0, result.stderr);
-  assert.equal(result.stdout.match(/Suitable rooms: Cedar Studio \(cedar\), Orchid Hall \(orchid\)/g)?.length, 2);
+  assert.equal(result.stdout.match(/Suitable rooms: Orchid Hall \(orchid\)/g)?.length, 2);
 });
 
 test('empty requests, rooms or bookings are valid and clearly reported', async (t) => {
