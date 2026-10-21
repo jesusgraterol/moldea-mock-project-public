@@ -1,16 +1,16 @@
 # Skill 10.0.0 project-run review
 
-Run `run-20261021-01` is in progress. Aster Dispatch completed six actor requests and passed fresh independent source/skill-behavior review. Final public-copy privacy review passed; public integrity, full replay and the expansion checkpoint remain pending. Cobalt Rooms, Folio Workshop, Beacon Collections, Cinder Returns and Quarry Handover have not started. This review records evidence and findings; the later evaluator's whole-batch assessment remains separate.
+Run `run-20261021-01` is in progress. Aster Dispatch completed six actor requests and passed fresh independent source/skill-behavior review. Final public-copy privacy review and public asset integrity verification passed; full replay and the expansion checkpoint remain pending. Cobalt Rooms, Folio Workshop, Beacon Collections, Cinder Returns and Quarry Handover have not started. This review records evidence and findings; the later evaluator's whole-batch assessment remains separate.
 
 ## Aster Dispatch
 
-**Independent source/behavior verdict: PASS, with no unresolved actionable product defect or material coverage gap in the bounded scope.** The review used a fresh agent and an owned disposable clone at `beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1`; its clone/cache were removed and the actor worktree stayed unchanged. Publication and replay are separate pending gates.
+**Independent source/behavior verdict: PASS, with no unresolved actionable product defect or material coverage gap in the bounded scope.** The review used a fresh agent and an owned disposable clone at `beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1`; its clone/cache were removed and the actor worktree stayed unchanged. Publication and public asset verification have passed; full replay remains a separate pending gate.
 
 Aster is one equipment-request assistant with a real compiled LangGraph, a deterministic read-only inventory lookup and structured staff handoffs. Available, unavailable, absent and unknown inventory remain distinct. Supplied UTC timestamps determine urgency; staff approve every dispatch. There is no reservation, inventory write, operational integration or second assistant.
 
 The generic fixture base is `c3ecda12e853b527a96c6ca81150083b0224643a`. The actual actor-start seed, and therefore the attempt's `baseCommit`, is `066ef7578ec935fe9f3532bcd59759eb6a91f7cf`. All seven introduced commits are signed driver seed/capture checkpoints; no actor-authored commit or driver repair request occurred. Source history, including the seed, was reviewed before its separate fixture-branch push.
 
-The [attempt record](../attempts/aster-dispatch-01.json) owns exact delivered wording, settings, before/after source SHAs, checks and redaction locators. The [final source](https://github.com/jesusgraterol/moldea-mock-project-public/tree/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1), [parent recording](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261021-01/aster-dispatch-01-session-01.jsonl.gz) and [identity log](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261021-01/aster-dispatch-identities-01.txt) are the evaluator entry points. Release assets remain pending until the publication checkpoint below records verification.
+The [attempt record](../attempts/aster-dispatch-01.json) owns exact delivered wording, settings, before/after source SHAs, checks and redaction locators. The [final source](https://github.com/jesusgraterol/moldea-mock-project-public/tree/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1), [parent recording](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261021-01/aster-dispatch-01-session-01.jsonl.gz) and [identity log](https://github.com/jesusgraterol/moldea-mock-project-public/releases/download/run-20261021-01/aster-dispatch-identities-01.txt) are the evaluator entry points. The Release assets are published and anonymously verified as recorded below.
 
 | Request / native event | Source after request | Reached result |
 | --- | --- | --- |
@@ -55,7 +55,9 @@ The proposed parent asset has 163 shareable events, native ordinals 0–573, 223
 
 ## Pilot publication and expansion checkpoint
 
-Independent source/skill-behavior review and final public-copy privacy review are complete. Records/Release publication, actual downloaded/anonymous integrity verification, full public conversation replay and the expansion decision are pending. The other five project seeds must not be prepared before this checkpoint passes.
+Independent source/skill-behavior review, final public-copy privacy review, source/records/Release publication and actual downloaded/anonymous asset integrity verification are complete. Full public conversation replay and the expansion decision remain pending. The other five project seeds must not be prepared before this checkpoint passes.
+
+The six reviewed record files were committed as `951bf224645dc24f0badc3c4299900ba7f95d194` and merged through [PR #7](https://github.com/jesusgraterol/moldea-mock-project-public/pull/7), merge `43ebb11aed5beb591532cc7493ad49b2c818f80f`. Release `run-20261021-01` was first created as a draft at that immutable target, its two assets downloaded and verified before publication, and published at 2026-10-21T20:07:24Z. Subsequent anonymous GETs returned HTTP 200 for both files and the same exact bytes. The tag remains fixed at `43ebb11aed5beb591532cc7493ad49b2c818f80f`. The identity log is 79,188 bytes, SHA-256 `11ec7e118bb06d4601a37059d638db87e24baa3fd5b313f6f6fc56296122ceb0`. The run remains incomplete while five planned projects are unstarted.
 
 The pinned reader is `950b89eb4c41564953fa1582fdd588992e152d37`. Its readiness checks passed: 68 unit, 73 artifact integration and 191 Chromium checks, plus typecheck/lint/format/build. These used existing fixtures. The final Aster recording also parses into 110 reader entries; full public replay remains separate. Readiness previews stopped and the pinned tracked checkout stayed unchanged.
 
