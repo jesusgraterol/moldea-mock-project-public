@@ -1,0 +1,20 @@
+[
+  {
+    "id": "CR-101",
+    "reference": "CINDER-101",
+    "item": "Desk lamp",
+    "deliveredAt": "2026-10-01T12:00:00.000Z"
+  },
+  {
+    "id": "CR-102",
+    "reference": "CINDER-102",
+    "item": "Storage tray",
+    "deliveredAt": null
+  },
+  {
+    "id": "CR-103",
+    "reference": "CINDER-103",
+    "item": "Reading stand",
+    "deliveredAt": "2026-09-20T09:30:00.000Z"
+  }
+]
