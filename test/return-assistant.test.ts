@@ -50,7 +50,7 @@ function knownRecommendation(
     lookupStatus: 'found',
     assessment: {
       status, reason: 'assessed', deliveredAt: '2026-10-01T12:00:00.000Z',
-      requestedAt, elapsedMs, windowMs: 2_592_000_000,
+      requestedAt, elapsedMs, windowMs: 1_814_400_000,
     },
     missingFacts: [],
     recommendation: status === 'within_window' ? 'recommend_within_window' : 'recommend_outside_window',
@@ -71,7 +71,7 @@ function unknownRecommendation(
     lookupStatus,
     assessment: {
       status: 'unknown', reason, deliveredAt: null,
-      requestedAt: '2026-10-15T12:00:00.000Z', elapsedMs: null, windowMs: 2_592_000_000,
+      requestedAt: '2026-10-15T12:00:00.000Z', elapsedMs: null, windowMs: 1_814_400_000,
     },
     missingFacts: lookupStatus === 'found' ? ['delivery_timestamp'] : ['order_record', 'delivery_timestamp'],
     recommendation: 'needs_more_information',
@@ -126,12 +126,12 @@ async function fixture(t: TestContext, contents: string): Promise<string> {
   return file;
 }
 
-const boundary = knownRecommendation('2026-10-31T12:00:00.000Z', 2_592_000_000, 'within_window');
+const boundary = knownRecommendation('2026-10-22T12:00:00.000Z', 1_814_400_000, 'within_window');
 
 for (const [name, expected] of [
   ['sample request within the window', knownRecommendation('2026-10-15T12:00:00.000Z', 1_209_600_000, 'within_window')],
-  ['exactly 30 elapsed days is included', boundary],
-  ['one millisecond beyond 30 days is excluded', knownRecommendation('2026-10-31T12:00:00.001Z', 2_592_000_001, 'outside_window')],
+  ['exactly 21 elapsed days is included', boundary],
+  ['one millisecond beyond 21 days is excluded', knownRecommendation('2026-10-22T12:00:00.001Z', 1_814_400_001, 'outside_window')],
   ['known order with missing delivery stays unknown', unknownRecommendation('CR-102', 'found', 'missing_delivery')],
   ['unknown identifier does not become a supporting order', unknownRecommendation('CR-999', 'not_found', 'order_not_found')],
 ] as const) {
@@ -225,8 +225,8 @@ test('request before delivery is inconsistent, not eligible', async () => {
 for (const input of [
   { orderId: 'CR-101' },
   { orderId: 'CR-101', requestedAt: '2026-02-30T12:00:00.000Z' },
-  { orderId: 'CR-101', requestedAt: '2026-10-31T12:00:00+01:00' },
-  { orderId: 'CR-101', requestedAt: '2026-10-31T12:00:00.0001Z' },
+  { orderId: 'CR-101', requestedAt: '2026-10-22T12:00:00+01:00' },
+  { orderId: 'CR-101', requestedAt: '2026-10-22T12:00:00.0001Z' },
 ]) {
   test(`invalid request fails before model invocation: ${JSON.stringify(input)}`, async () => {
     const model = new MockLanguageModelV4();

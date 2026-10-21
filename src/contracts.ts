@@ -40,7 +40,7 @@ export const StaffRecommendationSchema = z.strictObject({
     deliveredAt: UtcTimestampSchema.nullable(),
     requestedAt: UtcTimestampSchema,
     elapsedMs: z.number().int().nullable(),
-    windowMs: z.literal(2_592_000_000),
+    windowMs: z.literal(1_814_400_000),
   }),
   missingFacts: z.array(z.enum(['order_record', 'delivery_timestamp'])),
   recommendation: z.enum([

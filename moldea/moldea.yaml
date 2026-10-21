@@ -31,6 +31,7 @@ agents:
           path: /src/contracts.ts
           symbol: OrderLookupInputSchema
     affectedBy:
+      - /README.md
       - /src/assessment.ts
       - /data/orders.json
       - /test/return-assistant.test.ts

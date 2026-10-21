@@ -2,7 +2,7 @@
 
 Cinder Returns is a small staff tool for drafting return recommendations from fictional local order records. One real Vercel AI SDK `ToolLoopAgent` uses one read-only order lookup and `Output.object` for structured recommendations. Staff approve every decision; the assistant cannot issue refunds, create returns or change orders.
 
-The return window is 30 elapsed 24-hour days from delivery, inclusive at the exact boundary. Compare supplied UTC delivery and request timestamps rather than the machine clock. Missing delivery facts and unknown identifiers stay unknown. A failed lookup cannot establish eligibility.
+The return window is 21 elapsed 24-hour days from delivery, inclusive at the exact boundary. Compare supplied UTC delivery and request timestamps rather than the machine clock. Missing delivery facts and unknown identifiers stay unknown. A failed lookup cannot establish eligibility.
 
 Keep recommendations, supporting order identifiers, missing facts and staff approval distinct. No UI, database, second assistant or operational integration is needed.
 
@@ -28,7 +28,7 @@ import { draftReturnRecommendation } from './src/return-assistant.ts';
 
 export async function draftForStaff(model: LanguageModel) {
   return draftReturnRecommendation(
-    { orderId: 'CR-101', requestedAt: '2026-10-31T12:00:00.000Z' },
+    { orderId: 'CR-101', requestedAt: '2026-10-22T12:00:00.000Z' },
     { model },
   );
 }
@@ -45,13 +45,13 @@ The result for this exact-boundary request has this shape:
     "status": "within_window",
     "reason": "assessed",
     "deliveredAt": "2026-10-01T12:00:00.000Z",
-    "requestedAt": "2026-10-31T12:00:00.000Z",
-    "elapsedMs": 2592000000,
-    "windowMs": 2592000000
+    "requestedAt": "2026-10-22T12:00:00.000Z",
+    "elapsedMs": 1814400000,
+    "windowMs": 1814400000
   },
   "missingFacts": [],
   "recommendation": "recommend_within_window",
-  "rationale": "The request is exactly 30 elapsed days after delivery. Staff must review.",
+  "rationale": "The request is exactly 21 elapsed days after delivery. Staff must review.",
   "staffApproval": { "required": true, "status": "pending" },
   "authority": "recommendation_only"
 }
@@ -61,7 +61,7 @@ Only `rationale` is model-authored; all other fields must exactly match the exec
 
 The agent's first step requires `lookup_order` for the supplied `orderId`; its second step disables tools and drafts the result. The lookup reads `data/orders.json` without modifying it. `requestedOrderId` is merely the supplied identifier; only `supportingOrder` contains verified record identifiers. Unknown identifiers produce `not_found` with no supporting order. Read failures, malformed records, and ambiguous duplicate identifiers produce `unavailable`, not proof of nonexistence. Missing or invalid delivery timestamps preserve known identifiers but leave the window assessment unknown. `missingFacts` identifies unavailable order records and/or delivery timestamps.
 
-The elapsed-time calculation uses milliseconds, not calendar dates or rounded days: `0 <= requestedAt - deliveredAt <= 2592000000`. The exact 30-day boundary qualifies for the window; one millisecond over does not. A request before delivery has an unknown assessment with reason `request_before_delivery`. Requests must supply a valid UTC (`Z`) timestamp with seconds and at most millisecond precision; invalid requests fail before any model call. Missing or invalid delivery facts are never replaced with the current time.
+The elapsed-time calculation uses milliseconds, not calendar dates or rounded days: `0 <= requestedAt - deliveredAt <= 1814400000`. The exact 21-day boundary qualifies for the window; one millisecond over does not. A request before delivery has an unknown assessment with reason `request_before_delivery`. Requests must supply a valid UTC (`Z`) timestamp with seconds and at most millisecond precision; invalid requests fail before any model call. Missing or invalid delivery facts are never replaced with the current time.
 
 The draft entry point creates a fresh agent per request, limits it to two model steps, disables model retries, and applies a 30-second abort deadline. Provider errors, missing tool calls, malformed structured output, contradictory facts, and approval bypasses reject the promise; callers should show a drafting failure for staff handling, not manufacture a decision. For lower-level integration, `createReturnAgent(request, { model })` returns the real, single-use `ToolLoopAgent`; call its `generate` method with the request as the prompt and supply an abort deadline yourself.
 

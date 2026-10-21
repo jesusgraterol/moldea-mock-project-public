@@ -5,7 +5,7 @@ import {
   type ReturnRequest,
 } from './contracts.ts';
 
-export const RETURN_WINDOW_MS = 2_592_000_000; // 30 * 24 * 60 * 60 * 1_000
+export const RETURN_WINDOW_MS = 1_814_400_000; // 21 * 24 * 60 * 60 * 1_000
 
 /** Fixed elapsed time from supplied UTC timestamps, never the machine clock. */
 export function assessReturn(request: ReturnRequest, lookup: OrderLookupResult): GroundedFacts {
