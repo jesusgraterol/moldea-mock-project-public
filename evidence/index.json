@@ -21,6 +21,13 @@
       "evidenceStatus": "complete",
       "reviewStatus": "complete",
       "manifestPath": "evidence/runs/run-20261013-01/run.json"
+    },
+    {
+      "runId": "run-20261021-01",
+      "manifestPath": "evidence/runs/run-20261021-01/run.json",
+      "summary": "Six-project Skill 10.0.0 batch in progress: Aster completed six requests and passed independent real-LangGraph source/behavior checks; its public integrity/replay gate is pending. Cobalt, Folio, Beacon, Cinder and Quarry have not started.",
+      "evidenceStatus": "incomplete",
+      "reviewStatus": "pending"
     }
   ]
 }

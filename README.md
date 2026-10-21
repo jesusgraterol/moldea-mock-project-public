@@ -1,6 +1,6 @@
 # moldea-mock-project-public
 
-`main` indexes mock projects built in real coding-agent conversations. Each numbered `fixture_*` branch preserves the original source commits. The latest run includes sanitized session transcripts and identity logs as Release assets; older attempts remain explicitly incomplete historical records.
+`main` indexes mock projects built in real coding-agent conversations. Each numbered `fixture_*` branch preserves the original source commits. Completed runs link sanitized session transcripts and identity logs as Release assets; current run records distinguish pending work and older incomplete historical evidence.
 
 The base for fresh project attempts is `c3ecda12e853b527a96c6ca81150083b0224643a`. Planning and index commits on `main` are separate from that base.
 
@@ -16,8 +16,11 @@ Core 5.0.1, CLI 9.0.1 and Skill 6.0.1 were verified as published before the 2026
 
 The 2026-10-13 [project run](evidence/runs/run-20261013-01/run.json) contains four projects and 24 conversation turns using Skill 8.1.0, with CLI 11.0.2 as the fresh-adoption target. [Independent source/behavior review and the website handoff](evidence/runs/run-20261013-01/reviews/skill-review.md) are complete; the sanitized recordings and identity logs are [published](https://github.com/jesusgraterol/moldea-mock-project-public/releases/tag/run-20261013-01), and evidence verification and full browser replay passed. Recorded assistance, utility repairs, informal helper-check limits and the premature announcement finding remain explicit.
 
+The 2026-10-21 [six-project run](evidence/runs/run-20261021-01/run.json) uses Skill 10.0.0 with `gpt-6.1-sol` at `xhigh`. Aster Dispatch completed six requests and passed independent source/skill-behavior review, with 41 assistant tests, 54 exporter tests and typechecking passing. Its public integrity/replay gate remains pending. Cobalt Rooms, Folio Workshop, Beacon Collections, Cinder Returns and Quarry Handover have not started. [Run review](evidence/runs/run-20261021-01/reviews/skill-review.md) records progress and limitations.
+
 | Scenario | Branch | Date | Skill release | Commit | Actor session | Observed state |
 | --- | --- | --- | --- | --- | --- | --- |
+| Aster Dispatch | `fixture_langgraph_xs_aster_dispatch_01` | 2026-10-21 | `v10.0.0` | `beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1` | `01a15fe7-8015-7f12-a6a5-4c02617ad9a9` | Real LangGraph handoffs with maintained 48-hour urgency; independent checks passed. Public integrity and pilot replay pending; actor self-repair and driver bookkeeping findings retained. |
 | Lantern Loans | `fixture_langgraph_xs_lantern_loans_01` | 2026-10-13 | `v8.1.0` | `f78e0e93559969b3fa254cc5856c6e958e6442d4` | `01a1360b-551f-7a11-b092-2114901804cf` | Real compiled LangGraph with a controlled model boundary; fourteen-day policy maintained and three unrelated exporter requests abstained. |
 | Moss Atlas | `fixture_skill_only_xs_moss_atlas_01` | 2026-10-13 | `v8.1.0` | `5053d4f5ef318cbd1ff080432d5dfed8e76d01e5` | `01a1367e-298f-7da2-a3d5-620ba00d6f46` | Standalone specimen-label skill maintained to the MOSS format; CLI/Core remain absent. Editorial assistance and informal helper-check limits are recorded; unrelated sorter work stayed outside moldea. |
 | Juniper Pantry | `fixture_foundation_only_xs_juniper_pantry_01` | 2026-10-13 | `v8.1.0` | `638ff3d1eed01eb503b27ab8f07d52057a38b35b` | `01a136a0-3264-7d23-a7e0-2e1c93e7a1b1` | Operating foundation maintained to three-hour shifts with coordinator authority intact. Unrelated crate work left canonical state unchanged; two review-driven utility repairs are retained. |

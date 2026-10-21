@@ -1,0 +1,4032 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261021-01",
+  "scenarioId": "aster-dispatch",
+  "attemptId": "aster-dispatch-01",
+  "branch": "fixture_langgraph_xs_aster_dispatch_01",
+  "baseCommit": "066ef7578ec935fe9f3532bcd59759eb6a91f7cf",
+  "finalCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+  "lastDurableCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/aster-dispatch.md",
+    "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
+  },
+  "observedSummary": "One real compiled LangGraph assistant produces structured equipment handoffs through a read-only inventory lookup. moldea adopted absent tooling, connected the maintained instruction and source, and maintained the inclusive urgency rule from 24 to 48 hours. Three independent exporter requests received relevance misses and left assistant/canonical state unchanged. All 41 assistant and 54 exporter tests, typechecking and real instruction/schema checks passed independent reruns. Source/skill-behavior review is complete; public integrity and full replay remain pending. An intermediate actor API error and resolved driver bookkeeping errors are retained.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "incomplete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "hostVersion": "0.163.0",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 136,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 344,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 400,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 484,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 529,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "aster-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Aster Dispatch, a small equipment-request assistant for an events team. It should look up fictional inventory records and draft a handoff for staff. Requests needed within 24 hours are urgent. Staff approve every dispatch. Propose a small approach first; hold off on implementing the assistant.\n",
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 9,
+      "beforeCommit": "066ef7578ec935fe9f3532bcd59759eb6a91f7cf",
+      "afterCommit": "7446cde05a479808f77609904537cece3e97588a",
+      "observedResult": "Initialized moldea with project context and managed host/README integration. Proposed the single assistant and held implementation as requested. CLI 13.0.0 and Core 9.0.0 were observed after adoption; validation reported no errors or warnings.",
+      "redactionIds": []
+    },
+    {
+      "id": "aster-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Go ahead with that approach and implement the assistant. Use the selected LangGraph versions and one read-only inventory lookup, then return a structured handoff with the recommendation, supporting inventory record IDs, missing facts, urgency, and required staff approval. Handle available, unavailable, and unknown inventory without turning a missing observation into a stock claim. Use supplied reference and needed-by UTC timestamps, with exactly 24 hours still urgent. Add focused tests that run the real graph, lookup, and schemas with only the external model boundary controlled, and typecheck it. Keep this to the single assistant and a small command-line example; no reservation or inventory writes.\n",
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 137,
+      "beforeCommit": "7446cde05a479808f77609904537cece3e97588a",
+      "afterCommit": "c9ed3f5d35721951b75ce48a2b88b6b1162294f7",
+      "observedResult": "Built one real compiled LangGraph assistant, a read-only inventory tool, maintained instruction loader, schemas and offline CLI example. All 38 native tests and typechecking passed; canonical validation reported zero diagnostics and 8/8 bindings. No live provider was called. An initial model-binding API error was self-corrected within this request (events 255/263 to patch 267); no driver assistance was delivered.",
+      "redactionIds": []
+    },
+    {
+      "id": "aster-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Add a separate front-desk contact exporter at tools/contact-csv.mjs. Read a JSON array from stdin and write CSV to stdout with team,name,email columns, preserving input order and correctly escaping commas, quotes, and newlines. Require a nonempty string for each of those three fields; an empty array should produce the header. Malformed JSON, invalid rows, and unsupported command-line arguments should fail with a concise stderr message and a nonzero exit code. Include focused subprocess tests runnable with node --test tools/contact-csv.test.mjs. It needs no assistant imports or npm script.\n",
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 345,
+      "beforeCommit": "c9ed3f5d35721951b75ce48a2b88b6b1162294f7",
+      "afterCommit": "95a569b232f0b78b78c5377dde32dd5e2ec79d2c",
+      "observedResult": "Added the standalone contact CSV exporter and 40 passing subprocess tests. The relevance gate returned 0, with no further moldea activity or announcement. Only tools/contact-csv.mjs and tools/contact-csv.test.mjs changed; canonical state and assistant source stayed byte-identical.",
+      "redactionIds": []
+    },
+    {
+      "id": "aster-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "The events team has adopted a 48-hour urgency threshold, effective now. Update the assistant behavior, staff-facing explanations, and affected checks to use it. A request needed exactly 48 hours after the supplied reference timestamp is urgent; one just beyond that is routine. Continue using supplied UTC timestamps, preserve unknown inventory facts, and keep every dispatch subject to staff approval with no reservation or inventory writes. Verify that the model receives the maintained instruction with the new rule.\n",
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 401,
+      "beforeCommit": "95a569b232f0b78b78c5377dde32dd5e2ec79d2c",
+      "afterCommit": "3359018a03127bc4a3a80ed2ac11b32ca771a9ff",
+      "observedResult": "Maintained the approved urgency rule to 48 hours across product documentation, canonical instruction/context and implementation. All 41 assistant tests and typechecking passed; tests assert the new system instruction at the actual model boundary, and the existing 36-hour unknown-projector CLI example became urgent without losing its missing facts. Validation reported zero diagnostics and 8/8 bindings; staff approval remained mandatory.",
+      "redactionIds": []
+    },
+    {
+      "id": "aster-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Add an optional --sort=name flag to the standalone contact CSV exporter so the front desk can sort contacts by name. Use stable case-insensitive alphabetical ordering: preserve the original order for names that compare equal. Keep the input order when the flag is absent and preserve all accepted field text. Continue rejecting unsupported arguments, and extend the subprocess tests for the flag, equal names, and default behavior.\n",
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 485,
+      "beforeCommit": "3359018a03127bc4a3a80ed2ac11b32ca771a9ff",
+      "afterCommit": "8a0781201cac7c51e9917742ffdd3b0cc06c62a2",
+      "observedResult": "Added stable case-insensitive --sort=name behavior while preserving default row order, equal-name order and accepted field text. All 54 exporter subprocess tests passed. The relevance gate returned 0; no later moldea activity or announcement followed, and only the two exporter files changed.",
+      "redactionIds": []
+    },
+    {
+      "id": "aster-request-06",
+      "ordinal": 6,
+      "kind": "follow-up",
+      "text": "Write a short tools/README.md for the front desk explaining the contact exporter's JSON input shape, ordinary and --sort=name usage, row validation, CSV escaping, and stdout/stderr/exit behavior. Include small copyable examples for both ordinary and sorted output, and check those examples against the actual utility. Keep this to the standalone exporter documentation.\n",
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 530,
+      "beforeCommit": "8a0781201cac7c51e9917742ffdd3b0cc06c62a2",
+      "afterCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+      "observedResult": "Added only tools/README.md for the independent contact exporter. Both copyable ordinary/sorted examples matched actual stdout, stderr and exit status, and bash -n passed. The relevance gate returned 0 with no further moldea work or announcement. Optional shellcheck/shfmt were unavailable and were not installed.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 2,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 3,
+      "reason": "Host agent-execution instructions, not a delivered product request."
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 4,
+      "reason": "Host agent-execution instructions, not a delivered product request."
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 5,
+      "reason": "Host environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 133,
+      "reason": "Host-loaded managed project instructions after adoption, not a delivered product request."
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 134,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 398,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 482,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 527,
+      "reason": "Host-provided skill catalog, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "manual",
+      "description": "First-turn capture with the existing utility, exact request wording and native turn context reconciliation.",
+      "inputCommit": "7446cde05a479808f77609904537cece3e97588a",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/scenarios/aster-dispatch.md"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "npm test \u2014 actor execution on the source tree checkpointed after request 02; 38 assistant tests passed.",
+      "inputCommit": "c9ed3f5d35721951b75ce48a2b88b6b1162294f7",
+      "result": "passed",
+      "coveredArtifacts": [
+        "src/assistant.ts",
+        "src/assessment.ts",
+        "src/contracts.ts",
+        "src/inventory.ts",
+        "src/instructions.ts",
+        "test/assistant.test.ts"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm run typecheck \u2014 actor execution after request 02 passed.",
+      "inputCommit": "c9ed3f5d35721951b75ce48a2b88b6b1162294f7",
+      "result": "passed",
+      "coveredArtifacts": [
+        "src",
+        "examples",
+        "test/assistant.test.ts",
+        "tsconfig.json"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/contact-csv.test.mjs \u2014 actor execution after request 03; 40 subprocess tests passed.",
+      "inputCommit": "95a569b232f0b78b78c5377dde32dd5e2ec79d2c",
+      "result": "passed",
+      "coveredArtifacts": [
+        "tools/contact-csv.mjs",
+        "tools/contact-csv.test.mjs"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test \u2014 actor execution after the 48-hour policy update; 41 assistant tests passed, including real graph/instruction/schema checks.",
+      "inputCommit": "3359018a03127bc4a3a80ed2ac11b32ca771a9ff",
+      "result": "passed",
+      "coveredArtifacts": [
+        "src/assistant.ts",
+        "src/assessment.ts",
+        "src/contracts.ts",
+        "src/inventory.ts",
+        "src/instructions.ts",
+        "moldea/agents/equipment-handoff/instruction.md",
+        "test/assistant.test.ts"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm run typecheck \u2014 actor execution after request 04 passed.",
+      "inputCommit": "3359018a03127bc4a3a80ed2ac11b32ca771a9ff",
+      "result": "passed",
+      "coveredArtifacts": [
+        "src",
+        "examples",
+        "test/assistant.test.ts",
+        "tsconfig.json"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm run --silent example -- --request request-b \u2014 actual credential-free CLI execution produced an urgent unknown-stock handoff with three missing facts and required staff approval.",
+      "inputCommit": "3359018a03127bc4a3a80ed2ac11b32ca771a9ff",
+      "result": "passed",
+      "coveredArtifacts": [
+        "examples/dispatch.ts",
+        "examples/offline-model.ts",
+        "data/inventory.json",
+        "data/requests.json"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node --test tools/contact-csv.test.mjs \u2014 actor execution after request 05; 54 subprocess tests passed.",
+      "inputCommit": "8a0781201cac7c51e9917742ffdd3b0cc06c62a2",
+      "result": "passed",
+      "coveredArtifacts": [
+        "tools/contact-csv.mjs",
+        "tools/contact-csv.test.mjs"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node .agents/skills/moldea/scripts/moldea-cli.mjs --repository [redacted] -- validate --json --max-output-bytes 65536 \u2014 actual request 04 validation reported zero diagnostics and 8/8 file/export bindings.",
+      "inputCommit": "3359018a03127bc4a3a80ed2ac11b32ca771a9ff",
+      "result": "passed",
+      "coveredArtifacts": [
+        "moldea/moldea.yaml",
+        "moldea/project.md",
+        "moldea/agents/equipment-handoff",
+        "src"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Extracted both fenced bash examples from tools/README.md, checked each with bash -n, executed the exact commands and compared stdout, empty stderr and exit status against the documented CSV.",
+      "inputCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "git/066ef7578ec935fe9f3532bcd59759eb6a91f7cf/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+        "tools/contact-csv.mjs"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Compared exact before/after Git trees for aster-request-03: only standalone exporter files or its README changed; canonical files, assistant code, package metadata and installed distribution were unchanged. Native recording shows relevance result 0 and no later moldea activity or announcement.",
+      "inputCommit": "95a569b232f0b78b78c5377dde32dd5e2ec79d2c",
+      "result": "passed",
+      "coveredArtifacts": [
+        "moldea",
+        "src",
+        "package.json",
+        "package-lock.json",
+        "git/066ef7578ec935fe9f3532bcd59759eb6a91f7cf/95a569b232f0b78b78c5377dde32dd5e2ec79d2c",
+        "tools"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Compared exact before/after Git trees for aster-request-05: only standalone exporter files or its README changed; canonical files, assistant code, package metadata and installed distribution were unchanged. Native recording shows relevance result 0 and no later moldea activity or announcement.",
+      "inputCommit": "8a0781201cac7c51e9917742ffdd3b0cc06c62a2",
+      "result": "passed",
+      "coveredArtifacts": [
+        "moldea",
+        "src",
+        "package.json",
+        "package-lock.json",
+        "git/066ef7578ec935fe9f3532bcd59759eb6a91f7cf/8a0781201cac7c51e9917742ffdd3b0cc06c62a2",
+        "tools"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Compared exact before/after Git trees for aster-request-06: only standalone exporter files or its README changed; canonical files, assistant code, package metadata and installed distribution were unchanged. Native recording shows relevance result 0 and no later moldea activity or announcement.",
+      "inputCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "moldea",
+        "src",
+        "package.json",
+        "package-lock.json",
+        "git/066ef7578ec935fe9f3532bcd59759eb6a91f7cf/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+        "tools"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Reviewed driver seed lineage: generic fixture base c3ecda12e853b527a96c6ca81150083b0224643a to actual actor starting seed 066ef7578ec935fe9f3532bcd59759eb6a91f7cf. The attempt base is the source before its first delivered request, per the existing version 1 checkpoint contract. Full introduced-history privacy coverage includes the seed as well as all actor result checkpoints.",
+      "inputCommit": "066ef7578ec935fe9f3532bcd59759eb6a91f7cf",
+      "result": "passed",
+      "coveredArtifacts": [
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/066ef7578ec935fe9f3532bcd59759eb6a91f7cf"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "node scripts/evidence/evidence.mjs verify --run evidence/runs/run-20261021-01/run.json \u2014 initial working draft rejected premature review links.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node scripts/evidence/evidence.mjs verify --run evidence/runs/run-20261021-01/run.json \u2014 after link correction, invocation without asset-root rejected missing asset bytes.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "node scripts/evidence/evidence.mjs verify --run evidence/runs/run-20261021-01/run.json --asset-root [redacted] \u2014 exact private candidate bytes verified; evidence intentionally remained incomplete. This was not downloaded/public evidence verification.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test \u2014 intermediate request 02 run failed because custom model bindTools called unavailable this.bind; native tool call 252/result 255.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [
+        "examples/offline-model.ts",
+        "test/assistant.test.ts"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm run typecheck \u2014 intermediate request 02 run reported TS2339 for this.bind in both controlled model classes; native result 263.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [
+        "examples/offline-model.ts",
+        "test/assistant.test.ts"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent reviewer executed npm test (41 passed), npm run typecheck, and node --test tools/contact-csv.test.mjs (54 passed) after npm ci --ignore-scripts in an exact-source disposable clone.",
+      "inputCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "src",
+        "examples",
+        "test/assistant.test.ts",
+        "tools/contact-csv.mjs",
+        "tools/contact-csv.test.mjs"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent reviewer executed all three real CLI examples, CLI help/error cases, and both documented Bash examples with syntax/stdout/stderr/exit comparisons.",
+      "inputCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "examples",
+        "tools",
+        "data"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent reviewer compared all 36 installed distribution files byte-for-byte to immutable published source, checked inert installed metadata, and executed closed launcher composition/content/validate: schema7, zero diagnostics, 8/8 exports.",
+      "inputCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "moldea",
+        "package.json",
+        "package-lock.json"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent source/skill-behavior review: no unresolved actionable product defect or material observed behavior gap; entire introduced history and source leakage examined. Owned review clone/cache removed; source worktrees untouched.",
+      "inputCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1"
+      ],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json",
+        "evidence/scenarios/aster-dispatch.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/066ef7578ec935fe9f3532bcd59759eb6a91f7cf/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+        "git/c3ecda12e853b527a96c6ca81150083b0224643a/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz",
+        "run-20261021-01/aster-dispatch-identities-01.txt"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt",
+        "locator": "aster-before-request-01; aster-installed-skill-before-request-01; native-request-01-context"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Inert root manifest has no declaration; package-lock.json and node_modules are absent."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Inert root manifest has no declaration; package-lock.json and node_modules are absent."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 136,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt",
+        "locator": "aster-request-02; composition observed before request; reconciled native contexts after execution"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 344,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt",
+        "locator": "aster-request-03; liveCompositionObservations eventOrdinal 344"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 400,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt",
+        "locator": "aster-request-04; liveCompositionObservations eventOrdinal 400"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 484,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt",
+        "locator": "aster-request-05; liveCompositionObservations eventOrdinal 484"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "eventOrdinal": 529,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt",
+        "locator": "aster-request-06; liveCompositionObservations eventOrdinal 529"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v10.0.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261021-01",
+      "name": "aster-dispatch-01-session-01.jsonl.gz",
+      "sizeBytes": 182549,
+      "sha256": "f7a0c702d323d40beb5c7e6f023c5d59617dd1fc49a95de57d8cb69e9239aa65",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 573
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261021-01",
+      "name": "aster-dispatch-identities-01.txt",
+      "sizeBytes": 79188,
+      "sha256": "11ec7e118bb06d4601a37059d638db87e24baa3fd5b313f6f6fc56296122ceb0",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "actor",
+      "requestId": "aster-request-02",
+      "description": "An intermediate custom model implementation used the unavailable this.bind API. npm test failed at session event 255 and typecheck reported TS2339 at event 263; the actor changed both model bindTools methods to withConfig at event 267 without driver assistance. The same request then passed 38 tests/typechecking and validation. This was an application development mistake, not a demonstrated Skill or SDK defect.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "Pre-publication record drafting initially attached review links while reviewStatus was pending. The existing verifier rejected it; the driver changed those links to null. Actor source/session and the utility were unchanged.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "A subsequent draft verification omitted --asset-root despite declared assets. The verifier required bytes; the driver provided an exact private candidate copy and verification passed with evidence still incomplete. This did not establish downloadability or public integrity.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "aster-dispatch-identities-01.txt"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "ad-path-0001",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0002",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0003",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0004",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0005",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0006",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0007",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0008",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0009",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0010",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0011",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0012",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 17,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0013",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0014",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0015",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0016",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0017",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0018",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0019",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0020",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 62,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0021",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 82,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0022",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 82,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0023",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 89,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0024",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 89,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0025",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 99,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0026",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 99,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0027",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 118,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0028",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 126,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0029",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 133,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0030",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 134,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0031",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 134,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0032",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 134,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0033",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 134,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0034",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 134,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0035",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 134,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0036",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 134,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0037",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 141,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0038",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 141,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0039",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 141,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0040",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 149,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0041",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 149,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0042",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 170,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0043",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 194,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0044",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0045",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0046",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0047",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0048",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0049",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0050",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0051",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 234,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0052",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 245,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0053",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 245,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0054",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 245,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0055",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 245,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0056",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 245,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0057",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 245,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0058",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 245,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0059",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0060",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0061",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0062",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0063",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0064",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0065",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0066",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0067",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0068",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0069",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0070",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0071",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0072",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0073",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0074",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0075",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0076",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0077",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0078",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0079",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0080",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0081",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0082",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0083",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0084",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0085",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0086",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0087",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0088",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0089",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0090",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0091",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0092",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0093",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0094",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0095",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0096",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0097",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0098",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0099",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0100",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0101",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0102",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0103",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0104",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0105",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0106",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0107",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0108",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0109",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0110",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0111",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0112",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0113",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0114",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0115",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0116",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0117",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0118",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0119",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0120",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0121",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0122",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0123",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0124",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0125",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0126",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0127",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0128",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0129",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0130",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0131",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0132",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0133",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0134",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0135",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0136",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0137",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0138",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0139",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0140",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0141",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0142",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0143",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0144",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0145",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0146",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0147",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0148",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0149",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0150",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0151",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0152",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0153",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0154",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0155",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0156",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0157",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0158",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0159",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0160",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0161",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0162",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0163",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0164",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0165",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0166",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0167",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0168",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0169",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0170",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0171",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0172",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0173",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0174",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 255,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0175",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 267,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0176",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 267,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0177",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 280,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0178",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 280,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0179",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 280,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0180",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 280,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0181",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 293,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0182",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 293,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0183",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 293,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0184",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 311,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0185",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 322,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0186",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 322,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0187",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 337,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0188",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 349,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0189",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 349,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0190",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 349,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0191",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 375,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0192",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 375,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0193",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 391,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0194",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 398,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0195",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 398,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0196",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 398,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0197",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 405,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0198",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 413,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0199",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 436,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0200",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 436,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0201",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 436,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0202",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 436,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0203",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 436,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0204",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 436,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0205",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 462,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0206",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 475,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0207",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 482,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0208",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 482,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0209",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 482,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0210",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 482,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0211",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 482,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0212",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 482,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0213",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 482,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0214",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 489,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0215",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 504,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0216",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 504,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0217",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 527,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0218",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 527,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0219",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 527,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0220",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 534,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0221",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 549,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0222",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 556,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "ad-path-0223",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 570,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a15fe7-8015-7f12-a6a5-4c02617ad9a9",
+      "affectedLocations": [
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Public integrity/download verification and full public browser replay remain pending; the source/skill-behavior review is complete.",
+    "The dedicated actor home isolates configuration, not filesystem reads; host skill catalogs and shared Git objects remain available.",
+    "Controlled model-boundary execution does not establish live provider behavior or the semantic quality of arbitrary generated prose.",
+    "Encrypted reasoning and host-private world state are omitted; no natural compaction occurred.",
+    "Optional shellcheck and shfmt were unavailable; both documented commands passed bash syntax and actual output checks.",
+    "The pre-publication verifier draft checks have null inputCommit because the record metadata was uncommitted; their frozen actor source was beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1. Their initial driver errors and later passing private-byte validation are retained; publication checks will identify public record commits separately.",
+    "The intermediate failing request 02 checks have null inputCommit because they ran before the driver checkpoint; native tool calls/outputs and patch event 267 preserve the change. Initial npm test output was truncated by the host; the recorded failure reason and subsequent complete passing runs remain available."
+  ]
+}
