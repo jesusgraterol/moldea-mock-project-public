@@ -11,7 +11,7 @@
     "path": "evidence/scenarios/aster-dispatch.md",
     "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
   },
-  "observedSummary": "One real compiled LangGraph assistant produces structured equipment handoffs through a read-only inventory lookup. moldea adopted absent tooling, connected the maintained instruction and source, and maintained the inclusive urgency rule from 24 to 48 hours. Three independent exporter requests received relevance misses and left assistant/canonical state unchanged. All 41 assistant and 54 exporter tests, typechecking and real instruction/schema checks passed independent reruns. Source/skill-behavior review and public asset integrity verification are complete; full pilot replay remains pending. An intermediate actor API error and resolved driver bookkeeping errors are retained.",
+  "observedSummary": "One real compiled LangGraph assistant produces structured equipment handoffs through a read-only inventory lookup. moldea adopted absent tooling, connected the maintained instruction and source, and maintained the inclusive urgency rule from 24 to 48 hours. Three independent exporter requests received relevance misses and left assistant/canonical state unchanged. All 41 assistant and 54 exporter tests, typechecking and real instruction/schema checks passed independent reruns. Source/skill-behavior review and public asset integrity verification are complete; full functional pilot replay is complete and the expansion gate passed, with an inherited viewer landmark-naming defect retained. An intermediate actor API error and resolved driver bookkeeping errors are retained.",
   "actorOutcome": "concluded",
   "outcomeReason": null,
   "evidenceStatus": "complete",
@@ -587,6 +587,76 @@
         "run-20261021-01/aster-dispatch-identities-01.txt"
       ],
       "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "node website/scripts/generate-development.ts --project-runs-selection [redacted] \u2014 full public generation consumed immutable snapshot 86cd76337d220b59b598d241036e12b7ac5f05ce and run-20261021-01, retaining run-20261013-01 as history; pinned reader 950b89eb4c41564953fa1582fdd588992e152d37. No local-record substitution.",
+      "inputCommit": "86cd76337d220b59b598d241036e12b7ac5f05ce",
+      "result": "passed",
+      "asset": null,
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/reviews/skill-review.md"
+      ]
+    },
+    {
+      "kind": "manual",
+      "description": "Initial public browser replay failed because a driver text selector chose a hidden tool-dialog copy of this.bind; narrowed to the visible project-record failure note. All 54 complete tool inputs/results had already matched the unchanged asset before that selector failure.",
+      "inputCommit": "86cd76337d220b59b598d241036e12b7ac5f05ce",
+      "result": "failed",
+      "asset": null,
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/reviews/skill-review.md"
+      ]
+    },
+    {
+      "kind": "manual",
+      "description": "Unfiltered Conversation Axe assertion expected zero violations and failed on moderate landmark-unique: repeated Code block region names. Independently reproduced on Aster and unchanged prior Lantern Loans using pinned website-ui 4.1.0; original failed result retained, no rule filtering or reader repair.",
+      "inputCommit": "86cd76337d220b59b598d241036e12b7ac5f05ce",
+      "result": "failed",
+      "asset": null,
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/reviews/skill-review.md"
+      ]
+    },
+    {
+      "kind": "manual",
+      "description": "Complete functional public replay: Chromium 151.0.7922.34, 1440x900 and 320x900 touch, light/dark. All 110 parsed entries, six request ordinals and 54 complete tool exchanges matched the asset; four key tools rechecked in every theme/layout. Host/tool dialogs, Enter/Escape/focus restoration, tabs, summaries, exact immutable links, no document overflow or page errors passed. Raw Axe findings retained separately; this is not an all-accessibility pass.",
+      "inputCommit": "86cd76337d220b59b598d241036e12b7ac5f05ce",
+      "result": "passed",
+      "asset": null,
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/reviews/skill-review.md"
+      ]
+    },
+    {
+      "kind": "manual",
+      "description": "Anonymous immutable source, attempt-record and review endpoints returned HTTP200. Independent 320px keyboard probe confirmed focused code-region scrolling and Tab exit; visible record screenshots checked in both themes after explicit scrolling. Owned preview processes stopped, port closed, browsers closed and disposable caches removed.",
+      "inputCommit": "86cd76337d220b59b598d241036e12b7ac5f05ce",
+      "result": "passed",
+      "asset": null,
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/reviews/skill-review.md"
+      ]
+    },
+    {
+      "kind": "manual",
+      "description": "Pilot expansion gate: satisfied. Independent source/behavior review, first-turn capture, real graph/instruction/tool/schema execution, privacy, published asset integrity and complete functional replay establish meaningful expansion. Inherited moderate landmark naming does not hide/corrupt evidence or block tested keyboard access; retain it as non-blocking under jg-review step 5, without changing the failed Axe outcome.",
+      "inputCommit": "86cd76337d220b59b598d241036e12b7ac5f05ce",
+      "result": "passed",
+      "asset": null,
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/reviews/skill-review.md"
+      ]
+    },
+    {
+      "kind": "command",
+      "description": "Replay-record working draft verification rejected missing required coveredArtifacts arrays on newly appended checks. Added explicit coverage fields; no schema or evidence utility change.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -831,6 +901,24 @@
         "tag": "run-20261021-01",
         "name": "aster-dispatch-identities-01.txt"
       }
+    },
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "The first browser replay used a broad this.bind selector that selected hidden closed-dialog text. The visible record-note locator corrected this driver error; earlier full tool comparisons remain valid on unchanged inputs. A separate ad hoc Axe probe initially used browser.newPage instead of an explicit context and failed; the corrected diagnostic reproduced the real viewer finding.",
+      "asset": null
+    },
+    {
+      "kind": "environment",
+      "requestId": null,
+      "description": "Pinned public viewer accessibility finding: all-Axe assertion failed on moderate landmark-unique because multiple Markdown code regions share Code block as their accessible name. Independent reproduction on prior Lantern Loans and Aster traced it to website-ui 4.1.0 rendering. It makes landmark navigation ambiguous; no screen reader was tested. Evidence, keyboard scrolling/dialogs and responsive access remained usable, so the expansion gate treats this inherited finding as non-blocking. No reader fix or all-Axe pass is claimed.",
+      "asset": null
+    },
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "The replay-record working draft omitted required coveredArtifacts arrays on its new checks; structural verification rejected it. The driver supplied the explicit fields without altering the schema, source, recording or reader.",
+      "asset": null
     }
   ],
   "redactions": [
@@ -4045,12 +4133,13 @@
   "recovery": null,
   "predecessorAttemptId": null,
   "limitations": [
-    "Full public pilot browser replay and the expansion decision remain pending; source/skill-behavior review, privacy review and published asset integrity verification are complete.",
+    "Full functional public pilot replay completed at 1440/320 pixels in light/dark themes. The all-Axe assertion failed on inherited moderate landmark-unique code-region naming, independently reproduced on prior Lantern Loans. Tested evidence and keyboard access remain available; this non-blocking viewer limitation is retained without a reader fix or accessibility-conformance claim. The pilot expansion gate passed.",
     "The dedicated actor home isolates configuration, not filesystem reads; host skill catalogs and shared Git objects remain available.",
     "Controlled model-boundary execution does not establish live provider behavior or the semantic quality of arbitrary generated prose.",
     "Encrypted reasoning and host-private world state are omitted; no natural compaction occurred.",
     "Optional shellcheck and shfmt were unavailable; both documented commands passed bash syntax and actual output checks.",
     "The pre-publication verifier draft checks have null inputCommit because the record metadata was uncommitted; their frozen actor source was beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1. Their initial driver errors and later passing private-byte validation are retained; publication checks will identify public record commits separately.",
-    "The intermediate failing request 02 checks have null inputCommit because they ran before the driver checkpoint; native tool calls/outputs and patch event 267 preserve the change. Initial npm test output was truncated by the host; the recorded failure reason and subsequent complete passing runs remain available."
+    "The intermediate failing request 02 checks have null inputCommit because they ran before the driver checkpoint; native tool calls/outputs and patch event 267 preserve the change. Initial npm test output was truncated by the host; the recorded failure reason and subsequent complete passing runs remain available.",
+    "The replay-record draft failure has null inputCommit because its metadata was uncommitted; replay inputs were public snapshot 86cd76337d220b59b598d241036e12b7ac5f05ce and pinned reader 950b89eb4c41564953fa1582fdd588992e152d37."
   ]
 }

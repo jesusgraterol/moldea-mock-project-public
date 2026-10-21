@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "runId": "run-20261021-01",
   "date": "2026-10-21",
-  "summary": "Six-project Skill 10.0.0 batch in progress: Aster completed six requests with independent real-LangGraph source/behavior checks and complete published evidence; its full replay/expansion gate is pending. Cobalt, Folio, Beacon, Cinder and Quarry have not started.",
+  "summary": "Six-project Skill 10.0.0 batch in progress: Aster completed six requests with independent real-LangGraph source/behavior checks and complete published evidence; its functional public replay and expansion gate passed with an inherited viewer accessibility limitation retained. Cobalt, Folio, Beacon, Cinder and Quarry have not started.",
   "expectedActor": {
     "model": "gpt-6.1-sol",
     "effort": "xhigh"
@@ -36,7 +36,7 @@
   "reviewStatus": "pending",
   "review": null,
   "limitations": [
-    "Aster full public browser replay and the expansion gate remain pending. The other five projects have no attempts yet.",
+    "Aster functional public replay and expansion gate passed. The inherited moderate viewer landmark-unique finding remains open; no accessibility-conformance claim. The other five projects have no attempts yet.",
     "The six-project batch remains incomplete; Aster source/behavior review and published integrity verification are complete."
   ]
 }
