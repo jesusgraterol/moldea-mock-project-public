@@ -7,7 +7,8 @@
     "node": ">=24"
   },
   "scripts": {
-    "test": "node --test test/return-assistant.test.ts",
+    "orders:csv": "node scripts/order-reference-csv.ts",
+    "test": "node --test test/return-assistant.test.ts test/order-reference-csv.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

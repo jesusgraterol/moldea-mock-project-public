@@ -67,6 +67,25 @@ The draft entry point creates a fresh agent per request, limits it to two model 
 
 Canonical model instructions are loaded directly from `moldea/agents/returns-assistant/instruction.md`. Keep that file and `data/orders.json` alongside the source when running the tool. The optional `ordersFile` setting is a trusted host-selected local fixture path, never a model-controlled path. No UI, database, provider integration, or second assistant is included.
 
+## Order-reference CSV
+
+Export the fictional order identifiers for a spreadsheet, without running the assistant:
+
+```sh
+npm run --silent orders:csv
+```
+
+```csv
+orderId,reference
+CR-101,CINDER-101
+CR-102,CINDER-102
+CR-103,CINDER-103
+```
+
+Use `npm run --silent orders:csv > order-references.csv` to save the output. `--silent` suppresses npm's banner so stdout contains only CSV. By default the command reads `data/orders.json`, independently of the working directory. To select another local JSON file, use `npm run --silent orders:csv -- --input path/to/orders.json` (relative paths use the caller's working directory).
+
+Input must be an array with non-blank string `id` and `reference` fields; only those fields are exported. Rows are sorted lexicographically by `orderId`, independently of locale; equal IDs retain their input order. Commas, double quotes, and line breaks are CSV-quoted, with embedded quotes doubled and CRLF record endings. An empty array emits the header only. Invalid JSON, malformed records, or unreadable files produce an error on stderr, exit 1, and no partial CSV; invalid arguments exit 2. Source files are never modified. The utility checks run as part of `npm test`.
+
 <!-- moldea:start -->
 
 This project uses [moldea](https://skill.moldea.ai) to keep project knowledge in Git and bring relevant context into coding-agent work.
