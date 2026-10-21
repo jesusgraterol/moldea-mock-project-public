@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "test": "node --test tools/format-contributors.test.mjs skills/shared/count-label-words.test.mjs"
+  },
   "engines": {
     "node": ">=24"
   }
