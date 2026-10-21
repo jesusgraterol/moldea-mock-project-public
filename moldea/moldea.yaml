@@ -1,1 +1,37 @@
 version: 1
+agents:
+  returns-assistant:
+    runtime:
+      id: vercel-ai-sdk
+      guidance: /moldea/runtimes/vercel-ai-sdk.md
+    bindings:
+      runtimeAgent:
+        path: /src/return-assistant.ts
+        symbol: createReturnAgent
+      instructionLoader:
+        path: /src/instructions.ts
+        symbol: loadReturnInstruction
+      inputSchema:
+        path: /src/contracts.ts
+        symbol: ReturnRequestSchema
+      outputSchema:
+        path: /src/contracts.ts
+        symbol: StaffRecommendationSchema
+    tools:
+      lookup-order:
+        name: lookup_order
+        description: Reads the requested fictional order for a deterministic time-window assessment and staff recommendation; never writes.
+        implementation:
+          path: /src/order-lookup.ts
+          symbol: lookupOrder
+        registration:
+          path: /src/return-assistant.ts
+          symbol: createReturnAgent
+        inputSchema:
+          path: /src/contracts.ts
+          symbol: OrderLookupInputSchema
+    affectedBy:
+      - /src/assessment.ts
+      - /data/orders.json
+      - /test/return-assistant.test.ts
+      - /package.json

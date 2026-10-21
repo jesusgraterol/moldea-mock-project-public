@@ -6,6 +6,10 @@
   "engines": {
     "node": ">=24"
   },
+  "scripts": {
+    "test": "node --test test/return-assistant.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
     "ai": "7.0.148",
     "zod": "4.6.5"
