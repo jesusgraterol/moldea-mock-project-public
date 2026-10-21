@@ -49,3 +49,7 @@ Focused checks cover exact-window boundaries with supplied times, missing delive
 Keep canonical/file/export validation, SDK execution under controlled responses, application-owned handling, and live model quality distinct. No live provider result, payment action, semantic reliability evaluation, or general SDK qualification is claimed.
 
 Before this project runs, the Aster pilot must have passed first-turn capture, independent review, privacy/integrity verification, and full replay. Complete this project's source/behavior review, privacy check, publication, and downloaded-asset verification within its own milestone. Retain failures, interventions, retries, and limitations. The existing run review owns final outcome/evidence anchors, manual selection, public snapshot and source/recording/review links, and rollback selection.
+
+## Observed run
+
+[cinder-returns-01](../runs/run-20261021-01/attempts/cinder-returns-01.json) records five actual requests from brief revision 18651cd2a17ff89921bbbe557036f21f1cd16695 and final source f26b7754937ef2915a50757fc046159c730b08a6. One real AI SDK assistant uses an actual read-only lookup, deterministic inclusive21-day assessment and structured parsing, followed by a separate CSV utility;52tests/typecheck passed. Free rationale remains a human-review limit. Independent source/skill/capture/privacy review, signed source publication and authenticated/anonymous asset-byte verification are complete. The prospective sections above remain preparation history; no turn was added solely to meet an estimate.
