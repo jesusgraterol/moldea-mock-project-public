@@ -7,7 +7,19 @@
   "engines": {
     "node": ">=24"
   },
+  "scripts": {
+    "example": "node examples/dispatch.ts",
+    "test": "node --test test/assistant.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
-    "@moldea.ai/cli": "13.0.0"
+    "@moldea.ai/cli": "13.0.0",
+    "@types/node": "24.12.0",
+    "typescript": "6.0.3"
+  },
+  "dependencies": {
+    "@langchain/core": "1.2.20",
+    "@langchain/langgraph": "1.5.1",
+    "zod": "4.6.5"
   }
 }

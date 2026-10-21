@@ -1,1 +1,40 @@
 version: 1
+agents:
+  equipment-handoff:
+    runtime:
+      id: langgraph
+      guidance: /moldea/runtimes/langgraph.md
+    bindings:
+      runtimeAgent:
+        path: /src/assistant.ts
+        symbol: createDispatchAssistant
+      instructionLoader:
+        path: /src/instructions.ts
+        symbol: loadDispatchInstruction
+      inputSchema:
+        path: /src/contracts.ts
+        symbol: RequestSchema
+      outputSchema:
+        path: /src/contracts.ts
+        symbol: HandoffSchema
+    tools:
+      lookup-inventory:
+        name: lookup_inventory
+        description: Reads the matching fictional inventory record for this request without reservations or writes.
+        implementation:
+          path: /src/inventory.ts
+          symbol: lookupInventory
+        registration:
+          path: /src/inventory.ts
+          symbol: createInventoryLookupTool
+        inputSchema:
+          path: /src/contracts.ts
+          symbol: InventoryLookupInputSchema
+        outputSchema:
+          path: /src/contracts.ts
+          symbol: InventoryLookupOutputSchema
+    affectedBy:
+      - /src/assessment.ts
+      - /test/assistant.test.ts
+      - /package.json
+      - /package-lock.json
