@@ -1,0 +1,30 @@
+[
+  {
+    "id": "QH-101",
+    "scope": "loading-bay-latch",
+    "reportedAt": "2026-10-20T00:00:00.000Z",
+    "status": "unresolved",
+    "observation": "Door latch catches intermittently during closing."
+  },
+  {
+    "id": "QH-102",
+    "scope": "loading-bay-latch",
+    "reportedAt": "2026-10-20T01:00:00.000Z",
+    "status": "unresolved",
+    "observation": "Door latch operated normally during the check."
+  },
+  {
+    "id": "QH-103",
+    "scope": "north-stair-handrail",
+    "reportedAt": null,
+    "status": "unresolved",
+    "observation": "Handrail vibration noted; observation time was not recorded."
+  },
+  {
+    "id": "QH-104",
+    "scope": "store-room-light",
+    "reportedAt": "2026-10-19T09:00:00.000Z",
+    "status": "resolved",
+    "observation": "Supervisor record says the flickering-light report was resolved."
+  }
+]

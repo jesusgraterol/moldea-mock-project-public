@@ -1,0 +1,18 @@
+{
+  "name": "quarry-handover",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "eve": "0.82.0",
+    "ai": "7.0.148",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "typescript": "6.0.3",
+    "@types/node": "24.12.0"
+  }
+}
