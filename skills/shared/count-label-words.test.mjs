@@ -15,9 +15,9 @@ test('counts whitespace-separated words without splitting hyphens or punctuation
   assert.equal(countLabelWords(' \t\r\n'), 0);
 });
 
-test('accepts exactly 60 words, rejects 61, and rejects empty labels', () => {
-  assert.equal(checkLabelLength(Array(60).fill('word').join(' ')).length, 'PASS');
-  assert.equal(checkLabelLength(Array(61).fill('word').join(' ')).reason, 'over-limit');
+test('accepts exactly 40 words, rejects 41, and rejects empty labels', () => {
+  assert.equal(checkLabelLength(Array(40).fill('word').join(' ')).length, 'PASS');
+  assert.equal(checkLabelLength(Array(41).fill('word').join(' ')).reason, 'over-limit');
   assert.equal(checkLabelLength('').reason, 'empty-label');
 });
 
@@ -25,12 +25,16 @@ test('does not silently extract label text from surrounding metadata', () => {
   assert.equal(countLabelWords('# Label\n\nhand-made bowl\n\nEvidence: S-101'), 6);
 });
 
-test('worked example counts match the complete label blocks', async () => {
+test('worked example counts, limits, and length verdicts match the complete label blocks', async () => {
   const examples = await readFile(new URL('../design-and-examples.md', import.meta.url), 'utf8');
-  const labels = [...examples.matchAll(/```text\n([\s\S]*?)\n```\n\n\*\*Word count:\*\* (\d+)\/60\./gu)];
-  assert.equal(labels.length, 6);
-  for (const [, label, reportedCount] of labels) {
-    assert.equal(countLabelWords(label), Number(reportedCount));
+  const labels = [...examples.matchAll(/```text\n([\s\S]*?)\n```\n\n\*\*Word count:\*\* (\d+)\/(\d+)\.(.*)/gu)];
+  assert.equal(labels.length, 7);
+  for (const [, label, reportedCount, reportedLimit, review] of labels) {
+    const result = checkLabelLength(label);
+    assert.equal(result.wordCount, Number(reportedCount));
+    assert.equal(result.limit, Number(reportedLimit));
+    const lengthVerdict = review.match(/\*\*Length:\*\* (PASS|FAIL)/u)?.[1];
+    if (lengthVerdict) assert.equal(result.length, lengthVerdict);
   }
 });
 
@@ -50,7 +54,7 @@ test('CLI checks argument text or stdin and works outside the repository cwd', (
   assert.equal(argument.status, 0);
   assert.equal(stdin.status, 0);
   assert.deepEqual(JSON.parse(argument.stdout), {
-    schemaVersion: 1, wordCount: 2, limit: 60, length: 'PASS', reason: null,
+    schemaVersion: 1, wordCount: 2, limit: 40, length: 'PASS', reason: null,
   });
   assert.equal(JSON.parse(stdin.stdout).wordCount, 3);
   assert.equal(argument.stderr, '');
@@ -58,14 +62,14 @@ test('CLI checks argument text or stdin and works outside the repository cwd', (
 });
 
 test('CLI distinguishes a failing length check from an unexecuted check', () => {
-  const exact = runCounter(['--text', Array(60).fill('word').join(' ')]);
-  const over = runCounter([], Array(61).fill('word').join('\t'));
+  const exact = runCounter(['--text', Array(40).fill('word').join(' ')]);
+  const over = runCounter([], Array(41).fill('word').join('\t'));
   const empty = runCounter(['--text', ' \n']);
   const invalid = runCounter(['--notes', 'not-an-option']);
   assert.equal(exact.status, 0);
-  assert.equal(JSON.parse(exact.stdout).wordCount, 60);
+  assert.equal(JSON.parse(exact.stdout).wordCount, 40);
   assert.equal(over.status, 1);
-  assert.equal(JSON.parse(over.stdout).wordCount, 61);
+  assert.equal(JSON.parse(over.stdout).wordCount, 41);
   assert.equal(JSON.parse(over.stdout).reason, 'over-limit');
   assert.equal(empty.status, 1);
   assert.equal(JSON.parse(empty.stdout).reason, 'empty-label');

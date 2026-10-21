@@ -28,12 +28,12 @@ Do not add outside research, familiar-sounding biography, or plausible context. 
 
 ## Length and text boundary
 
-A nonempty label may contain **at most 60 words**, inclusive. Count whitespace-separated words in the **label text only**: each maximal run of non-whitespace characters is one word. Leading/trailing whitespace and repeated whitespace add no words; spaces, tabs, and line breaks separate words. Punctuation and hyphens within a run do not split it.
+A nonempty label may contain **at most 40 words**, inclusive. Count whitespace-separated words in the **label text only**: each maximal run of non-whitespace characters is one word. Leading/trailing whitespace and repeated whitespace add no words; spaces, tabs, and line breaks separate words. Punctuation and hyphens within a run do not split it.
 
 - `hand-made bowl` = **2** words.
 - `hand made bowl` = **3** words.
 - `about 1980` = **2** words.
-- 60 words passes length; 61 fails. Empty/whitespace-only text is not a label.
+- 40 words passes length; 41 fails. Empty/whitespace-only text is not a label.
 
 Put the complete proposed display text in one plain-text block. Any title, heading, date line, source credit, or attribution intended to appear on the exhibit label belongs inside that block and counts. Do not move on-label qualifications into uncounted metadata to evade the limit. Section headings that introduce the block, code fences, word counts, evidence maps, review findings, and open questions outside the display text are not counted. If the boundary is unclear, obtain the intended display text before reporting a definitive count.
 

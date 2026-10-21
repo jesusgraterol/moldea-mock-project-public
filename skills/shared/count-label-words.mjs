@@ -7,7 +7,7 @@ export function countLabelWords(labelText) {
 
 export function checkLabelLength(labelText) {
   const wordCount = countLabelWords(labelText);
-  const limit = 60;
+  const limit = 40;
   const reason = wordCount === 0 ? 'empty-label' : wordCount > limit ? 'over-limit' : null;
 
   return {

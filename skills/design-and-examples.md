@@ -31,7 +31,7 @@ Source: [FW-101 notes](../notes/fw-101.md).
 Blue-glazed stoneware cup. The maker-signed studio card S-101 attributes it to Irena Vale and dates it to 1974 at North Quay. Accession record A-101 records its donation by the Harbor Study Group in 2011.
 ```
 
-**Word count:** 34/60.
+**Word count:** 34/40.
 
 **Evidence:** Object/material: FW-101 opening description. Attribution/date/place and the signed card: S-101. Donor/donation year: A-101.
 
@@ -53,7 +53,7 @@ Source: [FW-102 notes](../notes/fw-102.md).
 Carved oak tray, dated about 1980 on storage card S-102. Its maker and place of manufacture are not recorded. Accession record A-102 records its donation by the South Window Study Circle in 2008.
 ```
 
-**Word count:** 33/60.
+**Word count:** 33/40.
 
 **Evidence:** Object/material: FW-102 opening description. Approximate date and missing maker/place: S-102. Donor/donation year: A-102.
 
@@ -75,7 +75,7 @@ Source: [FW-103 notes](../notes/fw-103.md).
 Woven wool wall panel. Note N-103-A attributes it to Tessa Marr, 1968; note N-103-B to Oren Pike, 1971. Attribution and date remain unresolved. Place of manufacture and provenance are not recorded in the supplied notes.
 ```
 
-**Word count:** 35/60.
+**Word count:** 35/40.
 
 **Evidence:** Object/material: FW-103 opening description. Tessa Marr/1968: N-103-A. Oren Pike/1971: N-103-B. The notes explicitly supply no resolving authority; neither supplies manufacture place or provenance.
 
@@ -93,7 +93,7 @@ Request: `Use $folio-review-label to check this label against notes/fw-101.md.`
 Irena Vale made this hand-made stoneware cup at North Quay in 1974. The artist donated it in 2011.
 ```
 
-**Word count:** 18/60. **Length:** PASS. **Grounding:** FAIL. **Overall:** REVISE.
+**Word count:** 18/40. **Length:** PASS. **Grounding:** FAIL. **Overall:** REVISE.
 
 **Findings:**
 
@@ -111,7 +111,7 @@ Irena Vale made this hand-made stoneware cup at North Quay in 1974. The artist d
 Carved oak tray, made in 1980. Donated by the South Window Study Circle in 2008.
 ```
 
-**Word count:** 15/60. **Length:** PASS. **Grounding:** FAIL. **Overall:** REVISE.
+**Word count:** 15/40. **Length:** PASS. **Grounding:** FAIL. **Overall:** REVISE.
 
 **Findings:** “made in 1980” drops S-102's approximation; preserve “about 1980.” The missing maker and manufacture place are hidden; disclose them as not recorded. A-102 supports the donor and donation year.
 
@@ -125,7 +125,7 @@ Carved oak tray, made in 1980. Donated by the South Window Study Circle in 2008.
 Woven wool wall panel by Tessa Marr, 1968.
 ```
 
-**Word count:** 8/60. **Length:** PASS. **Grounding:** FAIL. **Overall:** REVISE.
+**Word count:** 8/40. **Length:** PASS. **Grounding:** FAIL. **Overall:** REVISE.
 
 **Findings:** The label adopts N-103-A as settled fact and omits N-103-B's Oren Pike/1971 claim. No supplied authority resolves the conflict. Restore both source-linked claims and their unresolved status, and disclose the unrecorded place/provenance.
 
@@ -140,6 +140,22 @@ Request: `Draft a label for FW-102, but no notes are supplied or accessible.`
 **Request:** Supply the FW-102 source notes or an accessible path to them. An object identifier alone is not evidence for object type, maker, date, material, place, or provenance. No label or label word count is emitted.
 
 For a review with a label but no accessible notes: report **Overall: NEEDS INFORMATION**, give a length result if the label text is unambiguous, and mark grounding **NOT CHECKED**. Do not use a worked example as substitute evidence.
+
+### 8. A grounded label can fail length: FW-103
+
+Request: `Review this label against notes/fw-103.md using the current shared limit.`
+
+**Submitted label:**
+
+```text
+Woven wool wall panel. Note N-103-A attributes it to Tessa Marr and dates it to 1968; note N-103-B attributes it to Oren Pike and dates it to 1971. Maker and date remain unresolved. Place of manufacture and provenance are not recorded in the supplied notes.
+```
+
+**Word count:** 45/40. **Length:** FAIL. **Grounding:** PASS. **Overall:** REVISE.
+
+**Findings:** The supplied notes support the object/material, both source-qualified maker/date pairs, and the unresolved status; place and provenance are visibly unrecorded. The label is five words over the current limit. Shorten wording without removing these qualifications: the 35-word label in example 3 is one supported alternative. Recount any replacement.
+
+**Open questions:** The maker/date disagreement still needs an object-specific governing source or decision addressing both claims. Manufacture place and provenance still need supporting records. Shortening the label resolves none of these gaps.
 
 ## Copyable use
 
