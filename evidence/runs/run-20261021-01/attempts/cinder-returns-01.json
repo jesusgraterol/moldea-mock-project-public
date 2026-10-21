@@ -1,0 +1,1913 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261021-01",
+  "scenarioId": "cinder-returns",
+  "attemptId": "cinder-returns-01",
+  "branch": "fixture_vercel_ai_sdk_xs_cinder_returns_01",
+  "baseCommit": "058420acf9cf165b616610c1d94e24511d73472e",
+  "finalCommit": "f26b7754937ef2915a50757fc046159c730b08a6",
+  "lastDurableCommit": "f26b7754937ef2915a50757fc046159c730b08a6",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/cinder-returns.md",
+    "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
+  },
+  "observedSummary": "Five requests completed one real AI SDK assistant, actual uncertain-case demonstrations, inclusive21-day maintenance and separate CSV utility.52 actor/independent tests and typecheck passed. Independent source/skill/capture/privacy review, signed fixture source publication and authenticated/anonymous Release bytes verified. Structured facts and pending staff authority are enforced; free rationale remains a human-review limit.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "hostVersion": "0.163.0",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 150,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 331,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 380,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 458,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "cinder-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Cinder Returns, a small assistant using Vercel AI SDK that looks up fictional order records and drafts structured return recommendations for staff. Our return window is 30 elapsed 24-hour days from delivery, including the exact boundary. Missing delivery facts stay unknown, and staff approve every decision. Start with a small proposal; hold off on implementing the assistant. Use @moldea.ai/cli@13.0.0 for setup.\n",
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 9,
+      "beforeCommit": "058420acf9cf165b616610c1d94e24511d73472e",
+      "afterCommit": "340a0ab25e2345dcc1629b460ef420c74c402f8b",
+      "observedResult": "Explicit initialization and proposal only; CLI13 adoption,0 canonical agents and no assistant implementation. Validation0errors/warnings and integration smoke passed; runtime versions pinned.",
+      "redactionIds": []
+    },
+    {
+      "id": "cinder-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Implement the proposal now. Use one real AI SDK ToolLoopAgent, one read-only order lookup and Output.object for structured staff recommendations. Keep the deterministic elapsed-time assessment, grounded order identifiers, missing facts and required human staff approval explicit in the result; the assistant cannot issue refunds, create returns or change orders. Inspect the installed ai@7.0.148 APIs before wiring it. Provide npm test and npm run typecheck; tests should exercise the actual agent loop, lookup and structured parsing with MockLanguageModelV4 only at the external model boundary, without provider credentials or live calls. Include exact30-day and one-millisecond-over boundaries using supplied UTC timestamps. Update the directly affected usage documentation.\n",
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 151,
+      "beforeCommit": "340a0ab25e2345dcc1629b460ef420c74c402f8b",
+      "afterCommit": "bc565c16c9e96a01dfba5d4a87a401e4f2692dbc",
+      "observedResult": "Implemented one real ToolLoopAgent, one real read-only lookup and Output.object; deterministic supplied-UTC30-day assessment and exact structured-fact enforcement. Initial30/31 wrong-error-expectation failure retained; actor corrected it after inspecting actual SDK rejection, then31tests/typecheck/7bindings passed without driver assistance.",
+      "redactionIds": []
+    },
+    {
+      "id": "cinder-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Show how staff should read the uncertain cases. Run CR-102 (missing delivery), CR-999 (unknown identifier), and a temporarily unavailable order lookup through the actual assistant path at 2026-10-15T12:00:00.000Z using the controlled model boundary. Show the structured results and explain the difference between missing facts, no matching record and a failed lookup; none should become an eligibility decision. Keep source order data read-only, retain pending staff approval, and add a short usage note only if that distinction is missing from the README.\n",
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 332,
+      "beforeCommit": "bc565c16c9e96a01dfba5d4a87a401e4f2692dbc",
+      "afterCommit": "bc565c16c9e96a01dfba5d4a87a401e4f2692dbc",
+      "observedResult": "Actual owned assistant path demonstrated CR102 missing delivery, CR999 no record and CR101 real temporary-file read failure: two model calls/one lookup each, unknown assessment and pending staff approval. Source/data/README unchanged; no new note was needed.",
+      "redactionIds": []
+    },
+    {
+      "id": "cinder-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "Our approved return window is now21 elapsed24-hour days from delivery, still inclusive at the exact boundary. Update the assistant, its affected checks and usage documentation to use21 days instead of30. Keep supplied UTC timestamps, unknown facts, read-only orders and staff-only approval intact. Run npm test and npm run typecheck.\n",
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 381,
+      "beforeCommit": "bc565c16c9e96a01dfba5d4a87a401e4f2692dbc",
+      "afterCommit": "d6a3a9ae73a1873b8cb13acdad9c9616f8a3e58e",
+      "observedResult": "Approved inclusive21-day correction propagated to canonical instruction, deterministic constant, output literal, checks and usage;31tests/typecheck/7bindings passed. Unrelated30-second deadline retained, data unchanged. Actor added README as an affectedBy dependency.",
+      "redactionIds": []
+    },
+    {
+      "id": "cinder-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Staff also need a simple order-reference CSV for a spreadsheet. Add a small npm command that reads the fictional orders and prints only orderId and reference columns, with a header and stable orderId sorting. Handle CSV quoting and malformed input clearly, keep the source records read-only, and use the existing dependencies and native Node APIs. Add focused utility checks and a short usage example, then run the native checks.\n",
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 459,
+      "beforeCommit": "d6a3a9ae73a1873b8cb13acdad9c9616f8a3e58e",
+      "afterCommit": "f26b7754937ef2915a50757fc046159c730b08a6",
+      "observedResult": "Added separate order-reference CSV command using existing dependencies; stable lexicographic ID order, quoting, malformed-input errors/no partial CSV.52tests/typecheck and actual silent npm command passed. Only utility/scripts/tests/package/tsconfig/README changed; no canonical/data/dependency changes.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 2,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 3,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 4,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 5,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 147,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 148,
+      "reason": "Host instruction/catalog/environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "manual",
+      "description": "First real turn captured/reconciled45events/context7/request9 before request02; actual initial8components absent, resulting CLI13/Core9/repository4/repository-fs4 and pinned SDK/development metadata observed separately.",
+      "inputCommit": "340a0ab25e2345dcc1629b460ef420c74c402f8b",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Initial actor request02 npm test30/31 failed: real SDK correctly rejected a skipped required lookup with AI_ToolChoiceViolationError while the authored test expected a different error. Original failure retained; input source uncommitted.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor corrected only the error expectation after inspecting installed SDK contract, without driver help; request02 then31tests/typecheck/final7bindings0errors/warnings passed. Request04 policy maintenance31tests/typecheck/7bindings passed; exact native calls retained.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Request03 actual assistant demonstrations produced6modelcalls/3real lookup results for missing delivery/unknown ID/real file-read failure, all unknown/pending; repository source unchanged.",
+      "inputCommit": "bc565c16c9e96a01dfba5d4a87a401e4f2692dbc",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Final request05 full suite52tests/typecheck and silent orders:csv output passed; native source uncommitted before signed checkpoint, retained exact trace.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact-core31tests/typecheck/7bindings and10real-loop probes passed: every outgoing instruction/outputschema, first lookup inputSchema, actual toolresult flow and disabled second-step tools, boundary/uncertainty/malformed/forged-output cases.",
+      "inputCommit": "bc565c16c9e96a01dfba5d4a87a401e4f2692dbc",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent derived owned canonical-byte witness established real loader consumption, then restored source; separate unsafe rationale acceptance demonstrates unvalidated prose while structured authority remains pending. Passing means the stated limit was observed, not semantic safety.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact21-day31tests/typecheck/7bindings and5real-loop probes passed: exact21/+1ms/old30/CR10325days/stale30output, current instructions/schema/toolflow,30second deadline unchanged.",
+      "inputCommit": "d6a3a9ae73a1873b8cb13acdad9c9616f8a3e58e",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact final source52tests/typecheck/7bindings and actualsilentCSV smoke passed. Eight additional actual CLI checks used an independent Python CSV reader from outsidecwd; quoting/CRLF/Unicode/stableties/columns/emptyheader/malformedinput/no partialoutput/missingfile/invalidargs passed with inputbytes unchanged.",
+      "inputCommit": "f26b7754937ef2915a50757fc046159c730b08a6",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent selected98-mask recapture reproduces exact session bytes and sidecar;155events/547native/54toolpairs, all5requests/settings/composition and98locators reconcile. Earlier97maskcandidate is private; insertingonecachemask renumberedlaterIDs. Reviewer first compared fullruleobjects, corrected to locator/reason/span comparison and retained its bookkeepingfailure.",
+      "inputCommit": "f26b7754937ef2915a50757fc046159c730b08a6",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Entire introduced history (5 signed commits, 76 unique blobs and 264 reached file versions) and36pinnedSkillfiles reviewed; source independently checked and separately pushed. Root verifiedall5signatures and removed bothprovenownedactorcaches afteractorstop.",
+      "inputCommit": "f26b7754937ef2915a50757fc046159c730b08a6",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Root bash-n5README fenced/inline shellsnippets passed; shellcheck/shfmtnotinstalled and notinstalledduringrun. Linuxonly.",
+      "inputCommit": "f26b7754937ef2915a50757fc046159c730b08a6",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Existing verifier against exact private proposed bytes passed for five attempts with batch incomplete; metadata uncommitted, inputCommit null. This alone did not establish publication.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Fresh independent full eight-copy/source/privacy correspondence review passed after two narrative count labels were clarified to5commits/76unique blobs/264reachedfileversions. Frozen session/identity bytes unchanged by that prose correction; source tests unchanged.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Two distinct Cinder assets published without replacement. Authenticated gh and anonymous curl -q downloads with no auth flags/headers and GitHub token environment names removed matched reviewed sizes/hashes. Fixed tag43ebb11aed5beb591532cc7493ad49b2c818f80f and all8earlierasset IDs/sizes/digests/timestamps unchanged.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Root reviewed later factual publication/check/status/privacy prose deltas; unsafe-rationale limit, original actor/reviewer failures and cache override remain explicit.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "f26b7754937ef2915a50757fc046159c730b08a6",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/cinder-returns-01.json",
+        "evidence/scenarios/cinder-returns.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/058420acf9cf165b616610c1d94e24511d73472e/f26b7754937ef2915a50757fc046159c730b08a6",
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz",
+        "run-20261021-01/cinder-returns-identities-01.txt"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "Existing evidence verifier passed against actual authenticated and anonymous Release download roots: five attempts, batch evidence incomplete. Metadata inputs uncommitted; this verifies structure/bytes, not application correctness.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt",
+        "locator": "cinder-request-01-context-7; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Actual inert initial manifest/lock/installed metadata before adoption: this component absent. Runtime manifest declarations alone are not installed identities."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Actual inert initial manifest/lock/installed metadata before adoption: this component absent. Runtime manifest declarations alone are not installed identities."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 150,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt",
+        "locator": "cinder-request-02-context-150; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 331,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt",
+        "locator": "cinder-request-03-context-331; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 380,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt",
+        "locator": "cinder-request-04-context-380; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "eventOrdinal": 458,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt",
+        "locator": "cinder-request-05-context-458; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v10.0.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261021-01",
+      "name": "cinder-returns-01-session-01.jsonl.gz",
+      "sizeBytes": 189633,
+      "sha256": "b1784652fd8f686c01f6e515aefd6465006e973ee45647b928f29149dc668449",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 546
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261021-01",
+      "name": "cinder-returns-identities-01.txt",
+      "sizeBytes": 337181,
+      "sha256": "b86c645bb1e53dfe271ac567e76ab395809774863e805689759d4d1a65e12e3c",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "actor",
+      "requestId": "cinder-request-02",
+      "description": "Initial authored test expected the wrong rejection identity for a model skipping the required lookup:30/31 pass. The real SDK rejected it correctly. Actor inspected pinned SDK source, corrected the expectation and passed31/31 without driver assistance. This is retained test-authoring history, not a component defect.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "Independent closed validation first ran in a nongit extracted snapshot and returned GIT_REPOSITORY_NOT_FOUND. Reviewer added only owned exact-source Git metadata, reran successfully with7bindings and preserved the first result; not an actor/component defect. The reviewer first compared full redaction rule objects after one new mask renumbered later IDs; a locator/reason/span comparison established exactly one added span. Capture execution itself succeeded. That corrected bookkeeping error is retained separately.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "cinder-returns-identities-01.txt"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "cr-path-0001",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0002",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0003",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0004",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0005",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0006",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0007",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0008",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0009",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0010",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0011",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0012",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0013",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0014",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0015",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0016",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 17,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0017",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0018",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0019",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0020",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0021",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0022",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0023",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0024",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 67,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0025",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 88,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0026",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 88,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0027",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 93,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0028",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 98,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0029",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 105,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0030",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 113,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0031",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 132,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0032",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 140,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0033",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 147,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0034",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0035",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0036",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0037",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0038",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 155,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0039",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 165,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0040",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 165,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0041",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 176,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0042",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 176,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0043",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 191,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0044",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0045",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0046",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0047",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0048",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0049",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0050",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0051",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0052",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0053",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 237,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0054",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 248,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0055",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 248,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0056",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0057",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0058",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0059",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0060",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0061",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0062",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0063",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0064",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0065",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0066",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 284,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0067",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 284,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0068",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 284,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0069",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 284,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0070",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 291,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0071",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 310,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0072",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0073",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0074",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 336,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0075",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 373,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0076",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 385,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0077",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 414,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0078",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 414,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0079",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 414,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0080",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 414,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0081",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 414,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0082",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 414,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0083",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 414,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0084",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 441,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0085",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 463,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0086",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 463,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0087",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 463,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0088",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 463,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0089",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 474,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0090",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 509,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0091",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0092",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0093",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0094",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0095",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0096",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0097",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 516,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "cr-path-0098",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 543,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a1609a-720e-7192-9f20-e1382012e3ea",
+      "affectedLocations": [
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Controlled MockLanguageModelV4 replaces only the external model boundary; real owned loaders, SDK loop, lookup, assessment, schemas and parsing remain. No live-provider behavior or general SDK qualification is claimed.",
+    "Only rationale is model-authored. Structured fields are compared with real tool-derived facts, but arbitrary rationale prose is not semantically authenticated. An independent controlled response saying approval/refund occurred was accepted in rationale while structured authority stayed pending/recommendation_only. This demonstrates a limit, not a live model incident; humans must review prose.",
+    "Dedicated actor home isolates configuration, not filesystem reads or shared Git objects; host catalogs remain available.",
+    "Actor checks on intermediate uncommitted source use null inputCommit. Independent committed-source checks are separate; one canonical-byte witness used an explicitly derived owned test fixture and restored it.",
+    "Five requests reached the bounded purpose; the plan six-to-eight estimate is not a quota. No feature or synthetic turn was added for count.",
+    "The actor explicitly selected another task-owned temporary npm cache during adoption; it is separately recorded, redacted and ownership-audited. Initial private97-mask candidate remains retained; selected98-mask candidate adds only the missing local-cache prefix rule before any publication.",
+    "Linux only; no Windows/macOS runtime claim. Encrypted reasoning/private host state omitted; combined public replay remains Milestone8.",
+    "Private proposed/publication/status metadata checks use null inputCommit because record inputs were uncommitted; frozen assets and exact-source app checks are separate. Merged public record snapshot is consumed before milestone close and during final handoff."
+  ]
+}
