@@ -1,0 +1,28 @@
+[
+  {
+    "id": "cedar",
+    "name": "Cedar Studio",
+    "capacity": 12,
+    "equipment": [
+      "projector",
+      "whiteboard"
+    ]
+  },
+  {
+    "id": "indigo",
+    "name": "Indigo Room",
+    "capacity": 6,
+    "equipment": [
+      "whiteboard"
+    ]
+  },
+  {
+    "id": "orchid",
+    "name": "Orchid Hall",
+    "capacity": 30,
+    "equipment": [
+      "projector",
+      "microphone"
+    ]
+  }
+]
