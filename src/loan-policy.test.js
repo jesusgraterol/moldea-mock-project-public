@@ -5,9 +5,9 @@ import { canBorrow, daysOverdue, dueDate } from './loan-policy.js';
 
 const day = (iso) => new Date(`${iso}T00:00:00Z`);
 
-test('hand tools are due after 7 days and power tools after 3', () => {
+test('hand tools are due after 7 days and power tools after 5', () => {
   assert.deepEqual(dueDate({ category: 'hand' }, day('2026-10-01')), day('2026-10-08'));
-  assert.deepEqual(dueDate({ category: 'power' }, day('2026-10-01')), day('2026-10-04'));
+  assert.deepEqual(dueDate({ category: 'power' }, day('2026-10-01')), day('2026-10-06'));
 });
 
 test('an unknown category is rejected', () => {

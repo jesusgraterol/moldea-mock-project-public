@@ -1,5 +1,5 @@
 // loan periods in days by tool category
-export const LOAN_DAYS = { hand: 7, power: 3 };
+export const LOAN_DAYS = { hand: 7, power: 5 };
 
 // most tools a member may hold at once
 export const MAX_ACTIVE_LOANS = 3;
