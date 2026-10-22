@@ -1,0 +1,29 @@
+{
+  "week": 43,
+  "dishes": [
+    {
+      "name": "Roasted squash soup",
+      "description": "Butternut squash, toasted pumpkin seeds, sage oil",
+      "allergens": [],
+      "priceCents": 850
+    },
+    {
+      "name": "Walnut and pear salad",
+      "description": "Bitter leaves, poached pear, candied walnuts, blue cheese",
+      "allergens": ["tree nuts", "milk"],
+      "priceCents": 1175
+    },
+    {
+      "name": "Catch of the day",
+      "description": "Line-caught fish from the morning market, lemon butter",
+      "allergens": ["fish", "milk"],
+      "priceCents": null
+    },
+    {
+      "name": "Saffron rice pudding",
+      "description": "Arborio rice, saffron, cardamom, pistachio",
+      "allergens": ["milk", "tree nuts"],
+      "priceCents": 690
+    }
+  ]
+}
