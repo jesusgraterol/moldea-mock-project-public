@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "runId": "run-20261021-01",
   "date": "2026-10-21",
-  "summary": "All six Skill 10.0.0 conversations concluded with independently reviewed source and published/download-verified evidence. Quarry has two transparent review-assisted repairs; Cinder free rationale and other bounded limits remain. Full combined replay and final evaluator handoff remain Milestone8.",
+  "summary": "Six Skill 10.0.0 projects completed 41 actual requests with independently reviewed source, complete published/download-verified evidence and full combined public browser replay. Quarry retains two assisted repairs; controlled-model, prose-grounding, compaction and inherited viewer accessibility limits remain. Evaluator handoff is ready.",
   "expectedActor": {
     "model": "gpt-6.1-sol",
     "effort": "xhigh"
@@ -37,11 +37,12 @@
     "evidence/runs/run-20261021-01/attempts/cinder-returns-01.json",
     "evidence/runs/run-20261021-01/attempts/quarry-handover-01.json"
   ],
-  "evidenceStatus": "incomplete",
-  "reviewStatus": "pending",
-  "review": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
   "limitations": [
-    "Aster pilot expansion gate passed with the inherited moderate landmark-unique viewer finding retained; no accessibility-conformance claim.",
-    "All six attempts have complete independently reviewed and published/download-verified evidence. Full combined replay and final batch handoff remain Milestone8. Quarry two assisted repairs and natural-compaction encrypted-summary omission, Cinder free rationale and other recorded limits remain."
+    "Chromium 151.0.7922.34/Linux, 1440 x 900 and 320 x 900 emulated touch, light/dark. Inherited moderate Code block/Scrollable table landmark-unique findings remain; no assistive-technology, real-device or conformance claim.",
+    "Only external model/transport boundaries controlled; no live provider quality, SDK/safety qualification or causal skill advantage. Quarry assistance/omitted encrypted summary, Cinder free rationale and Folio opaque helper spans remain explicit.",
+    "Final metadata/privacy checks have null inputCommit while uncommitted. Replay input 2db9e098bd8bee82a3fd89d7482bd44eef460835 is separate; final containing public snapshot is consumer/link-verified after PR integration and named in the handoff."
   ]
 }

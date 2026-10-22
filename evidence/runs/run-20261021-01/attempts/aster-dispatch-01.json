@@ -657,6 +657,31 @@
         "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Combined public replay of 2db9e098bd8bee82a3fd89d7482bd44eef460835, unchanged reader 950b89eb4c41564953fa1582fdd588992e152d37, Chromium 151.0.7922.34/Linux: all 110 displayed entries/163 events and 54 full tool exchanges matched, with all rendered messages/request/context ordinals.1440 x 900 and 320 x 900 touch, light/dark; key dialogs/text, summaries, immutable source/attempt/review/recording links, keyboard/focus/Tab/scroll and stable visual checks passed; no document overflow/page errors. Unfiltered Axe landmark-unique failures retained for inherited generic Code block/Scrollable table names; bounded nonblocking replay finding, no conformance claim.",
+      "inputCommit": "2db9e098bd8bee82a3fd89d7482bd44eef460835",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/aster-dispatch-01.json",
+        "evidence/scenarios/aster-dispatch.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/066ef7578ec935fe9f3532bcd59759eb6a91f7cf/beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1",
+        "run-20261021-01/aster-dispatch-01-session-01.jsonl.gz",
+        "run-20261021-01/aster-dispatch-identities-01.txt"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -4140,6 +4165,7 @@
     "Optional shellcheck and shfmt were unavailable; both documented commands passed bash syntax and actual output checks.",
     "The pre-publication verifier draft checks have null inputCommit because the record metadata was uncommitted; their frozen actor source was beb77a2ce6c7f2377a3d4dcd2966bc0217ab79b1. Their initial driver errors and later passing private-byte validation are retained; publication checks will identify public record commits separately.",
     "The intermediate failing request 02 checks have null inputCommit because they ran before the driver checkpoint; native tool calls/outputs and patch event 267 preserve the change. Initial npm test output was truncated by the host; the recorded failure reason and subsequent complete passing runs remain available.",
-    "The replay-record draft failure has null inputCommit because its metadata was uncommitted; replay inputs were public snapshot 86cd76337d220b59b598d241036e12b7ac5f05ce and pinned reader 950b89eb4c41564953fa1582fdd588992e152d37."
+    "The replay-record draft failure has null inputCommit because its metadata was uncommitted; replay inputs were public snapshot 86cd76337d220b59b598d241036e12b7ac5f05ce and pinned reader 950b89eb4c41564953fa1582fdd588992e152d37.",
+    "Final replay is Chromium/Linux with emulated 320 px touch and desktop 1440 px, light/dark. Generic Code block/Scrollable table landmark naming remains an inherited accessibility defect; no screen-reader/real-device/conformance claim. Earlier pending-phase check/log statements remain chronological. Final metadata/privacy deltas use null inputCommit while uncommitted."
   ]
 }

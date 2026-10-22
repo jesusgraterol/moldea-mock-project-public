@@ -348,6 +348,31 @@
       "result": "passed",
       "coveredArtifacts": [],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Combined public replay of 2db9e098bd8bee82a3fd89d7482bd44eef460835, unchanged reader 950b89eb4c41564953fa1582fdd588992e152d37, Chromium 151.0.7922.34/Linux: all 101 displayed entries/155 events and 54 full tool exchanges matched, with all rendered messages/request/context ordinals.1440 x 900 and 320 x 900 touch, light/dark; key dialogs/text, summaries, immutable source/attempt/review/recording links, keyboard/focus/Tab/scroll and stable visual checks passed; no document overflow/page errors. Unfiltered Axe landmark-unique failures retained for inherited generic Code block/Scrollable table names; bounded nonblocking replay finding, no conformance claim.",
+      "inputCommit": "2db9e098bd8bee82a3fd89d7482bd44eef460835",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/cinder-returns-01.json",
+        "evidence/scenarios/cinder-returns.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/058420acf9cf165b616610c1d94e24511d73472e/f26b7754937ef2915a50757fc046159c730b08a6",
+        "run-20261021-01/cinder-returns-01-session-01.jsonl.gz",
+        "run-20261021-01/cinder-returns-identities-01.txt"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -1907,7 +1932,8 @@
     "Actor checks on intermediate uncommitted source use null inputCommit. Independent committed-source checks are separate; one canonical-byte witness used an explicitly derived owned test fixture and restored it.",
     "Five requests reached the bounded purpose; the plan six-to-eight estimate is not a quota. No feature or synthetic turn was added for count.",
     "The actor explicitly selected another task-owned temporary npm cache during adoption; it is separately recorded, redacted and ownership-audited. Initial private97-mask candidate remains retained; selected98-mask candidate adds only the missing local-cache prefix rule before any publication.",
-    "Linux only; no Windows/macOS runtime claim. Encrypted reasoning/private host state omitted; combined public replay remains Milestone8.",
-    "Private proposed/publication/status metadata checks use null inputCommit because record inputs were uncommitted; frozen assets and exact-source app checks are separate. Merged public record snapshot is consumed before milestone close and during final handoff."
+    "Linux only; no Windows/macOS runtime claim. Encrypted reasoning/private host state omitted; combined public browser replay completed in Milestone8 from 2db9e098bd8bee82a3fd89d7482bd44eef460835.",
+    "Private proposed/publication/status metadata checks use null inputCommit because record inputs were uncommitted; frozen assets and exact-source app checks are separate. Merged public record snapshot is consumed before milestone close and during final handoff.",
+    "Final replay is Chromium/Linux with emulated 320 px touch and desktop 1440 px, light/dark. Generic Code block/Scrollable table landmark naming remains an inherited accessibility defect; no screen-reader/real-device/conformance claim. Earlier pending-phase check/log statements remain chronological. Final metadata/privacy deltas use null inputCommit while uncommitted."
   ]
 }

@@ -461,6 +461,31 @@
         "run-20261021-01/cobalt-rooms-identities-01.txt"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Combined public replay of 2db9e098bd8bee82a3fd89d7482bd44eef460835, unchanged reader 950b89eb4c41564953fa1582fdd588992e152d37, Chromium 151.0.7922.34/Linux: all 110 displayed entries/159 events and 49 full tool exchanges matched, with all rendered messages/request/context ordinals.1440 x 900 and 320 x 900 touch, light/dark; key dialogs/text, summaries, immutable source/attempt/review/recording links, keyboard/focus/Tab/scroll and stable visual checks passed; no document overflow/page errors. Unfiltered Axe landmark-unique failures retained for inherited generic Code block/Scrollable table names; bounded nonblocking replay finding, no conformance claim.",
+      "inputCommit": "2db9e098bd8bee82a3fd89d7482bd44eef460835",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json",
+        "evidence/scenarios/cobalt-rooms.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/ebc99572cf9638a0403e022ca87ac730daba8f77/bcd832eda471f658bdc444bd006a078e850b34d6",
+        "run-20261021-01/cobalt-rooms-01-session-01.jsonl.gz",
+        "run-20261021-01/cobalt-rooms-identities-01.txt"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -2242,7 +2267,7 @@
   "recovery": null,
   "predecessorAttemptId": null,
   "limitations": [
-    "Independent source/skill-behavior review, full proposed-copy privacy review and actual public asset download/integrity verification are complete. Full combined public browser replay remains Milestone8, without an individual Cobalt browser-replay claim.",
+    "Independent source/skill-behavior review, full proposed-copy privacy review and actual public asset download/integrity verification are complete. combined public browser replay completed in Milestone8 from 2db9e098bd8bee82a3fd89d7482bd44eef460835, without an individual Cobalt browser-replay claim.",
     "Actor checks with null inputCommit ran before a driver checkpoint in an uncommitted intermediate tree. Actual commands/output/native anchors and reached request SHAs are retained; independent exact-commit checks are separate.",
     "Dedicated actor home isolates configuration, not filesystem reads; host catalogs/shared Git objects remain available.",
     "No runtime agent/provider exists by design. Passing tests and structural validity do not establish broader operational suitability or causal benefit from the skill.",
@@ -2251,6 +2276,7 @@
     "Temporary canonical navigation retained proposed/not-implemented wording through the correction-only checkpoint; request06 corrected it during authorized owner maintenance. Ordinary relevance misses did not authorize earlier canonical writes.",
     "Expected no-match/absence probes had nonzero exits, distinct from tests. The r2 rg audit skipped its chained diff; later standalone native diff242/result245 established unchanged data/lock. Some host reference outputs were truncated and needed sections reread.",
     "The frozen identity log was corrected from a copied95-case count to96 before publication; earlier private bytes retained and the sole text correction independently verified.",
-    "Private-candidate structural verification has null inputCommit because the proposed record metadata was uncommitted; public publication checks will identify immutable record inputs separately."
+    "Private-candidate structural verification has null inputCommit because the proposed record metadata was uncommitted; public publication checks will identify immutable record inputs separately.",
+    "Final replay is Chromium/Linux with emulated 320 px touch and desktop 1440 px, light/dark. Generic Code block/Scrollable table landmark naming remains an inherited accessibility defect; no screen-reader/real-device/conformance claim. Earlier pending-phase check/log statements remain chronological. Final metadata/privacy deltas use null inputCommit while uncommitted."
   ]
 }
