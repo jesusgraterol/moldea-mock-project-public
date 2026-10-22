@@ -1,0 +1,1407 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261022-01",
+  "scenarioId": "saffron-menus",
+  "attemptId": "saffron-menus-01",
+  "branch": "fixture_skill_only_xs_saffron_menus_01",
+  "baseCommit": "132a5ded61f2ebd14b898ab293c68fd14e258b06",
+  "finalCommit": "5903794af9576fccecc30eb866073049f443c4de",
+  "lastDurableCommit": "5903794af9576fccecc30eb866073049f443c4de",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/saffron-menus.md",
+    "commit": "3023ddbe5b4eeb131e4664d691ba05b500da183f"
+  },
+  "observedSummary": "Saffron Menus, a café menu-card helper with a project-owned menu-card skill bound to two context files, started adopted but without installed dependencies. Running the skill stayed host work without loading the moldea skill. A price-label change got the launcher's missing-install refusal and a one-line notice; after installation the actor finished the pending pricing context and validated. The host sandbox blocked the skill edit, the allergen correction validated, and unrelated work stayed silent.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261022-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "hostVersion": "0.163.0",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 56,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 149,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 239,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 298,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 344,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "saffron-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Use the menu-card skill to draft the card for week 43.\n",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 9,
+      "beforeCommit": "132a5ded61f2ebd14b898ab293c68fd14e258b06",
+      "afterCommit": "0bbe3adb91f6f5e7e7e9a3be5ca52f41d170a446",
+      "observedResult": "Host work: read the menu-card skill and its two named context files directly, ran the precheck on touched and read paths (gate 0), never loaded the moldea SKILL.md, and wrote cards/week-43.md. The card shows raw prices because the skill does not name the price-label source.",
+      "redactionIds": []
+    },
+    {
+      "id": "saffron-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Show whole-dollar prices without cents on the menu labels, so $12.00 becomes $12. Keep the other prices as they are.\n",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 57,
+      "beforeCommit": "0bbe3adb91f6f5e7e7e9a3be5ca52f41d170a446",
+      "afterCommit": "e043596c49f02e6873e2eb5ed5a1838ce219214a",
+      "observedResult": "Changed whole-dollar labels to drop .00 with matching tests. Routed as direct context work: read the moldea SKILL.md and menu-style context before one launcher attempt, which exited 3 with the missing-install sentence. Final reply gave a one-line notice to install dependencies; no canonical writes.",
+      "redactionIds": []
+    },
+    {
+      "id": "saffron-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Please install the project dependencies.\n",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 150,
+      "beforeCommit": "e043596c49f02e6873e2eb5ed5a1838ce219214a",
+      "afterCommit": "73d2079cbbf976d58fb2b50479b180aa2f112d33",
+      "observedResult": "Ran npm ci --ignore-scripts, installing CLI 13.0.1 and Core 9.0.0 with package files unchanged, then finished the pending pricing check with scope and content, updated the pricing context to whole-dollar labels and validated with zero diagnostics.",
+      "redactionIds": []
+    },
+    {
+      "id": "saffron-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "Update the menu-card skill so every card ends with a short line asking guests to tell staff about any allergies.\n",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 240,
+      "beforeCommit": "73d2079cbbf976d58fb2b50479b180aa2f112d33",
+      "afterCommit": "73d2079cbbf976d58fb2b50479b180aa2f112d33",
+      "observedResult": "Took the direct skill-work route, but the host sandbox rejected the edit to .agents/skills/menu-card/SKILL.md; the actor wrote a checked patch outside the repository and reported that the skill is unchanged. No repository files changed.",
+      "redactionIds": []
+    },
+    {
+      "id": "saffron-request-05",
+      "ordinal": 5,
+      "kind": "follow-up",
+      "text": "Correction: sesame is one of our major allergens too, and the card has to flag it.\n",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 299,
+      "beforeCommit": "73d2079cbbf976d58fb2b50479b180aa2f112d33",
+      "afterCommit": "d7832242361a29e7e531ea4cf30e2fd2c63f1c33",
+      "observedResult": "Added sesame to the allergen context with a minimal edit after a launcher content read, and validated with zero diagnostics; the week 43 card needed no change.",
+      "redactionIds": []
+    },
+    {
+      "id": "saffron-request-06",
+      "ordinal": 6,
+      "kind": "follow-up",
+      "text": "Add a small script that prints how many dishes each week's menu file has.\n",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 345,
+      "beforeCommit": "d7832242361a29e7e531ea4cf30e2fd2c63f1c33",
+      "afterCommit": "5903794af9576fccecc30eb866073049f443c4de",
+      "observedResult": "Added a dish-count script with an npm script and README note; the precheck missed (gate 0) and the reply did not mention moldea.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 3,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 4,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 54,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "manual",
+      "description": "First-turn capture reconciled native context 7 and request 9, exact delivered wording and gpt-6.1-sol/xhigh settings before request 02; the precheck at ordinal 20 printed 0 and no moldea SKILL.md read occurred.",
+      "inputCommit": "0bbe3adb91f6f5e7e7e9a3be5ca52f41d170a446",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Launcher inspect — actor execution during request 02 (call 86, result 90): exit 3, \"The moldea CLI is not installed in this repository: node_modules/@moldea.ai/cli is missing. Install the repository dependencies, then retry.\" No stdout envelope.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test — actor execution during request 02 (call 132, result 137): 3 tests passed in the uncommitted tree that reached checkpoint e043596c49f02e6873e2eb5ed5a1838ce219214a.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm ci --ignore-scripts — actor execution during request 03 (call 176, result 178): installed 13 packages from the lockfile; package files unchanged.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Launcher validate — actor execution during request 03 (call 226, result 229): valid, 0 diagnostics.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Launcher validate — actor execution during request 05 (call 329, result 332): valid, 0 diagnostics.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test and npm run count:dishes — actor execution during request 06 (call 384, result 391): 3 tests passed and the script printed 4 dishes for week 43.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Driver launcher validate and inspect in the actor worktree at the final commit: valid, 0 diagnostics, 3 context records, 2 binding coverage records, 0 unresolved.",
+      "inputCommit": "5903794af9576fccecc30eb866073049f443c4de",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent npm ci --ignore-scripts and npm test in a scratch clone of the final commit: 3 of 3 passed.",
+      "inputCommit": "5903794af9576fccecc30eb866073049f443c4de",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent launcher validate, inspect and relevance gate in the actor worktree: valid, 0 diagnostics; gate 1 for src/price-labels.js and the menu-card SKILL.md, 0 for cards/week-43.md and scripts/count-dishes.js; worktree unchanged by the checks.",
+      "inputCommit": "5903794af9576fccecc30eb866073049f443c4de",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent seed-clone launcher scope for src/price-labels.js without node_modules: exit 3, empty stdout and the same install sentence the actor received.",
+      "inputCommit": "132a5ded61f2ebd14b898ab293c68fd14e258b06",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent price-label check of the week 43 card: the module labels are correct at seed and final, but the card prints raw prices because the fixture skill does not name the price-label source.",
+      "inputCommit": "5903794af9576fccecc30eb866073049f443c4de",
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent source and skill-behavior review complete: host-work skill run, missing-install notice, installation and validations accepted; request 02 canonical reads before the notice, request 03 deferred-context write and the request 04 sandbox block recorded.",
+      "inputCommit": "5903794af9576fccecc30eb866073049f443c4de",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "5903794af9576fccecc30eb866073049f443c4de",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261022-01/run.json",
+        "evidence/runs/run-20261022-01/attempts/saffron-menus-01.json",
+        "evidence/scenarios/saffron-menus.md",
+        "evidence/runs/run-20261022-01/reviews/skill-review.md",
+        "git/132a5ded61f2ebd14b898ab293c68fd14e258b06/5903794af9576fccecc30eb866073049f443c4de",
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz",
+        "run-20261022-01/saffron-menus-identities-01.txt"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "Existing evidence verifier with the proposed private Saffron candidates plus the published Pebble assets passed for 2 attempts; run and attempt evidence complete. Records were uncommitted, so inputCommit is null.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261022-01/attempts/saffron-menus-01.json"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt",
+        "locator": "saffron-request-01-context-7; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Root manifest declares CLI 13.0.1 exactly with a lockfile, but node_modules is absent, so neither package is installed."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Root manifest declares CLI 13.0.1 exactly with a lockfile, but node_modules is absent, so neither package is installed."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 56,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt",
+        "locator": "saffron-request-02-context-56; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Root manifest declares CLI 13.0.1 exactly with a lockfile, but node_modules is absent, so neither package is installed."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Root manifest declares CLI 13.0.1 exactly with a lockfile, but node_modules is absent, so neither package is installed."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 149,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt",
+        "locator": "saffron-request-03-context-149; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Root manifest declares CLI 13.0.1 exactly with a lockfile, but node_modules is absent, so neither package is installed."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Root manifest declares CLI 13.0.1 exactly with a lockfile, but node_modules is absent, so neither package is installed."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 239,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt",
+        "locator": "saffron-request-04-context-239; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "version": "13.0.1",
+        "integrity": "sha512-N8EQkPZxRGygwgGCFt5Z4adevMWeJzTmeCK+YFSAsqHDAw3fcqxS11wMgdGnFSGZXfDPbpTKQZ8DRTDuws77xA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 298,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt",
+        "locator": "saffron-request-05-context-298; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "version": "13.0.1",
+        "integrity": "sha512-N8EQkPZxRGygwgGCFt5Z4adevMWeJzTmeCK+YFSAsqHDAw3fcqxS11wMgdGnFSGZXfDPbpTKQZ8DRTDuws77xA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 344,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt",
+        "locator": "saffron-request-06-context-344; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "version": "13.0.1",
+        "integrity": "sha512-N8EQkPZxRGygwgGCFt5Z4adevMWeJzTmeCK+YFSAsqHDAw3fcqxS11wMgdGnFSGZXfDPbpTKQZ8DRTDuws77xA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v10.0.1",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261022-01",
+      "name": "saffron-menus-01-session-01.jsonl.gz",
+      "sizeBytes": 60428,
+      "sha256": "a393719182b2cbadd0f679aa93e5463df4b77f576744fa540ea75c45698919be",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 399
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261022-01",
+      "name": "saffron-menus-identities-01.txt",
+      "sizeBytes": 45978,
+      "sha256": "f12b5263f6ef6097acc6361a65149ac6804a8d7680201a7a00f9fc772557c0b4",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "environment",
+      "requestId": "saffron-request-04",
+      "description": "The Codex workspace-write sandbox rejected writes to .agents/skills/menu-card/SKILL.md (\"writing outside of the project; rejected by user approval settings\"), so the requested skill edit was never applied and skill-edit routing and validation were not exercised.",
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": "saffron-request-01",
+      "description": "The fixture menu-card skill names only the style and allergen context, not src/price-labels.js or the pricing context, so the drafted card prints raw prices instead of the project's price labels.",
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "saffron-menus-identities-01.txt"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "sm-path-0001",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0002",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0003",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0004",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0005",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0006",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0007",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0008",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0009",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0010",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0011",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0012",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0013",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0014",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0015",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0016",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0017",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 20,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0018",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 34,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0019",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 47,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0020",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 54,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0021",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 54,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0022",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 54,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0023",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 68,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0024",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 86,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0025",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 113,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0026",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 125,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0027",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 125,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0028",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 142,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0029",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 168,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0030",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 176,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0031",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 191,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0032",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 201,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0033",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 211,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0034",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 226,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0035",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 244,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0036",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 261,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0037",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 303,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0038",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 310,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0039",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 318,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0040",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 329,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0041",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 337,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0042",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 349,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0043",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 360,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0044",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 360,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0045",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 377,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0046",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 377,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0047",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 377,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0048",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 384,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-path-0049",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 396,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-user-0050",
+      "reason": "Local account name in tool output.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-user-0051",
+      "reason": "Local account name in tool output.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-user-0052",
+      "reason": "Local account name in tool output.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-user-0053",
+      "reason": "Local account name in tool output.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-user-0054",
+      "reason": "Local account name in tool output.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-user-0055",
+      "reason": "Local account name in tool output.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-user-0056",
+      "reason": "Local account name in tool output.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-user-0057",
+      "reason": "Local account name in tool output.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 272,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-skill-0058",
+      "reason": "Personal host skill content read from outside the selected project, unrelated to it.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 354,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "sm-skill-0059",
+      "reason": "Personal host skill content read from outside the selected project, unrelated to it.",
+      "sessionId": "01a16416-e98b-7f41-a739-117f9ef31562",
+      "eventOrdinal": 365,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/saffron-menus-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "One Codex attempt on Linux with Node 24.15.0; the Claude Code host was not exercised.",
+    "Request 02 routed the label change as direct context work and read canonical context before the launcher attempt, so this attempt does not show the ordinary relationship-hit path ending at the notice without canonical reads.",
+    "Request 04 was blocked by the host sandbox, so editing a bound project skill and its validation were not exercised.",
+    "Actor checks with null inputCommit ran in an uncommitted intermediate tree before the driver checkpoint; independent exact-commit checks are separate.",
+    "Configuration isolation is not filesystem isolation. Request 6 read two personal host skills outside the repository; that content is whole-field redacted and a local account name in one listing is masked.",
+    "Encrypted reasoning and host-private world state are omitted; no compaction occurred."
+  ]
+}

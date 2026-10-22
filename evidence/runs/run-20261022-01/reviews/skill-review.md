@@ -26,3 +26,35 @@ This run checks the Skill 10.0.1 and CLI 13.0.1 corrections in real Codex conver
 ### Limitations
 
 One Codex attempt on Linux; the Claude Code host and Windows junctions were not exercised. The link was a deliberate uncommitted driver choice. Request 02's phrasing was a policy statement, so the ordinary path was exercised in request 03. Model choices in findings 3, 6 and 7 cannot be separated from model variance in a single attempt.
+
+## Saffron Menus
+
+**Purpose.** A café menu-card helper whose project-owned `menu-card` Agent Skill reads two context files bound to it, plus a pricing context related to `src/price-labels.js` through `affectedBy`. The seed was already adopted and declared CLI 13.0.1 exactly with a lockfile but had no `node_modules`, like a fresh clone. The conversation checks the project-owned skill run, the one-line notice when the launcher cannot run the CLI, and maintenance after installation.
+
+**Anchors.** Attempt `saffron-menus-01`, branch `fixture_skill_only_xs_saffron_menus_01`, seed `132a5ded61f2ebd14b898ab293c68fd14e258b06`, session `01a16416-e98b-7f41-a739-117f9ef31562` with requests at event ordinals 9, 57, 150, 240, 299 and 345. Checkpoints: request 01 `0bbe3adb91f6f5e7e7e9a3be5ca52f41d170a446`, request 02 `e043596c49f02e6873e2eb5ed5a1838ce219214a`, request 03 `73d2079cbbf976d58fb2b50479b180aa2f112d33`, request 04 unchanged, request 05 `d7832242361a29e7e531ea4cf30e2fd2c63f1c33`, request 06 `5903794af9576fccecc30eb866073049f443c4de`. Assets `run-20261022-01/saffron-menus-01-session-01.jsonl.gz` and `run-20261022-01/saffron-menus-identities-01.txt`.
+
+**Outcome.** The skill run stayed host work. The price-label change produced the launcher's missing-install refusal and a one-line notice, but only after the actor had loaded the moldea skill and read canonical context. After `npm ci --ignore-scripts`, the actor finished the pending pricing context and validated. The host sandbox blocked the skill edit. The sesame correction validated, and the unrelated script stayed silent. The final commit validates with zero diagnostics and both bindings checked.
+
+**Checks.** The driver and the independent reviewer ran `npm ci --ignore-scripts` and `npm test` (3 of 3) in a scratch clone of the final commit, launcher `validate` and `inspect` in the worktree (valid, 0 diagnostics), the relevance gate for the touched paths, and launcher `scope` in a seed clone without `node_modules`. That last check exited 3 with the same install sentence the actor received.
+
+### Findings
+
+1. **Activation, accepted, actor.** Request 01 read the menu-card skill and its two named context files directly and ran the precheck on the paths it read and wrote (ordinal 20, gate `0`). It never loaded the moldea `SKILL.md`. The reviewer reproduced that adding the menu-card `SKILL.md` itself to the batch flips the gate to `1`. Skill 10.0.1 does not say whether the skill being run counts as a touched path, which is a wording risk for a follow-up release.
+2. **Activation, deviation, actor.** Request 02 was a code-only label change, which the skill says still uses relationship matching. The actor routed it as direct context work: it read the moldea `SKILL.md` before any precheck, ran the adoption-only gate, and read `moldea/context/menu-style.md` with `cat`. It then ran `inspect` instead of `scope` and loaded five references. It wrote nothing canonical. This misses the plan's "no canonical reads" expectation for the notice path and is attributed to the actor, as plausible model variance.
+3. **Instruction consumption, accepted, actor and package.** The single launcher attempt (ordinal 86, result 90) exited 3 with "The moldea CLI is not installed in this repository: node_modules/@moldea.ai/cli is missing. Install the repository dependencies, then retry." The actor did not retry, finished the price change with passing tests, and ended with one line naming the install step. The launcher message and exit code work as designed.
+4. **Authorization, low risk, actor with package wording ambiguity.** Request 03 asked only to install dependencies. After installing, the actor resumed request 02's pending context check with `scope` and `content`, rewrote `moldea/context/pricing.md` to match the whole-dollar labels, and validated. The rewrite is accurate and was disclosed. The skill says topic changes reset authorization and also tells agents to report remaining canonical checks for the next request, so it does not settle whether this write was authorized.
+5. **Environment, blocked, environment and tooling.** Request 04's edit to `.agents/skills/menu-card/SKILL.md` was rejected by the Codex workspace-write sandbox with "writing outside of the project; rejected by user approval settings". The actor did not bypass it. It checked a patch outside the repository and reported that the skill is unchanged. Bound-skill editing and its validation were not exercised.
+6. **Context maintenance, accepted, actor.** Request 05 added sesame to the allergen context with a minimal edit after a launcher `content` read, and validated with zero diagnostics.
+7. **Activation and silence, accepted, actor.** Request 06's precheck missed with gate `0`, and the reply did not mention moldea.
+8. **Implementation, defect, driver with actor contribution.** The week 43 card prints raw prices (`8.50`, `11.75`, `Price pending`, `6.90`) instead of the project's labels. The fixture skill names only the style and allergen context, not the price-label source. In request 02 the actor also said wrongly that week 43 had no whole-dollar prices. This is a fixture gap, not a moldea defect.
+9. **Authorization, environment risk, environment and driver.** The shared Codex home exposes personal host skills. In request 06 the actor read two of them from outside the repository; their content is whole-field redacted in the session asset.
+
+### Limitations
+
+One Codex attempt on Linux; the Claude Code host was not exercised. Request 02's early canonical reads and request 04's sandbox block leave the ordinary notice path without canonical reads, and bound-skill editing, unobserved. The reviewer also observed that `validate`'s snapshot digest did not change after a context-body edit. Its intent was not established, and it is outside this run's scope.
+
+## Follow-up release items
+
+- Let `repair-git.mjs checkpoint` resolve directory links whose targets stay inside the repository, or report the linked path and a next step, and state whether a validate-only check needs the checkpoint.
+- State whether the Agent Skill being run counts as a touched path for the ordinary precheck.
+- Clarify whether finishing a reported pending canonical check is authorized by the next unrelated request.

@@ -32,7 +32,7 @@
     {
       "runId": "run-20261022-01",
       "manifestPath": "evidence/runs/run-20261022-01/run.json",
-      "summary": "Skill 10.0.1 verification run. Pebble Library worked with a linked .claude/skills directory: every launcher validate and inspect passed with the link present, while the bundled repair Git helper stopped an explicit Validate moldea before validation. Bound-skill project pending.",
+      "summary": "Skill 10.0.1 verification run across two projects. Pebble Library passed every launcher validate and inspect with a linked .claude/skills directory, while the bundled repair Git helper stopped an explicit Validate moldea before validation. Saffron Menus ran its project skill as host work, reported the missing CLI in one line, and maintained context after installation; the host sandbox blocked its skill edit.",
       "evidenceStatus": "complete",
       "reviewStatus": "complete"
     }

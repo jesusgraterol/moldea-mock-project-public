@@ -347,6 +347,18 @@
         "evidence/runs/run-20261022-01/attempts/pebble-library-01.json"
       ],
       "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "Existing evidence verifier against the authenticated draft download and the anonymous public download of run-20261022-01 passed for 1 attempt using public record commit b04a2062f9e0be3578aeff5a59d03ea4103b4f39; both downloads matched the recorded sizes and SHA-256 values.",
+      "inputCommit": "b04a2062f9e0be3578aeff5a59d03ea4103b4f39",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261022-01/attempts/pebble-library-01.json",
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz",
+        "run-20261022-01/pebble-library-identities-01.txt"
+      ],
+      "asset": null
     }
   ],
   "installations": [
