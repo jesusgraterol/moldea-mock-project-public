@@ -1,0 +1,42 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261022-01",
+  "date": "2026-10-22",
+  "summary": "Skill 10.0.1 verification run. Pebble Library worked with a linked .claude/skills directory: every launcher validate and inspect passed with the link present, while the bundled repair Git helper stopped an explicit Validate moldea before validation. Bound-skill project pending.",
+  "expectedActor": {
+    "model": "gpt-6.1-sol",
+    "effort": "xhigh"
+  },
+  "prerequisites": [
+    {
+      "component": "skill",
+      "version": "v10.0.1",
+      "integrity": "git-tag:6b7a96282b6e892c9943d030bf620057d2083639;commit:1cfa4b83c9d98a7947253fc5c7b97d7ea39837b2",
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt",
+        "locator": "release-skill; release-tag; expected-distribution"
+      }
+    },
+    {
+      "component": "cli",
+      "version": "13.0.1",
+      "integrity": "sha512-N8EQkPZxRGygwgGCFt5Z4adevMWeJzTmeCK+YFSAsqHDAw3fcqxS11wMgdGnFSGZXfDPbpTKQZ8DRTDuws77xA==",
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt",
+        "locator": "registry-method; @moldea.ai/cli 13.0.1 registry row"
+      }
+    }
+  ],
+  "attempts": [
+    "evidence/runs/run-20261022-01/attempts/pebble-library-01.json"
+  ],
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261022-01/reviews/skill-review.md",
+  "limitations": [
+    "Codex actor only, gpt-6.1-sol/xhigh on Linux with Node 24.15.0; the Claude Code host and Windows junctions were not exercised.",
+    "The repair Git helper finding is reproduced and attributed to Skill 10.0.1; it is a follow-up release item and was not fixed in this run."
+  ]
+}

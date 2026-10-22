@@ -1,0 +1,1420 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261022-01",
+  "scenarioId": "pebble-library",
+  "attemptId": "pebble-library-01",
+  "branch": "fixture_context_only_xs_pebble_library_01",
+  "baseCommit": "47a4208b2025b1748ca61feeb95c242562f712c6",
+  "finalCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+  "lastDurableCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/pebble-library.md",
+    "commit": "b3276d53d3a07a9ca75b8a191beabaa1d7841604"
+  },
+  "observedSummary": "Pebble Library, a small Node tool-lending helper, was initialized and maintained in a worktree whose .claude/skills/moldea is an uncommitted link to the Codex installation. Every launcher validate and inspect passed with the link present, so the CLI 13.0.1 link fix held. Request 4, Validate moldea, never ran validation because the bundled repair Git helper refuses tracked paths beneath the link; that package finding is left for a follow-up release.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261022-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "hostVersion": "0.163.0",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 154,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 193,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 253,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "pebble-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Pebble Library. Keep the lending rules and the reminder schedule as separate context so each stays tied to its own code.\n",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 9,
+      "beforeCommit": "47a4208b2025b1748ca61feeb95c242562f712c6",
+      "afterCommit": "fb1b6b85bd18835e447bfa827f5c92136c7bd78e",
+      "observedResult": "Explicit initialization created lending-rules and reminder-schedule context tied to their code, tests and README, recorded .agents/skills/moldea in AGENTS.md, installed exact CLI 13.0.1, passed 6 tests and validated with zero diagnostics while .claude/skills/moldea was a link.",
+      "redactionIds": []
+    },
+    {
+      "id": "pebble-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Power tools can now be borrowed for 5 days instead of 3.\n",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 155,
+      "beforeCommit": "fb1b6b85bd18835e447bfa827f5c92136c7bd78e",
+      "afterCommit": "bb0b5d027473d6d39860b9250266ec245c2e1170",
+      "observedResult": "Treated the statement as approved policy: updated the README and lending context to 5 days, recorded that code and tests still used 3 days, left application code unchanged and validated with zero diagnostics.",
+      "redactionIds": []
+    },
+    {
+      "id": "pebble-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Please update the loan code and its tests to match the 5-day power-tool rule.\n",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 194,
+      "beforeCommit": "bb0b5d027473d6d39860b9250266ec245c2e1170",
+      "afterCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "observedResult": "Relevance gate hit, one scope query and one content read; changed the power-tool loan to 5 days in code and test, removed the recorded gap, passed 6 tests and validated with zero diagnostics.",
+      "redactionIds": []
+    },
+    {
+      "id": "pebble-request-04",
+      "ordinal": 4,
+      "kind": "follow-up",
+      "text": "Validate moldea\n",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 254,
+      "beforeCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "afterCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "observedResult": "Took the explicit setup-check route; the bundled repair Git checkpoint returned attribute-safety for the linked directory, so the actor stopped before launcher validation and reported the limitation with an inert foundation check. No files changed.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 3,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 4,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 5,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 151,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 152,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 251,
+      "reason": "Host skill catalog, instruction or environment envelope, not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "manual",
+      "description": "First-turn capture reconciled 43 shareable events, native context 7 and request 9, exact delivered wording and gpt-6.1-sol/xhigh settings before request 02. CLI and Core were absent before request 01 and CLI 13.0.1 with Core 9.0.0 after it.",
+      "inputCommit": "fb1b6b85bd18835e447bfa827f5c92136c7bd78e",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test — actor execution during request 01 (call 125, result 130): 6 tests passed. Input was an uncommitted intermediate tree that reached checkpoint fb1b6b85bd18835e447bfa827f5c92136c7bd78e.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Launcher validate — actor execution during request 01 (call 136, result 139): valid, 0 diagnostics, with the .claude/skills/moldea link present.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Launcher validate — actor execution during request 02 (call 177, result 181): valid, 0 diagnostics, link present.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "npm test — actor execution during request 03 (call 227, result 232): 6 tests passed in the uncommitted tree that reached checkpoint 0814b3a6a4673986ce2fe3a3e4fac562e53d911f.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Launcher validate — actor execution during request 03 (call 236, result 241): valid, 0 diagnostics, link present.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "repair-git.mjs checkpoint — actor execution during request 04 (call 265, result 268): unavailable, attribute-safety, \"Expected a bounded regular file inside the repository.\"; launcher validation did not run.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Driver launcher validate and inspect in the actor worktree after request 01, link present: valid, 0 diagnostics, 2 context records.",
+      "inputCommit": "fb1b6b85bd18835e447bfa827f5c92136c7bd78e",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Driver launcher validate in the actor worktree after request 02, link present: valid, 0 diagnostics.",
+      "inputCommit": "bb0b5d027473d6d39860b9250266ec245c2e1170",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Driver launcher validate in the actor worktree after request 03, link present: valid, 0 diagnostics.",
+      "inputCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Driver repair-git.mjs checkpoint in the actor worktree after request 04: unavailable, attribute-safety, reproducing request 04.",
+      "inputCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Driver isolation in a disposable clone of the final commit: checkpoint available with the committed plain copy, attribute-safety with the uncommitted link replacing it, available with the link committed. Cause located in the helper's .gitattributes walk through linked parents.",
+      "inputCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent npm test in a scratch clone of the final commit: 6 of 6 passed.",
+      "inputCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent launcher validate, inspect and relevance gate in the actor worktree with the link present: valid, 0 diagnostics, 2 context records, 0 unresolved; gate printed 1 for src/loan-policy.js.",
+      "inputCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent repair-git.mjs checkpoint in the actor worktree: attribute-safety; the same refusal reproduced in a scratch clone with the uncommitted link and not without it.",
+      "inputCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent source and skill-behavior review complete: implementation and context maintenance accepted, request 04 helper refusal confirmed as a package defect, read-only outside-repository reads in request 01 and minor reporting choices recorded.",
+      "inputCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261022-01/run.json",
+        "evidence/runs/run-20261022-01/attempts/pebble-library-01.json",
+        "evidence/scenarios/pebble-library.md",
+        "evidence/runs/run-20261022-01/reviews/skill-review.md",
+        "git/47a4208b2025b1748ca61feeb95c242562f712c6/0814b3a6a4673986ce2fe3a3e4fac562e53d911f",
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz",
+        "run-20261022-01/pebble-library-identities-01.txt"
+      ],
+      "asset": null
+    },
+    {
+      "kind": "command",
+      "description": "Existing evidence verifier with the proposed private session and identity-log candidates passed for 1 attempt; run and Pebble evidence complete. Records were uncommitted, so inputCommit is null.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/runs/run-20261022-01/attempts/pebble-library-01.json"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt",
+        "locator": "pebble-request-01-context-7; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Inert initial root manifest has no declaration; lockfile and node_modules absent."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Inert initial root manifest has no declaration; lockfile and node_modules absent."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 154,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt",
+        "locator": "pebble-request-02-context-154; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "version": "13.0.1",
+        "integrity": "sha512-N8EQkPZxRGygwgGCFt5Z4adevMWeJzTmeCK+YFSAsqHDAw3fcqxS11wMgdGnFSGZXfDPbpTKQZ8DRTDuws77xA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 193,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt",
+        "locator": "pebble-request-03-context-193; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "version": "13.0.1",
+        "integrity": "sha512-N8EQkPZxRGygwgGCFt5Z4adevMWeJzTmeCK+YFSAsqHDAw3fcqxS11wMgdGnFSGZXfDPbpTKQZ8DRTDuws77xA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 253,
+      "source": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt",
+        "locator": "pebble-request-04-context-253; inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.1",
+        "contentHash": "ac6ce199850952a1914053e506aa52adbf2af08ab11349921682ea6c8323608e"
+      },
+      "cli": {
+        "version": "13.0.1",
+        "integrity": "sha512-N8EQkPZxRGygwgGCFt5Z4adevMWeJzTmeCK+YFSAsqHDAw3fcqxS11wMgdGnFSGZXfDPbpTKQZ8DRTDuws77xA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v10.0.1",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261022-01",
+      "name": "pebble-library-01-session-01.jsonl.gz",
+      "sizeBytes": 68672,
+      "sha256": "e1129061a0edf8f225104cf3de894224ac7a9bb24b4be7132167b1309acc3580",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 292
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261022-01",
+      "name": "pebble-library-identities-01.txt",
+      "sizeBytes": 37270,
+      "sha256": "0744f617507ff5d20f446727e13c90fbf3909a2e7fdc54ec4d9abeeb83144afc",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [],
+  "failures": [
+    {
+      "kind": "package",
+      "requestId": "pebble-request-04",
+      "description": "Skill 10.0.1 bundled repair-git.mjs checkpoint returns attribute-safety when an uncommitted directory link replaces tracked files, so an explicit Validate moldea stops before launcher validation that passes in the same worktree. Follow-up release finding; not fixed in this run.",
+      "asset": {
+        "tag": "run-20261022-01",
+        "name": "pebble-library-identities-01.txt"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "pl-path-0001",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0002",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0003",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0004",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0005",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0006",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0007",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0008",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0009",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0010",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0011",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0012",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0013",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0014",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0015",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0016",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 13,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0017",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 13,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0018",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 18,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-field-0019",
+      "reason": "Tool output listing unrelated private machine paths outside the selected project.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 18,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0020",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 22,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0021",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 22,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0022",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 22,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0023",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 22,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0024",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 22,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0025",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 22,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0026",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 22,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0027",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 83,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0028",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 108,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0029",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 108,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0030",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 108,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0031",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 108,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0032",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 115,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0033",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 115,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0034",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 115,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0035",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 115,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0036",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 136,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0037",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 144,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0038",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 144,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0039",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 151,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0040",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 152,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0041",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 152,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0042",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 152,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0043",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 177,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0044",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 177,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0045",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 177,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0046",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 186,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0047",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 198,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0048",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 205,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0049",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 212,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0050",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 220,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0051",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 220,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0052",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 220,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0053",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 236,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0054",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 236,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0055",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0056",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0057",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0058",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0059",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0060",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0061",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 251,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0062",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 258,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0063",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 265,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "pl-path-0064",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "sessionId": "01a163c1-fa2a-79d1-b30d-03965d3da295",
+      "eventOrdinal": 289,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "affectedLocations": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "One Codex attempt on Linux with Node 24.15.0; Windows junctions and the Claude Code host were not exercised.",
+    "The link was a deliberate uncommitted driver choice that replaced a committed plain copy, so Git lists the 36 copied files as deleted. A link with no tracked files beneath it was exercised only in the driver isolation check.",
+    "Request 2 was phrased as a policy statement, so the ordinary gate and scope path was exercised by request 3.",
+    "Actor checks with null inputCommit ran in an uncommitted intermediate tree before the driver checkpoint; independent exact-commit checks are separate.",
+    "Configuration isolation is not filesystem isolation. Request 1 searched for AGENTS.md outside the repository, read-only; that unrelated listing is whole-field redacted.",
+    "Encrypted reasoning and host-private world state are omitted; no compaction occurred."
+  ]
+}

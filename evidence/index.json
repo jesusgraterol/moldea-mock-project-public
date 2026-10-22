@@ -28,6 +28,13 @@
       "summary": "Six Skill 10.0.0 projects completed 41 actual requests with independently reviewed source, complete published/download-verified evidence and full combined public browser replay. Quarry retains two assisted repairs; controlled-model, prose-grounding, compaction and inherited viewer accessibility limits remain. Evaluator handoff is ready.",
       "evidenceStatus": "complete",
       "reviewStatus": "complete"
+    },
+    {
+      "runId": "run-20261022-01",
+      "manifestPath": "evidence/runs/run-20261022-01/run.json",
+      "summary": "Skill 10.0.1 verification run. Pebble Library worked with a linked .claude/skills directory: every launcher validate and inspect passed with the link present, while the bundled repair Git helper stopped an explicit Validate moldea before validation. Bound-skill project pending.",
+      "evidenceStatus": "complete",
+      "reviewStatus": "complete"
     }
   ]
 }
