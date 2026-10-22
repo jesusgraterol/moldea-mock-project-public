@@ -359,6 +359,16 @@
         "run-20261022-01/pebble-library-identities-01.txt"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Functional replay of public snapshot b984ac04c043d5d6046d08f17b56b3367521e800 with the run-20261022-01 Release assets, in an isolated Skill v10.0.1 website checkout with Chromium 151.0.7922.34 on Linux at 1440 px and emulated 320 px touch, light and dark: the gallery lists both projects; each project page renders every parsed session entry and tool (Pebble 63 entries and 27 tools, Saffron 89 entries and 39 tools) and every request anchor without horizontal overflow or page errors; the first and last tool dialogs show exact input and output and return focus on Escape; unfiltered axe scans of the gallery and both pages report no violations.",
+      "inputCommit": "b984ac04c043d5d6046d08f17b56b3367521e800",
+      "result": "passed",
+      "coveredArtifacts": [
+        "run-20261022-01/pebble-library-01-session-01.jsonl.gz"
+      ],
+      "asset": null
     }
   ],
   "installations": [
