@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "runId": "run-20261021-01",
   "date": "2026-10-21",
-  "summary": "Six-project Skill 10.0.0 batch in progress: Aster passed its pilot gate; Cobalt, Folio, Beacon and Cinder completed with independent review and published/download-verified evidence. Cinder used five requests and52tests for its real AI SDK loop,21-day policy and separate CSV utility. Quarry has not started.",
+  "summary": "All six Skill 10.0.0 conversations concluded with independently reviewed source and published/download-verified evidence. Quarry has two transparent review-assisted repairs; Cinder free rationale and other bounded limits remain. Full combined replay and final evaluator handoff remain Milestone8.",
   "expectedActor": {
     "model": "gpt-6.1-sol",
     "effort": "xhigh"
@@ -34,13 +34,14 @@
     "evidence/runs/run-20261021-01/attempts/cobalt-rooms-01.json",
     "evidence/runs/run-20261021-01/attempts/folio-workshop-01.json",
     "evidence/runs/run-20261021-01/attempts/beacon-collections-01.json",
-    "evidence/runs/run-20261021-01/attempts/cinder-returns-01.json"
+    "evidence/runs/run-20261021-01/attempts/cinder-returns-01.json",
+    "evidence/runs/run-20261021-01/attempts/quarry-handover-01.json"
   ],
   "evidenceStatus": "incomplete",
   "reviewStatus": "pending",
   "review": null,
   "limitations": [
     "Aster pilot expansion gate passed with the inherited moderate landmark-unique viewer finding retained; no accessibility-conformance claim.",
-    "Five projects have independently reviewed source and published/download-verified evidence. Quarry has no attempt yet; full combined public replay remains Milestone8. Cinder free rationale remains a human-review limit despite enforced structured facts/authority."
+    "All six attempts have complete independently reviewed and published/download-verified evidence. Full combined replay and final batch handoff remain Milestone8. Quarry two assisted repairs and natural-compaction encrypted-summary omission, Cinder free rationale and other recorded limits remain."
   ]
 }

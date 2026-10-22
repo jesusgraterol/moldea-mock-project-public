@@ -1,0 +1,4306 @@
+{
+  "formatVersion": 1,
+  "runId": "run-20261021-01",
+  "scenarioId": "quarry-handover",
+  "attemptId": "quarry-handover-01",
+  "branch": "fixture_eve_xs_quarry_handover_01",
+  "baseCommit": "85b6e34b24c8efdde24f32f6066e1e75c1295dea",
+  "finalCommit": "dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+  "lastDurableCommit": "dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+  "scenarioDefinition": {
+    "path": "evidence/scenarios/quarry-handover.md",
+    "commit": "18651cd2a17ff89921bbbe557036f21f1cd16695"
+  },
+  "observedSummary": "Eight requests completed one real Eve assistant, lookup and on-demand procedure, inclusive 8-hour policy, instruction reorganization and separate roster CSV utility. Two review-assisted request02 repairs resolved local eval discovery and stale same-session results. Independent 19 tests/typecheck/build, 17 strict evals/382 gates, 12 direct session turns and 16 CLI probes passed. Signed source and independently reviewed assets are published and authenticated/anonymous byte-verified; original failures and compaction limits remain.",
+  "actorOutcome": "concluded",
+  "outcomeReason": null,
+  "evidenceStatus": "complete",
+  "reviewStatus": "complete",
+  "review": "evidence/runs/run-20261021-01/reviews/skill-review.md",
+  "sessions": [
+    {
+      "id": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "hostVersion": "0.163.0",
+      "turns": [
+        {
+          "eventOrdinal": 7,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 134,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 428,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 488,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 573,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 679,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 757,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 771,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        },
+        {
+          "eventOrdinal": 844,
+          "requestedModel": "gpt-6.1-sol",
+          "requestedEffort": "xhigh",
+          "effectiveModel": "gpt-6.1-sol",
+          "effectiveEffort": "xhigh",
+          "deviation": false
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "id": "quarry-request-01",
+      "ordinal": 1,
+      "kind": "initial",
+      "text": "Initialize moldea for Quarry Handover, a small Eve assistant that reads fictional facilities shift records and drafts handover briefs. It needs one read-only lookup and one on-demand handover procedure. Unresolved reports aged at least 12 hours go to supervisor review; missing facts and conflicting reports must stay visible. The assistant only drafts. Start with a minimal proposal and hold off on implementation. Use @moldea.ai/cli@13.0.0 for setup.\n",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 9,
+      "beforeCommit": "85b6e34b24c8efdde24f32f6066e1e75c1295dea",
+      "afterCommit": "baff397e9dd11f8d9e45389ce51a03f4e8cb2e18",
+      "observedResult": "Explicit CLI13 initialization and minimal proposal only; no application/procedure implementation and zero canonical agents. Actual initial nine components absent; setup validation/integration smoke passed.",
+      "redactionIds": []
+    },
+    {
+      "id": "quarry-request-02",
+      "ordinal": 2,
+      "kind": "follow-up",
+      "text": "Implement the minimal proposal now. Use one filesystem-defined Eve root assistant, one read-only lookup and one on-demand handover procedure, with evals and their configuration outside agent/. Inspect the installed eve@0.82.0 APIs and documented fixture-model/eval contracts first. Keep elapsed-time flags deterministic in application code using supplied timestamps, preserve missing times and both claims of unresolved reports, and retain supervisor-only decisions with no operational actions. Provide npm test, npm run typecheck, npm run build and npm run test:runtime; the runtime script should use the installed Eve CLI deterministic eve eval --strict path after checking its options. Exercise real discovery, build, runtime, selected procedure and lookup; control only the external model boundary, with no live provider or model judge. Checks must inspect the actual instruction and selected procedure text reaching that boundary, plus real lookup inputs/results. Bind any local runtime to loopback, retain its owned process handles and verify shutdown after checks. Keep to the planned capabilities and update directly affected usage documentation.\\n",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 135,
+      "beforeCommit": "baff397e9dd11f8d9e45389ce51a03f4e8cb2e18",
+      "afterCommit": "90c9b26330ec9c561865403c482d2a0e092d8858",
+      "observedResult": "Implemented one filesystem-defined Eve root, real read-only lookup, canonical instruction loader and on-demand procedure; deterministic inclusive12-hour policy. Initial typecheck property error and local route-authorization failure were self-corrected;5tests/typecheck/build/8strict evals56gates/7binding validation passed. Independent review later found ambient Vercel discovery and same-session stale-result defects; subsequent repairs are assisted.",
+      "redactionIds": []
+    },
+    {
+      "id": "quarry-request-03",
+      "ordinal": 3,
+      "kind": "follow-up",
+      "text": "Add two fictional unresolved reports for west-service-gate, both observed at 2026-10-20T10:00:00.000Z. QH-105 says: 'The gate latch remained engaged for the entire inspection.' QH-106 says: 'The gate latch never engaged at any point during that same inspection.' Keep both claims and identifiers as unresolved source reports. Exercise the actual handover procedure with QH-101 through QH-106 at the supplied reference time 2026-10-20T12:00:00.000Z and show its resulting draft, including the missing observation time and items for supervisor review. Do not reconcile or resolve the conflicting claims. Adding these fictional fixture records and directly affected checks is authorized; the runtime must continue to read records without changing them.\n",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 429,
+      "beforeCommit": "90c9b26330ec9c561865403c482d2a0e092d8858",
+      "afterCommit": "72dfa5ef6211be5123dcdfb0ef89ccccb078b707",
+      "observedResult": "Added two authorized fictional same-time contradictory west-service-gate reports, preserving both unresolved identifiers/claims. Actual handover for all six reports retained missing QH103 time and supervisor authority;6tests/typecheck/9strict evals76gates passed, printed draft and verified runtime read-only behavior/shutdown.",
+      "redactionIds": []
+    },
+    {
+      "id": "quarry-request-04",
+      "ordinal": 4,
+      "kind": "intervention",
+      "text": "Independent review found a launcher issue in the implementation from request 02: Eve 0.82.0 treats eval --url as a remote target even when its URL is loopback. Without an explicit EVE_EVAL_AUTH_TOKEN, its client enters ambient Vercel project/deployment discovery and may launch a Vercel CLI. Actual external access in our earlier runs is not established. Correct the application-owned local runtime check so it uses the installed documented non-secret fixture auth override for its owned loopback endpoint, without inheriting a real token or relying on Vercel discovery, credentials, configuration or a new service. Inspect the pinned contract and record that test-environment choice in usage documentation. Then verify the real strict eval/procedure/lookup/instruction path and owned shutdown again. Keep the handover policy, source claims and capabilities unchanged. This is a review-assisted correction; preserve the earlier runtime history.\n",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 489,
+      "beforeCommit": "72dfa5ef6211be5123dcdfb0ef89ccccb078b707",
+      "afterCommit": "cec3eb7cd5c26ab976f3f48da6113d4e633418d0",
+      "observedResult": "Review intervention on request02: explicit non-secret fixture eval auth overrides any inherited token, bypassing ambient Vercel discovery for the owned loopback URL. Typecheck/real build/9strict evals76gates/validation passed; policy/claims unchanged. Prior actual external access remains unestablished.",
+      "redactionIds": []
+    },
+    {
+      "id": "quarry-request-05",
+      "ordinal": 5,
+      "kind": "intervention",
+      "text": "Independent review reproduced another issue in the original implementation: two valid requests in one real Eve session do not work correctly. First send mode lookup, recordIds ['QH-101'], referenceAt '2026-10-20T12:00:00.000Z'; then send mode lookup, recordIds ['QH-103'], referenceAt null in that same session. The second turn fails with MODEL_CALL_FAILED because evals/fixture-model.ts selects the first prior lookup result, compares its old timestamp with null, and never performs the second lookup. Correct this application-owned history handling using the pinned Eve model contract. Add a meaningful real-runtime continuation regression with different selections and timestamps, covering handover/procedure continuation as appropriate, and inspect explicit turn/step failure events as well as returned status. Retain real lookup execution, current supplied-time facts, selected-procedure consumption and the local auth/shutdown safeguards. Keep policy, source claims and capabilities unchanged; no SDK modifications or tool stubs. Recheck the affected native suites. This is a second review-assisted correction to request 02; preserve the reproduced failure and both repair histories.\n",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 574,
+      "beforeCommit": "cec3eb7cd5c26ab976f3f48da6113d4e633418d0",
+      "afterCommit": "ef3080e78c56cb18257d54e2fb76d76ea6c4778d",
+      "observedResult": "Second review intervention on request02: retained results were incorrectly reused across requests. New real-session regression first reproduced step/turn MODEL_CALL_FAILED despite status waiting; actor corrected current-request explicit call/result ID correlation.6tests/typecheck/build/11strict evals235gates/validation passed. Independent original-repro and mixed continuation checks passed at the exact repair SHA.",
+      "redactionIds": []
+    },
+    {
+      "id": "quarry-request-06",
+      "ordinal": 6,
+      "kind": "follow-up",
+      "text": "The approved escalation threshold is now 8 elapsed hours, inclusive, instead of 12. Implement that policy for unresolved reports using the supplied report and reference timestamps, and update the affected current instructions, usage guidance and checks. Missing time and chronology problems must remain unknown, both unresolved claims must remain visible, and supervisors keep all decision authority. Preserve the corrected same-session behavior and local runtime safeguards. Exercise the real Eve path at the new exact threshold and either side of it, without adding capabilities or changing the source report claims.\n",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 680,
+      "beforeCommit": "ef3080e78c56cb18257d54e2fb76d76ea6c4778d",
+      "afterCommit": "060f5705b82fa8b89184e3959b498fb146209e15",
+      "observedResult": "Approved inclusive8-hour policy propagated to deterministic code, canonical instruction/current context, README and checks. Exact8h minus1ms/equal/plus1ms exercised through actual lookup and handover;6tests/typecheck/build/17strict evals382gates/validation passed. Source claims and repair histories preserved.",
+      "redactionIds": []
+    },
+    {
+      "id": "quarry-request-07",
+      "ordinal": 7,
+      "kind": "follow-up",
+      "text": "Reorganize the root instructions and the one handover procedure into clear named sections so their responsibilities are easier to navigate. Keep general grounding, timestamp/uncertainty rules and supervisor authority clear at the root, with handover-specific steps in the on-demand procedure. Preserve every unique rule and the current inclusive 8-hour policy, including both unresolved claims and identifiers, data-as-evidence handling, unknown times and chronology issues, supplied-time calculations, and the ban on operational actions. Keep one authoritative instruction connection and one procedure; add no capability or instruction mirror. Verify that the reorganized root text and actual selected procedure still reach the real Eve model boundary through the existing consumer path. Keep business logic and source reports unchanged.\n",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 758,
+      "beforeCommit": "060f5705b82fa8b89184e3959b498fb146209e15",
+      "afterCommit": "be72fc2ace1a72b4a7e809bddcef9b83f3b6d1eb",
+      "observedResult": "Reorganized only root instruction and one procedure into named sections; all original nonheading rule text preserved, loader/business/data unchanged.6tests/typecheck/17strict evals382gates/validation passed. Actual natural compaction769 preserved; both real contexts757/771 observed and entrypoint/references reread after compaction.",
+      "redactionIds": []
+    },
+    {
+      "id": "quarry-request-08",
+      "ordinal": 8,
+      "kind": "follow-up",
+      "text": "Add one small, separate shift-roster formatter. It should read a JSON file of fictional roster entries with id, name and shift, then print CSV with the header id,name,shift in stable ID order. Include a small fictional sample, clear command usage, proper CSV quoting and clear invalid-input errors without partial CSV output. Keep this read-only: it must not assign staff, alter reports or connect to the handover assistant. Use the existing dependencies and add focused native checks for the utility; keep the assistant's policy, business logic, instructions and procedure unchanged.\n",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 845,
+      "beforeCommit": "be72fc2ace1a72b4a7e809bddcef9b83f3b6d1eb",
+      "afterCommit": "dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+      "observedResult": "Added only standalone roster CSV formatter/sample/tests/usage and test script selection, using existing dependencies.19tests/typecheck passed, with no assistant/data-report/instruction/procedure/dependency-lock changes; no staffing assignment capability. Actual file precheck859/result865 printed1; scope869/result872 matched README/package affectedBy paths to one existing owner. No canonical rewrite followed; unchanged current instruction was available from request07.",
+      "redactionIds": []
+    }
+  ],
+  "ignoredDeveloperEvents": [
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 2,
+      "reason": "Actual host skill catalog, role/mode, environment or AGENTS envelope; not a delivered product request."
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 3,
+      "reason": "Actual host skill catalog, role/mode, environment or AGENTS envelope; not a delivered product request."
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 4,
+      "reason": "Actual host skill catalog, role/mode, environment or AGENTS envelope; not a delivered product request."
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 5,
+      "reason": "Actual host skill catalog, role/mode, environment or AGENTS envelope; not a delivered product request."
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 131,
+      "reason": "Actual host skill catalog, role/mode, environment or AGENTS envelope; not a delivered product request."
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 132,
+      "reason": "Actual host skill catalog, role/mode, environment or AGENTS envelope; not a delivered product request."
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 486,
+      "reason": "Actual host skill catalog, role/mode, environment or AGENTS envelope; not a delivered product request."
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 571,
+      "reason": "Actual host skill catalog, role/mode, environment or AGENTS envelope; not a delivered product request."
+    }
+  ],
+  "checks": [
+    {
+      "kind": "manual",
+      "description": "First real turn frozen/reconciled before request02:128native/39shareable/context7/request9/33masks; actual initial9components absent and resulting CLI13/Core9/repository4/repository-fs4/Eve0.82/ai7.0.148 installed metadata/integrities observed.",
+      "inputCommit": "baff397e9dd11f8d9e45389ce51a03f4e8cb2e18",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor request02 initial typecheck failed on result.signal rather than installed IProcessResult.signalCode; corrected after reading pinned types. Initial actual loopback eval failed route authorization and verified owned shutdown; actor added local fixture channel auth and reran successfully. Original failures retained; source was uncommitted.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor request02 final5tests/typecheck/build/8strict evals56gates/7binding validation passed through actual Eve/procedure/lookup/instruction path. This did not establish same-session correctness or an explicit local auth override before later review.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact-core5tests/typecheck/build/8strict evals56gates/7binding validation passed with explicitly recorded reviewer non-secret auth override; actual procedure/tool/system text, data immutability, PID/startticks/loopback shutdown verified.",
+      "inputCommit": "90c9b26330ec9c561865403c482d2a0e092d8858",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact-core same-session QH101/ref12Z then QH103/refnull failed MODEL_CALL_FAILED before second lookup. Initial reviewer process exit0/statuswaiting was not a passing probe; explicit failure events inspected. Actual reproduced app bug retained.",
+      "inputCommit": "90c9b26330ec9c561865403c482d2a0e092d8858",
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor request03 actual contradictory QH105/106 handover printed resulting draft, unknownQH103 time and only original12h review item;6tests/typecheck/9strict evals76gates passed with source records read-only during runtime.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Review-assisted request04 fixed local eval auth override; typecheck/build/9strict evals76gates/validation passed. Independent exact-source auth-before-discovery inspection confirmed overriding inherited token, without any claim of prior actual external access.",
+      "inputCommit": "cec3eb7cd5c26ab976f3f48da6113d4e633418d0",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor request05 first real continuation regression reproduced9pass1fail/117gatespass17fail, retaining step/turnMODEL_CALL_FAILED despitewaiting. This is the deliberate red regression before correction, not a successful runtime.",
+      "inputCommit": null,
+      "result": "failed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor request05 after correction6tests/typecheck/build/11strict evals235gates/7binding validation passed; current-request explicit call/result IDs preserve fresh real lookups and actual procedure loads.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Independent exact repair6tests/typecheck/build/11strict evals235gates/7binding validation and event-aware original-repro/mixed direct session probe passed without reviewer auth override. Different/null timestamps, exact repeats, handover/procedure/current tool results and no-tool continuation inspected; zero failure events, owned runtime/data/source cleanup verified.",
+      "inputCommit": "ef3080e78c56cb18257d54e2fb76d76ea6c4778d",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Actor approved8h request06:6tests/typecheck/build/17strict evals382gates/validation passed; exact8h minus1ms/equal/plus1ms actual lookup AND handover paths, supplied-time uncertainty/claims and supervisor authority retained.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Root exact reorganization diff review: only2instruction/procedure files changed; every nonheading sentence fragment retained,5root/4procedure headings added. Loader/root definition/model/business/data blobs unchanged; actual r7 tests/typecheck/17strict evals382gates inspected both complete texts.",
+      "inputCommit": "be72fc2ace1a72b4a7e809bddcef9b83f3b6d1eb",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "command",
+      "description": "Final actor request08 npm test19tests and typecheck passed; real CSV command documented. Only utility/sample/tests/README/test-script changes, no assistant/report/canonical/procedure/dependency-lock changes.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Unchanged evidence utility captured actual natural compaction769 and both contexts757/771, preserving11plaintext replacements/7retained user messages and flagging encrypted summary omission; all8exact delivered requests and9actual contexts reconciled.",
+      "inputCommit": "dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Request08 actual relevance precheck859/result865=1 and scope869/result872 matched2known README/package paths to1existing owner. Existing current instruction had been read in request07; no new owner-content read or blanket relevance miss is claimed. Exact final diff preserves all canonical/assistant/procedure/report-data bytes.",
+      "inputCommit": "dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Root exact final README bash -n passed7actual command snippets; optional shellcheck/shfmt absent and not installed. All36 Skill paths/bytes/published modes match950b89 at every one of9introduced commits; root9commit/104path-blob-state scan and exact final capture/sidecar recapture passed. Automated scans supplement manual and independent privacy inspection.",
+      "inputCommit": "dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Final fresh independent exact-source npm test (19), typecheck, build, test:runtime (17 strict Eve evals/382 gates), validation (0 errors/warnings, 7 files/6 exports plus one Markdown no-symbol not checked), separate 12-turn real-session boundary/continuation probe and 16 actual roster CLI probes passed. All source/data unchanged; 36 owned runtime handles stopped and 6 ports released; seven owned reviewer scratch directories and both proven-owned actor caches removed. All nine signed source commits privacy-reviewed and explicit fixture branch push verified.",
+      "inputCommit": "dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "manual",
+      "description": "Existing unchanged verifier passed against all six exact private proposed attempt records and ten downloaded plus two frozen assets, while batch remained incomplete. Original driver invocation from dependency-free materialization lacked zod; using the unchanged installed verifier then exposed missing refs in the bare owned check metadata. Exact fixture ref copies resolved that separate harness setup. No source/utility/schema/evidence changes; originals retained.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Fresh independent full eight-copy privacy and correspondence review passed before upload: complete six drafts, selected recording and full identity audit, with all119sanitized evidence sections/80-file independent inventory checked against retained sources. Actual8requests/9contexts,242masks,compaction11+7 and both assisted repairs reconcile. No source/asset mutation.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Two distinct Quarry assets published without replacement. Authenticated gh and anonymous curl -q downloads with no auth flags/headers and GitHub token environment names removed matched reviewed sizes/hashes. Fixed tag43ebb11aed5beb591532cc7493ad49b2c818f80f and all10earlierasset IDs/sizes/digests/timestamps unchanged.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Root reviewed subsequent factual status/privacy/publication prose deltas against actual checks; all original assisted failures, runtime and natural-compaction limits retained. Full combined replay is Milestone8.",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": "dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/quarry-handover-01.json",
+        "evidence/scenarios/quarry-handover.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/85b6e34b24c8efdde24f32f6066e1e75c1295dea/dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz",
+        "run-20261021-01/quarry-handover-identities-01.txt"
+      ],
+      "asset": null
+    }
+  ],
+  "installations": [
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 7,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-01-context-7; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "state": "absent",
+        "reason": "Actual inert initial manifest/lock/installed metadata before adoption: component absent. Manifest declarations alone are not installed identities."
+      },
+      "core": {
+        "state": "absent",
+        "reason": "Actual inert initial manifest/lock/installed metadata before adoption: component absent. Manifest declarations alone are not installed identities."
+      },
+      "adapters": []
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 134,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-02-context-134; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 428,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-03-context-428; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 488,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-04-context-488; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 573,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-05-context-573; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 679,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-06-context-679; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 757,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-07-context-757; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 771,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-07-context-771; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    },
+    {
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "eventOrdinal": 844,
+      "source": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt",
+        "locator": "quarry-request-08-context-844; actual inert installed metadata observation"
+      },
+      "skill": {
+        "ref": "v10.0.0",
+        "contentHash": "f035aedbbebefeb7905e066369ca411924ce57c5dd9a9f7b801cde0344530fc4"
+      },
+      "cli": {
+        "version": "13.0.0",
+        "integrity": "sha512-8JCTSgdX2ApEFwYWD5Ai1WRo5dpVgJCYJNrIUyNz7/4EnNSvx39fVVVpGz6kfxQ+dCXDZrvFBLZKELkFF2tIMA=="
+      },
+      "core": {
+        "version": "9.0.0",
+        "integrity": "sha512-3khz/bp5PZnnvSUOyvZWsYOHGXXlB8ydlM8JFUSNeLZALPWU6zVpvTaPwglu19vk/cIW/KPKNa6YepFR2Uwvaw=="
+      },
+      "adapters": [
+        {
+          "name": "@moldea.ai/repository",
+          "version": "4.0.0",
+          "integrity": "sha512-6cNlZWwRxCdllj9SA5zSUMuHSl0YI14wOJ+meYgX4wxIi8qQmQaOKo6ExNmTf7K9YoEBWNokfrpbLTHRkJnX6Q=="
+        },
+        {
+          "name": "@moldea.ai/repository-fs",
+          "version": "4.0.0",
+          "integrity": "sha512-kXGQY64XtL08yRbKq4fdRBuyN1o42MUG4pEc57GC3eApeBVp9n1ehXF5hnRn5Ad9DqHrTnLfP1V9bE962KectQ=="
+        }
+      ]
+    }
+  ],
+  "skillRelease": "v10.0.0",
+  "assets": [
+    {
+      "kind": "session",
+      "tag": "run-20261021-01",
+      "name": "quarry-handover-01-session-01.jsonl.gz",
+      "sizeBytes": 444237,
+      "sha256": "1d8eadd4e83574b8f4f4946e8089ca80958fe5181172b5694bf00ee6cc96bfa1",
+      "mediaType": "application/jsonl+gzip",
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "firstEventOrdinal": 0,
+      "lastEventOrdinal": 931
+    },
+    {
+      "kind": "log",
+      "tag": "run-20261021-01",
+      "name": "quarry-handover-identities-01.txt",
+      "sizeBytes": 1102367,
+      "sha256": "c309d2e43e8e9840c52209896ddf074281dbecef4100b5ab61002c744cc8c8ba",
+      "mediaType": "text/plain",
+      "sessionId": null,
+      "firstEventOrdinal": null,
+      "lastEventOrdinal": null
+    }
+  ],
+  "interventions": [
+    {
+      "requestId": "quarry-request-02",
+      "interventionRequestId": "quarry-request-04",
+      "originalResult": "Initial local eval launcher inherited ambient environment; pinned Eve classifies --url loopback as remote and enters ambient Vercel discovery without explicit auth. Prior actual external access is not established.",
+      "assistedResult": "Actor used documented explicit non-secret fixture auth for owned loopback, overriding inherited evaltoken. Independent inspection and exact repair runtime passed without reviewer override.",
+      "originalCommit": "90c9b26330ec9c561865403c482d2a0e092d8858",
+      "assistedCommit": "cec3eb7cd5c26ab976f3f48da6113d4e633418d0"
+    },
+    {
+      "requestId": "quarry-request-02",
+      "interventionRequestId": "quarry-request-05",
+      "originalResult": "Independent real same-session QH101/ref12Z then QH103/refnull reproduced stale prior result, step/turn MODEL_CALL_FAILED and no fresh second lookup; waiting status masked failure in initial reviewer process-status check.",
+      "assistedResult": "Actor first reproduced the failure in a real regression, then correlated current-request call IDs/results. Independent event-aware original reproduction and mixed continuation passed at exact repair SHA; no SDK patch or tool stub.",
+      "originalCommit": "90c9b26330ec9c561865403c482d2a0e092d8858",
+      "assistedCommit": "ef3080e78c56cb18257d54e2fb76d76ea6c4778d"
+    }
+  ],
+  "failures": [
+    {
+      "kind": "actor",
+      "requestId": "quarry-request-02",
+      "description": "Initial authored process result.signal type error and local route-authorization runtime failure were self-corrected in request02; original failures and verified shutdown retained. No driver help for those two initial development errors.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "actor",
+      "requestId": "quarry-request-02",
+      "description": "Independent review established two application-owned defects: ambient Vercel discovery in the local eval launcher and stale retained results across valid same-session requests. Repaired by recorded interventions04/05; no Eve/Skill/provider defect established. Prior actual external access remains unestablished.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "actor",
+      "requestId": "quarry-request-05",
+      "description": "New real-session regression first reproduced the stale-result failure:9evalspassed1failed,117gatespassed17failed; explicit step/turn failure retained. Corrected within the intervention, then independent committed-source rerun passed.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-01-session-01.jsonl.gz"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": null,
+      "description": "Reviewer setup first used the same /dev/null file for both npm configuration roles; corrected to distinct owned empty configs. A bare Python rebind check first hit TIME_WAIT; no-listener plus SO_REUSEADDR rebind established shutdown. Initial continuation probe exited0 on waiting status despite failure events; event-aware inspection/recheck corrected that harness conclusion. These are reviewer-only limits, not actor/package defects.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    },
+    {
+      "kind": "driver",
+      "requestId": "quarry-request-02",
+      "description": "Delivered request02 terminal literal backslash+n was preserved exactly, with no retry or source change for formatting. A later post-capture compaction diagnostic guessed type instead of projected kind, then corrected the read/count labels without changing the successful capture. Neither is an unsupported native-format claim. A supplemental driver distribution check initially assumed all files were non-executable; it was corrected to compare the immutable release modes, including3published executables, and all9commits passed without changing source/capture.",
+      "asset": {
+        "tag": "run-20261021-01",
+        "name": "quarry-handover-identities-01.txt"
+      }
+    }
+  ],
+  "redactions": [
+    {
+      "id": "qh-path-0001",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0002",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0003",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0004",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0005",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0006",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0007",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0008",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 2,
+      "path": [
+        "payload",
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0009",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0010",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0011",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0012",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0013",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0014",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0015",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 5,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0016",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 17,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0017",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0018",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0019",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0020",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0021",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0022",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0023",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 21,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0024",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 65,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0025",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 87,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0026",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 87,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0027",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 87,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0028",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 95,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0029",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 95,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0030",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 95,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0031",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 116,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0032",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 124,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0033",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 124,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0034",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 131,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0035",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 132,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0036",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 132,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0037",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 132,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0038",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 139,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0039",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 139,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0040",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 139,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0041",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0042",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0043",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 148,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0044",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 156,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0045",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 156,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0046",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 176,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0047",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 247,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0048",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0049",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0050",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0051",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0052",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0053",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0054",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0055",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0056",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0057",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 256,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0058",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 263,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0059",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 263,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0060",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 263,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0061",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 263,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0062",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 263,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0063",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 263,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0064",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0065",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0066",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0067",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0068",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0069",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0070",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 279,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0071",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 301,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0072",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 311,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0073",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0074",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0075",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 324,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0076",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 345,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0077",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 355,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0078",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 396,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0079",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 396,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0080",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 396,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0081",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 396,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0082",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 405,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0083",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 413,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0084",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 416,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0085",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 421,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0086",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 433,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0087",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 433,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0088",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 442,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0089",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 457,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0090",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 457,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0091",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 457,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0092",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 457,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0093",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 474,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0094",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 486,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0095",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 486,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0096",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 486,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0097",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 486,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0098",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 486,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0099",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 486,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0100",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 486,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0101",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 493,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0102",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 502,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0103",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 510,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0104",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 526,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0105",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 526,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0106",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 526,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0107",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 526,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0108",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 538,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0109",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 549,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0110",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 555,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0111",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 564,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0112",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 571,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0113",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 571,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0114",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 571,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0115",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 578,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0116",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 587,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0117",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 587,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0118",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 617,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0119",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0120",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0121",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0122",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0123",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0124",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0125",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0126",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0127",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0128",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0129",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0130",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0131",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0132",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0133",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0134",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0135",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0136",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0137",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0138",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0139",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0140",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0141",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0142",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0143",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0144",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0145",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0146",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0147",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0148",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0149",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0150",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0151",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0152",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0153",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0154",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0155",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0156",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0157",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0158",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0159",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0160",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0161",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0162",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0163",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0164",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0165",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0166",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0167",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0168",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0169",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0170",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0171",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0172",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0173",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0174",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0175",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0176",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0177",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0178",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0179",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0180",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0181",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0182",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0183",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0184",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0185",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0186",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0187",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 627,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0188",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 633,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0189",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 633,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0190",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 644,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0191",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 652,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0192",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 652,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0193",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 652,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0194",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 663,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0195",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 667,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0196",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 672,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0197",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 684,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0198",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 693,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0199",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 707,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0200",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 707,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0201",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 707,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0202",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 707,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0203",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 707,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0204",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 707,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0205",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 707,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0206",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 707,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0207",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 723,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0208",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 726,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0209",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 742,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0210",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 745,
+      "path": [
+        "payload",
+        "output",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0211",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 750,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0212",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 762,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0213",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        6,
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0214",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        6,
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0215",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        6,
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0216",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        6,
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0217",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        9,
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0218",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        9,
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0219",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        9,
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0220",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        9,
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0221",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        9,
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0222",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        9,
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0223",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        9,
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0224",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 769,
+      "path": [
+        "payload",
+        "replacementHistory",
+        9,
+        "content",
+        1,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0225",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 804,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0226",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 804,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0227",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 823,
+      "path": [
+        "payload",
+        "output",
+        2,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0228",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 829,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0229",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 837,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0230",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 837,
+      "path": [
+        "payload",
+        "content",
+        0,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0231",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 849,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0232",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 849,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0233",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 849,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0234",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 859,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0235",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 859,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0236",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 865,
+      "path": [
+        "payload",
+        "output",
+        3,
+        "text"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0237",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 869,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0238",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 904,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0239",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 904,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0240",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 904,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0241",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 904,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    },
+    {
+      "id": "qh-path-0242",
+      "reason": "Private machine directory prefix; retain the project-relative or skill-relative suffix.",
+      "eventOrdinal": 904,
+      "path": [
+        "payload",
+        "input"
+      ],
+      "sessionId": "01a160bd-6813-76d3-8cb8-58160938a6bd",
+      "affectedLocations": [
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz"
+      ]
+    }
+  ],
+  "recovery": null,
+  "predecessorAttemptId": null,
+  "limitations": [
+    "Controlled eve/evals mockModel replaces only the external language-model boundary. Real filesystem discovery/build, HTTP runtime/session, canonical instruction loading, selected procedure and lookup remain. Scripted prose and action refusal do not prove a live model will follow instructions; no live provider, judge or general SDK qualification.",
+    "Two actual review-assisted actor repairs are recorded, both on request02. The first makes local eval auth explicit; earlier ambient Vercel discovery is source-established, while actual credential/config/network access in prior runs is not established. The second fixes stale results in a real same-session continuation; returned status waiting alone did not establish success.",
+    "Dedicated actor home isolates configuration, not filesystem reads/shared Git objects; actual host catalogs remain available. Linux only; Windows/macOS and real mobile devices untested.",
+    "Natural compaction at native769 preserves11 plaintext replacement messages and7 retained user messages, while the encrypted summary is omitted. Both actual contexts757/771 have composition observations; complete post-compaction context is unobservable. Observed entrypoint/reference rereads at775/784/796 and actual source/runtime checks are separate evidence.",
+    "The delivered request02 ends with literal backslash+n rather than a newline. That exact driver formatting is retained without rewriting, retrying or inventing another request; product constraints were otherwise explicit.",
+    "Actor checks on intermediate uncommitted source have null inputCommit with native/reached-source anchors. Independent committed-source checks are separate. Reviewer-only setup and probe-harness errors remain attributed to review, not actor/package defects.",
+    "The final capture has263 shareable events/932native records/95full tool-call-result pairs and242 explicit prefix masks. Encrypted reasoning/private host state and the encrypted compaction summary are omitted. No opaque child prompt or child internal-history coverage is claimed.",
+    "Independent final source/host/runtime/capture/public-copy privacy, separate source publication and authenticated/anonymous assets are verified. Record-publication checks use null inputCommit while metadata is uncommitted; full combined browser replay remains Milestone8."
+  ]
+}
