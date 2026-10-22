@@ -1,0 +1,12 @@
+version: 1
+context:
+  /moldea/context/lending-rules.md:
+    affectedBy:
+      - /src/loan-policy.js
+      - /src/loan-policy.test.js
+      - /README.md
+  /moldea/context/reminder-schedule.md:
+    affectedBy:
+      - /src/reminders.js
+      - /src/reminders.test.js
+      - /README.md

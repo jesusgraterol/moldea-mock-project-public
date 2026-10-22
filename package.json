@@ -8,5 +8,8 @@
   },
   "scripts": {
     "test": "node --test"
+  },
+  "devDependencies": {
+    "@moldea.ai/cli": "13.0.1"
   }
 }
