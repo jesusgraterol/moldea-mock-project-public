@@ -12,6 +12,12 @@ Requires Node.js 22.17 or later. Run the tests with:
 npm test
 ```
 
+Print the dish count for each `menus/week-<week>.json` file:
+
+```sh
+npm run count:dishes
+```
+
 <!-- moldea:start -->
 
 This project uses [moldea](https://skill.moldea.ai) to keep project knowledge in Git and bring relevant context into coding-agent work.
