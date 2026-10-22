@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "runId": "run-20261022-01",
   "date": "2026-10-22",
-  "summary": "Skill 10.0.1 verification run. Pebble Library worked with a linked .claude/skills directory: every launcher validate and inspect passed with the link present, while the bundled repair Git helper stopped an explicit Validate moldea before validation. Bound-skill project pending.",
+  "summary": "Skill 10.0.1 verification run across two projects. Pebble Library passed every launcher validate and inspect with a linked .claude/skills directory, while the bundled repair Git helper stopped an explicit Validate moldea before validation. Saffron Menus ran its project skill as host work, reported the missing CLI in one line, and maintained context after installation; the host sandbox blocked its skill edit.",
   "expectedActor": {
     "model": "gpt-6.1-sol",
     "effort": "xhigh"
@@ -30,13 +30,15 @@
     }
   ],
   "attempts": [
-    "evidence/runs/run-20261022-01/attempts/pebble-library-01.json"
+    "evidence/runs/run-20261022-01/attempts/pebble-library-01.json",
+    "evidence/runs/run-20261022-01/attempts/saffron-menus-01.json"
   ],
   "evidenceStatus": "complete",
   "reviewStatus": "complete",
   "review": "evidence/runs/run-20261022-01/reviews/skill-review.md",
   "limitations": [
     "Codex actor only, gpt-6.1-sol/xhigh on Linux with Node 24.15.0; the Claude Code host and Windows junctions were not exercised.",
-    "The repair Git helper finding is reproduced and attributed to Skill 10.0.1; it is a follow-up release item and was not fixed in this run."
+    "The repair Git helper finding is reproduced and attributed to Skill 10.0.1; it is a follow-up release item and was not fixed in this run.",
+    "Saffron request 02 read canonical context before the missing-install notice, and its request 04 skill edit was blocked by the host sandbox, so the ordinary notice path without canonical reads and bound-skill editing remain unobserved."
   ]
 }
