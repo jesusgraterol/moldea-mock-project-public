@@ -473,6 +473,31 @@
         "run-20261021-01/quarry-handover-identities-01.txt"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Combined public replay of 2db9e098bd8bee82a3fd89d7482bd44eef460835, unchanged reader 950b89eb4c41564953fa1582fdd588992e152d37, Chromium 151.0.7922.34/Linux: all 168 displayed entries/263 events and 95 full tool exchanges matched, with all rendered messages/request/context ordinals.1440 x 900 and 320 x 900 touch, light/dark; key dialogs/text, summaries, immutable source/attempt/review/recording links, keyboard/focus/Tab/scroll and stable visual checks passed; no document overflow/page errors. Unfiltered Axe landmark-unique failures retained for inherited generic Code block/Scrollable table names; bounded nonblocking replay finding, no conformance claim.",
+      "inputCommit": "2db9e098bd8bee82a3fd89d7482bd44eef460835",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/quarry-handover-01.json",
+        "evidence/scenarios/quarry-handover.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/85b6e34b24c8efdde24f32f6066e1e75c1295dea/dd6aaff148618cc41b6712dbb733cfe20c5f6f74",
+        "run-20261021-01/quarry-handover-01-session-01.jsonl.gz",
+        "run-20261021-01/quarry-handover-identities-01.txt"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -4301,6 +4326,7 @@
     "The delivered request02 ends with literal backslash+n rather than a newline. That exact driver formatting is retained without rewriting, retrying or inventing another request; product constraints were otherwise explicit.",
     "Actor checks on intermediate uncommitted source have null inputCommit with native/reached-source anchors. Independent committed-source checks are separate. Reviewer-only setup and probe-harness errors remain attributed to review, not actor/package defects.",
     "The final capture has263 shareable events/932native records/95full tool-call-result pairs and242 explicit prefix masks. Encrypted reasoning/private host state and the encrypted compaction summary are omitted. No opaque child prompt or child internal-history coverage is claimed.",
-    "Independent final source/host/runtime/capture/public-copy privacy, separate source publication and authenticated/anonymous assets are verified. Record-publication checks use null inputCommit while metadata is uncommitted; full combined browser replay remains Milestone8."
+    "Independent final source/host/runtime/capture/public-copy privacy, separate source publication and authenticated/anonymous assets are verified. Record-publication checks use null inputCommit while metadata is uncommitted; combined public browser replay completed in Milestone8 from 2db9e098bd8bee82a3fd89d7482bd44eef460835.",
+    "Final replay is Chromium/Linux with emulated 320 px touch and desktop 1440 px, light/dark. Generic Code block/Scrollable table landmark naming remains an inherited accessibility defect; no screen-reader/real-device/conformance claim. Earlier pending-phase check/log statements remain chronological. Final metadata/privacy deltas use null inputCommit while uncommitted."
   ]
 }

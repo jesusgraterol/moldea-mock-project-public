@@ -463,6 +463,31 @@
       "result": "passed",
       "coveredArtifacts": [],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Combined public replay of 2db9e098bd8bee82a3fd89d7482bd44eef460835, unchanged reader 950b89eb4c41564953fa1582fdd588992e152d37, Chromium 151.0.7922.34/Linux: all 121 displayed entries/179 events and 58 full tool exchanges matched, with all rendered messages/request/context ordinals.1440 x 900 and 320 x 900 touch, light/dark; key dialogs/text, summaries, immutable source/attempt/review/recording links, keyboard/focus/Tab/scroll and stable visual checks passed; no document overflow/page errors. Unfiltered Axe landmark-unique failures retained for inherited generic Code block/Scrollable table names; bounded nonblocking replay finding, no conformance claim.",
+      "inputCommit": "2db9e098bd8bee82a3fd89d7482bd44eef460835",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/beacon-collections-01.json",
+        "evidence/scenarios/beacon-collections.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/00d40168e72742bb9e1980c18e666b283ebc4f51/f614e97611569152ac47ef505cb8f3976f1902a5",
+        "run-20261021-01/beacon-collections-01-session-01.jsonl.gz",
+        "run-20261021-01/beacon-collections-identities-01.txt"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -2333,8 +2358,9 @@
     "Dedicated actor home isolates configuration, not filesystem reads; host catalogs/shared Git objects remain available.",
     "Actor checks with null inputCommit ran on uncommitted intermediate source; exact committed H/D/R checks and independent reruns are separate.",
     "Linux/Node24 and intentional safe repository-relative instruction symlink only; other platforms, unsafe links, large inventories and forced continuation unexercised. Encrypted reasoning/private host state omitted; no natural compaction observed.",
-    "Full combined public browser replay remains Milestone8; no separate Beacon browser replay claimed.",
+    "combined public browser replay completed in Milestone8 from 2db9e098bd8bee82a3fd89d7482bd44eef460835; no separate Beacon browser replay claimed.",
     "The selected prepublication capture adds8 local ls owner/group masks to the original106prefix rules; public contributor/source URLs remain. Original private proposed bytes retained; no actor/source/request change or replacement of published assets.",
-    "Private-candidate/publication/status metadata checks have null inputCommit because record inputs were uncommitted; frozen source/assets are checked separately. Merged public records are consumed before milestone close and during the combined handoff."
+    "Private-candidate/publication/status metadata checks have null inputCommit because record inputs were uncommitted; frozen source/assets are checked separately. Merged public records are consumed before milestone close and during the combined handoff.",
+    "Final replay is Chromium/Linux with emulated 320 px touch and desktop 1440 px, light/dark. Generic Code block/Scrollable table landmark naming remains an inherited accessibility defect; no screen-reader/real-device/conformance claim. Earlier pending-phase check/log statements remain chronological. Final metadata/privacy deltas use null inputCommit while uncommitted."
   ]
 }

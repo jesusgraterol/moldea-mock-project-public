@@ -421,6 +421,31 @@
         "run-20261021-01/folio-workshop-identities-01.txt"
       ],
       "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "Combined public replay of 2db9e098bd8bee82a3fd89d7482bd44eef460835, unchanged reader 950b89eb4c41564953fa1582fdd588992e152d37, Chromium 151.0.7922.34/Linux: all 116 displayed entries/157 events and 41 full tool exchanges matched, with all rendered messages/request/context ordinals.1440 x 900 and 320 x 900 touch, light/dark; key dialogs/text, summaries, immutable source/attempt/review/recording links, keyboard/focus/Tab/scroll and stable visual checks passed; no document overflow/page errors. Unfiltered Axe landmark-unique failures retained for inherited generic Code block/Scrollable table names; bounded nonblocking replay finding, no conformance claim.",
+      "inputCommit": "2db9e098bd8bee82a3fd89d7482bd44eef460835",
+      "result": "passed",
+      "coveredArtifacts": [],
+      "asset": null
+    },
+    {
+      "kind": "manual",
+      "description": "privacy review",
+      "inputCommit": null,
+      "result": "passed",
+      "coveredArtifacts": [
+        "evidence/index.json",
+        "evidence/runs/run-20261021-01/run.json",
+        "evidence/runs/run-20261021-01/attempts/folio-workshop-01.json",
+        "evidence/scenarios/folio-workshop.md",
+        "evidence/runs/run-20261021-01/reviews/skill-review.md",
+        "git/cdbb0e774eb6b5688ffa88e042ef113bc0862b39/1a4b3b6c2014520b0fd8562a1dbf5bbe291cbd55",
+        "run-20261021-01/folio-workshop-01-session-01.jsonl.gz",
+        "run-20261021-01/folio-workshop-identities-01.txt"
+      ],
+      "asset": null
     }
   ],
   "installations": [
@@ -1759,7 +1784,8 @@
     "Actor checks with null inputCommit ran on uncommitted intermediate source before signed driver checkpoints; independent exact-source checks are separate.",
     "Linux/Node24 only; Windows/macOS unexecuted. shellcheck/shfmt unavailable; documented POSIX snippets have actual syntax/output checks.",
     "Encrypted reasoning and host-private world state omitted; no natural compaction observed. Length success alone establishes no factual support; examples do not qualify general editorial reliability or causal benefit from moldea.",
-    "Full combined public browser replay remains Milestone8; no individual Folio browser replay claimed.",
-    "Private-candidate/publication/status metadata checks have null inputCommit because records were uncommitted; assets/source frozen. Merged public record snapshot separately consumed before milestone closes and in combined handoff."
+    "combined public browser replay completed in Milestone8 from 2db9e098bd8bee82a3fd89d7482bd44eef460835; no individual Folio browser replay claimed.",
+    "Private-candidate/publication/status metadata checks have null inputCommit because records were uncommitted; assets/source frozen. Merged public record snapshot separately consumed before milestone closes and in combined handoff.",
+    "Final replay is Chromium/Linux with emulated 320 px touch and desktop 1440 px, light/dark. Generic Code block/Scrollable table landmark naming remains an inherited accessibility defect; no screen-reader/real-device/conformance claim. Earlier pending-phase check/log statements remain chronological. Final metadata/privacy deltas use null inputCommit while uncommitted."
   ]
 }

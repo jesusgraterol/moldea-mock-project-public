@@ -25,9 +25,9 @@
     {
       "runId": "run-20261021-01",
       "manifestPath": "evidence/runs/run-20261021-01/run.json",
-      "summary": "All six Skill 10.0.0 conversations concluded with independently reviewed source and published/download-verified evidence. Quarry has two transparent review-assisted repairs; Cinder free rationale and other bounded limits remain. Full combined replay and final evaluator handoff remain Milestone8.",
-      "evidenceStatus": "incomplete",
-      "reviewStatus": "pending"
+      "summary": "Six Skill 10.0.0 projects completed 41 actual requests with independently reviewed source, complete published/download-verified evidence and full combined public browser replay. Quarry retains two assisted repairs; controlled-model, prose-grounding, compaction and inherited viewer accessibility limits remain. Evaluator handoff is ready.",
+      "evidenceStatus": "complete",
+      "reviewStatus": "complete"
     }
   ]
 }
