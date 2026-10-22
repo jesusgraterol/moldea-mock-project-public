@@ -58,3 +58,11 @@ One Codex attempt on Linux; the Claude Code host was not exercised. Request 02's
 - Let `repair-git.mjs checkpoint` resolve directory links whose targets stay inside the repository, or report the linked path and a next step, and state whether a validate-only check needs the checkpoint.
 - State whether the Agent Skill being run counts as a touched path for the ordinary precheck.
 - Clarify whether finishing a reported pending canonical check is authorized by the next unrelated request.
+
+## Evaluator and website handoff
+
+- **Run.** `run-20261022-01`, Skill `v10.0.1` (tag object `6b7a96282b6e892c9943d030bf620057d2083639`, commit `1cfa4b83c9d98a7947253fc5c7b97d7ea39837b2`) with CLI `13.0.1`, actor `gpt-6.1-sol`/`xhigh`.
+- **Selected attempts.** `pebble-library-01` (final source `0814b3a6a4673986ce2fe3a3e4fac562e53d911f`) and `saffron-menus-01` (final source `5903794af9576fccecc30eb866073049f443c4de`). Both have complete, independently reviewed evidence.
+- **Recordings.** Release `run-20261022-01`, target `b04a2062f9e0be3578aeff5a59d03ea4103b4f39`, with `pebble-library-01-session-01.jsonl.gz`, `pebble-library-identities-01.txt`, `saffron-menus-01-session-01.jsonl.gz` and `saffron-menus-identities-01.txt`. Authenticated and anonymous downloads matched the recorded sizes and SHA-256 values.
+- **Replay.** Public snapshot `b984ac04c043d5d6046d08f17b56b3367521e800` replayed in an isolated Skill `v10.0.1` website checkout: complete timelines, request anchors, tool dialogs with exact input and output and focus return, at 1440 px and emulated 320 px touch in light and dark, with no unfiltered axe violations. The landmark naming findings inherited by `run-20261021-01` no longer appear with Website UI 4.5.0.
+- **Website selection.** Select `run-20261022-01` at the `main` commit that contains this handoff, with history `["run-20261021-01", "run-20261013-01"]`. Rollback selection: `run-20261013-01` at `87ee9e2f25e4dc188c317ae421c9b9f1dac1759e` with empty history, the deployed selection before this run.
