@@ -5,7 +5,7 @@ Pebble Library is a small command-line helper for the volunteer desk of a commun
 ## Lending rules
 
 - Hand tools are lent for 7 days.
-- Power tools are lent for 3 days.
+- Power tools are lent for 5 days.
 - A member may hold at most 3 tools at once.
 - A member whose loan is more than 14 days overdue is suspended from borrowing until the tool comes back.
 
