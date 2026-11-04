@@ -1,0 +1,28 @@
+version: 1
+context:
+  /moldea/project.md:
+    affectedBy:
+      - /src/shipment-explainer/agent.ts
+agents:
+  shipment-explainer:
+    runtime:
+      id: openai
+      guidance: /moldea/runtimes/openai.md
+    bindings:
+      runtimeAgent:
+        path: /src/shipment-explainer/agent.ts
+        symbol: draftShipmentExplanation
+      instructionLoader:
+        path: /src/shipment-explainer/instructions.ts
+        symbol: loadShipmentExplainerInstruction
+      inputSchema:
+        path: /src/shipment-explainer/types.ts
+        symbol: ShipmentSnapshotSchema
+    unresolved:
+      operational-integration:
+        category: runtime-integration
+        effect: blocking
+        description: The source-only prototype has no service entry point or credential setup, and live provider behavior and staff-review integration have not been exercised. Operational readiness is not established.
+        resolution: Before operational use, establish an invocation and credential setup, verify the canonical instruction in a live Responses request, and verify that returned drafts reach staff for review without automatic customer sending. These checks are outside the current source-only prototype scope.
+        related:
+          - path: /src/shipment-explainer/agent.ts

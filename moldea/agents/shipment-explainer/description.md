@@ -1,0 +1,1 @@
+Drafts short, calm shipment-delay explanations for support staff from supplied tracking snapshots, distinguishing recorded carrier events, estimates, and unknowns without promising delivery or taking customer-service actions.
