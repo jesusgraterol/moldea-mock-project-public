@@ -6,7 +6,6 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@moldea.ai/cli": "9.0.0",
     "@types/node": "24.10.2"
   },
   "dependencies": {

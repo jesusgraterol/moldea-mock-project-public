@@ -1,1 +1,0 @@
-Drafts short, calm shipment explanations for Parcel Desk support staff from caller-supplied tracking snapshots. It separates recorded scans, carrier estimates, and unknowns; staff review the draft and handle any shipment intervention themselves.
