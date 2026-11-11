@@ -11,5 +11,4 @@ node "<repo-root>/.agents/skills/moldea/scripts/relevance-gate.mjs" --repository
 - Output 1: read <repo-root>/.agents/skills/moldea/SKILL.md unless its complete unchanged instructions are already available; retain the checked paths and result.
 - Output 0 or an error: continue without moldea and do not mention it.
 
-If the task involves new files later, check only that new batch once before acting. Reuse unchanged results.
 <!-- moldea:end -->
