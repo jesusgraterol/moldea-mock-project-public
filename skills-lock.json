@@ -1,11 +1,11 @@
 {
-  "version": 1,
+  "version": 2,
   "skills": {
     "moldea": {
       "source": "moldea-ai/skill",
       "sourceType": "github",
       "skillPath": "moldea/SKILL.md",
-      "computedHash": "ce8c3f340607c20f3929e8e8d1283b38f3ba6dc936cbec89c2fdd1d7a72037e1"
+      "computedHash": "e26c261c4c1a83e81fe8fc52f6e6d4f9164096364aabe97b0e61ac1f8c407f73"
     }
   }
 }
