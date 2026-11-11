@@ -3,6 +3,9 @@ context:
   /moldea/project.md:
     affectedBy:
       - /src/shipment-explainer/agent.ts
+      - /src/shipment-explainer/types.ts
+      - /records/pd-431.md
+      - /records/pd-432.md
 agents:
   shipment-explainer:
     runtime:
